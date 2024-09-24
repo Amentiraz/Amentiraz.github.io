@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -37,7 +37,7 @@
         <title>西电新生赛网络赛题解</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-vjZNhBBk&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-wsvnKcTb&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;507001285&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;持续六天的新生赛终于落下了帷幕，打了 8 道题，第 21 名，对于两年没有碰过 oi 的我来说已经是一个不错的成绩了，如果运气好的话还能水到一等奖，怎么说都血赚。&lt;br&gt;
@@ -129,7 +129,7 @@
         <title>DP</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/12/02/DP/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-spFbFTgV&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-WaDiIQOe&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;464413083&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;学了三天 DP 连个 P 都不会，总的来说就是寄了，每道题不看题解就做不来，试着做了做三道提高组难度的题，做出来了俩，另外一个没有思路。这俩题我都想出了大部分思路，但最后几步由于经验问题没想出来。做完后我以为我懂了，然后膨胀了，去挑战&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDExMDg=&#34;&gt;低价购买&lt;/span&gt;这道题。然后不出意外寄了。打算先不弄这个了，等以后在弄，先把之前写的贴上来吧。&lt;/p&gt;
@@ -156,7 +156,7 @@
         <title>Tarjan</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/11/29/Tarjan/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-HWVpZywi&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-JOchnjtC&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;488388731&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;想当年高中组织活动的时候我还专门写过 Tarjan 的流程和证明，如今已经忘的干干净净，原来的代码也找不到了，只能现写了。&lt;br&gt;
@@ -177,7 +177,7 @@ Tarjan 程序是正确无误的，然后最后要跑一个拓扑，然鹅我不�
         <title>LCA</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/11/29/LCA/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-RdztVWRC&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-SjDEDaBh&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;29850611&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;blockquote&gt;
@@ -199,7 +199,7 @@ Tarjan 程序是正确无误的，然后最后要跑一个拓扑，然鹅我不�
         <title>线段树</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/11/27/%E7%BA%BF%E6%AE%B5%E6%A0%91/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-fPuxBiZF&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-MwOaRFCC&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;27846868&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;线段树是一种树状数据结构，它可以区间加减，区间乘除等一系列操作，用于处理那种可以合并状态的数据，在使用其 3 倍左右的空间的代价下使得其修改、查询、求区间和等等操作变得更加快捷。但与此同时，我们无法利用它处理类似于区间最长 01 序列此类问题，而且线段树代码冗长，其实很容易写错（也可能是因为我太菜了）。&lt;br&gt;
@@ -222,7 +222,7 @@ Tarjan 程序是正确无误的，然后最后要跑一个拓扑，然鹅我不�
         <title>Dijkstra</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/11/27/Dijkstra/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-BpvTOYAt&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-whvCdkCr&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;1345488418&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;Dijkstra 算法用于解决单源最短路问题，假设起始点为 S，在最开始我们可以知道 S 到某些点的距离，从中取出最小的一个，我们可以保证在我们取出这个最小值的时候不可能有任何路径可以更短的到达此点，，此过程使用了贪心的思想。每当我们找出一个这样的点就更新 S 到与此点相连的其它点的距离，我们每一次取点都保证取出的是最短的且未被访问的点，这就是 Dijkstra 算法。&lt;/p&gt;

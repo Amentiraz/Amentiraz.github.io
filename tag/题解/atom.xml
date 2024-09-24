@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -37,7 +37,7 @@
         <title>西电新生赛网络赛题解</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-vjZNhBBk&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-wsvnKcTb&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;507001285&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;持续六天的新生赛终于落下了帷幕，打了 8 道题，第 21 名，对于两年没有碰过 oi 的我来说已经是一个不错的成绩了，如果运气好的话还能水到一等奖，怎么说都血赚。&lt;br&gt;

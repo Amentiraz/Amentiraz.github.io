@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -36,7 +36,7 @@
         <id>http://amentiraz.github.io/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/</id>
         <title>博客使用的图片</title>
         <link rel="alternate" href="http://amentiraz.github.io/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/"/>
-        <content type="html">&lt;p&gt;这里把所有我在博客中使用的图片和相应的地址给放出来，以便后面写文章使用&lt;/p&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;这里把所有我在博客中使用的图片和相应的地址给放出来，以便后面写文章使用&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;生活类&lt;br&gt;
 &lt;img data-src=&#34;https://i.postimg.cc/zfxwqzC7/wallhaven-pkw6y3.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;

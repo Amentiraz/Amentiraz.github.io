@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -36,7 +36,7 @@
         <id>http://amentiraz.github.io/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/</id>
         <title>《蓝色恐惧》观后感</title>
         <link rel="alternate" href="http://amentiraz.github.io/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-        <content type="html">&lt;p&gt;《蓝色恐惧》是今敏监督的处女座，然而它在 Bangumi 平台上享有盛誉，排名在全年代前 20。本文是对《蓝色恐惧》（未麻的部屋）的观后感与解读。&lt;/p&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;《蓝色恐惧》是今敏监督的处女座，然而它在 Bangumi 平台上享有盛誉，排名在全年代前 20。本文是对《蓝色恐惧》（未麻的部屋）的观后感与解读。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;“我” 是什么呢？这个命题在哲学上有着诸多的讨论，更专业的术语是自我同一性是怎样的呢？&lt;/p&gt;
 &lt;p&gt;在 EVA 中对于自我的表述是这样的：真嗣是由人们眼中的真嗣组成，借此强调人与他人的联系。在哲学上也有相关问题，例如泥沼人 —— 如果当下的你死去，而一个与你一模一样并继承了你的思想的人同时刻出现了，那么这个人能算做是你吗。泥沼人问题在《重启咲良田》也有提及，只不过也是泛泛而谈。谈的比较深入的有《攻壳机动队》和《Lain》，分别从肉体与网络现实去进行了讨论。在我大一参加哲学选修课时，老师也向我们提问：此刻的你，和前一刻的你是同一个人吗？而这位老师给出的答案是因为后一刻的你是前面的累积，那么当然是同一个你。然而当时我并不这么认为：假设人是一个函数 &lt;code&gt;y=f(x)&lt;/code&gt; ，那么老师对人的理解是 &lt;code&gt;f(x)&lt;/code&gt; ，这个函数本身，而我认为如果 &lt;code&gt;y&lt;/code&gt;  不同了，那么当然每时每刻的人也当然是不同的。&lt;/p&gt;
@@ -61,7 +61,7 @@
         <id>http://amentiraz.github.io/2024/05/07/FLCL/</id>
         <title>FLCL</title>
         <link rel="alternate" href="http://amentiraz.github.io/2024/05/07/FLCL/"/>
-        <content type="html">&lt;p&gt;FLCL (特别的她），四刷纪念文。&lt;/p&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;FLCL (特别的她），四刷纪念文。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;FLCL 是一部于千禧年初放送的一部动画，参与人员眼花缭乱：庵野秀明、鹤卷和哉、今石洋之、吉成曜等等业界扛把子的人物，这部作品也不负众望用最顶级的炫技向我们呈现了制作团队最饱满的热情。对我而言，如果要挑出一部作品代表日本动画，那我认为毫无疑问是这部作品。青春、意识流、天马行空的想象力，这些是日本动画最与众不同的地方。&lt;br&gt;
 对我而言这部作品是我极少在 bangumi 上打 10 分的作品，它是我青春期绕不开的话题，这部作品将我带入了成熟，又让我回归青春热情的本心。&lt;/p&gt;
@@ -82,7 +82,7 @@
         <id>http://amentiraz.github.io/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/</id>
         <title>你想活出怎样的人生</title>
         <link rel="alternate" href="http://amentiraz.github.io/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/"/>
-        <content type="html">&lt;p&gt;大概率是宫崎骏的最后一部作品了，看完感触良多，特此记录。&lt;/p&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;大概率是宫崎骏的最后一部作品了，看完感触良多，特此记录。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;宫崎骏一直是我喜欢不来的动画监督。上大学以前，我只看过他的《幽灵公主》，上大学后先后看了《天空之城》，《红猪》，《千与千寻》，《龙猫》，但是其中除了红猪我还算喜欢，剩下几部实在令我无感。我能很好的欣赏他那天马行空的作画，那种平淡之中若隐若现的思想，那种适合儿童的天真的气氛，但每次点开他的作品都有一种不会失望，但不会期待的情绪。让我来概况他的作品，那就是不计成本的作画，和局部极佳的演出表现，可作为电影，他的叙事情节过于平淡简单，不能很好的激起我个人的共鸣，在《天空之城》他那回归田园的观点更是让我敬而远之。&lt;br&gt;
 想到《你想活出怎样的人生》（以下简称《人生》）大概率是他最后一部作品我还是决定去看了。中国上映较晚，于是能在观影前看到很多风声：难以理解，意识流，甚至还有认为这部作品思想是反战败。我很喜欢意识主义动画，在动画领域，我认为意识主义动画才是日本最绚丽的瑰宝。意识主义动画往往以一种含蓄的方式去表达自己的观点，方式就是跳脱常规的剧情讲述，不明所以但似乎蕴含思想的作画，以极大的信息量冲击观众的感官，不追求你能看懂，只是导演团队的自嗨罢了。所以在面对这种动画时，我采用的态度往往是感受这个气氛，顺着导演的情绪去走，若是能窥见他思想的一角那更是极好，但如果在观影中自己获得了某种情绪，那便是更加。例如《EVA》中看完后对于故事为什么这样发展是模糊的，但我能感受到真嗣的在爱中寻找存在的冲动，再例如《FLCL》中，在富有激情的作画中感受到男主的青春与成长（这部片也是在我人生低谷中激励我的一部），《和平保卫战》中看到最后都不明白剧情的发展，但城市上空充满威胁的飞艇所渲染的绝望低气压的气息令人深思。&lt;br&gt;
@@ -108,7 +108,7 @@
         <title>小王子书评</title>
         <link rel="alternate" href="http://amentiraz.github.io/2021/10/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E4%B9%A6%E8%AF%84/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-DCqrlQoI&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-vRpALCXZ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;26908739&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;国庆回家的火车上读完了《小王子》这本书，对于自从高三结束以来一直没有再阅读纸质小说的我来说，这的的确确是一种很新鲜的感觉，让我讶异的发觉，原来阅读是这么一种充实而快乐的体验。当然，打游戏远比此要快乐的多，这也是没办法的事，但以后当我没办法玩手机，也不妨多看看书吧。&lt;/p&gt;

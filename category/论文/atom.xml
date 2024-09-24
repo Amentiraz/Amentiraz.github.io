@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -36,7 +36,7 @@
         <id>http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</id>
         <title>scRNA论文笔记</title>
         <link rel="alternate" href="http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"/>
-        <content type="html">&lt;p&gt;论文阅读笔记&lt;/p&gt;
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;&lt;p&gt;论文阅读笔记&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;h1 id=&#34;abstract&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#abstract&#34;&gt;#&lt;/a&gt; Abstract&lt;/h1&gt;
 &lt;p&gt;squencing-based spatial transcriptomics (ST) 技术无法实现单细胞分辨率，而通过单细胞 RNA 测序的数据与 ST 数据存在偏差，本文开发了一个基于实例的迁移学习框架，通过 ST 数据调整 scRNA-seq 数据，从而更精确地描述细胞类型空间组织&lt;/p&gt;

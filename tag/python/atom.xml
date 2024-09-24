@@ -9,25 +9,25 @@
     <category term="Dijkstra" />
     <category term="书评" />
     <category term="LCA" />
+    <category term="代码" />
+    <category term="分布式" />
     <category term="数学建模" />
     <category term="TOPSIS" />
     <category term="Matlab" />
-    <category term="代码" />
-    <category term="分布式" />
     <category term="Tarjan" />
     <category term="学习笔记" />
     <category term="C语言" />
     <category term="复习资料" />
     <category term="python" />
-    <category term="读书笔记" />
+    <category term="论文" />
+    <category term="笔记" />
     <category term="生活" />
+    <category term="读书笔记" />
     <category term="杂" />
     <category term="层次分析法" />
     <category term="诗" />
     <category term="指针" />
     <category term="c语言" />
-    <category term="论文" />
-    <category term="笔记" />
     <category term="插值算法" />
     <category term="线段树" />
     <category term="结构" />
@@ -37,7 +37,7 @@
         <title>python学习笔记1</title>
         <link rel="alternate" href="http://amentiraz.github.io/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-FVVRxfLT&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-TPUrLzZw&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;1458550&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;除开函数外的 python 基础知识总汇，用于复习及查看，写的会很简略&lt;/p&gt;

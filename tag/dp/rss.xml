@@ -12,25 +12,25 @@
         <category>Dijkstra</category>
         <category>书评</category>
         <category>LCA</category>
+        <category>代码</category>
+        <category>分布式</category>
         <category>数学建模</category>
         <category>TOPSIS</category>
         <category>Matlab</category>
-        <category>代码</category>
-        <category>分布式</category>
         <category>Tarjan</category>
         <category>学习笔记</category>
         <category>C语言</category>
         <category>复习资料</category>
         <category>python</category>
-        <category>读书笔记</category>
+        <category>论文</category>
+        <category>笔记</category>
         <category>生活</category>
+        <category>读书笔记</category>
         <category>杂</category>
         <category>层次分析法</category>
         <category>诗</category>
         <category>指针</category>
         <category>c语言</category>
-        <category>论文</category>
-        <category>笔记</category>
         <category>插值算法</category>
         <category>线段树</category>
         <category>结构</category>
@@ -43,7 +43,7 @@
             <category>算法</category>
             <pubDate>Thu, 02 Dec 2021 17:26:14 +0800</pubDate>
             <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
-    &lt;div id=&#34;aplayer-spFbFTgV&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+    &lt;div id=&#34;aplayer-WaDiIQOe&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
          data-id=&#34;464413083&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
     &gt;&lt;/div&gt;
 &lt;p&gt;学了三天 DP 连个 P 都不会，总的来说就是寄了，每道题不看题解就做不来，试着做了做三道提高组难度的题，做出来了俩，另外一个没有思路。这俩题我都想出了大部分思路，但最后几步由于经验问题没想出来。做完后我以为我懂了，然后膨胀了，去挑战&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDExMDg=&#34;&gt;低价购买&lt;/span&gt;这道题。然后不出意外寄了。打算先不弄这个了，等以后在弄，先把之前写的贴上来吧。&lt;/p&gt;
