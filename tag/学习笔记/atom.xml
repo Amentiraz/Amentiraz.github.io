@@ -1,0 +1,612 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://Amentiraz.github.io</id>
+    <title>Amentiraz • Posts by &#34;学习笔记&#34; tag</title>
+    <link href="http://Amentiraz.github.io" />
+    <updated>2024-09-19T02:26:45.000Z</updated>
+    <category term="DP" />
+    <category term="算法" />
+    <category term="Dijkstra" />
+    <category term="书评" />
+    <category term="LCA" />
+    <category term="数学建模" />
+    <category term="TOPSIS" />
+    <category term="Matlab" />
+    <category term="代码" />
+    <category term="分布式" />
+    <category term="Tarjan" />
+    <category term="学习笔记" />
+    <category term="C语言" />
+    <category term="复习资料" />
+    <category term="python" />
+    <category term="读书笔记" />
+    <category term="生活" />
+    <category term="杂" />
+    <category term="层次分析法" />
+    <category term="诗" />
+    <category term="指针" />
+    <category term="c语言" />
+    <category term="论文" />
+    <category term="笔记" />
+    <category term="插值算法" />
+    <category term="线段树" />
+    <category term="结构" />
+    <category term="题解" />
+    <entry>
+        <id>http://amentiraz.github.io/2024/09/19/%E4%BF%9D%E7%A0%94%E5%A4%8D%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%80%BB%E6%8B%AC/</id>
+        <title>保研复试复习总括</title>
+        <link rel="alternate" href="http://amentiraz.github.io/2024/09/19/%E4%BF%9D%E7%A0%94%E5%A4%8D%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%80%BB%E6%8B%AC/"/>
+        <content type="html">&lt;p&gt;本文针对保研复试进行总复习，对目前的自己针对机器学习、计算机组织，包括数学建模、ACM 等等学科进行自己的理解和概括，以总述为主，内容复习为辅。&lt;br&gt;
+目的是为了在复试时更好的吹牛 qwq。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h1 id=&#34;机器学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#机器学习&#34;&gt;#&lt;/a&gt; 机器学习&lt;/h1&gt;
+&lt;h2 id=&#34;内容复习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内容复习&#34;&gt;#&lt;/a&gt; 内容复习&lt;/h2&gt;
+&lt;h3 id=&#34;绪论&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#绪论&#34;&gt;#&lt;/a&gt; 绪论&lt;/h3&gt;
+&lt;p&gt;无论学习算法 A 多聪明，学习算法 B 多笨拙，期望性能是完全相同的。（NFL 定理）&lt;br&gt;
+脱离实际问题，空泛的谈论算法优劣没有意义。&lt;br&gt;
+机器学习为交叉学习提供技术支撑，本质上机器学习就是利用大数据&lt;br&gt;
+数据库为数据挖掘提供数据管理技术，机器学习和统计学提供数据分析技术。&lt;/p&gt;
+&lt;h3 id=&#34;模型评估与选择&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#模型评估与选择&#34;&gt;#&lt;/a&gt; 模型评估与选择&lt;/h3&gt;
+&lt;p&gt;过拟合无法彻底避免，我们能做的只有缓解&lt;br&gt;
+调参和算法选择没有什么本质区别&lt;br&gt;
+泛化误差可分解为偏差、方差和噪声之和。&lt;/p&gt;
+&lt;h3 id=&#34;线性模型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#线性模型&#34;&gt;#&lt;/a&gt; 线性模型&lt;/h3&gt;
+&lt;p&gt;形式简单、易于建模。&lt;br&gt;
+线性回归：均方误差最小化&lt;br&gt;
+线性判别分析：将样本投到一条直线上（更低维的空间）。&lt;br&gt;
+多分类问题：一对一、一对多、多对多。&lt;/p&gt;
+&lt;h3 id=&#34;决策树&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#决策树&#34;&gt;#&lt;/a&gt; 决策树&lt;/h3&gt;
+&lt;p&gt;信息增益、希望决策树的样本划分尽可能属于同一类别，数据挖掘里面讲到过。还有剪枝的内容，泛化能力更强。&lt;/p&gt;
+&lt;h3 id=&#34;神经网络&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#神经网络&#34;&gt;#&lt;/a&gt; 神经网络&lt;/h3&gt;
+&lt;p&gt;感知机（Perception）&lt;br&gt;
+BP 算法（误差逆传播）（error BackPropagation)&lt;/p&gt;
+&lt;h3 id=&#34;支持向量机&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#支持向量机&#34;&gt;#&lt;/a&gt; 支持向量机&lt;/h3&gt;
+&lt;p&gt;划分的超平面对于训练样本的局部扰动的 “容忍” 性最好&lt;br&gt;
+软间隔、正则化（一种罚函数）&lt;/p&gt;
+&lt;h3 id=&#34;贝叶斯分类器&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#贝叶斯分类器&#34;&gt;#&lt;/a&gt; 贝叶斯分类器&lt;/h3&gt;
+&lt;p&gt;基于后验概率&lt;/p&gt;
+&lt;h3 id=&#34;集成学习&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#集成学习&#34;&gt;#&lt;/a&gt; 集成学习&lt;/h3&gt;
+&lt;p&gt;构建并结合多个学习器来完成学习任务，也被称为多分类器系统。&lt;br&gt;
+Boosting：弱学习器提升为强学习器&lt;br&gt;
+ bagging：自助法啥的&lt;/p&gt;
+&lt;h3 id=&#34;聚类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#聚类&#34;&gt;#&lt;/a&gt; 聚类&lt;/h3&gt;
+&lt;p&gt;无监督。。。&lt;/p&gt;
+&lt;h2 id=&#34;理念概括&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#理念概括&#34;&gt;#&lt;/a&gt; 理念概括&lt;/h2&gt;
+&lt;p&gt;利用数据对未来情况进行预测，模型构建的过程中算法从数据提取特征和规律，构建数学模型来表示复杂的关系，希望具有泛化的能力和持续改进的功能。&lt;br&gt;
+数据质量，特征提取，模型选择，过拟合欠拟合找到平衡，选用适当的评估指标，模型的可解释性，数据的划分，运行的成本&lt;/p&gt;
+&lt;h1 id=&#34;数据挖掘&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据挖掘&#34;&gt;#&lt;/a&gt; 数据挖掘&lt;/h1&gt;
+&lt;h2 id=&#34;内容&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#内容&#34;&gt;#&lt;/a&gt; 内容&lt;/h2&gt;
+&lt;h3 id=&#34;绪论-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#绪论-2&#34;&gt;#&lt;/a&gt; 绪论&lt;/h3&gt;
+&lt;p&gt;数据挖掘是在大型数据存储库中，自动的发现有用信息的过程。数据挖掘技术用来探查大型数据库，发现先前未知的有用模式。&lt;br&gt;
+数据预处理是将未加工的输入数据转换成适合分析的形式&lt;br&gt;
+任务：预测任务，描述任务，预测建模&lt;/p&gt;
+&lt;h3 id=&#34;数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据&#34;&gt;#&lt;/a&gt; 数据&lt;/h3&gt;
+&lt;p&gt;数据类型、数据质量、预处理步骤，数据之间的联系。&lt;br&gt;
+&lt;img data-src=&#34;1.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+数据预处理：聚类、抽样、维归约、特征子集选择、特征创建、离散化和二元化、变量变换&lt;/p&gt;
+&lt;h3 id=&#34;探索数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#探索数据&#34;&gt;#&lt;/a&gt; 探索数据&lt;/h3&gt;
+&lt;p&gt;对于有序数据，考虑值的百分位数更有意义。第 &lt;code&gt;p&lt;/code&gt;  个百分位数 &lt;code&gt;xp&lt;/code&gt;  是一个 &lt;code&gt;x&lt;/code&gt;  值，使得 &lt;code&gt;x&lt;/code&gt;  的 &lt;code&gt;p%&lt;/code&gt;  的观测值小于 &lt;code&gt;xp&lt;/code&gt; &lt;br&gt;
+ 可视化：直方图、盒状图、饼图、散布图&lt;/p&gt;
+&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h2 id=&#34;理念概括-2&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#理念概括-2&#34;&gt;#&lt;/a&gt; 理念概括&lt;/h2&gt;
+&lt;p&gt;没什么好概括的&lt;br&gt;
+实际和机器学习概括的差不多&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;一坨屎，妈的，我已经足够了解这个方面的知识了，明天问啥答啥，爱要不要。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;结果复习一天的内容屁都没用上，面试就是即兴英语口语 + 竞赛经历讲解 + tree new bee。老师问啥我答啥，照这些老师喜欢的方向去回答，最后目测这些老师都挺满意的，应该问题不大（希望不是 flag）。这玩意还是得硬实力够啊，我看前面的都挺折磨，估计是项目经历不真实导致的吧。&lt;/p&gt;
+&lt;p&gt;就我个人观察而言，面试技巧已经没啥特别加分的作用了，大家都会，老师也都知道，反套路搞你几句你也寄。实际上，在大家都不会面试技巧时，考察的是情商；然而，在大家都会面试技巧时，考察的照样是情商。走捷径是没有用的。&lt;/p&gt;
+</content>
+        <category term="学习笔记" />
+        <updated>2024-09-19T02:26:45.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://amentiraz.github.io/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</id>
+        <title>python学习笔记1</title>
+        <link rel="alternate" href="http://amentiraz.github.io/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-FVVRxfLT&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;1458550&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;除开函数外的 python 基础知识总汇，用于复习及查看，写的会很简略&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;基础知识&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础知识&#34;&gt;#&lt;/a&gt; 基础知识&lt;/h3&gt;
+&lt;p&gt;普通的除法：1/2  0.5&lt;br&gt;
+ 整除: 1//2 0&lt;br&gt;
+ 取模：%&lt;br&gt;
+ 乘方：2&lt;strong&gt;3 (-3&lt;/strong&gt;2 等同于 -(3**2))&lt;/p&gt;
+&lt;p&gt;十六进制：0xAF&lt;br&gt;
+ 八进制：010&lt;/p&gt;
+&lt;p&gt;变量无需声明即可使用&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;x = &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;output : &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;变量名命名同 C 语言&lt;/p&gt;
+&lt;p&gt;print 在 python2 是语句，在 python3 中是函数，所以应当加上（）&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;The meaning of life: &amp;quot;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;The meaning of life &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;x = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;x: &amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;x: &lt;span class=&#34;number&#34;&gt;34&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;y = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;y: &amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;y : &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( x * y ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1428&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;pow&lt;/span&gt; ( &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; , &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;8&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;round 函数会把浮点数四舍五入为最接近的整数值 （ py2 与 py3 对于 0.5 的取值有所不同）&lt;br&gt;
+abs 绝对值函数&lt;/p&gt;
+&lt;p&gt;可以用变量来引用函数&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; math &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;math.floor( &lt;span class=&#34;number&#34;&gt;32.9&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; math &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; floor&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;floor&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo = math.sqrt &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo ( &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;math 中的 sqrt 不支持复数运算而 cmath 中支持&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; cmath&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;cmath.sqrt ( -&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1j&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 没有使用from 。。。import 。。。是因为一旦使用了这个语句那么就无法使用普通的sqrt了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;3j&lt;/span&gt;) * (&lt;span class=&#34;number&#34;&gt;9&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;4j&lt;/span&gt;) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(-&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;31j&lt;/span&gt;) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;字符串是值，就像数字一样，单引号和双引号没有本质区别&lt;br&gt;
+ \ 与 C 语言中一样使用&lt;br&gt;
+字符串之间可以拼接&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;quot;hello,&amp;quot;&lt;/span&gt; + &lt;span class=&#34;string&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;转换成字符串有两种方式&lt;br&gt;
+ str 将对象转换成用户看的，repr 转换成 python 表达式&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;repr&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt; ) )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;hello world&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;str&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;hello world &amp;quot;&lt;/span&gt; ) )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hello world &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;长字符串：&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot; This is a very long string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;It continues here &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;And it&amp;#x27;s not over yet&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;Still here &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 换行符可以被转义&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot; hello \ &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;world &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原始字符串&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;path = &lt;span class=&#34;string&#34;&gt;&amp;#x27;c:\\program\\fnord&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;path = &lt;span class=&#34;string&#34;&gt;r&amp;#x27;c:\ll&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;# r紧贴&amp;#x27;&lt;/span&gt;且字符串末尾不是\&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;序列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#序列&#34;&gt;#&lt;/a&gt; 序列&lt;/h3&gt;
+&lt;p&gt;列表和元组的区别在于列表可以修改而元组不可以&lt;/p&gt;
+&lt;p&gt;通用的序列操作：索引，分片，加，乘&lt;br&gt;
+索引同数组，数组最后一个元素的位置标号为 - 1 如：greeting [-1]&lt;br&gt;
+ print 的返回值是一个序列，所以我们可以如此调用&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;fourth = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;Year: &amp;quot;&lt;/span&gt; )[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;] &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;列表可以相加与相乘，例如&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;endings = [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;nd&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;rd&amp;#x27;&lt;/span&gt;]+&lt;span class=&#34;number&#34;&gt;17&lt;/span&gt; * [&lt;span class=&#34;string&#34;&gt;&amp;#x27;th&amp;#x27;&lt;/span&gt;,] \ &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+    [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;nd&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;rd&amp;#x27;&lt;/span&gt;]+ &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt; * [&lt;span class=&#34;string&#34;&gt;&amp;#x27;th&amp;#x27;&lt;/span&gt;,]  \&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+ [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;[1,2,3] + [4,5,6]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;= [1,2,3,4,5,6]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;# 初始化一个长度为10 的列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;sequence = [None] * 10 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;分片&lt;br&gt;
+ numbers [-3:-1]&lt;br&gt;
+numbers[-3:]&lt;br&gt;
+numbers[0::2]&lt;br&gt;
+numbers[-1:0:-2]&lt;/p&gt;
+&lt;p&gt;成员资格：in 函数&lt;/p&gt;
+&lt;p&gt;长度：len&lt;br&gt;
+ 最大值：max&lt;br&gt;
+ 最小值：min&lt;/p&gt;
+&lt;h4 id=&#34;列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#列表&#34;&gt;#&lt;/a&gt; 列表&lt;/h4&gt;
+&lt;p&gt;list 函数 对立： ‘’.join (somelist)&lt;br&gt;
+ 删除元素 del names [2]&lt;br&gt;
+ 分片赋值：可以使用与原序列不等长的序列将分片替换（可以用来删除某一段）&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;numbers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = [&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; ,&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;numbers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;] = [] &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;.append( )&lt;br&gt;
+.count ( )&lt;br&gt;
+.extend ( ) 追加一个序列&lt;br&gt;
+.index ( ) 找出第一个匹配项索引位置&lt;br&gt;
+.insert (i , value) 插入&lt;br&gt;
+.pop ( ) 移除最后一个值并返回值&lt;br&gt;
+.remove ( ) 移除第一个匹配项&lt;br&gt;
+.reserve ( ) 反向存放&lt;br&gt;
+.sort ( ) 会该表原来的列表修改，也就是说修改副本不会影响原本，反之不然&lt;br&gt;
+&lt;strong&gt; sort 里面可以有参数如 cmp，key=len，reserve=True&lt;/strong&gt;&lt;br&gt;
+sorted ( ) 返回已排序的列表副本&lt;/p&gt;
+&lt;h4 id=&#34;元组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元组&#34;&gt;#&lt;/a&gt; 元组&lt;/h4&gt;
+&lt;p&gt;如果你用逗号分隔了一些值，那么你就自动创建了元组&lt;br&gt;
+ tuple ( ) 类比于 list&lt;/p&gt;
+&lt;h3 id=&#34;字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串&#34;&gt;#&lt;/a&gt; 字符串&lt;/h3&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;format&lt;/span&gt; = &lt;span class=&#34;string&#34;&gt;&amp;quot;hello , %s , %s enough for ya!&amp;quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;values = ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;world&amp;#x27;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;#x27;Hot&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;format&lt;/span&gt; % values ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;模板字符串：&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; string &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; Template&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;$x , glorious $x &amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( x = &lt;span class=&#34;string&#34;&gt;&amp;#x27;slum&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;quot;It&amp;#x27;s $&amp;#123;x&amp;#125;tatic&amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( x = &lt;span class=&#34;string&#34;&gt;&amp;#x27;slum&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;A $thing must never $action&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d = &amp;#123; &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d[&lt;span class=&#34;string&#34;&gt;&amp;#x27;thing&amp;#x27;&lt;/span&gt;] = &lt;span class=&#34;string&#34;&gt;&amp;#x27;gentleman&amp;#x27;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d[&lt;span class=&#34;string&#34;&gt;&amp;#x27;action&amp;#x27;&lt;/span&gt;] = &lt;span class=&#34;string&#34;&gt;&amp;#x27;show his socks&amp;#x27;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( d ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;转换符包括（注意顺序）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;%&lt;/li&gt;
+&lt;li&gt;转换标志 ，- : 左对齐，+ : 正负号，&amp;quot;&amp;quot; 正数前保留空格，0：位数不够用零来凑&lt;/li&gt;
+&lt;li&gt;最小值宽（若为 * 则从元组读入）例如’%. * s’ % (5 , ‘dada’)&lt;/li&gt;
+&lt;li&gt;. 后跟精确度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;字符串方法：&lt;br&gt;
+.find (“target” ,start ,end ) 查找字串 (start end 可忽略)&lt;br&gt;
+sth.join ( )&lt;br&gt;
+.lower ( ) 转换成小写&lt;br&gt;
+.title ()  //.capwords () 标题&lt;br&gt;
+.replace (A , B) 查找并替换&lt;br&gt;
+.split ( ) join 的逆运算&lt;br&gt;
+.strip () 去除两侧空格，可自己添加例如.strip ( ’ * !’)&lt;br&gt;
+.translate ( ) &amp;amp;&amp;amp; .maketrans python3 有所区别，运用时自己网上查&lt;/p&gt;
+&lt;h3 id=&#34;字典&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字典&#34;&gt;#&lt;/a&gt; 字典&lt;/h3&gt;
+&lt;p&gt;创建： phonebook = {‘A’ : 1 , ‘B’ : 2 …}&lt;br&gt;
+ dict (序列)&lt;br&gt;
+len ( )&lt;br&gt;
+d[k]&lt;br&gt;
+d[k] = v&lt;br&gt;
+del d[k]&lt;br&gt;
+ k in d 检查 d 中是否有含有键为 k 的项&lt;br&gt;
+字典可以嵌套，类比于多维数组&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template = &lt;span class=&#34;string&#34;&gt;&amp;quot;%(title)s , %(ooo)d &amp;quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;data = &amp;#123; &lt;span class=&#34;string&#34;&gt;&amp;#x27;title&amp;#x27;&lt;/span&gt; : &lt;span class=&#34;string&#34;&gt;&amp;#x27;fff&amp;#x27;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;#x27;ooo&amp;#x27;&lt;/span&gt; : &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( template % data )  &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;.clear ( ) 原本操作&lt;br&gt;
+.copy ( ) 替换值不变原本，修改值会变&lt;br&gt;
+.deepcopy (copy 函数库中) 复制其包含的所有值&lt;br&gt;
+.fromkeys ([] , ‘default’ ) or dict.fromkeys ( [ ] , ‘default’ ) 给给定的键建立新的字典&lt;br&gt;
+.get (‘value’) 访问不存在的项返回 None&lt;br&gt;
+.has_key (‘value’) 查询是否有此键，py3 中被__contains__(key) 替代&lt;br&gt;
+.items () 把所有项以列表形式返回，且每一项返回 (键，值) 的形式&lt;br&gt;
+.iteritems ( ) 返回迭代器&lt;br&gt;
+.keys ( ) 返回键 ， 同上&lt;br&gt;
+.itereys ( ) 同上&lt;br&gt;
+.values ( ) 同上&lt;br&gt;
+.itervalues ( ) 同上&lt;br&gt;
+.pop (‘键’) 删除对应的键值对&lt;br&gt;
+.popitem ( ) 随机弹出项&lt;br&gt;
+.setdefault (键，‘default’)&lt;br&gt;
+.update (x) 有则不变，无则加之&lt;/p&gt;
+&lt;h3 id=&#34;条件-循环和其它语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#条件-循环和其它语句&#34;&gt;#&lt;/a&gt; 条件、循环和其它语句&lt;/h3&gt;
+&lt;p&gt;print: , 即空格，print 即换行（除非在最后加，)&lt;br&gt;
+import somemodule&lt;br&gt;
+from sm import sf&lt;br&gt;
+from sm import sf as (可避免重名)&lt;/p&gt;
+&lt;p&gt;解包时可在最后用 * rest 把剩下的值都存入 rest&lt;/p&gt;
+&lt;p&gt;+=&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ... : &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;elif&lt;/span&gt; ... : &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;x is y x 和 y 是同一对象&lt;br&gt;
+ x is not y …&lt;br&gt;
+x in y&lt;br&gt;
+x not in y&lt;br&gt;
+ 可以使用 x&amp;lt;y&amp;lt;z&lt;/p&gt;
+&lt;p&gt;断言：assert 判断条件&lt;br&gt;
+如果不满足直接程序崩溃&lt;/p&gt;
+&lt;p&gt;while 判断 :&lt;br&gt;
+ 代码块&lt;br&gt;
+代码块&lt;/p&gt;
+&lt;p&gt;for i in sequence :&lt;br&gt;
+…&lt;br&gt;
+…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;range ( 3 )&lt;br&gt;
+[ 0 , 1 , 2 , 3 ]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xrange ( 3 )&lt;br&gt;
+ 同 range 只不过是一个一个给出的，更为高效&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+</content>
+        <category term="学习笔记" />
+        <category term="python" />
+        <updated>2022-01-12T11:55:31.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://amentiraz.github.io/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+        <title>文件学习笔记</title>
+        <link rel="alternate" href="http://amentiraz.github.io/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-MtvMxXMJ&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;1486106274&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;h3 id=&#34;文件是什么&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件是什么&#34;&gt;#&lt;/a&gt; 文件是什么&lt;/h3&gt;
+&lt;p&gt;文件是指一组相关数据的有序集合，这个数据集有一个名称叫做文件名。文件可以是自己编制的，也可以是系统已有的。事实上我们已经多次使用了文件，例如源程序文件，目标文件、可执行文件、库文件等。&lt;br&gt;
+为了将结果保存起来，就需要使用文件。将数据以文件的形式存放在光盘、磁盘等外存储器上，可以达到重复利用、永久保存数据的目的。文件可分为普通文件和设备文件两种。通常吧显示器定义为标准输出文件，一般情况下在屏幕上显示有关信息就是向标准输出文件输出。如前面经常使用的 printf、putchar 函数就是这类输出。键盘通常被指定标准的输入文件，从键盘上输入意味着以标准输入文件输入数据。scanf、getchar 函数就属于这类输入。&lt;/p&gt;
+&lt;h3 id=&#34;文件类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件类型&#34;&gt;#&lt;/a&gt; 文件类型&lt;/h3&gt;
+&lt;p&gt;文件可分为 ASCII 码文件和二进制文件两种。ASCII 文件也成为文本文件，这种文件在磁盘中存放时每个字符对应一个字节，用于存放对应的 ASCII 码。&lt;br&gt;
+例如数 6843 的存储形式为：&lt;br&gt;
+ASCII 码：00110110 00111000 00110100 00110011&lt;br&gt;
+ 十进制码：  6         8        4        3&lt;br&gt;
+ 共占用四个字节。&lt;br&gt;
+ASCII 码文件可在屏幕上按字符显示，例如源程序文件就是 ASCII 文件，用 DOS 命令 TYPE 可显示文件的内容。&lt;br&gt;
+二进制文件是按二进制编码的方式来存放文件的。例如，数 6843 的存储形式为：00011010 10111011&lt;br&gt;
+ 只占两个字节。二进制文件也可以在屏幕中显示，但内容无法读懂。&lt;br&gt;
+输入输出字符流的开始和结束只由程序控制而不受物理符号（如回车符）的控制。因此也把这种文件称作流式文件。&lt;/p&gt;
+&lt;h3 id=&#34;文件指针&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件指针&#34;&gt;#&lt;/a&gt; 文件指针&lt;/h3&gt;
+&lt;p&gt;在 C 语言中用一个指针变量指向一个文件，这个指针被称为文件指针，通过文件指针可以对它所指的文件进行各种操作。存放文件的有关信息被保存在一个结构体变量中，它是由系统定义的，取名为 FILE。在编写源程序时不必关心 FILE 结构的细节。例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * 指针变量标识符&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其中 FILE 必须为大写，该结构中含有文件名、文件状态和文件当前位置等信息。&lt;br&gt;
+注意：在操作系统中，文件被作为重要的系统资源来看待。因此，当程序需要访问文件时，程序员必须显式地打开某个文件，并在使用后关闭它。程序中所有对文件的操作都通过文件指针来实现。&lt;/p&gt;
+&lt;h3 id=&#34;文件打开操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件打开操作&#34;&gt;#&lt;/a&gt; 文件打开操作&lt;/h3&gt;
+&lt;p&gt;C 语言没有输入输出语句，对文件的读写都是用看库函数来实现的。&lt;br&gt;
+对文件进行操作时应遵循一下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;打开文件。打开文件是指请求系统为指定文件分配内存缓冲区，建立文件的各种有关信息，文件使用前必须先打开。&lt;/li&gt;
+&lt;li&gt;读写文件。包括文件的读、写、定位等操作。&lt;/li&gt;
+&lt;li&gt;关闭文件。确保数据完整写入文件并释放内存缓冲区。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;打开文件，实际上是建立文件的各种有关信息，并使文件指针指向该文件。关闭文件则是断开指针与文件之间的联系，也就是禁止再对该文件操作。&lt;br&gt;
+fopen 函数用来打开一个文件，其调用的一般形式为：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;文件指针名 = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( 文件名 , 使用文件方式 ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;文件指针名必须是被说明为 FILE 类型的指针变量；文件名使被打开文件的文件名，可以是字符串常量或字符串数组；使用文件方式是指文件类型和操作要求。&lt;br&gt;
+例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = ( &lt;span class=&#34;string&#34;&gt;&amp;quot;file a&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;r&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其意义使在当前目录下打开文件 file a，只允许进行读入操作，并使 fp 指向该文件。&lt;br&gt;
+又如：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = ( &lt;span class=&#34;string&#34;&gt;&amp;quot;c:\\test&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;rb&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;其意义是打开 C 驱动磁盘的根目录下的文件 test，这是一个二进制文件，只允许按二进制的方式进行读操作。两个反斜杠 &amp;quot;\&amp;quot; 第一个表示转义字符，第二个表示根目录。&lt;br&gt;
+或者使用：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;FILE * &lt;span class=&#34;title&#34;&gt;fopen&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * filename , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * mode )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;返回失败时返回空指针 NULL&lt;br&gt;
+ 使用文件的方式共有 12 种，下表给出其符号以及意义。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;文件使用方式&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;意义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;r&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打开文件，只读&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;w&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;打开或建立文件只写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;a&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;追加打开一个文本文件，并在文件末尾写数据&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;rb&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;wb&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;ab&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;r+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;w+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;a+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;rb+&amp;amp;wb+&amp;amp;ab+&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;类推&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;总结如下：r (ead) , w (rite) , a (ppend) , t (ext) , b (inary) 。+：读和写&lt;br&gt;
+查看是否成功读入&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ( ( fp = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;rb&amp;quot;&lt;/span&gt; ) ) == &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;  ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;error&amp;quot;&lt;/span&gt; ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;getch&lt;/span&gt; ( ) ; &lt;span class=&#34;built_in&#34;&gt;exit&lt;/span&gt; ( &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;文件关闭操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件关闭操作&#34;&gt;#&lt;/a&gt; 文件关闭操作&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;a.out&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;r&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fclose&lt;/span&gt; ( fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;关闭成功返回值为 0，否则为非零值&lt;br&gt;
+如果打开了多个文件且需要统一关闭：&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fcloseall&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;此函数关闭除了标准流意外的所有打开流，刷新所有的流缓冲区，并关闭返回的参数，否则返回 EOF。&lt;br&gt;
+标准流：stdin，stdout，stderr&lt;/p&gt;
+&lt;h3 id=&#34;文件结束检测&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件结束检测&#34;&gt;#&lt;/a&gt; 文件结束检测&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;feof&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FLIE * fp )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;文件未结束返回 0，已结束返回真。&lt;/p&gt;
+&lt;h3 id=&#34;文件错误检测函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#文件错误检测函数&#34;&gt;#&lt;/a&gt; 文件错误检测函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;ferror&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * fp )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;发生错误返回非零，否则返回 0&lt;/p&gt;
+&lt;h3 id=&#34;定位文件位置指针函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定位文件位置指针函数&#34;&gt;#&lt;/a&gt; 定位文件位置指针函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fseek&lt;/span&gt; ( FILE * fp , &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; offset , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; startpos ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;offset 表示目标位置相对起始点的偏移量，要求偏移量为 long 型数据以便在文件长度大于 64KB 时不会出错，当用常量表示位移量时，要求加后缀 L.&lt;br&gt;
+startpos 表示从何处计算偏移量：SEEK_SET:0 , SEEK_CUR:1 , SEEK_END:2 ;&lt;br&gt;
+fseek 函数一般用于二进制文件，在文本文件中由于要进行转换，故往往会出现错误。&lt;/p&gt;
+&lt;h3 id=&#34;重置文件位置指针函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#重置文件位置指针函数&#34;&gt;#&lt;/a&gt; 重置文件位置指针函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;rewind&lt;/span&gt; ( FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;移动到文件开始的位置。&lt;br&gt;
+无返回值&lt;/p&gt;
+&lt;h3 id=&#34;移动指针到当前位置函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#移动指针到当前位置函数&#34;&gt;#&lt;/a&gt; 移动指针到当前位置函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;ftell&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * p )&lt;/span&gt; &lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;若函数调用成功则函数的返回值时当前读写位置偏离文件头部的字节数，否则返回 - 1 ；&lt;br&gt;
+文件的长度&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;ftell&lt;/span&gt; ( fp , &lt;span class=&#34;number&#34;&gt;0L&lt;/span&gt; , SEEK_END ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;len = &lt;span class=&#34;built_in&#34;&gt;ftell&lt;/span&gt; ( fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;面向字符的文件读写操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向字符的文件读写操作&#34;&gt;#&lt;/a&gt; 面向字符的文件读写操作&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fputc&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; c , FILE * stream ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;c 是带写入的字符，可以是字符常量或者变量。&lt;br&gt;
+每写入一个字符，文件内部位置指针将向后移动一个字节。返回值为字符或者 EOF。&lt;br&gt;
+如果用写或者读写方式打开一个已存在的文件时将清除原有的文件内容，写入字符从文件首开始，如需保留原有文件内容，必须以追加的方式打开文件。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ch = &lt;span class=&#34;built_in&#34;&gt;fgetc&lt;/span&gt; ( FILE * stream ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;读取的文件必须是以读写或读的方式打开的。&lt;/p&gt;
+&lt;h3 id=&#34;面向字符串的文件读写操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向字符串的文件读写操作&#34;&gt;#&lt;/a&gt; 面向字符串的文件读写操作&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * &lt;span class=&#34;title&#34;&gt;fgets&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * string , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; n , FILE * stream )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;函数的功能是从 stream 指向的文件中逐一读取 n-1 个字符，并将读取的字符保存到 string 指向的连续存储空间。&lt;br&gt;
+在读取 n-1 个字符之前如果遇到了换行符或 EOF，则读取结束。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fputs&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * string , FILE * stream )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;执行成功返回非负整数，否则返回 EOF。不会把 \0 写入文件。&lt;/p&gt;
+&lt;h3 id=&#34;面向格式化输入输出的文件读写操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向格式化输入输出的文件读写操作&#34;&gt;#&lt;/a&gt; 面向格式化输入输出的文件读写操作&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fscanf&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * stream , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * format[,argument]...)&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;返回值为读取正确的数据个数， EOF 为读取错误或文件结束。&lt;/p&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fprintf&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * stream , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * format[,argument]... )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;返回值为正确写入返回数据的个数，负值为读写错误。&lt;/p&gt;
+&lt;h3 id=&#34;面向信息块的文件读写操作&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#面向信息块的文件读写操作&#34;&gt;#&lt;/a&gt; 面向信息块的文件读写操作&lt;/h3&gt;
+&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fread&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; * buffer , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; size , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; count , FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fwrite&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; * buffer , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; size , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; count , FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;例如：fread (fa , 4 , 5 , fp) ; 的意义是从 fp 所指的文件中，每次读 4 个字节，送入实数数组 fa 中，连续读 5 次。&lt;/p&gt;
+</content>
+        <category term="学习笔记" />
+        <category term="C语言" />
+        <updated>2021-12-28T01:46:28.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://amentiraz.github.io/2021/09/19/c%E5%A4%8D%E4%B9%A0/</id>
+        <title>c复习</title>
+        <link rel="alternate" href="http://amentiraz.github.io/2021/09/19/c%E5%A4%8D%E4%B9%A0/"/>
+        <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-XGhDTRyH&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;578090&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;这篇文章是大一刚开学对 c 的复习，十分的不全面，看看就行。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;程序设计语言&lt;br&gt;
+机器语言 汇编语言 高级语言&lt;br&gt;
+ return 0 ; return 表示 main 函数结束，0 表示程序在退出时给执行此程序的操作系统返回来一个结果，即返回值。&lt;/p&gt;
+&lt;h3 id=&#34;c程序的构成&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#c程序的构成&#34;&gt;#&lt;/a&gt; c 程序的构成&lt;/h3&gt;
+&lt;h4 id=&#34;预处理部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#预处理部分&#34;&gt;#&lt;/a&gt; 预处理部分&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;宏定义：#define 指令定义一个宏，#undef 指令删除一个宏定义&lt;/li&gt;
+&lt;li&gt;头文件包含：#include&lt;/li&gt;
+&lt;li&gt;条件编译语句：#if、#ifdef、#ifndef、#else 和 #endif 指令根据预处理器可以测试的条件来确定是将一段文本块包含到程序还是将其排除在外&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;说明部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明部分&#34;&gt;#&lt;/a&gt; 说明部分&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;全局变量&lt;/li&gt;
+&lt;li&gt;常量：#define PI 3.1416926f \ const float PI 3.1415926&lt;/li&gt;
+&lt;li&gt;函数声明&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;执行部分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#执行部分&#34;&gt;#&lt;/a&gt; 执行部分&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;主函数&lt;/li&gt;
+&lt;li&gt;其他函数&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;标识符&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标识符&#34;&gt;#&lt;/a&gt; 标识符&lt;/h3&gt;
+&lt;p&gt;由数字、字母和下划线字符构成的一个连续序列，不能有空白字符。&lt;br&gt;
+区分大小写&lt;/p&gt;
+&lt;h3 id=&#34;整型数据的分类&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整型数据的分类&#34;&gt;#&lt;/a&gt; 整型数据的分类&lt;/h3&gt;
+&lt;p&gt;基本整型（int）、短整型（short int）和长整型（long int）&lt;br&gt;
+int 的取值范围 - 2147483648 与 2147483647（2^31-1)、字节数 4&lt;br&gt;
+short (int) 的取值范围 -32768 与 32767 之间、字节数 2&lt;br&gt;
+long (int) 主流编译器一般规定其取值范围与基本 int 类型相同、字节数 4&lt;br&gt;
+C 语言还提供了有符号和无符号整数类型&lt;br&gt;
+若希望表达非负整数，可以定义无符号整型，即在类型符号前面加上修饰符 unsigned&lt;br&gt;
+ 加上 unsigned 变成原来的两倍、字节数不变&lt;br&gt;
+如：unsigned int : 0 ~ 4294967295&lt;/p&gt;
+&lt;h3 id=&#34;整型常数的书写形式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#整型常数的书写形式&#34;&gt;#&lt;/a&gt; 整型常数的书写形式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;十进制形式&lt;/li&gt;
+&lt;li&gt;八进制形式： 以 0 开头，如 0100、0123、0123456&lt;/li&gt;
+&lt;li&gt;十六进制形式：以 0x 开头，如 0x100、0x123&lt;/li&gt;
+&lt;li&gt;整型数据的储存形式：在计算机内部通常采用补码形式储存&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;补码-后面再补充相应知识&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#补码-后面再补充相应知识&#34;&gt;#&lt;/a&gt; 补码 （ 后面再补充相应知识 ）&lt;/h3&gt;
+&lt;h3 id=&#34;浮点数类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浮点数类型&#34;&gt;#&lt;/a&gt; 浮点数类型&lt;/h3&gt;
+&lt;p&gt;C 语言把浮点数类型分为 float（单精度浮点型）、double（双精度浮点型）和 long double （长双精度浮点型）&lt;br&gt;
+如表所示&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;类型&lt;/th&gt;
+&lt;th&gt;字节数&lt;/th&gt;
+&lt;th&gt;有效位数&lt;/th&gt;
+&lt;th&gt;取值范围&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;foat&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;6&lt;/td&gt;
+&lt;td&gt;-3.4 * 10^38 ~ 3.4 * 10^38&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;double&lt;/td&gt;
+&lt;td&gt;8&lt;/td&gt;
+&lt;td&gt;15&lt;/td&gt;
+&lt;td&gt;-1.7 * 10^308 ~ 3.4 * 10^308&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;long double&lt;/td&gt;
+&lt;td&gt;16&lt;/td&gt;
+&lt;td&gt;19&lt;/td&gt;
+&lt;td&gt;-1.2 * 10^4932 ~ 3.4 * 10^4932&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;浮点数的书写形式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#浮点数的书写形式&#34;&gt;#&lt;/a&gt; 浮点数的书写形式&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;当小数点前后的数是零时，可以省略 0，但是小数点不能省略如 5. 和.5 分别表示 5.0 和 0.5&lt;/li&gt;
+&lt;li&gt;指数形式 ： 如 4.5678E2 代表 4.5678 * 10^2 \ -5.7e-3 代表 - 5.7 * 10^-3 （E 和 e 本质是一样的）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;默认情况下，浮点型常数为 double 型。可以在浮点型常数后面加上 F (f) 以表示 float 型；也可以在浮点型常数后面加上 L (l）表示 long double 型&lt;/p&gt;
+&lt;h3 id=&#34;字符类型&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符类型&#34;&gt;#&lt;/a&gt; 字符类型&lt;/h3&gt;
+&lt;p&gt;ASCII 字符集的特征：0～9、26 个大写英文字母以及 26 哥消协的英文字母的编码各自是连续的&lt;br&gt;
+如：A 的编码加上 25 是 Z 的编码&lt;/p&gt;
+&lt;p&gt;char 类型来描述单字节编码字符集中的字符类型数据&lt;br&gt;
+ C 还提供了 [signed] char 和 unsigned char 类型，他们的区别在于：在参加算术运算时，把字符的编码当作有符号整数还是无符号整数来看待&lt;/p&gt;
+&lt;h4 id=&#34;字符型常量的三种书写方式&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符型常量的三种书写方式&#34;&gt;#&lt;/a&gt; 字符型常量的三种书写方式：&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;以一对单引号括起来的一个字符：‘A’‘1’&lt;/li&gt;
+&lt;li&gt;以字符对应的 ASCII 码来表示，这时必须用转义序列（以反斜杠开头的一串字符）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;八进制：’\ddd’如’101’为字母 A 的 ASCII 码的八进制表示&lt;/li&gt;
+&lt;li&gt;十六进制：’\xhh’如’\x41’为字母 A 的 ASCII 码的十六进制表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;特殊的转移序列符号表示&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;th&gt;符号&lt;/th&gt;
+&lt;th&gt;含义&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;\a&lt;/td&gt;
+&lt;td&gt;响铃&lt;/td&gt;
+&lt;td&gt;\v&lt;/td&gt;
+&lt;td&gt;纵向制表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\b&lt;/td&gt;
+&lt;td&gt;退格&lt;/td&gt;
+&lt;td&gt;’&lt;/td&gt;
+&lt;td&gt;单引号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\f&lt;/td&gt;
+&lt;td&gt;换页&lt;/td&gt;
+&lt;td&gt;‘’&lt;/td&gt;
+&lt;td&gt;双引号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\n&lt;/td&gt;
+&lt;td&gt;换行&lt;/td&gt;
+&lt;td&gt;\ | 反斜杠&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\r&lt;/td&gt;
+&lt;td&gt;回车&lt;/td&gt;
+&lt;td&gt;\0&lt;/td&gt;
+&lt;td&gt;字符串结束&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;\t&lt;/td&gt;
+&lt;td colspan=&#34;2&#34;&gt;横向制表&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;“Please enter “Y” or “N”:&lt;br&gt;
+ 当字符串包含双引号 &amp;quot; 时，双引号应写成：”&lt;br&gt;
+ 字符常量表示单个字符，字符串常量可表示多个字符&lt;br&gt;
+字符常量用’&#39; 表示，字符串常量用 &amp;quot;&amp;quot; 表示&lt;br&gt;
+在储存字符串时，通常在最后一个字符后面储存一个表示字符串结束的标记符号&lt;/p&gt;
+&lt;p&gt;两个实数相除的结果是双精度实数，两个整数相除的结果是整数&lt;/p&gt;
+&lt;h3 id=&#34;常用运算符的优先级与结合性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#常用运算符的优先级与结合性&#34;&gt;#&lt;/a&gt; 常用运算符的优先级与结合性&lt;/h3&gt;
+&lt;p&gt;自行百度&lt;/p&gt;
+&lt;h3 id=&#34;输入输出语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#输入输出语句&#34;&gt;#&lt;/a&gt; 输入输出语句&lt;/h3&gt;
+&lt;p&gt;printf ( ) ; scanf ( ) ; getchar ( ) ; putchar ( ) ; puts ( ) ; gets ( ) ;&lt;/p&gt;
+&lt;h3 id=&#34;头文件&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#头文件&#34;&gt;#&lt;/a&gt; 头文件&lt;/h3&gt;
+&lt;p&gt;/#include&amp;lt; &amp;gt; 表示直接去查找系统的源文件&lt;br&gt;
+ /#include&amp;quot; &amp;quot; 表示先去找用户存放源文件的子目录再去找系统文件&lt;br&gt;
+如果是自己写的头文件必须用第二种&lt;br&gt;
+如果头文件不在当前目录中，可以在双引号中写出文件路径 (#include “C:\temp\file.h”&lt;/p&gt;
+&lt;h3 id=&#34;scanf-与-printf&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scanf-与-printf&#34;&gt;#&lt;/a&gt; scanf 与 printf&lt;/h3&gt;
+&lt;p&gt;特别的，scanf (“%2d%2d” , &amp;amp; a , &amp;amp; b ) ; 输入的数据可以为 1234&lt;br&gt;
+ 则 a = 12 , b = 34 ；&lt;br&gt;
+如果 scanf (“a=% d,b=% d\n” , &amp;amp; a , &amp;amp; b ) ;&lt;br&gt;
+ 则用户必须输入 a=12,b=34 ;&lt;br&gt;
+ 如果是 scanf (“% d * % d” , &amp;amp; a , &amp;amp; b ) ;&lt;br&gt;
+ 那么用户输入 12，34｜12#34 都会得到正确的结果，因为 * 为忽略输入修饰符&lt;br&gt;
+ scanf 输入时如果是 % c 那么空格也会被读入&lt;/p&gt;
+&lt;h3 id=&#34;空语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#空语句&#34;&gt;#&lt;/a&gt; 空语句&lt;/h3&gt;
+&lt;p&gt;空语句不做任何事情其作用是用于语法上需要一条语句的地方，而该地方又不需要做任何事情；例如&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    goto end ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    end : ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;int i = 1 , sum = 0 ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;for ( ; i &amp;lt;= 100 ; sum += i , i ++ ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;switch-语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#switch-语句&#34;&gt;#&lt;/a&gt; switch 语句&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;switch( &amp;lt;整式表达式&amp;gt; ) &amp;#123; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    case 常量1: 语句序列1 ; break ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    case 常量2: 语句序列2 ; break ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    ...&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    default ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;常量可为 1、2、3；‘c’、‘a’…&lt;/p&gt;
+&lt;p&gt;case 常量 1: 语句序列 1 ; break ;&lt;/p&gt;
+</content>
+        <category term="学习笔记" />
+        <category term="C语言" />
+        <category term="复习资料" />
+        <updated>2021-09-19T06:32:11.000Z</updated>
+    </entry>
+</feed>

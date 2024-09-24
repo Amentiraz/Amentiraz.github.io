@@ -1,0 +1,320 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amentiraz • Posts by &#34;topsis&#34; tag</title>
+        <link>http://Amentiraz.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Wed, 22 Sep 2021 18:35:13 +0800</pubDate>
+        <lastBuildDate>Wed, 22 Sep 2021 18:35:13 +0800</lastBuildDate>
+        <category>DP</category>
+        <category>算法</category>
+        <category>Dijkstra</category>
+        <category>书评</category>
+        <category>LCA</category>
+        <category>数学建模</category>
+        <category>TOPSIS</category>
+        <category>Matlab</category>
+        <category>代码</category>
+        <category>分布式</category>
+        <category>Tarjan</category>
+        <category>学习笔记</category>
+        <category>C语言</category>
+        <category>复习资料</category>
+        <category>python</category>
+        <category>读书笔记</category>
+        <category>生活</category>
+        <category>杂</category>
+        <category>层次分析法</category>
+        <category>诗</category>
+        <category>指针</category>
+        <category>c语言</category>
+        <category>论文</category>
+        <category>笔记</category>
+        <category>插值算法</category>
+        <category>线段树</category>
+        <category>结构</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2021/09/22/TOPSIS-MATLAB/</guid>
+            <title>TOPSIS-MATLAB</title>
+            <link>http://amentiraz.github.io/2021/09/22/TOPSIS-MATLAB/</link>
+            <category>数学建模</category>
+            <category>TOPSIS</category>
+            <category>Matlab</category>
+            <pubDate>Wed, 22 Sep 2021 18:35:13 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-NKUgVpPc&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;1401456829&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;代码如下&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;主函数代码&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#主函数代码&#34;&gt;#&lt;/a&gt; 主函数代码&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;clear;clc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;load data_water_quality.mat&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//正向化&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[n,m] = size ( X ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;disp ( [&amp;#x27;共有&amp;#x27;num2str ( n ) &amp;#x27;个评价对象,&amp;#x27;num2str ( m ) &amp;#x27;个评价指标] ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Judge = input ([&amp;#x27;这&amp;#x27;num2str(m)&amp;#x27;个指标是否需要经过正向化处理，需要输入1，不需要输入0:&amp;#x27;]);&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;if Judge == 1 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Position = input (&amp;#x27;请输入需要正向化处理的指标所在的列，例如第2、3、6三列需要处理，那么你需要输入[2,3,6]:&amp;#x27;) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp ( &amp;#x27;请输入需要处理的这些列的指标类型（1:极小型，2:中间型，3:区间型）&amp;#x27;) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    Type = input (&amp;#x27;例如2极小，3区间，6中间就输入[1,3,2]:&amp;#x27; ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for i = 1 : size ( Position , 2 ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    X ( : , Position ( i ) ) = Positivization ( X ( : , Position ( i )  ) , Type ( i ) , Position ( i ) ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    //Positization是我们定义的函数&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp (&amp;#x27;正向化后的举证X=&amp;#x27; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp ( X ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//对正向化对举证进行标准化&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;Z = X ./ repmat ( sum ( X .* X ) .^ 0.5 , n , 1 ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;disp ( &amp;#x27;标准化矩阵Z=&amp;#x27; ） &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;disp (Z) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;//计算最大值与最小值的距离，并算出得分&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;D_P = sum ( [Z - repmat ( max ( Z ) , n , 1 ) .^ 2 ] , 2 ) .^ 0.5 ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;D_N = sum ( [Z - repmat ( min ( Z ) , n , 1 ) .^ 2 ] , 2 ) .^ 0.5 ;   &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;S = D_N ./ ( D_P + D_N ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;disp ( &amp;#x27;最后的得分为：&amp;#x27; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;stand_S = S / sum ( S ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;[sorted_S , index] = sort ( stand_S , &amp;#x27;descend&amp;#x27; ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;positivization函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#positivization函数&#34;&gt;#&lt;/a&gt; Positivization 函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function [ posit_x ] = Positivization ( x , type , i ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    if type == 1 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp([&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列是极小型，正在正向化&amp;#x27;]) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = Min2Max ( x ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp([&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列正向化处理完成])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp(&amp;#x27;~~~~~~~~~~~~~~~~~~~~~分界线~~~~~~~~~~~~~~~~~~~~~~~~&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    else if type == 2 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    dis ( [&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列是中间型&amp;#x27;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    best = input (&amp;#x27;请输入最佳的那一个值:&amp;#x27;) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = Mid2Max ( x , best ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp([&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列正向化处理完成]) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp(&amp;#x27;~~~~~~~~~~~~~~~~~~~~~分界线~~~~~~~~~~~~~~~~~~~~~~~~&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    else if type == 3                                          &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    dis ( [&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列是区间型&amp;#x27;])                    &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    a = input (&amp;#x27;请输入区间的下界&amp;#x27;) ;                   &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    b = input (&amp;#x27;请输入区间的上界&amp;#x27;) ;         &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = Inter2Max ( x , a , b ) ;                           &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp([&amp;#x27;第&amp;#x27;num2str ( i ) &amp;#x27;列正向化处理完成]) ;              &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp(&amp;#x27;~~~~~~~~~~~~~~~~~~~~~分界线~~~~~~~~~~~~~~~~~~~~~~~~&amp;#x27;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    else &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    disp (&amp;#x27;没有这种类型的指标请检查Type向量中是否有除了1、2、3以外的其他值&amp;#x27;) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;min2maxx函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#min2maxx函数&#34;&gt;#&lt;/a&gt; Min2Max (x) 函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function [ posit_x ] = Min2Max ( x ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = max ( x ) - x ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;mid2maxxbest函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#mid2maxxbest函数&#34;&gt;#&lt;/a&gt; Mid2Max (x,best) 函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function [ posit_x ] = Mid2Max ( x , best )  &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    M = max ( abs ( x - best ) ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = 1 - abs ( x - best ) / M ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;inter2maxxab函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#inter2maxxab函数&#34;&gt;#&lt;/a&gt; Inter2Max (x,a,b) 函数&lt;/h3&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function [ posit_x ] = Inter2Max ( x , a , b ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    M = max ([ a - min ( x ) , max ( x ) - b ] ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    r_x = size ( x , 1 ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    posit_x = zeros ( r_x , 1 ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    for i = 1 : r_x&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        if x(i) &amp;lt; a &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            posit_x(i) = 1 - ( a - x(i) ) / M ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else if x(i) &amp;gt; b &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            posit_x(i) = 1 - ( x(i) - b ) / M ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        else posit_x(i) = 1 ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    end&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;原始矩阵正向化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#原始矩阵正向化&#34;&gt;#&lt;/a&gt; 原始矩阵正向化&lt;/h3&gt;
+&lt;p&gt;将 Excel 内的数据直接粘贴进 matlab 里，赋值给变量&lt;br&gt;
+将此变量另存为至与代码相同的目录下&lt;br&gt;
+调用直接用 load xxx.mat&lt;/p&gt;
+&lt;h3 id=&#34;sort函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#sort函数&#34;&gt;#&lt;/a&gt; sort 函数&lt;/h3&gt;
+&lt;p&gt;sort (A) 若 A 是向量不管是列还是行向量，默认都是对 A 进行升序排序，sort (A) 是默认的升序，而 sort (A,‘descend’) 是降序&lt;br&gt;
+若 A 是矩阵，默认对 A 的割裂进行升序排列&lt;br&gt;
+ sort (A , dim) ;&lt;br&gt;
+dim = 1 时 等效于 sort (A) ;&lt;br&gt;
+dim = 2 时 表示对 A 的各列进行升序排列&lt;br&gt;
+若欲爆裂排列前的索引，则可用 [sA,index] = sort ( A , ‘decend’ ) ;&lt;br&gt;
+A = [ 2 , 1 , 3 , 8 ]&lt;br&gt;
+sA = [ 8 , 3 , 2 , 1 ]&lt;br&gt;
+index = [ 4 , 3 , 1 , 2 ]&lt;/p&gt;
+&lt;h3 id=&#34;定义函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#定义函数&#34;&gt;#&lt;/a&gt; 定义函数&lt;/h3&gt;
+&lt;p&gt;function [输出变量] = 函数名称（输入变量）&lt;br&gt;
+函数的中间部分都是函数体&lt;br&gt;
+函数的最后要用 end 结尾&lt;br&gt;
+输出变量和输入变量可以有多个，用逗号隔开&lt;br&gt;
+例如：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;function [ a , b , c ] = test ( d , e , f ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;a = d + e ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;b = e + f ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;c = f + d ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;end &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;zeros-ones函数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#zeros-ones函数&#34;&gt;#&lt;/a&gt; zeros, ones 函数&lt;/h3&gt;
+&lt;p&gt;zeros ( 3 ) ;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ans = &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 0 0 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 0 0 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 0 0 &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;zeros ( 3 , 1 ) ;&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ans = &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;ones 同理&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2021/09/22/TOPSIS%E6%B3%95/</guid>
+            <title>TOPSIS法</title>
+            <link>http://amentiraz.github.io/2021/09/22/TOPSIS%E6%B3%95/</link>
+            <category>数学建模</category>
+            <category>TOPSIS</category>
+            <pubDate>Wed, 22 Sep 2021 14:32:59 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-qujocUSI&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;537854742&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;TOPSIS 法 (Technique for Order Preference by Similarity to Ideal Solution)&lt;br&gt;
+ 可翻译为逼近理想解排序法，也称优劣解距离法&lt;br&gt;
+ TOPSIS 法是一种常用的综合评价方法，其能充分利用原始数据的信息，其结果能精确的反映各评价方案之间的差距&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;层次分析法的局限性&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#层次分析法的局限性&#34;&gt;#&lt;/a&gt; 层次分析法的局限性&lt;/h3&gt;
+&lt;p&gt;1） 决策层不能太多，太多 n 会很大，潘多矩阵和一致矩阵差距大&lt;br&gt;
+ 2）对于已知的指标数据，我们如何利用数据使之更加准确&lt;/p&gt;
+&lt;h3 id=&#34;一个例子&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一个例子&#34;&gt;#&lt;/a&gt; 一个例子&lt;/h3&gt;
+&lt;p&gt;对于如下表格&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;姓名&lt;/th&gt;
+&lt;th&gt;成绩&lt;/th&gt;
+&lt;th&gt;排名&lt;/th&gt;
+&lt;th&gt;修正后的排名&lt;/th&gt;
+&lt;th&gt;评分&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;小明&lt;/td&gt;
+&lt;td&gt;89&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;3/10=0.3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小王&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;1/10=0.1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小张&lt;/td&gt;
+&lt;td&gt;74&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;2/10=0.2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;我&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;4&lt;/td&gt;
+&lt;td&gt;4/10=0.4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;对于这种评价系统我们可以发现，只要保证排名不变，那么评分就不会改变&lt;/p&gt;
+&lt;h4 id=&#34;优化的想法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#优化的想法&#34;&gt;#&lt;/a&gt; 优化的想法&lt;/h4&gt;
+&lt;p&gt;我们可以取最高的成绩 max = 99&lt;br&gt;
+ 最低的成绩 min = 60&lt;br&gt;
+ 构造计算评分的公式: (x - min) / ( max - min )&lt;br&gt;
+ 然后对于每一个数据进行归一化处理即可&lt;br&gt;
+但同时最高分与最低分的评价是一定的，1&amp;amp;0&lt;/p&gt;
+&lt;h4 id=&#34;说明&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#说明&#34;&gt;#&lt;/a&gt; 说明&lt;/h4&gt;
+&lt;p&gt;为什么不直接将各自的分数除以 100 再进行归一化处理，这样对于数据的关联性还更强&lt;br&gt;
+原因有三点&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;比较对象一般远大于两个&lt;/li&gt;
+&lt;li&gt;比较的指标往往不是一个方面的&lt;/li&gt;
+&lt;li&gt;有很多指标不存在理论上的最大值和最小值，例如衡量经济增长水平的指标：GDP 增速&lt;br&gt;
+故我们最好使用上述优化的想法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;拓展问题增加指标个数&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#拓展问题增加指标个数&#34;&gt;#&lt;/a&gt; 拓展问题：增加指标个数&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;姓名&lt;/th&gt;
+&lt;th&gt;成绩&lt;/th&gt;
+&lt;th&gt;与他人争吵的次数&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;小明&lt;/td&gt;
+&lt;td&gt;89&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小王&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小张&lt;/td&gt;
+&lt;td&gt;74&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;清风&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;成绩是越大越好，这样的指标称为极大型指标（效益型指标）&lt;br&gt;
+与他人争吵的次数越少越好，这样的指标称为极小型指标（成本型指标）&lt;/p&gt;
+&lt;p&gt;如果我们直接将这些数据加以利用显然是不合适的，因为指标类型不一样&lt;br&gt;
+所以我们应当统一指标类型&lt;br&gt;
+一般我们将所有的指标转化为极大型称为指标正向化（最常用）&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;姓名&lt;/th&gt;
+&lt;th&gt;成绩&lt;/th&gt;
+&lt;th&gt;与他人争吵的次数&lt;/th&gt;
+&lt;th&gt;正向化后的争吵次数&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;小明&lt;/td&gt;
+&lt;td&gt;89&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小王&lt;/td&gt;
+&lt;td&gt;60&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;小张&lt;/td&gt;
+&lt;td&gt;74&lt;/td&gt;
+&lt;td&gt;1&lt;/td&gt;
+&lt;td&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;清风&lt;/td&gt;
+&lt;td&gt;99&lt;/td&gt;
+&lt;td&gt;3&lt;/td&gt;
+&lt;td&gt;0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;极小型指标转换为极大型指标的公式：max - x&lt;/p&gt;
+&lt;h4 id=&#34;标准化处理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#标准化处理&#34;&gt;#&lt;/a&gt; 标准化处理&lt;/h4&gt;
+&lt;p&gt;显然成绩的大小与争吵次数的大小不是一个量级上的比较&lt;br&gt;
+为了消去不同指标量纲的影响，需要对已经正向化的矩阵进行标准化处理&lt;br&gt;
+图像链接：&lt;br&gt;
+我们得到了标准化处理后的指标，那么我们怎么去联系这些值呢&lt;/p&gt;
+&lt;h4 id=&#34;如何计算得分&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#如何计算得分&#34;&gt;#&lt;/a&gt; 如何计算得分&lt;/h4&gt;
+&lt;p&gt;我们对于最开始的式子：(x - min) / ( max - min )&lt;br&gt;
+ 我们可以将其变形 = (x - min) / [ ( max - x ) + ( x - min ) ]&lt;br&gt;
+ 可以看作是：x 与最小值的距离 /  (x 与最大值的距离 + x 与最小值的距离)&lt;br&gt;
+ 类比可以得出：&lt;br&gt;
+图像链接：&lt;/p&gt;
+&lt;p&gt;上面的一大串公式可以这样理解，我们对于只有一个指标时，我们将这一列的数据找出它的最大值和最小值，对于多个指标，同理，我们先将每一列的最大值和最小值找出来。&lt;br&gt;
+对于每一个评价对象，我们要找出它与最小值的距离可以看成一个平面直角坐标系，它的值所对应的点距离原点（最小值）的距离长度，也就是他的我们所要找的值&lt;br&gt;
+对于最大值的寻找也同理&lt;/p&gt;
+&lt;p&gt;计算出未归一化的得分后我们将其进行归一化处理，就可得到他们的排名了&lt;/p&gt;
+&lt;p&gt;这下子再回到 TOPSIS 算法，我们就不难理解它为什么是优劣解距离法了吧&lt;/p&gt;
+&lt;h3 id=&#34;梳理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#梳理&#34;&gt;#&lt;/a&gt; 梳理&lt;/h3&gt;
+&lt;h4 id=&#34;第一步将原始矩阵正向化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第一步将原始矩阵正向化&#34;&gt;#&lt;/a&gt; 第一步将原始矩阵正向化&lt;/h4&gt;
+&lt;p&gt;最常见的四种指标&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;指标&lt;/th&gt;
+&lt;th&gt;名称&lt;/th&gt;
+&lt;th&gt;指标特点&lt;/th&gt;
+&lt;th&gt;例子&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;极大型（效益型）&lt;/td&gt;
+&lt;td&gt;指标越大越好&lt;/td&gt;
+&lt;td&gt;成绩、GDP 增速、企业利润&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;极小型（成本型）&lt;/td&gt;
+&lt;td&gt;指标越小越好&lt;/td&gt;
+&lt;td&gt;费用、坏品率、污染程度&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;中间型指标&lt;/td&gt;
+&lt;td&gt;越接近某个值越好&lt;/td&gt;
+&lt;td&gt;水质量评估 ph 值&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;区间型指标&lt;/td&gt;
+&lt;td&gt;落在某个区间最好&lt;/td&gt;
+&lt;td&gt;体温、水中植物性营养物量&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;正向化就是将所有指标类型转化为极大型指标&lt;/p&gt;
+&lt;p&gt;我们介绍了极小型转化为极大型，那么另外两种指标该如何转换呢&lt;/p&gt;
+&lt;h5 id=&#34;中间型指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#中间型指标&#34;&gt;#&lt;/a&gt; 中间型指标&lt;/h5&gt;
+&lt;p&gt;{xi} 是一组中间型指标序列，且最佳的数值为 xbest，那么正向化的公式如下&lt;br&gt;
+ M = max {| xi - xbest |} , xi’ = 1 - | xi - xbest | / M&lt;br&gt;
+ 我们可以画图去理解这个公式，也是利用距离去计算，思想大致与极小型相同&lt;/p&gt;
+&lt;h5 id=&#34;区间型指标&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#区间型指标&#34;&gt;#&lt;/a&gt; 区间型指标&lt;/h5&gt;
+&lt;p&gt;我们设最佳区间为 [a,b]&lt;br&gt;
+M = max { a - min { xi } , max { xi } - b }&lt;br&gt;
+xi = 1 - ( a - x ) / M , x &amp;lt; a&lt;br&gt;
+1                 , a &amp;lt;= x &amp;lt;= b&lt;br&gt;
+1 - ( x - b ) / M , x &amp;gt; b&lt;br&gt;
+ 思路与中间型指标也是差不多的，画图也可以理解&lt;/p&gt;
+&lt;h4 id=&#34;第二步正向化矩阵标准化&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第二步正向化矩阵标准化&#34;&gt;#&lt;/a&gt; 第二步：正向化矩阵标准化&lt;/h4&gt;
+&lt;h4 id=&#34;第三步归一化处理并排名&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#第三步归一化处理并排名&#34;&gt;#&lt;/a&gt; 第三步：归一化处理并排名&lt;/h4&gt;
+&lt;h3 id=&#34;带权重的topsis&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#带权重的topsis&#34;&gt;#&lt;/a&gt; 带权重的 TOPSIS&lt;/h3&gt;
+&lt;p&gt;对于之前我们所用到的 TOPSIS 我们默认了指标之间的权重为 1 ，然而实际情况可能更为复杂&lt;br&gt;
+有 n 个要评价的对象，m 个评价指标的标准化矩阵&lt;br&gt;
+可以利用层次分析法给这 m 个评价指标确定权重，每个指标的权重加起来显然是为 1 的。&lt;br&gt;
+我们在计算评价对象与最大值之间的距离是可以直接针对每个 j（即每个指标）乘以响应的权重 wj 再进行开方&lt;br&gt;
+可能有人就要问了，那你这样加起来的距离显然是要小于之前的距离呀，会对得出正确的结论有影响吗&lt;br&gt;
+其实是没有影响的&lt;br&gt;
+我们可以理解为对于我们建立的直角坐标系对于某个轴进行了压缩，压缩后虽然大小改变了，但是并不影响我们得出正确的结论&lt;/p&gt;
+&lt;p&gt;关于 TOPSIS 的代码见下一篇博客&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

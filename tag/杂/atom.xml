@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://Amentiraz.github.io</id>
+    <title>Amentiraz • Posts by &#34;杂&#34; tag</title>
+    <link href="http://Amentiraz.github.io" />
+    <updated>2023-11-14T01:58:38.000Z</updated>
+    <category term="DP" />
+    <category term="算法" />
+    <category term="Dijkstra" />
+    <category term="书评" />
+    <category term="LCA" />
+    <category term="数学建模" />
+    <category term="TOPSIS" />
+    <category term="Matlab" />
+    <category term="代码" />
+    <category term="分布式" />
+    <category term="Tarjan" />
+    <category term="学习笔记" />
+    <category term="C语言" />
+    <category term="复习资料" />
+    <category term="python" />
+    <category term="读书笔记" />
+    <category term="生活" />
+    <category term="杂" />
+    <category term="层次分析法" />
+    <category term="诗" />
+    <category term="指针" />
+    <category term="c语言" />
+    <category term="论文" />
+    <category term="笔记" />
+    <category term="插值算法" />
+    <category term="线段树" />
+    <category term="结构" />
+    <category term="题解" />
+    <entry>
+        <id>http://amentiraz.github.io/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/</id>
+        <title>博客使用的图片</title>
+        <link rel="alternate" href="http://amentiraz.github.io/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/"/>
+        <content type="html">&lt;p&gt;这里把所有我在博客中使用的图片和相应的地址给放出来，以便后面写文章使用&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;生活类&lt;br&gt;
+&lt;img data-src=&#34;https://i.postimg.cc/zfxwqzC7/wallhaven-pkw6y3.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnBvc3RpbWcuY2MvemZ4d3F6Qzcvd2FsbGhhdmVuLXBrdzZ5My5qcGc=&#34;&gt; https://i.postimg.cc/zfxwqzC7/wallhaven-pkw6y3.jpg&lt;/span&gt;&lt;br&gt;
+ 学习笔记类&lt;br&gt;
+&lt;img data-src=&#34;https://i.postimg.cc/XvqGcw5K/wallhaven-e7pwdw.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnBvc3RpbWcuY2MvWHZxR2N3NUsvd2FsbGhhdmVuLWU3cHdkdy5qcGc=&#34;&gt; https://i.postimg.cc/XvqGcw5K/wallhaven-e7pwdw.jpg&lt;/span&gt;&lt;br&gt;
+ 数学建模类&lt;br&gt;
+&lt;img data-src=&#34;https://i.postimg.cc/CKR5fwym/wallhaven-r2g7rm.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnBvc3RpbWcuY2MvQ0tSNWZ3eW0vd2FsbGhhdmVuLXIyZzdybS5qcGc=&#34;&gt; https://i.postimg.cc/CKR5fwym/wallhaven-r2g7rm.jpg&lt;/span&gt;&lt;br&gt;
+ 算法类&lt;br&gt;
+&lt;img data-src=&#34;https://i.postimg.cc/Dy5wjSnx/46985381-p0-master1200.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9pLnBvc3RpbWcuY2MvRHk1d2pTbngvNDY5ODUzODEtcDAtbWFzdGVyMTIwMC5qcGc=&#34;&gt; https://i.postimg.cc/Dy5wjSnx/46985381-p0-master1200.jpg&lt;/span&gt;&lt;/p&gt;
+</content>
+        <category term="杂" />
+        <updated>2023-11-14T01:58:38.000Z</updated>
+    </entry>
+</feed>

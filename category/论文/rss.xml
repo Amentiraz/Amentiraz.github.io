@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amentiraz • Posts by &#34;论文&#34; category</title>
+        <link>http://Amentiraz.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Wed, 05 Jun 2024 10:38:37 +0800</pubDate>
+        <lastBuildDate>Wed, 05 Jun 2024 10:38:37 +0800</lastBuildDate>
+        <category>DP</category>
+        <category>算法</category>
+        <category>Dijkstra</category>
+        <category>书评</category>
+        <category>LCA</category>
+        <category>数学建模</category>
+        <category>TOPSIS</category>
+        <category>Matlab</category>
+        <category>代码</category>
+        <category>分布式</category>
+        <category>Tarjan</category>
+        <category>学习笔记</category>
+        <category>C语言</category>
+        <category>复习资料</category>
+        <category>python</category>
+        <category>读书笔记</category>
+        <category>生活</category>
+        <category>杂</category>
+        <category>层次分析法</category>
+        <category>诗</category>
+        <category>指针</category>
+        <category>c语言</category>
+        <category>论文</category>
+        <category>笔记</category>
+        <category>插值算法</category>
+        <category>线段树</category>
+        <category>结构</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</guid>
+            <title>scRNA论文笔记</title>
+            <link>http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/</link>
+            <category>论文</category>
+            <category>笔记</category>
+            <pubDate>Wed, 05 Jun 2024 10:38:37 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;论文阅读笔记&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#abstract&#34;&gt;#&lt;/a&gt; Abstract&lt;/h1&gt;
+&lt;p&gt;squencing-based spatial transcriptomics (ST) 技术无法实现单细胞分辨率，而通过单细胞 RNA 测序的数据与 ST 数据存在偏差，本文开发了一个基于实例的迁移学习框架，通过 ST 数据调整 scRNA-seq 数据，从而更精确地描述细胞类型空间组织&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt; Introduction&lt;/h1&gt;
+&lt;p&gt;SPOTlight: 基于非负矩阵分解回归，缺点是无法区分个体细胞类型地贡献&lt;br&gt;
+ SpatialDWLS: 增强了特异性但消除了不想管细胞类型影响，并可能过滤稀有类型&lt;br&gt;
+ CARD: 可以在 scRNAseq 数据不匹配地情况下分解但没有奥利 scRNA-seq 和 ST 数据的差异&lt;br&gt;
+ stereoscope 假设 scRNA 和 ST 基于二项分布&lt;br&gt;
+ RCTD 利用泊松分布，假设细胞类型的共享随机效应。&lt;br&gt;
+Cell2location 采用分层贝叶斯后验分布近似 ST 数据，拟合性差。&lt;br&gt;
+STRIDE: 基于潜在狄利克雷分布&lt;br&gt;
+ DSTG：基于图卷积网络。&lt;br&gt;
+大多数方法按时 scRNA 和 ST 数据分布相似，但很少考虑差异&lt;/p&gt;
+&lt;p&gt;本文设计的基于实例的迁移学习框架通过 ST 数据调整 scRNA-seq 数据，以改进分解，采用核平均匹配方法&lt;/p&gt;
+&lt;h1 id=&#34;results&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#results&#34;&gt;#&lt;/a&gt; Results&lt;/h1&gt;
+&lt;h2 id=&#34;scrna-seq和st数据的分布差异&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#scrna-seq和st数据的分布差异&#34;&gt;#&lt;/a&gt; scRNA-seq 和 ST 数据的分布差异&lt;/h2&gt;
+&lt;p&gt;有三个模拟数据集，为了更好的说明不同技术导致的分布差异存在，&lt;br&gt;
+ 采用 Simulated Data III . 对于每种细胞类型，我们检查属于该类型的细胞中细胞类型特异性基因的表达水平，然后比较相同基因在 scRNA-seq 和 ST 数据中的概率密度分布。&lt;br&gt;
+对于三个模拟数据的每种细胞类型绘制出概率密度曲线，能够直观的看出模拟数据三的优越性&lt;br&gt;
+&lt;img data-src=&#34;1.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;数据调整框架&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#数据调整框架&#34;&gt;#&lt;/a&gt; 数据调整框架&lt;/h2&gt;
+&lt;p&gt;首先采用 KMM 方法，通过 ST 调整 scRNA 数据，KMM 改变了每种细胞类型中相应细胞在相应细胞类型特异性基因上的权重。&lt;br&gt;
+然后用三个模拟数据和四个真实数据套入模型，去关注它们的性质。&lt;br&gt;
+最后将 Raw 结果和调整后的结果比较&lt;br&gt;
+&lt;img data-src=&#34;2.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;评估调整数据与模拟数据&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#评估调整数据与模拟数据&#34;&gt;#&lt;/a&gt; 评估调整数据与模拟数据&lt;/h2&gt;
+&lt;p&gt;三个模拟数据集提供了 scRNA-seq 数据调整提高 ST 数据分解精度的证据，分解结果容易收到两个数据之间分布差异的影响&lt;br&gt;
+&lt;img data-src=&#34;3.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;pdac数据集上癌细胞类型的空间描述&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#pdac数据集上癌细胞类型的空间描述&#34;&gt;#&lt;/a&gt; PDAC 数据集上癌细胞类型的空间描述&lt;/h2&gt;
+&lt;p&gt;PDAC 数据表明，数据调整改善了癌细胞类型的空间描述，对细胞类型的空间组织进行更精细的注释，可以直接使用低分辨率 ST 数据来描绘癌症样本。&lt;br&gt;
+&lt;img data-src=&#34;4.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;在人类心脏上的表现&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#在人类心脏上的表现&#34;&gt;#&lt;/a&gt; 在人类心脏上的表现&lt;/h2&gt;
+&lt;p&gt;数据调整使某些基因与 ST 数据的相关性增强，并改进了分解，更丰富的基因有助于我们研究心脏相关疾病&lt;/p&gt;
+&lt;p&gt;## 在小鼠嗅球数据集上的表现&lt;br&gt;
+调整后的数据的表达模式显示出明显的细胞类型和层的空间组织。&lt;/p&gt;
+&lt;h1 id=&#34;methods&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#methods&#34;&gt;#&lt;/a&gt; Methods&lt;/h1&gt;
+&lt;p&gt;剩下的就是理论推导，大致这篇论文想干什么，怎么干的已经了解了，后面就不写了。&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

@@ -1,0 +1,580 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Amentiraz" href="http://amentiraz.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Amentiraz" href="http://amentiraz.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Amentiraz" href="http://amentiraz.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="C语言,结构" />
+
+
+<link rel="canonical" href="http://amentiraz.github.io/2021/11/22/%E7%BB%93%E6%9E%84/">
+
+
+
+  <title>
+结构 - 学习笔记 |
+Lemon Sour = Amentiraz</title>
+<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">结构
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-11-22 21:02:31">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-11-22T21:02:31+08:00">2021-11-22</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>6.1k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>6 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Lemon Sour</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://tva1.sinaimg.cn/large/008i3skNly1gwsdt2024tj30xc0nkgvs.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="In 学习笔记"><span itemprop="name">学习笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://amentiraz.github.io/2021/11/22/%E7%BB%93%E6%9E%84/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Amentiraz">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Amentiraz">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    
+    <div id="aplayer-TxVuxMvi" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="29393038" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+<h3 id="结构的基本知识"><a class="markdownIt-Anchor" href="#结构的基本知识">#</a> 结构的基本知识</h3>
+<p>结构是一个或者多个变量的几何，这些变量可能为不同的类型，为了处理的方便而将这些变量组织在一个名字之下。<br>
+结构可以拷贝、赋值、传递给函数，函数也可以返回结构类型的返回值，在 ANSI 标准中，自动结构和数组现在也可以进行初始化。</p>
+<span id="more"></span>
+<p>我们首先来看一个关于平面坐标的结构体</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct point &#123;</span><br><span class="line">    int x , y ; </span><br><span class="line">&#125; ; </span><br></pre></td></tr></table></figure>
+<p>关键字 struct 引入结构声明。结构声明由包含在花括号内的一系列声明组成。关键字 struct 后面的名字是可选的，称为<em>结构标记</em>（这里是 point）。<br>
+结构标记用于为结构命名，在定义之后，结构标记就代表花括号内的声明，可以用它作为该声明的简写形式。<br>
+结构中定义的变量称为<em>成员</em>。结构成员，结构标记和普通变量（即非成员）可以采用相同的名字，它们之间不会冲突，因为通过上下文分析总可以对它们进行区分。不同结构中的成员也可以使用相同的名字。<br>
+struct 声明定义了一种数据类型，在标志结构成员表结束的右花括号之后可以跟一个变量表，这与其它基本类型的变量声明是相同的。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct &#123; ... &#125; x , y , z ; </span><br></pre></td></tr></table></figure>
+<p>从语法角度来说，这种声明与声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int x , y , z ; </span><br></pre></td></tr></table></figure>
+<p>具有类似的意义。如果结构声明的后面不带变量表，则不需要为它分配存储空间，它仅仅描述了一个结构的模版。但是，如果结构声明中带有标记，那么在以后定义结构实例时便可以使用该标记定义。例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct point maxpt = &#123; 320 , 200 &#125; ; </span><br></pre></td></tr></table></figure>
+<p>定义了一个 struct point 类型的变量 pt。结构的初始化可以在定义的后面使用初值表进行，除指标中同每个成员对应的处置必须是常量表达式。<br>
+自动结构也可以通过赋值初始化，还可以通过调用返回相应类型结构中的成员。<br>
+在表达式中可以通过下列形式引用某哥特定结构中的成员：<br>
+结构名。成员<br>
+结构可以嵌套，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">struct rect &#123; </span><br><span class="line">    struct point pt1 ; </span><br><span class="line">    struct point pt2 ; </span><br><span class="line">&#125; ;</span><br><span class="line">struct rec screen ; </span><br></pre></td></tr></table></figure>
+<p>我们可以使用语句</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen.pt1.x ; </span><br></pre></td></tr></table></figure>
+<h3 id="结构与函数"><a class="markdownIt-Anchor" href="#结构与函数">#</a> 结构与函数</h3>
+<p>结构的合法操作只有：</p>
+<ol>
+<li>作为一个整体赋值</li>
+<li>通过 &amp; 运算符取地址，访问其成员。</li>
+</ol>
+<p>其中复制和复制包括向函数传递参数以及从函数返回值。结构之间不可以进行比较。<br>
+可以用一个常量成员值列表初始化结构，自动结构也可以通过赋值进行初始化。<br>
+我们可以通过至少 3 种方法传递结构：</p>
+<ol>
+<li>分别传递各个结构成员</li>
+<li>传递整个结构</li>
+<li>传递指向结构的指针</li>
+</ol>
+<p>例如以下函数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">struct point makepoint ( int x , int y ) &#123;</span><br><span class="line">    struct point temp ; </span><br><span class="line">    temp.x = x ; temp.y = y ; </span><br><span class="line">    return temp ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">struct rect screen ; </span><br><span class="line">struct point middle ; </span><br><span class="line">struct point makepoint ( int , int ) ; </span><br><span class="line">screen.pt1 = makepoint ( 0 , 0 ) ; </span><br><span class="line">screen.pt2 = makepoint ( XMAX , YMAX ) ; </span><br><span class="line">middle = makepoint ( ( screen.pt1.x + screen.pt2.x ) &gt;&gt; 1 , ( screen.pt1.y + screen.pt2.y ) &gt;&gt; 1 ) ; </span><br><span class="line"></span><br><span class="line">struct point addpoint ( struct point p1 , struct point p2 ) &#123; </span><br><span class="line">    p1.x += p2.x ; </span><br><span class="line">    p1.y += p2.y ; </span><br><span class="line">    return p1 ; </span><br><span class="line">&#125;   </span><br></pre></td></tr></table></figure>
+<p>addpoint 函数的参数和返回值都是结构类型，结构类型的参数和其它参数是一样的都是通过值传递的。</p>
+<p>如果传递给函数的结构很大，使用指针方式的效率通常比赋值整个结构的效率更高，结构指针类似于普通变量指针。声明：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct point * pp ; </span><br></pre></td></tr></table></figure>
+<p>如果 pp 指向一个 point 结构，那么 * pp 即为该结构，而（ * pp ).x 和 (* pp).y 则是结构成员。其中 ( * pp ).x 的圆括号是必须的，因为结构成员运算符 &quot;.“的优先级比”*&quot; 的优先级高。表达式 * pp.x 的含义等价于 *(pp.x)，因为 x 不是指针，所以该表达式是非法的。<br>
+结构指针的使用频率非常高，为了使用方便，C 语言提供了另一种简写方式。嘉定 p 是一个指向结构的指针，可以用<br>
+ p-&gt; 结构成员<br>
+这种形式来引用相应的结构成员。<br>
+运算符。和 -&gt; 都是从左至右结合的，所以以下声明都是等价的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">struct rec r , * rp = &amp; r ; </span><br><span class="line"></span><br><span class="line">r.pt1.x </span><br><span class="line">rp-&gt;pt1.x </span><br><span class="line">(r.pt1).x </span><br><span class="line">(rp-&gt;pt1).x</span><br></pre></td></tr></table></figure>
+<p>在所有运算符中，下面 4 个运算符的优先级最高：结构运算符 “.” 和 “-&gt;”、用于函数<br>
+调用的 “()” 以及用于下标的 “[]”，因此，它们同操作数之间的结合也最紧密。例如，对于<br>
+结构声明</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct &#123; </span><br><span class="line">    int len; </span><br><span class="line">    char *str; </span><br><span class="line">&#125; *p ;</span><br></pre></td></tr></table></figure>
+<p>表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">++p-&gt;len</span><br></pre></td></tr></table></figure>
+<p>将增加 len 的值，而不是增加 p 的值，这是田为，其中的隐含括号关系是 ++(p-&gt;len)。可 以使用括号改变结合次序。例如：(<ins>p)-&gt;len 将先执行 p 的加 1 操作，再对 len 执行操作； 而 (p</ins>)-&gt;len 则先对 len 执行操作，然后再将 p 加 1（该表达式中的括号可以省略）。 同样的道理，*p-&gt;str 读取的是指针 str 所指向的对象的值；*p-&gt;str<ins> 先读取指针 str 指向的对象的值，然后再将 str 加 1（与 * s</ins> 相同）；(*p-&gt;str）<ins>将指针 str 指向 的对象的值加 1；*p</ins>-&gt;str 先读取指针 str 指向的对象的值，然后再将 p 加 1。</p>
+<h3 id="结构数组"><a class="markdownIt-Anchor" href="#结构数组">#</a> 结构数组</h3>
+<p>考虑编写一个程序，用来统计输入中各个 C 语言关键字出现的次数。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">struct key &#123;</span><br><span class="line">    char *word;</span><br><span class="line">    int count;</span><br><span class="line">&#125; keytab[] = &#123;</span><br><span class="line">    &quot;auto&quot;, 0,</span><br><span class="line">    &quot;break&quot;, 0,</span><br><span class="line">    &quot;case&quot;, 0,</span><br><span class="line">    &quot;char&quot;, 0,</span><br><span class="line">    &quot;const&quot;, 0,</span><br><span class="line">    &quot;continue&quot;, 0,</span><br><span class="line">    &quot;default&quot;, 0,</span><br><span class="line">    /* ... */</span><br><span class="line">    &quot;unsigned&quot;, 0,</span><br><span class="line">    &quot;void&quot;, 0,</span><br><span class="line">    &quot;volatile&quot;, 0,</span><br><span class="line">    &quot;while&quot;, 0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>与结构成员相对应，初值也要按照成对的方式列出。更精确的做法是，将每一行（即每个结<br>
+构）的初值都括在花括号内，如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123; &quot;auto&quot;, 0 &#125;, </span><br><span class="line">&#123; &quot;break&quot;, 0 &#125;, </span><br><span class="line">&#123; &quot;case&quot;, 0 &#125;, </span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>但是，如果初值是简单变量或字符串，并且其中的任何值都不为空，则内层的花括号可以省 略。通常情况下，如果初值存在并且方括号 [ ] 中没有数值，编译程序将计算数组 keytab 中 的项数。<br>
+在统计关键字出现次数的程序中，我们首先定义了 keytab。主程序反复调用函数 getword 读取输入，每次读取一个单词。每个单词将通过折半查找函数在 keytab 中进行查找。注意，关键字列表必须按升序存储在 keytab 中。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">#include &lt;ctype.h&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">#define MAXWORD 100</span><br><span class="line">int getword(char *, int);</span><br><span class="line">int binsearch(char *, struct key *, int);</span><br><span class="line">/* count C keywords */</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int n;</span><br><span class="line">    char word[MAXWORD];</span><br><span class="line">    while (getword(word, MAXWORD) != EOF)</span><br><span class="line">        if (isalpha(word[0]))</span><br><span class="line">              if ((n = binsearch(word, keytab, NKEYS)) &gt;= 0)</span><br><span class="line">                    keytab[n].count++;</span><br><span class="line">    for (n = 0; n &lt; NKEYS; n++)</span><br><span class="line">        if (keytab[n].count &gt; 0)</span><br><span class="line">            printf(&quot;%4d %s\n&quot;,</span><br><span class="line">                keytab[n].count, keytab[n].word);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line">/* binsearch: find word in tab[0]...tab[n-1] */</span><br><span class="line">int binsearch(char *word, struct key tab[], int n)</span><br><span class="line">&#123;</span><br><span class="line">    int cond;</span><br><span class="line">    int low, high, mid;</span><br><span class="line">    low = 0;</span><br><span class="line">    high = n - 1;</span><br><span class="line">    while (low &lt;= high) &#123;</span><br><span class="line">        mid = (low+high) / 2;</span><br><span class="line">        if ((cond = strcmp(word, tab[mid].word)) &lt; 0)</span><br><span class="line">            high = mid - 1;</span><br><span class="line">        else if (cond &gt; 0)</span><br><span class="line">            low = mid + 1;</span><br><span class="line">        else</span><br><span class="line">            return mid;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br><span class="line">int getword ( char * word , int lim ) &#123;</span><br><span class="line">    int c , getch ( void ) ; </span><br><span class="line">    void ungetch ( int ) ; </span><br><span class="line">    char * w = word ; </span><br><span class="line">    while ( isspace ( c = getch ( ) ) ) ; </span><br><span class="line">    if ( c != EOF ) * w ++ ; </span><br><span class="line">    if ( ! isalpha ( c ) ) &#123; * w = &#x27;\0&#x27; ; return c ; &#125; </span><br><span class="line">    for ( ; -- lim &gt; 0 ; w ++ ) </span><br><span class="line">        if ( ! isnum ( * w = getch ( ) ) ) &#123;</span><br><span class="line">            ungetch ( * w ) ; break ; </span><br><span class="line">        &#125;</span><br><span class="line">    * w = &#x27;\0&#x27; ; </span><br><span class="line">    return word[0] ; </span><br><span class="line">&#125;</span><br><span class="line">/*我们可以通过如下方法计算NKEYS的值*/</span><br><span class="line">#define NKEYS ( sizeof keytab / sizeof ( struct key ) ) </span><br><span class="line">#define NKEYS ( sizeof keytab / sizeof keytab[0] ) </span><br></pre></td></tr></table></figure>
+<p>getchar 函数的返回值也是 int 类型的</p>
+<h3 id="指向结构的指针"><a class="markdownIt-Anchor" href="#指向结构的指针">#</a> 指向结构的指针</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt; </span><br><span class="line">#include &lt;ctype.h&gt; </span><br><span class="line">#include &lt;string.h&gt; </span><br><span class="line">#define MAXWORD 100 </span><br><span class="line">int getword(char *, int); </span><br><span class="line">struct key *binsearch(char *, struct key *, int); </span><br><span class="line">/* count C keywords; pointer version */ </span><br><span class="line">int main() </span><br><span class="line">&#123; </span><br><span class="line">    char word[MAXWORD]; </span><br><span class="line">    struct key *p; </span><br><span class="line">    while (getword(word, MAXWORD) != EOF) </span><br><span class="line">        if (isalpha(word[0])) </span><br><span class="line">            if ((p=binsearch(word, keytab, NKEYS)) != NULL) </span><br><span class="line">                p-&gt;count++; </span><br><span class="line">    for (p = keytab; p &lt; keytab + NKEYS; p++) </span><br><span class="line">        if (p-&gt;count &gt; 0) </span><br><span class="line">            printf(&quot;%4d %s\n&quot;, p-&gt;count, p-&gt;word); </span><br><span class="line">    return 0; </span><br><span class="line">&#125; </span><br><span class="line">/* binsearch: find word in tab[0]...tab[n-1] */ </span><br><span class="line">struct key *binsearch(char *word, struck key *tab, int n) </span><br><span class="line">&#123; </span><br><span class="line">    int cond; </span><br><span class="line">    struct key *low = &amp;tab[0]; </span><br><span class="line">    struct key *high = &amp;tab[n]; </span><br><span class="line">    struct key *mid; </span><br><span class="line">    while (low &lt; high) &#123; </span><br><span class="line">        mid = low + (high-low) / 2; </span><br><span class="line">        if ((cond = strcmp(word, mid-&gt;word)) &lt; 0) </span><br><span class="line">            high = mid; </span><br><span class="line">        else if (cond &gt; 0) </span><br><span class="line">            low = mid + 1; </span><br><span class="line">        else </span><br><span class="line">            return mid; </span><br><span class="line">    &#125; </span><br><span class="line">    return NULL; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这一个部分比较简单，就不细写了，上面的程序等于是改写了一下。搜索函数里面的 while 循环是为了防止死循环写的，当 high==low 的时候，如果没有 low&lt;high 这个条件会一直死循环下去。<br>
+特别需要注意的是千万不要认为结构的长度等于各成员长度的和。因为不同的对象有不同的对齐要 求，所以，结构中可能会出现未命名的 “空穴 “（hole）。例如，假设 char 类型占用一个字节，int 类型占用 4 个字节，则下列结构：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">struct &#123; </span><br><span class="line">    char c; </span><br><span class="line">    int i; </span><br><span class="line">&#125;; </span><br></pre></td></tr></table></figure>
+<p>可能需要 8 个字节的存储空间，而不是 5 个字节。使用 sizeof 运算符可以返回正确的对象<br>
+长度。</p>
+<h3 id="自引用结构"><a class="markdownIt-Anchor" href="#自引用结构">#</a> 自引用结构</h3>
+<p>假定我们需要处理一个更一般化的问题：统计输入中所有单词的出现次数。因为预先不 知道出现的单词列表，所以无法方便地排序，并使用折半查找；也不能分别对输入中的每个单词都执行一次线性查找，看它在前面是否已经出现，这样做，程序的执行将花费太长的时 间。（更准确地说，程序的执行时间是与输入单词数目的二次方成比例的。）我们该如何组织这些数据，才能够有效地处理一系列任意的单词呢？<br>
+一种解决方法是，在读取输入中任意单词的同时，就将它放置到正确的位置，从而始终 保证所有单词是按顺序排列的。虽然这可以不用通过在线性数组中移动单词来实现，但它仍 然会导致程序执行的时间过长。我们可以使用一种称为二叉树的数据结构来取而代之。 每个不同的单词在树中都是一个节点，每个节点包含：</p>
+<ol>
+<li>一个指向该单词内容的指针</li>
+<li>一个统计出现次数的计数值・一个指向左子树的指针</li>
+<li>一个指向右子树的指针<br>
+任何节点最多拥有两个子树，也可能只有一个子树或一个都没有。 对节点的所有操作要保证，任何节点的左子树只包含按字典序小于该节点中单词的那些单词，右子树只包含按字典序大于该节点中单词的那些单词。要查找一个新单词是否已经在树中，可以从根节点开始，比较新单词与该节点中的单词。若 匹配，则得到肯定的答案。若新单词小于该节点中的单词，则在左子树中继续查找，否则在 右子树中查找。如在搜寻方向上无子树，则说明新单词不在树中，并且，当前的空位置就是 存放新加入单词的正确位置。因为从任意节点出发的查找都要按照同样的方式查找它的一个子树，所以该过程是递归的。相应地，在插入和打印操作中使用递归过程也是很自然的事情。<br>
+对节点的递归的：</li>
+</ol>
+
+      <div class="tags">
+          <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="ic i-tag"></i> C语言</a>
+          <a href="/tags/%E7%BB%93%E6%9E%84/" rel="tag"><i class="ic i-tag"></i> 结构</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-11-14 09:53:21" itemprop="dateModified" datetime="2023-11-14T09:53:21+08:00">2023-11-14</time>
+  </span>
+  <span id="2021/11/22/结构/" class="item leancloud_visitors" data-flag-title="结构" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Amentiraz <i class="ic i-at"><em>@</em></i>Amentiraz
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://amentiraz.github.io/2021/11/22/%E7%BB%93%E6%9E%84/" title="结构">http://amentiraz.github.io/2021/11/22/结构/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/11/04/%E6%8C%87%E9%92%88/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gwsee3lulpj31hc0u0dla.jpg" title="指针">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 学习笔记</span>
+  <h3>指针</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/11/27/Dijkstra/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gwth07vmchj31jk0qktis.jpg" title="Dijkstra">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 算法</span>
+  <h3>Dijkstra</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86"><span class="toc-number">1.</span> <span class="toc-text"> 结构的基本知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%B8%8E%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text"> 结构与函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E6%95%B0%E7%BB%84"><span class="toc-number">3.</span> <span class="toc-text"> 结构数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E5%90%91%E7%BB%93%E6%9E%84%E7%9A%84%E6%8C%87%E9%92%88"><span class="toc-number">4.</span> <span class="toc-text"> 指向结构的指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E5%BC%95%E7%94%A8%E7%BB%93%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text"> 自引用结构</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2021/09/19/c%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="c复习">c复习</a></li><li><a href="/2021/11/04/%E6%8C%87%E9%92%88/" rel="bookmark" title="指针">指针</a></li><li class="active"><a href="/2021/11/22/%E7%BB%93%E6%9E%84/" rel="bookmark" title="结构">结构</a></li><li><a href="/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="bookmark" title="文件学习笔记">文件学习笔记</a></li><li><a href="/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="python学习笔记1">python学习笔记1</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Amentiraz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Amentiraz</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">28</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FtZW50aXJheg==" title="https:&#x2F;&#x2F;github.com&#x2F;Amentiraz"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/11/04/%E6%8C%87%E9%92%88/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/11/27/Dijkstra/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/07/%E6%80%9D%E6%83%B3%E7%82%B9%E6%BB%B4/" title="思想点滴">思想点滴</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/15/%E8%A7%82%E9%83%91%E6%99%9F%E6%B2%B3%E6%BC%94%E5%A5%8F%E4%BC%9A%E6%9C%89%E6%84%9F/" title="观郑晟河演奏会有感">观郑晟河演奏会有感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/12/02/DP/" title="DP">DP</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/" title="《蓝色恐惧》观后感">《蓝色恐惧》观后感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/26/%E4%BD%A0%E6%80%BB%E8%83%BD%E6%AF%81%E7%81%AD%E4%B8%80%E5%88%87/" title="你总能毁灭一切">你总能毁灭一切</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/07/28/%E5%AF%B9LGBT%E7%9A%84%E6%80%9D%E8%80%83/" title="对LGBT的思考">对LGBT的思考</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/" title="你想活出怎样的人生">你想活出怎样的人生</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/2021/11/22/%E7%BB%93%E6%9E%84/" title="结构">结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/02/19/%E6%9C%9D%E8%8A%B1%E5%A4%95%E6%8B%BE/" title="朝花夕拾">朝花夕拾</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/06/08/%E6%88%96%E8%AE%B8%E6%88%91%E4%BB%AC%E6%B0%B8%E8%BF%9C%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E5%B9%B3%E9%9D%99/" title="或许我们永远无法获得平静">或许我们永远无法获得平静</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Amentiraz @ Lemon Sour</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/11/22/结构/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

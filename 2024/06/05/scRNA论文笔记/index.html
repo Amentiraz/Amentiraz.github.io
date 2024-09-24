@@ -1,0 +1,536 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Amentiraz" href="http://amentiraz.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Amentiraz" href="http://amentiraz.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Amentiraz" href="http://amentiraz.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="论文,笔记" />
+
+
+<link rel="canonical" href="http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">
+
+
+
+  <title>
+scRNA论文笔记 - 论文 |
+Lemon Sour = Amentiraz</title>
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">scRNA论文笔记
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2024-06-05 10:38:37">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2024-06-05T10:38:37+08:00">2024-06-05</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>1.1k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>1 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Lemon Sour</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeuibk9fj20zk0m8ay2.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet8c1a2j20zk0m8kct.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclflwv2aj20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4wqtg4j20zk0m8x6p.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclize41wj20zk0m87gk.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E8%AE%BA%E6%96%87/" itemprop="item" rel="index" title="In 论文"><span itemprop="name">论文</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Amentiraz">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Amentiraz">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <p>论文阅读笔记</p>
+<span id="more"></span>
+<h1 id="abstract"><a class="markdownIt-Anchor" href="#abstract">#</a> Abstract</h1>
+<p>squencing-based spatial transcriptomics (ST) 技术无法实现单细胞分辨率，而通过单细胞 RNA 测序的数据与 ST 数据存在偏差，本文开发了一个基于实例的迁移学习框架，通过 ST 数据调整 scRNA-seq 数据，从而更精确地描述细胞类型空间组织</p>
+<h1 id="introduction"><a class="markdownIt-Anchor" href="#introduction">#</a> Introduction</h1>
+<p>SPOTlight: 基于非负矩阵分解回归，缺点是无法区分个体细胞类型地贡献<br>
+ SpatialDWLS: 增强了特异性但消除了不想管细胞类型影响，并可能过滤稀有类型<br>
+ CARD: 可以在 scRNAseq 数据不匹配地情况下分解但没有奥利 scRNA-seq 和 ST 数据的差异<br>
+ stereoscope 假设 scRNA 和 ST 基于二项分布<br>
+ RCTD 利用泊松分布，假设细胞类型的共享随机效应。<br>
+Cell2location 采用分层贝叶斯后验分布近似 ST 数据，拟合性差。<br>
+STRIDE: 基于潜在狄利克雷分布<br>
+ DSTG：基于图卷积网络。<br>
+大多数方法按时 scRNA 和 ST 数据分布相似，但很少考虑差异</p>
+<p>本文设计的基于实例的迁移学习框架通过 ST 数据调整 scRNA-seq 数据，以改进分解，采用核平均匹配方法</p>
+<h1 id="results"><a class="markdownIt-Anchor" href="#results">#</a> Results</h1>
+<h2 id="scrna-seq和st数据的分布差异"><a class="markdownIt-Anchor" href="#scrna-seq和st数据的分布差异">#</a> scRNA-seq 和 ST 数据的分布差异</h2>
+<p>有三个模拟数据集，为了更好的说明不同技术导致的分布差异存在，<br>
+ 采用 Simulated Data III . 对于每种细胞类型，我们检查属于该类型的细胞中细胞类型特异性基因的表达水平，然后比较相同基因在 scRNA-seq 和 ST 数据中的概率密度分布。<br>
+对于三个模拟数据的每种细胞类型绘制出概率密度曲线，能够直观的看出模拟数据三的优越性<br>
+<img data-src="1.jpg" alt=""></p>
+<h2 id="数据调整框架"><a class="markdownIt-Anchor" href="#数据调整框架">#</a> 数据调整框架</h2>
+<p>首先采用 KMM 方法，通过 ST 调整 scRNA 数据，KMM 改变了每种细胞类型中相应细胞在相应细胞类型特异性基因上的权重。<br>
+然后用三个模拟数据和四个真实数据套入模型，去关注它们的性质。<br>
+最后将 Raw 结果和调整后的结果比较<br>
+<img data-src="2.jpg" alt=""></p>
+<h2 id="评估调整数据与模拟数据"><a class="markdownIt-Anchor" href="#评估调整数据与模拟数据">#</a> 评估调整数据与模拟数据</h2>
+<p>三个模拟数据集提供了 scRNA-seq 数据调整提高 ST 数据分解精度的证据，分解结果容易收到两个数据之间分布差异的影响<br>
+<img data-src="3.jpg" alt=""></p>
+<h2 id="pdac数据集上癌细胞类型的空间描述"><a class="markdownIt-Anchor" href="#pdac数据集上癌细胞类型的空间描述">#</a> PDAC 数据集上癌细胞类型的空间描述</h2>
+<p>PDAC 数据表明，数据调整改善了癌细胞类型的空间描述，对细胞类型的空间组织进行更精细的注释，可以直接使用低分辨率 ST 数据来描绘癌症样本。<br>
+<img data-src="4.jpg" alt=""></p>
+<h2 id="在人类心脏上的表现"><a class="markdownIt-Anchor" href="#在人类心脏上的表现">#</a> 在人类心脏上的表现</h2>
+<p>数据调整使某些基因与 ST 数据的相关性增强，并改进了分解，更丰富的基因有助于我们研究心脏相关疾病</p>
+<p>## 在小鼠嗅球数据集上的表现<br>
+调整后的数据的表达模式显示出明显的细胞类型和层的空间组织。</p>
+<h1 id="methods"><a class="markdownIt-Anchor" href="#methods">#</a> Methods</h1>
+<p>剩下的就是理论推导，大致这篇论文想干什么，怎么干的已经了解了，后面就不写了。</p>
+
+      <div class="tags">
+          <a href="/tags/%E8%AE%BA%E6%96%87/" rel="tag"><i class="ic i-tag"></i> 论文</a>
+          <a href="/tags/%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 笔记</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2024-06-05 21:29:22" itemprop="dateModified" datetime="2024-06-05T21:29:22+08:00">2024-06-05</time>
+  </span>
+  <span id="2024/06/05/scRNA论文笔记/" class="item leancloud_visitors" data-flag-title="scRNA论文笔记" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Amentiraz <i class="ic i-at"><em>@</em></i>Amentiraz
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="scRNA论文笔记">http://amentiraz.github.io/2024/06/05/scRNA论文笔记/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2024/06/03/P2P%E7%BE%A4%E8%81%8A%E7%B3%BB%E7%BB%9F/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicit31ffoj20zk0m8naf.jpg" title="P2P群聊系统">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 代码</span>
+  <h3>P2P群聊系统</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2024/06/08/%E6%88%96%E8%AE%B8%E6%88%91%E4%BB%AC%E6%B0%B8%E8%BF%9C%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E5%B9%B3%E9%9D%99/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1giclj9410cj20zk0m8h12.jpg" title="或许我们永远无法获得平静">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 生活</span>
+  <h3>或许我们永远无法获得平静</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#abstract"><span class="toc-number">1.</span> <span class="toc-text"> Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#introduction"><span class="toc-number">2.</span> <span class="toc-text"> Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#results"><span class="toc-number">3.</span> <span class="toc-text"> Results</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#scrna-seq%E5%92%8Cst%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%86%E5%B8%83%E5%B7%AE%E5%BC%82"><span class="toc-number">3.1.</span> <span class="toc-text"> scRNA-seq 和 ST 数据的分布差异</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%B0%83%E6%95%B4%E6%A1%86%E6%9E%B6"><span class="toc-number">3.2.</span> <span class="toc-text"> 数据调整框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E8%B0%83%E6%95%B4%E6%95%B0%E6%8D%AE%E4%B8%8E%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE"><span class="toc-number">3.3.</span> <span class="toc-text"> 评估调整数据与模拟数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#pdac%E6%95%B0%E6%8D%AE%E9%9B%86%E4%B8%8A%E7%99%8C%E7%BB%86%E8%83%9E%E7%B1%BB%E5%9E%8B%E7%9A%84%E7%A9%BA%E9%97%B4%E6%8F%8F%E8%BF%B0"><span class="toc-number">3.4.</span> <span class="toc-text"> PDAC 数据集上癌细胞类型的空间描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8%E4%BA%BA%E7%B1%BB%E5%BF%83%E8%84%8F%E4%B8%8A%E7%9A%84%E8%A1%A8%E7%8E%B0"><span class="toc-number">3.5.</span> <span class="toc-text"> 在人类心脏上的表现</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#methods"><span class="toc-number">4.</span> <span class="toc-text"> Methods</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" rel="bookmark" title="scRNA论文笔记">scRNA论文笔记</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Amentiraz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Amentiraz</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">28</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FtZW50aXJheg==" title="https:&#x2F;&#x2F;github.com&#x2F;Amentiraz"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2024/06/03/P2P%E7%BE%A4%E8%81%8A%E7%B3%BB%E7%BB%9F/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2024/06/08/%E6%88%96%E8%AE%B8%E6%88%91%E4%BB%AC%E6%B0%B8%E8%BF%9C%E6%97%A0%E6%B3%95%E8%8E%B7%E5%BE%97%E5%B9%B3%E9%9D%99/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/" title="你想活出怎样的人生">你想活出怎样的人生</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/12/02/DP/" title="DP">DP</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/07/FLCL/" title="FLCL">FLCL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/11/29/Tarjan/" title="Tarjan">Tarjan</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" title="In 数学建模">数学建模</a>
+</div>
+
+    <span><a href="/2021/10/03/%E6%8F%92%E5%80%BC%E7%AE%97%E6%B3%95/" title="插值算法">插值算法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/" title="博客使用的图片">博客使用的图片</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/2021/09/19/c%E5%A4%8D%E4%B9%A0/" title="c复习">c复习</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/26/%E4%BD%A0%E6%80%BB%E8%83%BD%E6%AF%81%E7%81%AD%E4%B8%80%E5%88%87/" title="你总能毁灭一切">你总能毁灭一切</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E8%AE%BA%E6%96%87/" title="In 论文">论文</a>
+</div>
+
+    <span><a href="/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/" title="scRNA论文笔记">scRNA论文笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/11/27/%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="线段树">线段树</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Amentiraz @ Lemon Sour</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2024/06/05/scRNA论文笔记/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

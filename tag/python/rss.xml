@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amentiraz • Posts by &#34;python&#34; tag</title>
+        <link>http://Amentiraz.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Wed, 12 Jan 2022 19:55:31 +0800</pubDate>
+        <lastBuildDate>Wed, 12 Jan 2022 19:55:31 +0800</lastBuildDate>
+        <category>DP</category>
+        <category>算法</category>
+        <category>Dijkstra</category>
+        <category>书评</category>
+        <category>LCA</category>
+        <category>数学建模</category>
+        <category>TOPSIS</category>
+        <category>Matlab</category>
+        <category>代码</category>
+        <category>分布式</category>
+        <category>Tarjan</category>
+        <category>学习笔记</category>
+        <category>C语言</category>
+        <category>复习资料</category>
+        <category>python</category>
+        <category>读书笔记</category>
+        <category>生活</category>
+        <category>杂</category>
+        <category>层次分析法</category>
+        <category>诗</category>
+        <category>指针</category>
+        <category>c语言</category>
+        <category>论文</category>
+        <category>笔记</category>
+        <category>插值算法</category>
+        <category>线段树</category>
+        <category>结构</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</guid>
+            <title>python学习笔记1</title>
+            <link>http://amentiraz.github.io/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/</link>
+            <category>学习笔记</category>
+            <category>python</category>
+            <pubDate>Wed, 12 Jan 2022 19:55:31 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-FVVRxfLT&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;1458550&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;除开函数外的 python 基础知识总汇，用于复习及查看，写的会很简略&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;基础知识&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#基础知识&#34;&gt;#&lt;/a&gt; 基础知识&lt;/h3&gt;
+&lt;p&gt;普通的除法：1/2  0.5&lt;br&gt;
+ 整除: 1//2 0&lt;br&gt;
+ 取模：%&lt;br&gt;
+ 乘方：2&lt;strong&gt;3 (-3&lt;/strong&gt;2 等同于 -(3**2))&lt;/p&gt;
+&lt;p&gt;十六进制：0xAF&lt;br&gt;
+ 八进制：010&lt;/p&gt;
+&lt;p&gt;变量无需声明即可使用&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;x = &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;x * &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;output : &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;变量名命名同 C 语言&lt;/p&gt;
+&lt;p&gt;print 在 python2 是语句，在 python3 中是函数，所以应当加上（）&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;The meaning of life: &amp;quot;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;The meaning of life &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;42&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;x = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;x: &amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;x: &lt;span class=&#34;number&#34;&gt;34&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;y = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;y: &amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;y : &lt;span class=&#34;number&#34;&gt;42&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( x * y ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1428&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;built_in&#34;&gt;pow&lt;/span&gt; ( &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt; , &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;8&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;round 函数会把浮点数四舍五入为最接近的整数值 （ py2 与 py3 对于 0.5 的取值有所不同）&lt;br&gt;
+abs 绝对值函数&lt;/p&gt;
+&lt;p&gt;可以用变量来引用函数&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; math &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;math.floor( &lt;span class=&#34;number&#34;&gt;32.9&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; math &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; floor&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;floor&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo = math.sqrt &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;foo ( &lt;span class=&#34;number&#34;&gt;4&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;math 中的 sqrt 不支持复数运算而 cmath 中支持&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; cmath&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;cmath.sqrt ( -&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1j&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 没有使用from 。。。import 。。。是因为一旦使用了这个语句那么就无法使用普通的sqrt了&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;meta&#34;&gt;&amp;gt;&amp;gt;&amp;gt; &lt;/span&gt;(&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;3j&lt;/span&gt;) * (&lt;span class=&#34;number&#34;&gt;9&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;4j&lt;/span&gt;) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;(-&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;+&lt;span class=&#34;number&#34;&gt;31j&lt;/span&gt;) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;字符串是值，就像数字一样，单引号和双引号没有本质区别&lt;br&gt;
+ \ 与 C 语言中一样使用&lt;br&gt;
+字符串之间可以拼接&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;quot;hello,&amp;quot;&lt;/span&gt; + &lt;span class=&#34;string&#34;&gt;&amp;quot;world&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;转换成字符串有两种方式&lt;br&gt;
+ str 将对象转换成用户看的，repr 转换成 python 表达式&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;repr&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;hello world&amp;quot;&lt;/span&gt; ) )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;&amp;#x27;hello world&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;str&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;hello world &amp;quot;&lt;/span&gt; ) )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;hello world &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;长字符串：&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot; This is a very long string&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;It continues here &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;And it&amp;#x27;s not over yet&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;Still here &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; )&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 换行符可以被转义&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot; hello \ &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;world &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;原始字符串&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;path = &lt;span class=&#34;string&#34;&gt;&amp;#x27;c:\\program\\fnord&amp;#x27;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;path = &lt;span class=&#34;string&#34;&gt;r&amp;#x27;c:\ll&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;# r紧贴&amp;#x27;&lt;/span&gt;且字符串末尾不是\&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;序列&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#序列&#34;&gt;#&lt;/a&gt; 序列&lt;/h3&gt;
+&lt;p&gt;列表和元组的区别在于列表可以修改而元组不可以&lt;/p&gt;
+&lt;p&gt;通用的序列操作：索引，分片，加，乘&lt;br&gt;
+索引同数组，数组最后一个元素的位置标号为 - 1 如：greeting [-1]&lt;br&gt;
+ print 的返回值是一个序列，所以我们可以如此调用&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;fourth = &lt;span class=&#34;built_in&#34;&gt;input&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;Year: &amp;quot;&lt;/span&gt; )[&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;] &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;列表可以相加与相乘，例如&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;endings = [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;nd&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;rd&amp;#x27;&lt;/span&gt;]+&lt;span class=&#34;number&#34;&gt;17&lt;/span&gt; * [&lt;span class=&#34;string&#34;&gt;&amp;#x27;th&amp;#x27;&lt;/span&gt;,] \ &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+    [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;nd&amp;#x27;&lt;/span&gt;,&lt;span class=&#34;string&#34;&gt;&amp;#x27;rd&amp;#x27;&lt;/span&gt;]+ &lt;span class=&#34;number&#34;&gt;7&lt;/span&gt; * [&lt;span class=&#34;string&#34;&gt;&amp;#x27;th&amp;#x27;&lt;/span&gt;,]  \&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+ [&lt;span class=&#34;string&#34;&gt;&amp;#x27;st]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;[1,2,3] + [4,5,6]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;= [1,2,3,4,5,6]&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;# 初始化一个长度为10 的列表&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;sequence = [None] * 10 &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;分片&lt;br&gt;
+ numbers [-3:-1]&lt;br&gt;
+numbers[-3:]&lt;br&gt;
+numbers[0::2]&lt;br&gt;
+numbers[-1:0:-2]&lt;/p&gt;
+&lt;p&gt;成员资格：in 函数&lt;/p&gt;
+&lt;p&gt;长度：len&lt;br&gt;
+ 最大值：max&lt;br&gt;
+ 最小值：min&lt;/p&gt;
+&lt;h4 id=&#34;列表&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#列表&#34;&gt;#&lt;/a&gt; 列表&lt;/h4&gt;
+&lt;p&gt;list 函数 对立： ‘’.join (somelist)&lt;br&gt;
+ 删除元素 del names [2]&lt;br&gt;
+ 分片赋值：可以使用与原序列不等长的序列将分片替换（可以用来删除某一段）&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;numbers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;] = [&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt; ,&lt;span class=&#34;number&#34;&gt;4&lt;/span&gt; ]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;numbers[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;:&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;] = [] &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;.append( )&lt;br&gt;
+.count ( )&lt;br&gt;
+.extend ( ) 追加一个序列&lt;br&gt;
+.index ( ) 找出第一个匹配项索引位置&lt;br&gt;
+.insert (i , value) 插入&lt;br&gt;
+.pop ( ) 移除最后一个值并返回值&lt;br&gt;
+.remove ( ) 移除第一个匹配项&lt;br&gt;
+.reserve ( ) 反向存放&lt;br&gt;
+.sort ( ) 会该表原来的列表修改，也就是说修改副本不会影响原本，反之不然&lt;br&gt;
+&lt;strong&gt; sort 里面可以有参数如 cmp，key=len，reserve=True&lt;/strong&gt;&lt;br&gt;
+sorted ( ) 返回已排序的列表副本&lt;/p&gt;
+&lt;h4 id=&#34;元组&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#元组&#34;&gt;#&lt;/a&gt; 元组&lt;/h4&gt;
+&lt;p&gt;如果你用逗号分隔了一些值，那么你就自动创建了元组&lt;br&gt;
+ tuple ( ) 类比于 list&lt;/p&gt;
+&lt;h3 id=&#34;字符串&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字符串&#34;&gt;#&lt;/a&gt; 字符串&lt;/h3&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;format&lt;/span&gt; = &lt;span class=&#34;string&#34;&gt;&amp;quot;hello , %s , %s enough for ya!&amp;quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;values = ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;world&amp;#x27;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;#x27;Hot&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( &lt;span class=&#34;built_in&#34;&gt;format&lt;/span&gt; % values ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;模板字符串：&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;from&lt;/span&gt; string &lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; Template&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;$x , glorious $x &amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( x = &lt;span class=&#34;string&#34;&gt;&amp;#x27;slum&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;quot;It&amp;#x27;s $&amp;#123;x&amp;#125;tatic&amp;quot;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( x = &lt;span class=&#34;string&#34;&gt;&amp;#x27;slum&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s = Template ( &lt;span class=&#34;string&#34;&gt;&amp;#x27;A $thing must never $action&amp;#x27;&lt;/span&gt; ) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d = &amp;#123; &amp;#125; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d[&lt;span class=&#34;string&#34;&gt;&amp;#x27;thing&amp;#x27;&lt;/span&gt;] = &lt;span class=&#34;string&#34;&gt;&amp;#x27;gentleman&amp;#x27;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;d[&lt;span class=&#34;string&#34;&gt;&amp;#x27;action&amp;#x27;&lt;/span&gt;] = &lt;span class=&#34;string&#34;&gt;&amp;#x27;show his socks&amp;#x27;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;s.substitute ( d ) &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;转换符包括（注意顺序）&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;%&lt;/li&gt;
+&lt;li&gt;转换标志 ，- : 左对齐，+ : 正负号，&amp;quot;&amp;quot; 正数前保留空格，0：位数不够用零来凑&lt;/li&gt;
+&lt;li&gt;最小值宽（若为 * 则从元组读入）例如’%. * s’ % (5 , ‘dada’)&lt;/li&gt;
+&lt;li&gt;. 后跟精确度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;字符串方法：&lt;br&gt;
+.find (“target” ,start ,end ) 查找字串 (start end 可忽略)&lt;br&gt;
+sth.join ( )&lt;br&gt;
+.lower ( ) 转换成小写&lt;br&gt;
+.title ()  //.capwords () 标题&lt;br&gt;
+.replace (A , B) 查找并替换&lt;br&gt;
+.split ( ) join 的逆运算&lt;br&gt;
+.strip () 去除两侧空格，可自己添加例如.strip ( ’ * !’)&lt;br&gt;
+.translate ( ) &amp;amp;&amp;amp; .maketrans python3 有所区别，运用时自己网上查&lt;/p&gt;
+&lt;h3 id=&#34;字典&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#字典&#34;&gt;#&lt;/a&gt; 字典&lt;/h3&gt;
+&lt;p&gt;创建： phonebook = {‘A’ : 1 , ‘B’ : 2 …}&lt;br&gt;
+ dict (序列)&lt;br&gt;
+len ( )&lt;br&gt;
+d[k]&lt;br&gt;
+d[k] = v&lt;br&gt;
+del d[k]&lt;br&gt;
+ k in d 检查 d 中是否有含有键为 k 的项&lt;br&gt;
+字典可以嵌套，类比于多维数组&lt;/p&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;template = &lt;span class=&#34;string&#34;&gt;&amp;quot;%(title)s , %(ooo)d &amp;quot;&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;data = &amp;#123; &lt;span class=&#34;string&#34;&gt;&amp;#x27;title&amp;#x27;&lt;/span&gt; : &lt;span class=&#34;string&#34;&gt;&amp;#x27;fff&amp;#x27;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;#x27;ooo&amp;#x27;&lt;/span&gt; : &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt; ( template % data )  &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;.clear ( ) 原本操作&lt;br&gt;
+.copy ( ) 替换值不变原本，修改值会变&lt;br&gt;
+.deepcopy (copy 函数库中) 复制其包含的所有值&lt;br&gt;
+.fromkeys ([] , ‘default’ ) or dict.fromkeys ( [ ] , ‘default’ ) 给给定的键建立新的字典&lt;br&gt;
+.get (‘value’) 访问不存在的项返回 None&lt;br&gt;
+.has_key (‘value’) 查询是否有此键，py3 中被__contains__(key) 替代&lt;br&gt;
+.items () 把所有项以列表形式返回，且每一项返回 (键，值) 的形式&lt;br&gt;
+.iteritems ( ) 返回迭代器&lt;br&gt;
+.keys ( ) 返回键 ， 同上&lt;br&gt;
+.itereys ( ) 同上&lt;br&gt;
+.values ( ) 同上&lt;br&gt;
+.itervalues ( ) 同上&lt;br&gt;
+.pop (‘键’) 删除对应的键值对&lt;br&gt;
+.popitem ( ) 随机弹出项&lt;br&gt;
+.setdefault (键，‘default’)&lt;br&gt;
+.update (x) 有则不变，无则加之&lt;/p&gt;
+&lt;h3 id=&#34;条件-循环和其它语句&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#条件-循环和其它语句&#34;&gt;#&lt;/a&gt; 条件、循环和其它语句&lt;/h3&gt;
+&lt;p&gt;print: , 即空格，print 即换行（除非在最后加，)&lt;br&gt;
+import somemodule&lt;br&gt;
+from sm import sf&lt;br&gt;
+from sm import sf as (可避免重名)&lt;/p&gt;
+&lt;p&gt;解包时可在最后用 * rest 把剩下的值都存入 rest&lt;/p&gt;
+&lt;p&gt;+=&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;=&lt;/li&gt;
+&lt;/ul&gt;
+&lt;figure class=&#34;highlight py&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ... : &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;elif&lt;/span&gt; ... : &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    代码块&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;x is y x 和 y 是同一对象&lt;br&gt;
+ x is not y …&lt;br&gt;
+x in y&lt;br&gt;
+x not in y&lt;br&gt;
+ 可以使用 x&amp;lt;y&amp;lt;z&lt;/p&gt;
+&lt;p&gt;断言：assert 判断条件&lt;br&gt;
+如果不满足直接程序崩溃&lt;/p&gt;
+&lt;p&gt;while 判断 :&lt;br&gt;
+ 代码块&lt;br&gt;
+代码块&lt;/p&gt;
+&lt;p&gt;for i in sequence :&lt;br&gt;
+…&lt;br&gt;
+…&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;range ( 3 )&lt;br&gt;
+[ 0 , 1 , 2 , 3 ]&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;xrange ( 3 )&lt;br&gt;
+ 同 range 只不过是一个一个给出的，更为高效&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+&lt;/blockquote&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

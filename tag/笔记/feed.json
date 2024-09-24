@@ -1,0 +1,19 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Amentiraz • All posts by \"笔记\" tag",
+    "description": "",
+    "home_page_url": "http://Amentiraz.github.io",
+    "items": [
+        {
+            "id": "http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/",
+            "url": "http://amentiraz.github.io/2024/06/05/scRNA%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/",
+            "title": "scRNA论文笔记",
+            "date_published": "2024-06-05T02:38:37.000Z",
+            "content_html": "<p>论文阅读笔记</p>\n<span id=\"more\"></span>\n<h1 id=\"abstract\"><a class=\"markdownIt-Anchor\" href=\"#abstract\">#</a> Abstract</h1>\n<p>squencing-based spatial transcriptomics (ST) 技术无法实现单细胞分辨率，而通过单细胞 RNA 测序的数据与 ST 数据存在偏差，本文开发了一个基于实例的迁移学习框架，通过 ST 数据调整 scRNA-seq 数据，从而更精确地描述细胞类型空间组织</p>\n<h1 id=\"introduction\"><a class=\"markdownIt-Anchor\" href=\"#introduction\">#</a> Introduction</h1>\n<p>SPOTlight: 基于非负矩阵分解回归，缺点是无法区分个体细胞类型地贡献<br>\n SpatialDWLS: 增强了特异性但消除了不想管细胞类型影响，并可能过滤稀有类型<br>\n CARD: 可以在 scRNAseq 数据不匹配地情况下分解但没有奥利 scRNA-seq 和 ST 数据的差异<br>\n stereoscope 假设 scRNA 和 ST 基于二项分布<br>\n RCTD 利用泊松分布，假设细胞类型的共享随机效应。<br>\nCell2location 采用分层贝叶斯后验分布近似 ST 数据，拟合性差。<br>\nSTRIDE: 基于潜在狄利克雷分布<br>\n DSTG：基于图卷积网络。<br>\n大多数方法按时 scRNA 和 ST 数据分布相似，但很少考虑差异</p>\n<p>本文设计的基于实例的迁移学习框架通过 ST 数据调整 scRNA-seq 数据，以改进分解，采用核平均匹配方法</p>\n<h1 id=\"results\"><a class=\"markdownIt-Anchor\" href=\"#results\">#</a> Results</h1>\n<h2 id=\"scrna-seq和st数据的分布差异\"><a class=\"markdownIt-Anchor\" href=\"#scrna-seq和st数据的分布差异\">#</a> scRNA-seq 和 ST 数据的分布差异</h2>\n<p>有三个模拟数据集，为了更好的说明不同技术导致的分布差异存在，<br>\n 采用 Simulated Data III . 对于每种细胞类型，我们检查属于该类型的细胞中细胞类型特异性基因的表达水平，然后比较相同基因在 scRNA-seq 和 ST 数据中的概率密度分布。<br>\n对于三个模拟数据的每种细胞类型绘制出概率密度曲线，能够直观的看出模拟数据三的优越性<br>\n<img data-src=\"1.jpg\" alt=\"\"></p>\n<h2 id=\"数据调整框架\"><a class=\"markdownIt-Anchor\" href=\"#数据调整框架\">#</a> 数据调整框架</h2>\n<p>首先采用 KMM 方法，通过 ST 调整 scRNA 数据，KMM 改变了每种细胞类型中相应细胞在相应细胞类型特异性基因上的权重。<br>\n然后用三个模拟数据和四个真实数据套入模型，去关注它们的性质。<br>\n最后将 Raw 结果和调整后的结果比较<br>\n<img data-src=\"2.jpg\" alt=\"\"></p>\n<h2 id=\"评估调整数据与模拟数据\"><a class=\"markdownIt-Anchor\" href=\"#评估调整数据与模拟数据\">#</a> 评估调整数据与模拟数据</h2>\n<p>三个模拟数据集提供了 scRNA-seq 数据调整提高 ST 数据分解精度的证据，分解结果容易收到两个数据之间分布差异的影响<br>\n<img data-src=\"3.jpg\" alt=\"\"></p>\n<h2 id=\"pdac数据集上癌细胞类型的空间描述\"><a class=\"markdownIt-Anchor\" href=\"#pdac数据集上癌细胞类型的空间描述\">#</a> PDAC 数据集上癌细胞类型的空间描述</h2>\n<p>PDAC 数据表明，数据调整改善了癌细胞类型的空间描述，对细胞类型的空间组织进行更精细的注释，可以直接使用低分辨率 ST 数据来描绘癌症样本。<br>\n<img data-src=\"4.jpg\" alt=\"\"></p>\n<h2 id=\"在人类心脏上的表现\"><a class=\"markdownIt-Anchor\" href=\"#在人类心脏上的表现\">#</a> 在人类心脏上的表现</h2>\n<p>数据调整使某些基因与 ST 数据的相关性增强，并改进了分解，更丰富的基因有助于我们研究心脏相关疾病</p>\n<p>## 在小鼠嗅球数据集上的表现<br>\n调整后的数据的表达模式显示出明显的细胞类型和层的空间组织。</p>\n<h1 id=\"methods\"><a class=\"markdownIt-Anchor\" href=\"#methods\">#</a> Methods</h1>\n<p>剩下的就是理论推导，大致这篇论文想干什么，怎么干的已经了解了，后面就不写了。</p>\n",
+            "tags": [
+                "论文",
+                "笔记"
+            ]
+        }
+    ]
+}

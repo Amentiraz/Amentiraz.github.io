@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amentiraz • Posts by &#34;诗&#34; tag</title>
+        <link>http://Amentiraz.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Tue, 07 May 2024 16:33:35 +0800</pubDate>
+        <lastBuildDate>Tue, 07 May 2024 16:33:35 +0800</lastBuildDate>
+        <category>DP</category>
+        <category>算法</category>
+        <category>Dijkstra</category>
+        <category>书评</category>
+        <category>LCA</category>
+        <category>数学建模</category>
+        <category>TOPSIS</category>
+        <category>Matlab</category>
+        <category>代码</category>
+        <category>分布式</category>
+        <category>Tarjan</category>
+        <category>学习笔记</category>
+        <category>C语言</category>
+        <category>复习资料</category>
+        <category>python</category>
+        <category>读书笔记</category>
+        <category>生活</category>
+        <category>杂</category>
+        <category>层次分析法</category>
+        <category>诗</category>
+        <category>指针</category>
+        <category>c语言</category>
+        <category>论文</category>
+        <category>笔记</category>
+        <category>插值算法</category>
+        <category>线段树</category>
+        <category>结构</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2024/05/07/%E6%80%9D%E6%83%B3%E7%82%B9%E6%BB%B4/</guid>
+            <title>思想点滴</title>
+            <link>http://amentiraz.github.io/2024/05/07/%E6%80%9D%E6%83%B3%E7%82%B9%E6%BB%B4/</link>
+            <category>诗</category>
+            <pubDate>Tue, 07 May 2024 16:33:35 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-NTPOyKfP&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;477215674&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;false&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;每一句话都记载了当时自己那看似成熟的思想，里面有暴论，但更多的是真情实感。&lt;br&gt;
+体裁是没有限制的，有诗，有句子。诗由于没有系统学过所以只能算是随口说出的句子，但这样也足够了。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;责任不过是对爱的一种异化，是对爱的拙劣模仿&lt;br&gt;
+ 2024/07/14&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;爱建立在主观唯心之上&lt;br&gt;
+ 2024/05/23&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;细雨朦胧的上午&lt;br&gt;
+回寝室的路上&lt;br&gt;
+耳机里传来的是回忆&lt;br&gt;
+是过去的情绪&lt;/p&gt;
+&lt;p&gt;不断跳过又不舍删去的歌&lt;br&gt;
+如今也能静静凝听&lt;br&gt;
+这意味着成长&lt;br&gt;
+也意味着失去&lt;/p&gt;
+&lt;p&gt;2021/11/20&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《梦》&lt;br&gt;
+没有任何犹豫&lt;br&gt;
+把朋友抛下&lt;br&gt;
+只因望见她的身影&lt;/p&gt;
+&lt;p&gt;“原来你和我在同一座城市”&lt;br&gt;
+ 对于她撒谎这件事&lt;br&gt;
+心中委屈却毫无芥蒂&lt;/p&gt;
+&lt;p&gt;明知道她在微笑&lt;br&gt;
+可为什么&lt;br&gt;
+我怎么也看不清她的脸&lt;/p&gt;
+&lt;p&gt;恍惚中猛一转头&lt;br&gt;
+无论梦里梦外&lt;br&gt;
+人群里早已不见她的身影&lt;/p&gt;
+&lt;p&gt;时间不详&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在我初识算法时&lt;br&gt;
+我一直认为人生不过是动态规划&lt;br&gt;
+走好每一步即可&lt;br&gt;
+可最后我发现&lt;br&gt;
+人生是有后效性的&lt;br&gt;
+它是无法穷尽的搜索&lt;br&gt;
+可能我一直都是鼠目寸光吧&lt;br&gt;
+然而我们永远不会知道我们现在干的事对将来有什么影响&lt;br&gt;
+我们永远也不会重来&lt;br&gt;
+自以为对未来的把握很可笑不是吗&lt;br&gt;
+或许鼠目寸光也不错&lt;br&gt;
+毕竟我们能享受当下&lt;/p&gt;
+&lt;p&gt;时间不详&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;强者与斗士的区别类似于智者与伟人&lt;br&gt;
+我更欣赏与羡慕后者&lt;br&gt;
+因为他们有着无可比拟的信念&lt;br&gt;
+信念支撑着他们&lt;br&gt;
+但生活却挫败着他们&lt;br&gt;
+但这并不重要&lt;br&gt;
+或许后来斗士不再善战&lt;br&gt;
+伟人的行为变得愚蠢&lt;br&gt;
+甚至他们自身的信念也被生活磨砺光滑&lt;br&gt;
+但是他们的信念传承了下去&lt;br&gt;
+激励了千千万万的人&lt;br&gt;
+这是前两者所不能比的&lt;/p&gt;
+&lt;p&gt;2022/1/8&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;缺少常识是一件很幸福的事&lt;/p&gt;
+&lt;p&gt;2024/2/4&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请原谅我不是为了你而永远怀念你&lt;/p&gt;
+&lt;p&gt;2024/2/7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《入幻》&lt;br&gt;
+雾林灯火众，体遍斑驳影。&lt;br&gt;
+紫琴抚虚弦，墨云倾远岫。&lt;br&gt;
+来路隐新木，往处浮茫汀。&lt;br&gt;
+何不举灯起，一饮烛流情。&lt;/p&gt;
+&lt;p&gt;2023/2/23&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;爱情似乎是谁手的折磨越深谁越有发言权&lt;/p&gt;
+&lt;p&gt;2024/3/7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;任何与你相关的表征都是你灵魂的一部分&lt;/p&gt;
+&lt;p&gt;2024/3/24&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;世界是个巨大的扶她&lt;/p&gt;
+&lt;p&gt;2024/3/29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《祭坛》&lt;br&gt;
+我的生命之中有一座祭坛&lt;br&gt;
+它是由一位可爱的天使带来的&lt;br&gt;
+我总是虔诚的向它献出自己的血肉&lt;br&gt;
+过程虽然痛苦&lt;br&gt;
+一想到那位天使便不算什么了&lt;br&gt;
+祭坛总是公平的，它慷慨的回馈我&lt;/p&gt;
+&lt;p&gt;天真换来了沉稳&lt;br&gt;
+幽默换来了聪慧&lt;br&gt;
+随波逐流换来了特立独行&lt;/p&gt;
+&lt;p&gt;人们惊叹于我的成长&lt;br&gt;
+我的血肉逐渐与祭坛交融&lt;br&gt;
+我的灵魂逐渐有了神性 ——&lt;/p&gt;
+&lt;p&gt;所以我再也受不了了&lt;br&gt;
+我将祭坛砸了个粉碎&lt;br&gt;
+而那位天使&lt;br&gt;
+她必死无疑&lt;/p&gt;
+&lt;p&gt;2024/4/3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们过于追求独立与完整&lt;br&gt;
+从而常常忘记了残缺的自己&lt;br&gt;
+所以我们无法拥抱彼此&lt;/p&gt;
+&lt;p&gt;2024/4/22&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;看烂片才能凸显你的品味&lt;/p&gt;
+&lt;p&gt;2024/4/26&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我还是喜欢看人在现实中的面具&lt;br&gt;
+起码那蕴含了亲近真实的意愿&lt;br&gt;
+所以我讨厌网络聊天&lt;/p&gt;
+&lt;p&gt;2024/4/28&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;把记忆留在梦中&lt;/p&gt;
+&lt;p&gt;2024/4/29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ghost is a guarantee of love&lt;br&gt;
+// 注：这句话在三天后被自己推翻了改为下句：&lt;br&gt;
+love is a guarantee of love&lt;br&gt;
+ “爱即是同语反复”&lt;/p&gt;
+&lt;p&gt;2024/4/29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在爱中，你我皆是被害者&lt;/p&gt;
+&lt;p&gt;2024/4/29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;无论我处于哪个阶段，爱总是自私的&lt;br&gt;
+我希望上面这句话能被我亲自推翻&lt;/p&gt;
+&lt;p&gt;2024/4/30&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;经过我缜密的分析，爱如果参杂着排他性则毫无价值&lt;br&gt;
+但爱如果没有排他性，则爱对我毫无意义&lt;/p&gt;
+&lt;p&gt;2024/5/3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;你是来自灵魂深处的灼烧&lt;/p&gt;
+&lt;p&gt;2024/4/7&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;台前息消雪，轩槛念化冰&lt;/p&gt;
+&lt;p&gt;2023/11/20&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我对自己成为什么样的人不感兴趣&lt;br&gt;
+我对自己没成为什么样的人感到欣喜&lt;/p&gt;
+&lt;p&gt;2023/3/4&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;与事物建立联系是痛苦的，但让我们存在&lt;br&gt;
+而与事物脱离联系是快乐的，但让我们轻松却不踏实&lt;/p&gt;
+&lt;p&gt;2023/1/2&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;《同理心》&lt;br&gt;
+自由使人存在，生命使人活着&lt;br&gt;
+智慧令人目明，愚蠢令人轻松&lt;br&gt;
+爱总是有趣的，陪伴总是无趣的&lt;br&gt;
+这是因为前者的目的是自己，后者的目的是他人&lt;/p&gt;
+&lt;p&gt;在我看来&lt;br&gt;
+自由源于生命最终选择生命&lt;br&gt;
+智慧源于愚蠢最终外显愚蠢&lt;br&gt;
+爱源于陪伴最终圆满于陪伴&lt;/p&gt;
+&lt;p&gt;这就是我认为的同理心&lt;/p&gt;
+&lt;p&gt;//ps:2023/2/22, 我已经看不懂自己一年前写出来的文字了，hh&lt;/p&gt;
+&lt;p&gt;2023/2/22&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在人生的征途中，我不断的寻找自己的坟墓&lt;/p&gt;
+&lt;p&gt;2022/11/29&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我是神的使徒&lt;br&gt;
+去救助他人是我的职责，我的信仰&lt;br&gt;
+可我无法解决神的问题&lt;br&gt;
+这是理所应当的&lt;br&gt;
+可我无法忍受&lt;br&gt;
+因为这是我第一次想要去帮助别人&lt;/p&gt;
+&lt;p&gt;2022/11/27&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;快乐就是打破固有认知&lt;/p&gt;
+&lt;p&gt;//ps: 当年的自己是真积极&lt;/p&gt;
+&lt;p&gt;2022/10/16&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;十八岁那年我将心中宝箱中的宝物义无反顾送给了别人&lt;br&gt;
+十九岁的我在深不见底的海底重塑了自己的宝物&lt;br&gt;
+它虽然残缺，但对我而言足够了&lt;/p&gt;
+&lt;p&gt;//ps：几个月后你就发现这东西没啥用 hh&lt;/p&gt;
+&lt;p&gt;2022/9/25&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;愿你在攀爬高峰之后，取得自己想要的果实的那双手，仍如攀登前一样白净。&lt;/p&gt;
+&lt;p&gt;2022/9/3&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自律就像处女膜&lt;/p&gt;
+&lt;p&gt;2022/8/31&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;漆黑的夜空&lt;br&gt;
+忽然散发出紫色的光芒&lt;br&gt;
+纯白的老虎忽地出现在笔直的十字路口中央&lt;br&gt;
+红绿灯在无规律的闪烁&lt;br&gt;
+柏油路指向的方向似乎看不到尽头&lt;/p&gt;
+&lt;p&gt;白虎的胸腔内燃起了不稳定的火焰&lt;br&gt;
+自身也闪起了微弱的白光&lt;br&gt;
+可在刺眼的路灯下&lt;br&gt;
+它的阴影打向各个方向&lt;/p&gt;
+&lt;p&gt;锐利的指爪在坑坑洼洼的沥青中却使不上劲&lt;br&gt;
+它似乎发出了一声叹息&lt;br&gt;
+无力的抬头望向理应属于自己的天空&lt;/p&gt;
+&lt;p&gt;不经意间&lt;br&gt;
+微弱的光点闪烁着缓慢划过夜空&lt;br&gt;
+它意识到了些什么&lt;/p&gt;
+&lt;p&gt;于是做出决定&lt;br&gt;
+艰难的撑起身子&lt;br&gt;
+在奇幻的夜还未消失殆尽之前&lt;br&gt;
+选择一条与光点方向相近的道路&lt;br&gt;
+消失在了初起的朝阳里&lt;/p&gt;
+&lt;p&gt;2022/8/14&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;最简单的活法就是像自己最讨厌的人那样活&lt;/p&gt;
+&lt;p&gt;//ps:wwww, 真年轻&lt;/p&gt;
+&lt;p&gt;2022/7/20&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;记忆让我们存在，遗忘让我们活着&lt;/p&gt;
+&lt;p&gt;2022/2/5&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;hr&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

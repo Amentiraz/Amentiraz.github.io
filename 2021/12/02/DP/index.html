@@ -1,0 +1,510 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Amentiraz" href="http://amentiraz.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Amentiraz" href="http://amentiraz.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Amentiraz" href="http://amentiraz.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="DP,算法" />
+
+
+<link rel="canonical" href="http://amentiraz.github.io/2021/12/02/DP/">
+
+
+
+  <title>
+DP - 算法 |
+Lemon Sour = Amentiraz</title>
+<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">DP
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-12-02 17:26:14">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-02T17:26:14+08:00">2021-12-02</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>2.4k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Lemon Sour</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://tva1.sinaimg.cn/large/008i3skNly1gwth07vmchj31jk0qktis.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="item" rel="index" title="In 算法"><span itemprop="name">算法</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://amentiraz.github.io/2021/12/02/DP/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Amentiraz">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Amentiraz">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    
+    <div id="aplayer-spFbFTgV" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="464413083" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+<p>学了三天 DP 连个 P 都不会，总的来说就是寄了，每道题不看题解就做不来，试着做了做三道提高组难度的题，做出来了俩，另外一个没有思路。这俩题我都想出了大部分思路，但最后几步由于经验问题没想出来。做完后我以为我懂了，然后膨胀了，去挑战<span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDExMDg=">低价购买</span>这道题。然后不出意外寄了。打算先不弄这个了，等以后在弄，先把之前写的贴上来吧。</p>
+<span id="more"></span>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDQ4MzI=">珈百璃的堕落</span><br>
+这番是好看的，题是不会的。<br>
+这道题有三个麻烦的点，一个是范围的确定，一个是 dp 数组的含义确定，还有一个是压缩数组的大小。<br>
+通过这道题我掌握了基本的 DP 递推的根据和要领，意思就是我能证明 dp 递推的正确性了，但然而并没有什么卵用，不会的还是不会。<br>
+我在高中时就做出来了这道题，但我认为在我高中的时候是不可能想出这道题的思路的，可以说我高中学竞赛就是在自欺欺人了（笑）。但讲道理的是，我起步太慢了，那个时候我也不是什么天才，依葫芦画瓢才是我应该干的，不管怎样我现在是不能这么干了。<br>
+一个很重要的点是，我们要继承上一个状态，又不能破坏现在的状态，所以起码要二维的数组，我们要尽力压缩空间，注意到第一维只会用到上一个的状态，所以我们调整一下。<br>
+代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;queue&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line"></span><br><span class="line">using namespace std ; </span><br><span class="line"></span><br><span class="line">int tots , totc , dp[2][2000006] ; </span><br><span class="line">int T = 1000000 ; </span><br><span class="line">char a[2000006] ; </span><br><span class="line"></span><br><span class="line">int main ( ) &#123;</span><br><span class="line">    int n ; scanf ( &quot;%d&quot; , &amp; n ) ;</span><br><span class="line">    int l = 0 , r = 0 ; </span><br><span class="line">    for ( int i = 0 ; i &lt;= 2000006 ; i ++ ) dp[0][i] = dp[1][i] = -100000006 ; </span><br><span class="line">    dp[0][T] = 0 ; </span><br><span class="line">    for ( int i = 1 ; i &lt;= n ; i ++ ) &#123;</span><br><span class="line">        scanf ( &quot;%s&quot; , a ) ; </span><br><span class="line">        int len = strlen ( a ) , tots = 0 , totc = 0 ; </span><br><span class="line">        for ( int j = 0 ; j &lt; len ; j += 2 ) </span><br><span class="line">            a[j] == &#x27;s&#x27; ? tots ++ : totc ++ ; </span><br><span class="line">        int v = totc , w = tots - totc ;</span><br><span class="line">        l = min ( l + w , l ) ; r = max ( r + w , r ) ; </span><br><span class="line">        for ( int j = l ; j &lt;= r ; j ++ ) &#123;</span><br><span class="line">            dp[i&amp;1][T+j] = max ( dp[i&amp;1^1][T+j] , dp[i&amp;1][T+j] ) ; </span><br><span class="line">            dp[i&amp;1][T+j] = max ( dp[i&amp;1^1][T+j-w] + v , dp[i&amp;1][T+j] ) ; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; dp[n&amp;1][T] ; </span><br><span class="line">    return 0 ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubHVvZ3UuY29tLmNuL3Byb2JsZW0vUDExNTY=">垃圾陷阱</span><br>
+其实高度和维持生命的时间可以换一下，就是时间做数组，生命做值，但太麻烦了，就没写。<br>
+要时刻记住当前状态由上一个状态推导而来，别自己吓自己。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;cstdio&gt;</span><br><span class="line">#include&lt;cstring&gt;</span><br><span class="line">#include&lt;cmath&gt;</span><br><span class="line">#include&lt;algorithm&gt;</span><br><span class="line"></span><br><span class="line">using namespace std ; </span><br><span class="line"></span><br><span class="line">struct L &#123;</span><br><span class="line">    int t , f , h ; </span><br><span class="line">&#125; trash[1005] ; </span><br><span class="line">int dp[105][105] ; </span><br><span class="line">bool cmp ( L x , L y ) &#123; return x.t &lt; y.t ; &#125; </span><br><span class="line"></span><br><span class="line">int main ( ) &#123;</span><br><span class="line">    int D , G ; scanf ( &quot;%d%d&quot; , &amp; D , &amp; G ) ; </span><br><span class="line">    for ( int i = 1 ; i &lt;= G ; i ++ ) scanf ( &quot;%d%d%d&quot; , &amp; trash[i].t , &amp; trash[i].f , &amp; trash[i].h ) ; </span><br><span class="line">    sort ( trash + 1 , trash + 1 + G , cmp ) ;</span><br><span class="line">    dp[0][0] = 10 ; </span><br><span class="line">    for ( int i = 1 ; i &lt;= G ; i ++ ) &#123;</span><br><span class="line">        for ( int j = 0 ; j &lt;= D ; j ++ ) &#123;</span><br><span class="line">            if ( j &gt;= trash[i].h &amp;&amp; dp[i-1][j-trash[i].h] &gt;= trash[i].t ) &#123;</span><br><span class="line">                dp[i][j] = max ( dp[i-1][j-trash[i].h] ,dp[i][j] ) ;</span><br><span class="line">            &#125;</span><br><span class="line">            if ( dp[i-1][j] &gt;= trash[i].t ) &#123;</span><br><span class="line">                dp[i][j] = max ( dp[i-1][j] + trash[i].f , dp[i][j] ) ;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for ( int i = 1 ; i &lt;= G ; i ++ ) &#123;</span><br><span class="line">        if ( dp[i][D] != 0 ) &#123;</span><br><span class="line">            cout &lt;&lt; trash[i].t ; return 0 ; </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    int now = 10 ; </span><br><span class="line">    for ( int i = 1 ; i &lt;= G; i ++ ) &#123;</span><br><span class="line">        if ( now &lt; trash[i].t - trash[i-1].t ) &#123; cout &lt;&lt; trash[i-1].t + now ; return 0 ; &#125;  </span><br><span class="line">        else now = now - trash[i].t + trash[i-1].t + trash[i].f ; </span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; trash[G].t + now ; </span><br><span class="line">    return 0 ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      <div class="tags">
+          <a href="/tags/DP/" rel="tag"><i class="ic i-tag"></i> DP</a>
+          <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"><i class="ic i-tag"></i> 算法</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-11-11 11:38:02" itemprop="dateModified" datetime="2023-11-11T11:38:02+08:00">2023-11-11</time>
+  </span>
+  <span id="2021/12/02/DP/" class="item leancloud_visitors" data-flag-title="DP" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Amentiraz <i class="ic i-at"><em>@</em></i>Amentiraz
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://amentiraz.github.io/2021/12/02/DP/" title="DP">http://amentiraz.github.io/2021/12/02/DP/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/11/29/Tarjan/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gwth07vmchj31jk0qktis.jpg" title="Tarjan">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 算法</span>
+  <h3>Tarjan</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gx9outtxwaj31hc0u010t.jpg" title="西电新生赛网络赛题解">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 算法</span>
+  <h3>西电新生赛网络赛题解</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2021/11/27/Dijkstra/" rel="bookmark" title="Dijkstra">Dijkstra</a></li><li><a href="/2021/11/27/%E7%BA%BF%E6%AE%B5%E6%A0%91/" rel="bookmark" title="线段树">线段树</a></li><li><a href="/2021/11/29/LCA/" rel="bookmark" title="LCA">LCA</a></li><li><a href="/2021/11/29/Tarjan/" rel="bookmark" title="Tarjan">Tarjan</a></li><li class="active"><a href="/2021/12/02/DP/" rel="bookmark" title="DP">DP</a></li><li><a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" rel="bookmark" title="西电新生赛网络赛题解">西电新生赛网络赛题解</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Amentiraz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Amentiraz</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">28</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FtZW50aXJheg==" title="https:&#x2F;&#x2F;github.com&#x2F;Amentiraz"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/11/29/Tarjan/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/08/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《情爱现象学》读书笔记">《情爱现象学》读书笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/07/%E6%80%9D%E6%83%B3%E7%82%B9%E6%BB%B4/" title="思想点滴">思想点滴</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/2021/11/22/%E7%BB%93%E6%9E%84/" title="结构">结构</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+</div>
+
+    <span><a href="/2024/09/24/hello-world/" title="Hello World">Hello World</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" title="In 数学建模">数学建模</a>
+</div>
+
+    <span><a href="/2021/09/18/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" title="层次分析法">层次分析法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/" title="《蓝色恐惧》观后感">《蓝色恐惧》观后感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/2021/11/04/%E6%8C%87%E9%92%88/" title="指针">指针</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BB%A3%E7%A0%81/" title="In 代码">代码</a>
+</div>
+
+    <span><a href="/2024/06/10/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="分布式大作业">分布式大作业</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/07/28/%E5%AF%B9LGBT%E7%9A%84%E6%80%9D%E8%80%83/" title="对LGBT的思考">对LGBT的思考</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2021/10/10/%E5%B0%8F%E7%8E%8B%E5%AD%90%E4%B9%A6%E8%AF%84/" title="小王子书评">小王子书评</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Amentiraz @ Lemon Sour</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/12/02/DP/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

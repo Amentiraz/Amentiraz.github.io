@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>Amentiraz • Posts by &#34;插值算法&#34; tag</title>
+        <link>http://Amentiraz.github.io</link>
+        <description></description>
+        <language>en</language>
+        <pubDate>Sun, 03 Oct 2021 16:21:52 +0800</pubDate>
+        <lastBuildDate>Sun, 03 Oct 2021 16:21:52 +0800</lastBuildDate>
+        <category>DP</category>
+        <category>算法</category>
+        <category>Dijkstra</category>
+        <category>书评</category>
+        <category>LCA</category>
+        <category>数学建模</category>
+        <category>TOPSIS</category>
+        <category>Matlab</category>
+        <category>代码</category>
+        <category>分布式</category>
+        <category>Tarjan</category>
+        <category>学习笔记</category>
+        <category>C语言</category>
+        <category>复习资料</category>
+        <category>python</category>
+        <category>读书笔记</category>
+        <category>生活</category>
+        <category>杂</category>
+        <category>层次分析法</category>
+        <category>诗</category>
+        <category>指针</category>
+        <category>c语言</category>
+        <category>论文</category>
+        <category>笔记</category>
+        <category>插值算法</category>
+        <category>线段树</category>
+        <category>结构</category>
+        <category>题解</category>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/2021/10/03/%E6%8F%92%E5%80%BC%E7%AE%97%E6%B3%95/</guid>
+            <title>插值算法</title>
+            <link>http://amentiraz.github.io/2021/10/03/%E6%8F%92%E5%80%BC%E7%AE%97%E6%B3%95/</link>
+            <category>数学建模</category>
+            <category>插值算法</category>
+            <pubDate>Sun, 03 Oct 2021 16:21:52 +0800</pubDate>
+            <description><![CDATA[ &lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;script class=&#34;meting-secondary-script-marker&#34; src=&#34;\assets\js\Meting.min.js&#34;&gt;&lt;/script&gt;
+    &lt;div id=&#34;aplayer-jiymPaoF&#34; class=&#34;aplayer aplayer-tag-marker meting-tag-marker&#34;
+         data-id=&#34;502455381&#34; data-server=&#34;netease&#34; data-type=&#34;song&#34; data-mode=&#34;circulation&#34; data-autoplay=&#34;true&#34; data-mutex=&#34;true&#34; data-listmaxheight=&#34;340px&#34; data-preload=&#34;none&#34; data-theme=&#34;#ad7a86&#34;
+    &gt;&lt;/div&gt;
+&lt;p&gt;插值算法主要运用于在数学建模竞赛中，现有的数据极少，不足以支撑分析的进行，这时候就需要使用一些数学的方法&lt;br&gt;
+插值的作用，“模拟产生” 一些新的但又比较靠谱的值来满足需求&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h3 id=&#34;一维插值问题&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#一维插值问题&#34;&gt;#&lt;/a&gt; 一维插值问题&lt;/h3&gt;
+&lt;h4 id=&#34;问题如下&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#问题如下&#34;&gt;#&lt;/a&gt; 问题如下：&lt;/h4&gt;
+&lt;p&gt;已经有 n+1 个节点 (xi,yi)(i=0,1,…,n), 其中 xi 互不相同，不妨设 a &amp;lt;= x0 &amp;lt; x1 &amp;lt; … &amp;lt; xn &amp;lt;= b , 求任一插值点 x * （不等于 xi）处的插值 y *&lt;br&gt;
+ 思路：构造 y=f (x), 使得 f (x) 过所有节点，即可得到 y *&lt;/p&gt;
+&lt;h4 id=&#34;插值法的概念&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#插值法的概念&#34;&gt;#&lt;/a&gt; 插值法的概念&lt;/h4&gt;
+&lt;p&gt;设函数 y=f (x) 在区间 [a,b] 上有定义，且已知在点 a&amp;lt;= x0 &amp;lt; x1 &amp;lt; … &amp;lt; xn &amp;lt;= b 上的值分别为 y0 , y1 , … , yn&lt;br&gt;
+ 若存在一简单函数 P (x) 使 P (xi) = yi ( i = 0 , 1 , 2 , … , n ) 则称 P (x) 为 f (x) 的插值函数，点 x0,x1,…,xn 称为插值节点，包含插值节点的区间 [a,b] 称为插值区间&lt;br&gt;
+求插值函数 P (x) 的方法称为插值法&lt;br&gt;
+插值法是不唯一的&lt;br&gt;
+代数多项式：若 P (x) 是次数不超过 n 的代数多项式，即 P (x) = a0 + a1x + … + anx^n&lt;br&gt;
+ 分段插值：若 P (x) 为分段多项式，就称为分段插值&lt;br&gt;
+三角插值：若 P (x) 为三角多项式，就称为三角插值（不予讨论）（一般要用到傅立叶变换等复杂的数学工具）&lt;br&gt;
+一般来讲三角插值适用于对周期函数的插值（三角函数嘛）&lt;/p&gt;
+&lt;h4 id=&#34;插值法原理&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#插值法原理&#34;&gt;#&lt;/a&gt; 插值法原理&lt;/h4&gt;
+&lt;p&gt;定理：设有 n+1 个互不相同的节点 (xi,yi)(i=0,1,2,…,n) 则存在唯一的多项式：&lt;br&gt;
+Ln (x) = a0 + a1x + … + anx^n   使得 Ln (xj) = yj (j=0,1,2,…n)&lt;br&gt;
+ 证 构造方程组&lt;br&gt;
+「a0 + a1x0 + … + anx0^n = y0&lt;br&gt;
+a0 + a1x1 + … + anx1^n = y1&lt;br&gt;
+…&lt;br&gt;
+a0 + a1xn + … + anxn^n = yn  」&lt;/p&gt;
+&lt;p&gt;图片：&lt;/p&gt;
+&lt;h4 id=&#34;拉格朗日插值法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#拉格朗日插值法&#34;&gt;#&lt;/a&gt; 拉格朗日插值法&lt;/h4&gt;
+&lt;p&gt;在数值分析中，拉格朗日插值法是以法国十八世纪数学家约瑟夫・拉格朗日命名的一种多项式插值方法。如对实践中的某个物理量进行观测，在若干个不同的地方得到相应的观测值，拉格朗日插值法可以找到一个多项式，其恰好在各个观测的点取到观测到的值。这样的多项式称为拉格朗日（插值）多项式。&lt;br&gt;
+对于两个点：(x0,y0) , (x1,y1)&lt;br&gt;
+f(x) = ( x - x1 ) y0 / ( x0 - x1 ) + ( x - x0 ) y1 / ( x1 - x0 )&lt;br&gt;
+ 对于三个点：(x0,y0),(x1,y1),(x2,y2)&lt;br&gt;
+f(x) = [ ( x - x1 ) ( x - x2 ) y0 ] / [ ( x0 - x1 ) ( x0 - x2 ) ]&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;[ ( x - x0 ) ( x - x2 ) y1 ] / [ ( x1 - x0 ) ( x1 - x2 ) ]&lt;/li&gt;
+&lt;li&gt;[ ( x - x0 ) ( x - x1 ) y2 ] / [ ( x2 - x0 ) ( x2 - x1 ) ]&lt;br&gt;
+ 我们可以归纳发现，这种式子如果取其中的一个 xi 取得的值必定是 yi，因为其它项为 0，对应的 xi 的 yi 的系数必定为 1&lt;br&gt;
+&lt;img data-src=&#34;https://tva1.sinaimg.cn/large/008i3skNgy1gv3e0n9uf2j60mt09774y02.jpg&#34; alt=&#34;&#34;&gt;&lt;br&gt;
+ 然而我们实际情况中却不可能用拉格朗日插值法，他有很多问题&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;龙格现象&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#龙格现象&#34;&gt;#&lt;/a&gt; 龙格现象&lt;/h4&gt;
+&lt;p&gt;图片 1:&lt;br&gt;
+ 图片 2:&lt;br&gt;
+ 这引出了两个问题&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;插值多项式次数高，精度未必显著提高&lt;/li&gt;
+&lt;li&gt;插值多项式次数越高，摄入误差可能显著增大&lt;br&gt;
+我们可以得到，对于高次的多项式插值时，如果我们不确定曲线的类型，我们尽量不要使用&lt;br&gt;
+那么如何提高插值精度呢&lt;br&gt;
+采用分段线性插值&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;分段插值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分段插值&#34;&gt;#&lt;/a&gt; 分段插值&lt;/h3&gt;
+&lt;h4 id=&#34;分段线性插值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分段线性插值&#34;&gt;#&lt;/a&gt; 分段线性插值&lt;/h4&gt;
+&lt;p&gt;如果我们要在中间找一个值，我们找距离它最近的两点，两点之间连一条线段，直接在这条线段上找 x 对应的 y 值即可&lt;br&gt;
+这种插值是十分简单的，也是不精准的&lt;/p&gt;
+&lt;h4 id=&#34;分段二次插值&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#分段二次插值&#34;&gt;#&lt;/a&gt; 分段二次插值&lt;/h4&gt;
+&lt;p&gt;分段二次插值也是非常简单的，我们可以寻找距离这个插入点最近的三个点，三个点可以形成一个二次函数，同理可以直接取二次函数的值&lt;br&gt;
+分段二次插值又称为分段抛物线插值&lt;/p&gt;
+&lt;h4 id=&#34;牛顿插值法&#34;&gt;&lt;a class=&#34;markdownIt-Anchor&#34; href=&#34;#牛顿插值法&#34;&gt;#&lt;/a&gt; 牛顿插值法・&lt;/h4&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>

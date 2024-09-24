@@ -1,0 +1,646 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Amentiraz" href="http://amentiraz.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Amentiraz" href="http://amentiraz.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Amentiraz" href="http://amentiraz.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,C语言" />
+
+
+<link rel="canonical" href="http://amentiraz.github.io/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+
+  <title>
+文件学习笔记 - 学习笔记 |
+Lemon Sour = Amentiraz</title>
+<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">文件学习笔记
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-12-28 09:46:28">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-12-28T09:46:28+08:00">2021-12-28</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>3.2k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>3 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Lemon Sour</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giph4lm9i7j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclwrdwyaj20zk0m8are.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm07ih54j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipeudstjqj20zk0m8k3r.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciub8ja1j20zk0m81ky.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="In 学习笔记"><span itemprop="name">学习笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://amentiraz.github.io/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Amentiraz">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Amentiraz">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    
+    <div id="aplayer-MtvMxXMJ" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="1486106274" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+<h3 id="文件是什么"><a class="markdownIt-Anchor" href="#文件是什么">#</a> 文件是什么</h3>
+<p>文件是指一组相关数据的有序集合，这个数据集有一个名称叫做文件名。文件可以是自己编制的，也可以是系统已有的。事实上我们已经多次使用了文件，例如源程序文件，目标文件、可执行文件、库文件等。<br>
+为了将结果保存起来，就需要使用文件。将数据以文件的形式存放在光盘、磁盘等外存储器上，可以达到重复利用、永久保存数据的目的。文件可分为普通文件和设备文件两种。通常吧显示器定义为标准输出文件，一般情况下在屏幕上显示有关信息就是向标准输出文件输出。如前面经常使用的 printf、putchar 函数就是这类输出。键盘通常被指定标准的输入文件，从键盘上输入意味着以标准输入文件输入数据。scanf、getchar 函数就属于这类输入。</p>
+<h3 id="文件类型"><a class="markdownIt-Anchor" href="#文件类型">#</a> 文件类型</h3>
+<p>文件可分为 ASCII 码文件和二进制文件两种。ASCII 文件也成为文本文件，这种文件在磁盘中存放时每个字符对应一个字节，用于存放对应的 ASCII 码。<br>
+例如数 6843 的存储形式为：<br>
+ASCII 码：00110110 00111000 00110100 00110011<br>
+ 十进制码：  6         8        4        3<br>
+ 共占用四个字节。<br>
+ASCII 码文件可在屏幕上按字符显示，例如源程序文件就是 ASCII 文件，用 DOS 命令 TYPE 可显示文件的内容。<br>
+二进制文件是按二进制编码的方式来存放文件的。例如，数 6843 的存储形式为：00011010 10111011<br>
+ 只占两个字节。二进制文件也可以在屏幕中显示，但内容无法读懂。<br>
+输入输出字符流的开始和结束只由程序控制而不受物理符号（如回车符）的控制。因此也把这种文件称作流式文件。</p>
+<h3 id="文件指针"><a class="markdownIt-Anchor" href="#文件指针">#</a> 文件指针</h3>
+<p>在 C 语言中用一个指针变量指向一个文件，这个指针被称为文件指针，通过文件指针可以对它所指的文件进行各种操作。存放文件的有关信息被保存在一个结构体变量中，它是由系统定义的，取名为 FILE。在编写源程序时不必关心 FILE 结构的细节。例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FILE * 指针变量标识符</span><br></pre></td></tr></table></figure>
+<p>其中 FILE 必须为大写，该结构中含有文件名、文件状态和文件当前位置等信息。<br>
+注意：在操作系统中，文件被作为重要的系统资源来看待。因此，当程序需要访问文件时，程序员必须显式地打开某个文件，并在使用后关闭它。程序中所有对文件的操作都通过文件指针来实现。</p>
+<h3 id="文件打开操作"><a class="markdownIt-Anchor" href="#文件打开操作">#</a> 文件打开操作</h3>
+<p>C 语言没有输入输出语句，对文件的读写都是用看库函数来实现的。<br>
+对文件进行操作时应遵循一下步骤：</p>
+<ol>
+<li>打开文件。打开文件是指请求系统为指定文件分配内存缓冲区，建立文件的各种有关信息，文件使用前必须先打开。</li>
+<li>读写文件。包括文件的读、写、定位等操作。</li>
+<li>关闭文件。确保数据完整写入文件并释放内存缓冲区。</li>
+</ol>
+<p>打开文件，实际上是建立文件的各种有关信息，并使文件指针指向该文件。关闭文件则是断开指针与文件之间的联系，也就是禁止再对该文件操作。<br>
+fopen 函数用来打开一个文件，其调用的一般形式为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文件指针名 = <span class="built_in">fopen</span> ( 文件名 , 使用文件方式 ) ; </span><br></pre></td></tr></table></figure>
+<p>文件指针名必须是被说明为 FILE 类型的指针变量；文件名使被打开文件的文件名，可以是字符串常量或字符串数组；使用文件方式是指文件类型和操作要求。<br>
+例如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FILE * fp ; </span><br><span class="line">fp = ( <span class="string">&quot;file a&quot;</span> , <span class="string">&quot;r&quot;</span> ) ; </span><br></pre></td></tr></table></figure>
+<p>其意义使在当前目录下打开文件 file a，只允许进行读入操作，并使 fp 指向该文件。<br>
+又如：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FILE * fp ; </span><br><span class="line">fp = ( <span class="string">&quot;c:\\test&quot;</span> , <span class="string">&quot;rb&quot;</span> ) ; </span><br></pre></td></tr></table></figure>
+<p>其意义是打开 C 驱动磁盘的根目录下的文件 test，这是一个二进制文件，只允许按二进制的方式进行读操作。两个反斜杠 &quot;\&quot; 第一个表示转义字符，第二个表示根目录。<br>
+或者使用：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">FILE * <span class="title">fopen</span> <span class="params">( <span class="type">const</span> <span class="type">char</span> * filename , <span class="type">const</span> <span class="type">char</span> * mode )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>返回失败时返回空指针 NULL<br>
+ 使用文件的方式共有 12 种，下表给出其符号以及意义。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">文件使用方式</th>
+<th style="text-align:center">意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">打开文件，只读</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">打开或建立文件只写</td>
+</tr>
+<tr>
+<td style="text-align:center">a</td>
+<td style="text-align:center">追加打开一个文本文件，并在文件末尾写数据</td>
+</tr>
+<tr>
+<td style="text-align:center">rb</td>
+<td style="text-align:center">二进制文件，同上</td>
+</tr>
+<tr>
+<td style="text-align:center">wb</td>
+<td style="text-align:center">二进制文件，同上</td>
+</tr>
+<tr>
+<td style="text-align:center">ab</td>
+<td style="text-align:center">二进制文件，同上</td>
+</tr>
+<tr>
+<td style="text-align:center">r+</td>
+<td style="text-align:center">读 + 写</td>
+</tr>
+<tr>
+<td style="text-align:center">w+</td>
+<td style="text-align:center">读 + 写</td>
+</tr>
+<tr>
+<td style="text-align:center">a+</td>
+<td style="text-align:center">读 + 写</td>
+</tr>
+<tr>
+<td style="text-align:center">rb+&amp;wb+&amp;ab+</td>
+<td style="text-align:center">类推</td>
+</tr>
+</tbody>
+</table>
+<p>总结如下：r (ead) , w (rite) , a (ppend) , t (ext) , b (inary) 。+：读和写<br>
+查看是否成功读入</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ( ( fp = <span class="built_in">fopen</span> ( <span class="string">&quot;text&quot;</span> , <span class="string">&quot;rb&quot;</span> ) ) == <span class="literal">NULL</span>  ) &#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;error&quot;</span> ; </span><br><span class="line">    <span class="built_in">getch</span> ( ) ; <span class="built_in">exit</span> ( <span class="number">1</span> ) ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="文件关闭操作"><a class="markdownIt-Anchor" href="#文件关闭操作">#</a> 文件关闭操作</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FILE * fp ; </span><br><span class="line">fp = <span class="built_in">fopen</span> ( <span class="string">&quot;a.out&quot;</span> , <span class="string">&quot;r&quot;</span> ) ; </span><br><span class="line"><span class="built_in">fclose</span> ( fp ) ; </span><br></pre></td></tr></table></figure>
+<p>关闭成功返回值为 0，否则为非零值<br>
+如果打开了多个文件且需要统一关闭：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fcloseall</span> <span class="params">( )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>此函数关闭除了标准流意外的所有打开流，刷新所有的流缓冲区，并关闭返回的参数，否则返回 EOF。<br>
+标准流：stdin，stdout，stderr</p>
+<h3 id="文件结束检测"><a class="markdownIt-Anchor" href="#文件结束检测">#</a> 文件结束检测</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">feof</span> <span class="params">( FLIE * fp )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>文件未结束返回 0，已结束返回真。</p>
+<h3 id="文件错误检测函数"><a class="markdownIt-Anchor" href="#文件错误检测函数">#</a> 文件错误检测函数</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">ferror</span> <span class="params">( FILE * fp )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>发生错误返回非零，否则返回 0</p>
+<h3 id="定位文件位置指针函数"><a class="markdownIt-Anchor" href="#定位文件位置指针函数">#</a> 定位文件位置指针函数</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fseek</span> ( FILE * fp , <span class="type">long</span> offset , <span class="type">int</span> startpos ) ; </span><br></pre></td></tr></table></figure>
+<p>offset 表示目标位置相对起始点的偏移量，要求偏移量为 long 型数据以便在文件长度大于 64KB 时不会出错，当用常量表示位移量时，要求加后缀 L.<br>
+startpos 表示从何处计算偏移量：SEEK_SET:0 , SEEK_CUR:1 , SEEK_END:2 ;<br>
+fseek 函数一般用于二进制文件，在文本文件中由于要进行转换，故往往会出现错误。</p>
+<h3 id="重置文件位置指针函数"><a class="markdownIt-Anchor" href="#重置文件位置指针函数">#</a> 重置文件位置指针函数</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rewind</span> ( FILE * fp ) ; </span><br></pre></td></tr></table></figure>
+<p>移动到文件开始的位置。<br>
+无返回值</p>
+<h3 id="移动指针到当前位置函数"><a class="markdownIt-Anchor" href="#移动指针到当前位置函数">#</a> 移动指针到当前位置函数</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">long</span> <span class="title">ftell</span> <span class="params">( FILE * p )</span> </span>;</span><br></pre></td></tr></table></figure>
+<p>若函数调用成功则函数的返回值时当前读写位置偏离文件头部的字节数，否则返回 - 1 ；<br>
+文件的长度</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ftell</span> ( fp , <span class="number">0L</span> , SEEK_END ) ;</span><br><span class="line">len = <span class="built_in">ftell</span> ( fp ) ; </span><br></pre></td></tr></table></figure>
+<h3 id="面向字符的文件读写操作"><a class="markdownIt-Anchor" href="#面向字符的文件读写操作">#</a> 面向字符的文件读写操作</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fputc</span> ( <span class="type">int</span> c , FILE * stream ) ; </span><br></pre></td></tr></table></figure>
+<p>c 是带写入的字符，可以是字符常量或者变量。<br>
+每写入一个字符，文件内部位置指针将向后移动一个字节。返回值为字符或者 EOF。<br>
+如果用写或者读写方式打开一个已存在的文件时将清除原有的文件内容，写入字符从文件首开始，如需保留原有文件内容，必须以追加的方式打开文件。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ch = <span class="built_in">fgetc</span> ( FILE * stream ) ; </span><br></pre></td></tr></table></figure>
+<p>读取的文件必须是以读写或读的方式打开的。</p>
+<h3 id="面向字符串的文件读写操作"><a class="markdownIt-Anchor" href="#面向字符串的文件读写操作">#</a> 面向字符串的文件读写操作</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">char</span> * <span class="title">fgets</span> <span class="params">( <span class="type">char</span> * string , <span class="type">int</span> n , FILE * stream )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>函数的功能是从 stream 指向的文件中逐一读取 n-1 个字符，并将读取的字符保存到 string 指向的连续存储空间。<br>
+在读取 n-1 个字符之前如果遇到了换行符或 EOF，则读取结束。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fputs</span> <span class="params">( <span class="type">const</span> <span class="type">char</span> * string , FILE * stream )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>执行成功返回非负整数，否则返回 EOF。不会把 \0 写入文件。</p>
+<h3 id="面向格式化输入输出的文件读写操作"><a class="markdownIt-Anchor" href="#面向格式化输入输出的文件读写操作">#</a> 面向格式化输入输出的文件读写操作</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fscanf</span> <span class="params">( FILE * stream , <span class="type">const</span> <span class="type">char</span> * format[,argument]...)</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>返回值为读取正确的数据个数， EOF 为读取错误或文件结束。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">fprintf</span> <span class="params">( FILE * stream , <span class="type">const</span> <span class="type">char</span> * format[,argument]... )</span> </span>; </span><br></pre></td></tr></table></figure>
+<p>返回值为正确写入返回数据的个数，负值为读写错误。</p>
+<h3 id="面向信息块的文件读写操作"><a class="markdownIt-Anchor" href="#面向信息块的文件读写操作">#</a> 面向信息块的文件读写操作</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fread</span> ( <span class="type">void</span> * buffer , <span class="type">int</span> size , <span class="type">int</span> count , FILE * fp ) ; </span><br><span class="line"><span class="built_in">fwrite</span> ( <span class="type">void</span> * buffer , <span class="type">int</span> size , <span class="type">int</span> count , FILE * fp ) ; </span><br></pre></td></tr></table></figure>
+<p>例如：fread (fa , 4 , 5 , fp) ; 的意义是从 fp 所指的文件中，每次读 4 个字节，送入实数数组 fa 中，连续读 5 次。</p>
+
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="ic i-tag"></i> C语言</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-11-14 09:54:37" itemprop="dateModified" datetime="2023-11-14T09:54:37+08:00">2023-11-14</time>
+  </span>
+  <span id="2021/12/28/文件学习笔记/" class="item leancloud_visitors" data-flag-title="文件学习笔记" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Amentiraz <i class="ic i-at"><em>@</em></i>Amentiraz
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://amentiraz.github.io/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="文件学习笔记">http://amentiraz.github.io/2021/12/28/文件学习笔记/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gx9outtxwaj31hc0u010t.jpg" title="西电新生赛网络赛题解">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 算法</span>
+  <h3>西电新生赛网络赛题解</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;i.postimg.cc&#x2F;Y03jkmWs&#x2F;46985381-p0-master1200.jpg" title="python学习笔记1">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 学习笔记</span>
+  <h3>python学习笔记1</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text"> 文件是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.</span> <span class="toc-text"> 文件类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%8C%87%E9%92%88"><span class="toc-number">3.</span> <span class="toc-text"> 文件指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%89%93%E5%BC%80%E6%93%8D%E4%BD%9C"><span class="toc-number">4.</span> <span class="toc-text"> 文件打开操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E5%85%B3%E9%97%AD%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text"> 文件关闭操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9D%9F%E6%A3%80%E6%B5%8B"><span class="toc-number">6.</span> <span class="toc-text"> 文件结束检测</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E9%94%99%E8%AF%AF%E6%A3%80%E6%B5%8B%E5%87%BD%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text"> 文件错误检测函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%E6%8C%87%E9%92%88%E5%87%BD%E6%95%B0"><span class="toc-number">8.</span> <span class="toc-text"> 定位文件位置指针函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE%E6%8C%87%E9%92%88%E5%87%BD%E6%95%B0"><span class="toc-number">9.</span> <span class="toc-text"> 重置文件位置指针函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E6%8C%87%E9%92%88%E5%88%B0%E5%BD%93%E5%89%8D%E4%BD%8D%E7%BD%AE%E5%87%BD%E6%95%B0"><span class="toc-number">10.</span> <span class="toc-text"> 移动指针到当前位置函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AD%97%E7%AC%A6%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-number">11.</span> <span class="toc-text"> 面向字符的文件读写操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-number">12.</span> <span class="toc-text"> 面向字符串的文件读写操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-number">13.</span> <span class="toc-text"> 面向格式化输入输出的文件读写操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%A2%E5%90%91%E4%BF%A1%E6%81%AF%E5%9D%97%E7%9A%84%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-number">14.</span> <span class="toc-text"> 面向信息块的文件读写操作</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li><a href="/2021/09/19/c%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="c复习">c复习</a></li><li><a href="/2021/11/04/%E6%8C%87%E9%92%88/" rel="bookmark" title="指针">指针</a></li><li><a href="/2021/11/22/%E7%BB%93%E6%9E%84/" rel="bookmark" title="结构">结构</a></li><li class="active"><a href="/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="bookmark" title="文件学习笔记">文件学习笔记</a></li><li><a href="/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="python学习笔记1">python学习笔记1</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Amentiraz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Amentiraz</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">28</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FtZW50aXJheg==" title="https:&#x2F;&#x2F;github.com&#x2F;Amentiraz"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BB%A3%E7%A0%81/" title="In 代码">代码</a>
+</div>
+
+    <span><a href="/2024/06/03/P2P%E7%BE%A4%E8%81%8A%E7%B3%BB%E7%BB%9F/" title="P2P群聊系统">P2P群聊系统</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" title="In 数学建模">数学建模</a>
+</div>
+
+    <span><a href="/2021/09/18/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" title="层次分析法">层次分析法</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/12/11/%E8%A5%BF%E7%94%B5%E6%96%B0%E7%94%9F%E8%B5%9B%E7%BD%91%E7%BB%9C%E8%B5%9B%E9%A2%98%E8%A7%A3/" title="西电新生赛网络赛题解">西电新生赛网络赛题解</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/" title="《蓝色恐惧》观后感">《蓝色恐惧》观后感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BB%A3%E7%A0%81/" title="In 代码">代码</a>
+</div>
+
+    <span><a href="/2024/06/10/%E5%88%86%E5%B8%83%E5%BC%8F%E5%A4%A7%E4%BD%9C%E4%B8%9A/" title="分布式大作业">分布式大作业</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/07/18/%E6%8E%A8%E9%94%80%E8%87%AA%E5%B7%B1%E7%9A%84%E5%95%86%E5%93%81/" title="推销自己的商品">推销自己的商品</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/" title="你想活出怎样的人生">你想活出怎样的人生</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/11/29/LCA/" title="LCA">LCA</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%AE%97%E6%B3%95/" title="In 算法">算法</a>
+</div>
+
+    <span><a href="/2021/11/27/%E7%BA%BF%E6%AE%B5%E6%A0%91/" title="线段树">线段树</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2023/11/14/%E5%8D%9A%E5%AE%A2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9B%BE%E7%89%87/" title="博客使用的图片">博客使用的图片</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Amentiraz @ Lemon Sour</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/12/28/文件学习笔记/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>

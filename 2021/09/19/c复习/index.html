@@ -1,0 +1,674 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="Amentiraz" href="http://amentiraz.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="Amentiraz" href="http://amentiraz.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="Amentiraz" href="http://amentiraz.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="学习笔记,C语言,复习资料" />
+
+
+<link rel="canonical" href="http://amentiraz.github.io/2021/09/19/c%E5%A4%8D%E4%B9%A0/">
+
+
+
+  <title>
+c复习 - 学习笔记 |
+Lemon Sour = Amentiraz</title>
+<meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="\assets\css\APlayer.min.css" class="aplayer-style-marker">
+<script src="\assets\js\APlayer.min.js" class="aplayer-script-marker"></script>
+<script src="\assets\js\Meting.min.js" class="meting-script-marker"></script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">c复习
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="Created: 2021-09-19 14:32:11">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">Posted on</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-09-19T14:32:11+08:00">2021-09-19</time>
+  </span>
+  <span class="item" title="Symbols count in article">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">Symbols count in article</span>
+    <span>2.3k</span>
+    <span class="text">words</span>
+  </span>
+  <span class="item" title="Reading time">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">Reading time</span>
+    <span>2 mins.</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="Toggle navigation bar">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">Lemon Sour</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+          <img src="https://tva1.sinaimg.cn/large/008i3skNly1gwsuvfung6j31hc0u0kbz.jpg">
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">Home</a></span><i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="item" rel="index" title="In 学习笔记"><span itemprop="name">学习笔记</span></a>
+<meta itemprop="position" content="1" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="en">
+  <link itemprop="mainEntityOfPage" href="http://amentiraz.github.io/2021/09/19/c%E5%A4%8D%E4%B9%A0/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="Amentiraz">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Amentiraz">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    
+    <div id="aplayer-XGhDTRyH" class="aplayer aplayer-tag-marker meting-tag-marker"
+         data-id="578090" data-server="netease" data-type="song" data-mode="circulation" data-autoplay="true" data-mutex="true" data-listmaxheight="340px" data-preload="none" data-theme="#ad7a86"
+    ></div>
+<p>这篇文章是大一刚开学对 c 的复习，十分的不全面，看看就行。</p>
+<span id="more"></span>
+<p>程序设计语言<br>
+机器语言 汇编语言 高级语言<br>
+ return 0 ; return 表示 main 函数结束，0 表示程序在退出时给执行此程序的操作系统返回来一个结果，即返回值。</p>
+<h3 id="c程序的构成"><a class="markdownIt-Anchor" href="#c程序的构成">#</a> c 程序的构成</h3>
+<h4 id="预处理部分"><a class="markdownIt-Anchor" href="#预处理部分">#</a> 预处理部分</h4>
+<ol>
+<li>宏定义：#define 指令定义一个宏，#undef 指令删除一个宏定义</li>
+<li>头文件包含：#include</li>
+<li>条件编译语句：#if、#ifdef、#ifndef、#else 和 #endif 指令根据预处理器可以测试的条件来确定是将一段文本块包含到程序还是将其排除在外</li>
+</ol>
+<h4 id="说明部分"><a class="markdownIt-Anchor" href="#说明部分">#</a> 说明部分</h4>
+<ol>
+<li>全局变量</li>
+<li>常量：#define PI 3.1416926f \ const float PI 3.1415926</li>
+<li>函数声明</li>
+</ol>
+<h4 id="执行部分"><a class="markdownIt-Anchor" href="#执行部分">#</a> 执行部分</h4>
+<ol>
+<li>主函数</li>
+<li>其他函数</li>
+</ol>
+<h3 id="标识符"><a class="markdownIt-Anchor" href="#标识符">#</a> 标识符</h3>
+<p>由数字、字母和下划线字符构成的一个连续序列，不能有空白字符。<br>
+区分大小写</p>
+<h3 id="整型数据的分类"><a class="markdownIt-Anchor" href="#整型数据的分类">#</a> 整型数据的分类</h3>
+<p>基本整型（int）、短整型（short int）和长整型（long int）<br>
+int 的取值范围 - 2147483648 与 2147483647（2^31-1)、字节数 4<br>
+short (int) 的取值范围 -32768 与 32767 之间、字节数 2<br>
+long (int) 主流编译器一般规定其取值范围与基本 int 类型相同、字节数 4<br>
+C 语言还提供了有符号和无符号整数类型<br>
+若希望表达非负整数，可以定义无符号整型，即在类型符号前面加上修饰符 unsigned<br>
+ 加上 unsigned 变成原来的两倍、字节数不变<br>
+如：unsigned int : 0 ~ 4294967295</p>
+<h3 id="整型常数的书写形式"><a class="markdownIt-Anchor" href="#整型常数的书写形式">#</a> 整型常数的书写形式</h3>
+<ol>
+<li>十进制形式</li>
+<li>八进制形式： 以 0 开头，如 0100、0123、0123456</li>
+<li>十六进制形式：以 0x 开头，如 0x100、0x123</li>
+<li>整型数据的储存形式：在计算机内部通常采用补码形式储存</li>
+</ol>
+<h3 id="补码-后面再补充相应知识"><a class="markdownIt-Anchor" href="#补码-后面再补充相应知识">#</a> 补码 （ 后面再补充相应知识 ）</h3>
+<h3 id="浮点数类型"><a class="markdownIt-Anchor" href="#浮点数类型">#</a> 浮点数类型</h3>
+<p>C 语言把浮点数类型分为 float（单精度浮点型）、double（双精度浮点型）和 long double （长双精度浮点型）<br>
+如表所示</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>字节数</th>
+<th>有效位数</th>
+<th>取值范围</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>foat</td>
+<td>4</td>
+<td>6</td>
+<td>-3.4 * 10^38 ~ 3.4 * 10^38</td>
+</tr>
+<tr>
+<td>double</td>
+<td>8</td>
+<td>15</td>
+<td>-1.7 * 10^308 ~ 3.4 * 10^308</td>
+</tr>
+<tr>
+<td>long double</td>
+<td>16</td>
+<td>19</td>
+<td>-1.2 * 10^4932 ~ 3.4 * 10^4932</td>
+</tr>
+</tbody>
+</table>
+<h3 id="浮点数的书写形式"><a class="markdownIt-Anchor" href="#浮点数的书写形式">#</a> 浮点数的书写形式</h3>
+<ol>
+<li>当小数点前后的数是零时，可以省略 0，但是小数点不能省略如 5. 和.5 分别表示 5.0 和 0.5</li>
+<li>指数形式 ： 如 4.5678E2 代表 4.5678 * 10^2 \ -5.7e-3 代表 - 5.7 * 10^-3 （E 和 e 本质是一样的）</li>
+</ol>
+<p>默认情况下，浮点型常数为 double 型。可以在浮点型常数后面加上 F (f) 以表示 float 型；也可以在浮点型常数后面加上 L (l）表示 long double 型</p>
+<h3 id="字符类型"><a class="markdownIt-Anchor" href="#字符类型">#</a> 字符类型</h3>
+<p>ASCII 字符集的特征：0～9、26 个大写英文字母以及 26 哥消协的英文字母的编码各自是连续的<br>
+如：A 的编码加上 25 是 Z 的编码</p>
+<p>char 类型来描述单字节编码字符集中的字符类型数据<br>
+ C 还提供了 [signed] char 和 unsigned char 类型，他们的区别在于：在参加算术运算时，把字符的编码当作有符号整数还是无符号整数来看待</p>
+<h4 id="字符型常量的三种书写方式"><a class="markdownIt-Anchor" href="#字符型常量的三种书写方式">#</a> 字符型常量的三种书写方式：</h4>
+<ol>
+<li>以一对单引号括起来的一个字符：‘A’‘1’</li>
+<li>以字符对应的 ASCII 码来表示，这时必须用转义序列（以反斜杠开头的一串字符）</li>
+</ol>
+<ul>
+<li>八进制：’\ddd’如’101’为字母 A 的 ASCII 码的八进制表示</li>
+<li>十六进制：’\xhh’如’\x41’为字母 A 的 ASCII 码的十六进制表示</li>
+</ul>
+<ol start="3">
+<li>特殊的转移序列符号表示</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\a</td>
+<td>响铃</td>
+<td>\v</td>
+<td>纵向制表</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>退格</td>
+<td>’</td>
+<td>单引号</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页</td>
+<td>‘’</td>
+<td>双引号</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>换行</td>
+<td>\ | 反斜杠</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车</td>
+<td>\0</td>
+<td>字符串结束</td>
+</tr>
+<tr>
+<td>\t</td>
+<td colspan="2">横向制表</td>
+</tr>
+</tbody>
+</table>
+<p>“Please enter “Y” or “N”:<br>
+ 当字符串包含双引号 &quot; 时，双引号应写成：”<br>
+ 字符常量表示单个字符，字符串常量可表示多个字符<br>
+字符常量用’' 表示，字符串常量用 &quot;&quot; 表示<br>
+在储存字符串时，通常在最后一个字符后面储存一个表示字符串结束的标记符号</p>
+<p>两个实数相除的结果是双精度实数，两个整数相除的结果是整数</p>
+<h3 id="常用运算符的优先级与结合性"><a class="markdownIt-Anchor" href="#常用运算符的优先级与结合性">#</a> 常用运算符的优先级与结合性</h3>
+<p>自行百度</p>
+<h3 id="输入输出语句"><a class="markdownIt-Anchor" href="#输入输出语句">#</a> 输入输出语句</h3>
+<p>printf ( ) ; scanf ( ) ; getchar ( ) ; putchar ( ) ; puts ( ) ; gets ( ) ;</p>
+<h3 id="头文件"><a class="markdownIt-Anchor" href="#头文件">#</a> 头文件</h3>
+<p>/#include&lt; &gt; 表示直接去查找系统的源文件<br>
+ /#include&quot; &quot; 表示先去找用户存放源文件的子目录再去找系统文件<br>
+如果是自己写的头文件必须用第二种<br>
+如果头文件不在当前目录中，可以在双引号中写出文件路径 (#include “C:\temp\file.h”</p>
+<h3 id="scanf-与-printf"><a class="markdownIt-Anchor" href="#scanf-与-printf">#</a> scanf 与 printf</h3>
+<p>特别的，scanf (“%2d%2d” , &amp; a , &amp; b ) ; 输入的数据可以为 1234<br>
+ 则 a = 12 , b = 34 ；<br>
+如果 scanf (“a=% d,b=% d\n” , &amp; a , &amp; b ) ;<br>
+ 则用户必须输入 a=12,b=34 ;<br>
+ 如果是 scanf (“% d * % d” , &amp; a , &amp; b ) ;<br>
+ 那么用户输入 12，34｜12#34 都会得到正确的结果，因为 * 为忽略输入修饰符<br>
+ scanf 输入时如果是 % c 那么空格也会被读入</p>
+<h3 id="空语句"><a class="markdownIt-Anchor" href="#空语句">#</a> 空语句</h3>
+<p>空语句不做任何事情其作用是用于语法上需要一条语句的地方，而该地方又不需要做任何事情；例如</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    goto end ; </span><br><span class="line">    ...</span><br><span class="line">    end : ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int i = 1 , sum = 0 ; </span><br><span class="line">for ( ; i &lt;= 100 ; sum += i , i ++ ) ; </span><br></pre></td></tr></table></figure>
+<h3 id="switch-语句"><a class="markdownIt-Anchor" href="#switch-语句">#</a> switch 语句</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">switch( &lt;整式表达式&gt; ) &#123; </span><br><span class="line">    case 常量1: 语句序列1 ; break ; </span><br><span class="line">    case 常量2: 语句序列2 ; break ;</span><br><span class="line">    ...</span><br><span class="line">    default ; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常量可为 1、2、3；‘c’、‘a’…</p>
+<p>case 常量 1: 语句序列 1 ; break ;</p>
+
+      <div class="tags">
+          <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="tag"><i class="ic i-tag"></i> 学习笔记</a>
+          <a href="/tags/C%E8%AF%AD%E8%A8%80/" rel="tag"><i class="ic i-tag"></i> C语言</a>
+          <a href="/tags/%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/" rel="tag"><i class="ic i-tag"></i> 复习资料</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">Edited on</span>
+    <time title="Modified: 2023-11-14 09:50:35" itemprop="dateModified" datetime="2023-11-14T09:50:35+08:00">2023-11-14</time>
+  </span>
+  <span id="2021/09/19/c复习/" class="item leancloud_visitors" data-flag-title="c复习" title="Views">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">Views</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">times</span>
+  </span>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>Post author:  </strong>Amentiraz <i class="ic i-at"><em>@</em></i>Amentiraz
+  </li>
+  <li class="link">
+    <strong>Post link: </strong>
+    <a href="http://amentiraz.github.io/2021/09/19/c%E5%A4%8D%E4%B9%A0/" title="c复习">http://amentiraz.github.io/2021/09/19/c复习/</a>
+  </li>
+  <li class="license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aC1DTg=="><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/09/18/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gwsujy3yjgj31710u0q9x.jpg" title="层次分析法">
+  <span class="type">Previous Post</span>
+  <span class="category"><i class="ic i-flag"></i> 数学建模</span>
+  <h3>层次分析法</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/09/22/TOPSIS%E6%B3%95/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva1.sinaimg.cn&#x2F;large&#x2F;008i3skNly1gwsuvddw90j31hc0u0tep.jpg" title="TOPSIS法">
+  <span class="type">Next Post</span>
+  <span class="category"><i class="ic i-flag"></i> 数学建模</span>
+  <h3>TOPSIS法</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="Contents">
+          <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#c%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%9E%84%E6%88%90"><span class="toc-number">1.</span> <span class="toc-text"> c 程序的构成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E5%A4%84%E7%90%86%E9%83%A8%E5%88%86"><span class="toc-number">1.1.</span> <span class="toc-text"> 预处理部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E%E9%83%A8%E5%88%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 说明部分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text"> 执行部分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E8%AF%86%E7%AC%A6"><span class="toc-number">2.</span> <span class="toc-text"> 标识符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B%E6%95%B0%E6%8D%AE%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">3.</span> <span class="toc-text"> 整型数据的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B4%E5%9E%8B%E5%B8%B8%E6%95%B0%E7%9A%84%E4%B9%A6%E5%86%99%E5%BD%A2%E5%BC%8F"><span class="toc-number">4.</span> <span class="toc-text"> 整型常数的书写形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E7%A0%81-%E5%90%8E%E9%9D%A2%E5%86%8D%E8%A1%A5%E5%85%85%E7%9B%B8%E5%BA%94%E7%9F%A5%E8%AF%86"><span class="toc-number">5.</span> <span class="toc-text"> 补码 （ 后面再补充相应知识 ）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%B1%BB%E5%9E%8B"><span class="toc-number">6.</span> <span class="toc-text"> 浮点数类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%AE%E7%82%B9%E6%95%B0%E7%9A%84%E4%B9%A6%E5%86%99%E5%BD%A2%E5%BC%8F"><span class="toc-number">7.</span> <span class="toc-text"> 浮点数的书写形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">8.</span> <span class="toc-text"> 字符类型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E5%9E%8B%E5%B8%B8%E9%87%8F%E7%9A%84%E4%B8%89%E7%A7%8D%E4%B9%A6%E5%86%99%E6%96%B9%E5%BC%8F"><span class="toc-number">8.1.</span> <span class="toc-text"> 字符型常量的三种书写方式：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E8%BF%90%E7%AE%97%E7%AC%A6%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E4%B8%8E%E7%BB%93%E5%90%88%E6%80%A7"><span class="toc-number">9.</span> <span class="toc-text"> 常用运算符的优先级与结合性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E8%AF%AD%E5%8F%A5"><span class="toc-number">10.</span> <span class="toc-text"> 输入输出语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%96%87%E4%BB%B6"><span class="toc-number">11.</span> <span class="toc-text"> 头文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#scanf-%E4%B8%8E-printf"><span class="toc-number">12.</span> <span class="toc-text"> scanf 与 printf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E8%AF%AD%E5%8F%A5"><span class="toc-number">13.</span> <span class="toc-text"> 空语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch-%E8%AF%AD%E5%8F%A5"><span class="toc-number">14.</span> <span class="toc-text"> switch 语句</span></a></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="Related">
+        <ul>
+          <li class="active"><a href="/2021/09/19/c%E5%A4%8D%E4%B9%A0/" rel="bookmark" title="c复习">c复习</a></li><li><a href="/2021/11/04/%E6%8C%87%E9%92%88/" rel="bookmark" title="指针">指针</a></li><li><a href="/2021/11/22/%E7%BB%93%E6%9E%84/" rel="bookmark" title="结构">结构</a></li><li><a href="/2021/12/28/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="bookmark" title="文件学习笔记">文件学习笔记</a></li><li><a href="/2022/01/12/python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B01/" rel="bookmark" title="python学习笔记1">python学习笔记1</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="Overview">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="Amentiraz"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">Amentiraz</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">36</span>
+        <span class="name">posts</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">6</span>
+        <span class="name">categories</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">28</span>
+        <span class="name">tags</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL0FtZW50aXJheg==" title="https:&#x2F;&#x2F;github.com&#x2F;Amentiraz"><i class="ic i-github"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>Home</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/09/18/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95/" rel="prev" title="Previous Post"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/09/22/TOPSIS%E6%B3%95/" rel="next" title="Next Post"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>Random Posts</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/07/31/%E5%96%9C%E6%AC%A2%E7%9A%84%E6%AD%8C/" title="喜欢的歌">喜欢的歌</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/26/%E4%BD%A0%E6%80%BB%E8%83%BD%E6%AF%81%E7%81%AD%E4%B8%80%E5%88%87/" title="你总能毁灭一切">你总能毁灭一切</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="In 学习笔记">学习笔记</a>
+</div>
+
+    <span><a href="/2021/11/04/%E6%8C%87%E9%92%88/" title="指针">指针</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/04/07/%E4%BD%A0%E6%83%B3%E6%B4%BB%E5%87%BA%E6%80%8E%E6%A0%B7%E7%9A%84%E4%BA%BA%E7%94%9F/" title="你想活出怎样的人生">你想活出怎样的人生</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/15/%E8%A7%82%E9%83%91%E6%99%9F%E6%B2%B3%E6%BC%94%E5%A5%8F%E4%BC%9A%E6%9C%89%E6%84%9F/" title="观郑晟河演奏会有感">观郑晟河演奏会有感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/07/FLCL/" title="FLCL">FLCL</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/09/19/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/" title="《蓝色恐惧》观后感">《蓝色恐惧》观后感</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E7%94%9F%E6%B4%BB/" title="In 生活">生活</a>
+</div>
+
+    <span><a href="/2024/05/08/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《情爱现象学》读书笔记">《情爱现象学》读书笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E4%BB%A3%E7%A0%81/" title="In 代码">代码</a>
+</div>
+
+    <span><a href="/2024/06/03/P2P%E7%BE%A4%E8%81%8A%E7%B3%BB%E7%BB%9F/" title="P2P群聊系统">P2P群聊系统</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/" title="In 数学建模">数学建模</a>
+</div>
+
+    <span><a href="/2021/09/22/TOPSIS%E6%B3%95/" title="TOPSIS法">TOPSIS法</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>Recent Comments</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2024</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Amentiraz @ Lemon Sour</span>
+  </div>
+  <div class="powered-by">
+    Powered by <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/09/19/c复习/',
+    favicon: {
+      show: "（●´3｀●）Goooood",
+      hide: "(´Д｀)Booooom"
+    },
+    search : {
+      placeholder: "Search for Posts",
+      empty: "We didn't find any results for the search: ${query}",
+      stats: "${hits} results found in ${time} ms"
+    },
+    valine: true,fancybox: true,
+    copyright: 'Copied to clipboard successfully! <br> All articles in this blog are licensed under <i class="ic i-creative-commons"></i>BY-NC-SA.',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+
+
+</body>
+</html>
