@@ -10,16 +10,33 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 27 Sep 2024 11:04:05 +0800</pubDate>
-        <lastBuildDate>Fri, 27 Sep 2024 11:04:05 +0800</lastBuildDate>
+        <pubDate>Mon, 30 Sep 2024 10:31:57 +0800</pubDate>
+        <lastBuildDate>Mon, 30 Sep 2024 10:31:57 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/Cell-Review-What-is-a-cell-type-and-how-to-define-it/</guid>
+            <title>Cell_Review_What_is_a_cell_type_and_how_to_define_it</title>
+            <link>http://amentiraz.github.io/Cell-Review-What-is-a-cell-type-and-how-to-define-it/</link>
+            <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+            <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+            <pubDate>Mon, 30 Sep 2024 10:31:57 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;单词&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#单词&#34;&gt;#&lt;/a&gt; 单词&lt;/h1&gt;
+&lt;p&gt;这里面的专有名词太多了，会记录很多&lt;/p&gt;
+&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;单词表&lt;/summary&gt;&lt;div&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;h1 id=&#34;观点摘抄&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#观点摘抄&#34;&gt;#&lt;/a&gt; 观点摘抄&lt;/h1&gt;
+&lt;h1 id=&#34;内容概括&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内容概括&#34;&gt;#&lt;/a&gt; 内容概括&lt;/h1&gt;
+&lt;h1 id=&#34;我的思考&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#我的思考&#34;&gt;#&lt;/a&gt; 我的思考&lt;/h1&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://amentiraz.github.io/What-is-A-Cell-Type/</guid>
             <title>What_is_A_Cell_Type</title>
             <link>http://amentiraz.github.io/What-is-A-Cell-Type/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="论文" scheme="http://amentiraz.github.io/tags/%E8%AE%BA%E6%96%87/" />
             <category term="笔记" scheme="http://amentiraz.github.io/tags/%E7%AC%94%E8%AE%B0/" />
-            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <pubDate>Fri, 27 Sep 2024 11:04:05 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;从这篇开始我就正式接触科研了，对于每一篇文章都尽量做一个良好的学习。会针对分析、概括、思考、代码等等方便对文章进行学习。主要起到一个确保自己当下学懂和未来能够用到的作用。&lt;br&gt;
 不苛求形式，即使博客本身形式性就很强。我会尽量做到更新，或以博客记录，或者把自己的电子手写稿粘贴上来。如果对我的内容有疑问，欢迎批评与指正。&lt;/p&gt;
@@ -156,6 +173,15 @@
 &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet1.png&#34; alt&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet2.png&#34; alt&gt;&lt;br&gt;
 &lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet3.png&#34; alt&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;/details&gt;
+&lt;details&gt;&lt;summary&gt;《Like a Star》金永所&lt;/summary&gt;&lt;div&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star1.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star2.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star3.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star4.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star5.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star6.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star7.jpg&#34; alt&gt;&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
  ]]></description>
         </item>
@@ -1334,157 +1360,6 @@ x not in y&lt;br&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
 &lt;/blockquote&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</guid>
-            <title>文件学习笔记</title>
-            <link>http://amentiraz.github.io/%E6%96%87%E4%BB%B6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</link>
-            <category term="学习笔记" scheme="http://amentiraz.github.io/categories/note/" />
-            <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
-            <category term="C语言" scheme="http://amentiraz.github.io/tags/C%E8%AF%AD%E8%A8%80/" />
-            <pubDate>Tue, 28 Dec 2021 09:46:28 +0800</pubDate>
-            <description><![CDATA[ &lt;h3 id=&#34;文件是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件是什么&#34;&gt;#&lt;/a&gt; 文件是什么&lt;/h3&gt;
-&lt;p&gt;文件是指一组相关数据的有序集合，这个数据集有一个名称叫做文件名。文件可以是自己编制的，也可以是系统已有的。事实上我们已经多次使用了文件，例如源程序文件，目标文件、可执行文件、库文件等。&lt;br&gt;
-为了将结果保存起来，就需要使用文件。将数据以文件的形式存放在光盘、磁盘等外存储器上，可以达到重复利用、永久保存数据的目的。文件可分为普通文件和设备文件两种。通常吧显示器定义为标准输出文件，一般情况下在屏幕上显示有关信息就是向标准输出文件输出。如前面经常使用的 printf、putchar 函数就是这类输出。键盘通常被指定标准的输入文件，从键盘上输入意味着以标准输入文件输入数据。scanf、getchar 函数就属于这类输入。&lt;/p&gt;
-&lt;h3 id=&#34;文件类型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件类型&#34;&gt;#&lt;/a&gt; 文件类型&lt;/h3&gt;
-&lt;p&gt;文件可分为 ASCII 码文件和二进制文件两种。ASCII 文件也成为文本文件，这种文件在磁盘中存放时每个字符对应一个字节，用于存放对应的 ASCII 码。&lt;br&gt;
-例如数 6843 的存储形式为：&lt;br&gt;
-ASCII 码：00110110 00111000 00110100 00110011&lt;br&gt;
- 十进制码：  6         8        4        3&lt;br&gt;
- 共占用四个字节。&lt;br&gt;
-ASCII 码文件可在屏幕上按字符显示，例如源程序文件就是 ASCII 文件，用 DOS 命令 TYPE 可显示文件的内容。&lt;br&gt;
-二进制文件是按二进制编码的方式来存放文件的。例如，数 6843 的存储形式为：00011010 10111011&lt;br&gt;
- 只占两个字节。二进制文件也可以在屏幕中显示，但内容无法读懂。&lt;br&gt;
-输入输出字符流的开始和结束只由程序控制而不受物理符号（如回车符）的控制。因此也把这种文件称作流式文件。&lt;/p&gt;
-&lt;h3 id=&#34;文件指针&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件指针&#34;&gt;#&lt;/a&gt; 文件指针&lt;/h3&gt;
-&lt;p&gt;在 C 语言中用一个指针变量指向一个文件，这个指针被称为文件指针，通过文件指针可以对它所指的文件进行各种操作。存放文件的有关信息被保存在一个结构体变量中，它是由系统定义的，取名为 FILE。在编写源程序时不必关心 FILE 结构的细节。例如：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * 指针变量标识符&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其中 FILE 必须为大写，该结构中含有文件名、文件状态和文件当前位置等信息。&lt;br&gt;
-注意：在操作系统中，文件被作为重要的系统资源来看待。因此，当程序需要访问文件时，程序员必须显式地打开某个文件，并在使用后关闭它。程序中所有对文件的操作都通过文件指针来实现。&lt;/p&gt;
-&lt;h3 id=&#34;文件打开操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件打开操作&#34;&gt;#&lt;/a&gt; 文件打开操作&lt;/h3&gt;
-&lt;p&gt;C 语言没有输入输出语句，对文件的读写都是用看库函数来实现的。&lt;br&gt;
-对文件进行操作时应遵循一下步骤：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;打开文件。打开文件是指请求系统为指定文件分配内存缓冲区，建立文件的各种有关信息，文件使用前必须先打开。&lt;/li&gt;
-&lt;li&gt;读写文件。包括文件的读、写、定位等操作。&lt;/li&gt;
-&lt;li&gt;关闭文件。确保数据完整写入文件并释放内存缓冲区。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;打开文件，实际上是建立文件的各种有关信息，并使文件指针指向该文件。关闭文件则是断开指针与文件之间的联系，也就是禁止再对该文件操作。&lt;br&gt;
-fopen 函数用来打开一个文件，其调用的一般形式为：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;文件指针名 = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( 文件名 , 使用文件方式 ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;文件指针名必须是被说明为 FILE 类型的指针变量；文件名使被打开文件的文件名，可以是字符串常量或字符串数组；使用文件方式是指文件类型和操作要求。&lt;br&gt;
-例如：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = ( &lt;span class=&#34;string&#34;&gt;&amp;quot;file a&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;r&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其意义使在当前目录下打开文件 file a，只允许进行读入操作，并使 fp 指向该文件。&lt;br&gt;
-又如：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = ( &lt;span class=&#34;string&#34;&gt;&amp;quot;c:\\test&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;rb&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;其意义是打开 C 驱动磁盘的根目录下的文件 test，这是一个二进制文件，只允许按二进制的方式进行读操作。两个反斜杠 &amp;quot;\&amp;quot; 第一个表示转义字符，第二个表示根目录。&lt;br&gt;
-或者使用：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;FILE * &lt;span class=&#34;title&#34;&gt;fopen&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * filename , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * mode )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;返回失败时返回空指针 NULL&lt;br&gt;
- 使用文件的方式共有 12 种，下表给出其符号以及意义。&lt;/p&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;文件使用方式&lt;/th&gt;
-&lt;th style=&#34;text-align:center&#34;&gt;意义&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;r&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;打开文件，只读&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;w&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;打开或建立文件只写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;a&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;追加打开一个文本文件，并在文件末尾写数据&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;rb&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;wb&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;ab&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;二进制文件，同上&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;r+&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;w+&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;a+&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;读 + 写&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;rb+&amp;amp;wb+&amp;amp;ab+&lt;/td&gt;
-&lt;td style=&#34;text-align:center&#34;&gt;类推&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;总结如下：r (ead) , w (rite) , a (ppend) , t (ext) , b (inary) 。+：读和写&lt;br&gt;
-查看是否成功读入&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; ( ( fp = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;rb&amp;quot;&lt;/span&gt; ) ) == &lt;span class=&#34;literal&#34;&gt;NULL&lt;/span&gt;  ) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    cout &amp;lt;&amp;lt; &lt;span class=&#34;string&#34;&gt;&amp;quot;error&amp;quot;&lt;/span&gt; ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;built_in&#34;&gt;getch&lt;/span&gt; ( ) ; &lt;span class=&#34;built_in&#34;&gt;exit&lt;/span&gt; ( &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;文件关闭操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件关闭操作&#34;&gt;#&lt;/a&gt; 文件关闭操作&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;FILE * fp ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;fp = &lt;span class=&#34;built_in&#34;&gt;fopen&lt;/span&gt; ( &lt;span class=&#34;string&#34;&gt;&amp;quot;a.out&amp;quot;&lt;/span&gt; , &lt;span class=&#34;string&#34;&gt;&amp;quot;r&amp;quot;&lt;/span&gt; ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fclose&lt;/span&gt; ( fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;关闭成功返回值为 0，否则为非零值&lt;br&gt;
-如果打开了多个文件且需要统一关闭：&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fcloseall&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;此函数关闭除了标准流意外的所有打开流，刷新所有的流缓冲区，并关闭返回的参数，否则返回 EOF。&lt;br&gt;
-标准流：stdin，stdout，stderr&lt;/p&gt;
-&lt;h3 id=&#34;文件结束检测&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件结束检测&#34;&gt;#&lt;/a&gt; 文件结束检测&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;feof&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FLIE * fp )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;文件未结束返回 0，已结束返回真。&lt;/p&gt;
-&lt;h3 id=&#34;文件错误检测函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文件错误检测函数&#34;&gt;#&lt;/a&gt; 文件错误检测函数&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;ferror&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * fp )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;发生错误返回非零，否则返回 0&lt;/p&gt;
-&lt;h3 id=&#34;定位文件位置指针函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#定位文件位置指针函数&#34;&gt;#&lt;/a&gt; 定位文件位置指针函数&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fseek&lt;/span&gt; ( FILE * fp , &lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; offset , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; startpos ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;offset 表示目标位置相对起始点的偏移量，要求偏移量为 long 型数据以便在文件长度大于 64KB 时不会出错，当用常量表示位移量时，要求加后缀 L.&lt;br&gt;
-startpos 表示从何处计算偏移量：SEEK_SET:0 , SEEK_CUR:1 , SEEK_END:2 ;&lt;br&gt;
-fseek 函数一般用于二进制文件，在文本文件中由于要进行转换，故往往会出现错误。&lt;/p&gt;
-&lt;h3 id=&#34;重置文件位置指针函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#重置文件位置指针函数&#34;&gt;#&lt;/a&gt; 重置文件位置指针函数&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;rewind&lt;/span&gt; ( FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;移动到文件开始的位置。&lt;br&gt;
-无返回值&lt;/p&gt;
-&lt;h3 id=&#34;移动指针到当前位置函数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#移动指针到当前位置函数&#34;&gt;#&lt;/a&gt; 移动指针到当前位置函数&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;long&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;ftell&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * p )&lt;/span&gt; &lt;/span&gt;;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;若函数调用成功则函数的返回值时当前读写位置偏离文件头部的字节数，否则返回 - 1 ；&lt;br&gt;
-文件的长度&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;ftell&lt;/span&gt; ( fp , &lt;span class=&#34;number&#34;&gt;0L&lt;/span&gt; , SEEK_END ) ;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;len = &lt;span class=&#34;built_in&#34;&gt;ftell&lt;/span&gt; ( fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;面向字符的文件读写操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向字符的文件读写操作&#34;&gt;#&lt;/a&gt; 面向字符的文件读写操作&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fputc&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; c , FILE * stream ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;c 是带写入的字符，可以是字符常量或者变量。&lt;br&gt;
-每写入一个字符，文件内部位置指针将向后移动一个字节。返回值为字符或者 EOF。&lt;br&gt;
-如果用写或者读写方式打开一个已存在的文件时将清除原有的文件内容，写入字符从文件首开始，如需保留原有文件内容，必须以追加的方式打开文件。&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ch = &lt;span class=&#34;built_in&#34;&gt;fgetc&lt;/span&gt; ( FILE * stream ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;读取的文件必须是以读写或读的方式打开的。&lt;/p&gt;
-&lt;h3 id=&#34;面向字符串的文件读写操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向字符串的文件读写操作&#34;&gt;#&lt;/a&gt; 面向字符串的文件读写操作&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * &lt;span class=&#34;title&#34;&gt;fgets&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * string , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; n , FILE * stream )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;函数的功能是从 stream 指向的文件中逐一读取 n-1 个字符，并将读取的字符保存到 string 指向的连续存储空间。&lt;br&gt;
-在读取 n-1 个字符之前如果遇到了换行符或 EOF，则读取结束。&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fputs&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * string , FILE * stream )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;执行成功返回非负整数，否则返回 EOF。不会把 \0 写入文件。&lt;/p&gt;
-&lt;h3 id=&#34;面向格式化输入输出的文件读写操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向格式化输入输出的文件读写操作&#34;&gt;#&lt;/a&gt; 面向格式化输入输出的文件读写操作&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fscanf&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * stream , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * format[,argument]...)&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;返回值为读取正确的数据个数， EOF 为读取错误或文件结束。&lt;/p&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;function&#34;&gt;&lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;title&#34;&gt;fprintf&lt;/span&gt; &lt;span class=&#34;params&#34;&gt;( FILE * stream , &lt;span class=&#34;type&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;type&#34;&gt;char&lt;/span&gt; * format[,argument]... )&lt;/span&gt; &lt;/span&gt;; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;返回值为正确写入返回数据的个数，负值为读写错误。&lt;/p&gt;
-&lt;h3 id=&#34;面向信息块的文件读写操作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向信息块的文件读写操作&#34;&gt;#&lt;/a&gt; 面向信息块的文件读写操作&lt;/h3&gt;
-&lt;figure class=&#34;highlight cpp&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fread&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; * buffer , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; size , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; count , FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;fwrite&lt;/span&gt; ( &lt;span class=&#34;type&#34;&gt;void&lt;/span&gt; * buffer , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; size , &lt;span class=&#34;type&#34;&gt;int&lt;/span&gt; count , FILE * fp ) ; &lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;例如：fread (fa , 4 , 5 , fp) ; 的意义是从 fp 所指的文件中，每次读 4 个字节，送入实数数组 fa 中，连续读 5 次。&lt;/p&gt;
  ]]></description>
         </item>
     </channel>
