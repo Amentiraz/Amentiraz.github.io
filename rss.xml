@@ -75,7 +75,7 @@ C 指型&lt;br&gt;
             <guid isPermalink="true">http://amentiraz.github.io/Cell-Review-What-is-a-cell-type-and-how-to-define-it/</guid>
             <title>Cell_Review_What_is_a_cell_type_and_how_to_define_it</title>
             <link>http://amentiraz.github.io/Cell-Review-What-is-a-cell-type-and-how-to-define-it/</link>
-            <category term="论文" scheme="http://amentiraz.github.io/categories/%E8%AE%BA%E6%96%87/" />
+            <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
             <pubDate>Mon, 30 Sep 2024 10:31:57 +0800</pubDate>
@@ -639,7 +639,8 @@ Boosting：弱学习器提升为强学习器&lt;br&gt;
             <guid isPermalink="true">http://amentiraz.github.io/%E7%8E%B0%E8%B1%A1%E5%AD%A6%E5%AF%BC%E8%AE%BA%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
             <title>现象学导论读书笔记</title>
             <link>http://amentiraz.github.io/%E7%8E%B0%E8%B1%A1%E5%AD%A6%E5%AF%BC%E8%AE%BA%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-            <category term="读书笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
             <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
             <pubDate>Mon, 16 Sep 2024 09:47:39 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;《现象学导论》读书笔记&lt;br&gt;
@@ -1050,7 +1051,8 @@ mvn exec:java -Dexec.mainClass=&amp;quot;Publisher&amp;quot; -Dexec.args=&amp;qu
             <guid isPermalink="true">http://amentiraz.github.io/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
             <title>《情爱现象学》读书笔记</title>
             <link>http://amentiraz.github.io/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
-            <category term="读书笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
             <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
             <pubDate>Wed, 08 May 2024 16:57:36 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;本书从爱出发，将爱与存在的理论相结合，在阅读此书前已对大致内容有所了解，自认为能够解决目前我所遇到的精神危机，特此做笔记摘录并留下自己些许思考。&lt;br&gt;
@@ -1181,6 +1183,7 @@ ps：这一段很难懂，我将在后面写入我的理解与思考。&lt;/p&gt
             <title>FLCL</title>
             <link>http://amentiraz.github.io/FLCL/</link>
             <category term="鉴赏类" scheme="http://amentiraz.github.io/categories/comment/" />
+            <category term="动画" scheme="http://amentiraz.github.io/categories/comment/%E5%8A%A8%E7%94%BB/" />
             <category term="书评" scheme="http://amentiraz.github.io/tags/%E4%B9%A6%E8%AF%84/" />
             <pubDate>Tue, 07 May 2024 17:02:12 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;FLCL（特别的她），四刷纪念文。&lt;/p&gt;

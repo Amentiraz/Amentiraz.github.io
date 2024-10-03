@@ -333,7 +333,7 @@ C 指型&lt;br&gt;
 &lt;h1 id=&#34;思考&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#思考&#34;&gt;#&lt;/a&gt; 思考&lt;/h1&gt;
 &lt;p&gt;原本我认为区分细胞是区分人类中的职业，现在我才发现这玩意怕不是类似于区分动植物界的种族。有点抽象。&lt;/p&gt;
 </content>
-        <category term="论文" scheme="http://amentiraz.github.io/categories/%E8%AE%BA%E6%96%87/" />
+        <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
         <updated>2024-09-30T02:31:57.000Z</updated>
@@ -644,7 +644,8 @@ Boosting：弱学习器提升为强学习器&lt;br&gt;
 &lt;img data-src=&#34;3.jpg&#34; alt&gt;&lt;br&gt;
 &lt;img data-src=&#34;4.jpg&#34; alt&gt;&lt;/p&gt;
 </content>
-        <category term="读书笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
         <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
         <updated>2024-09-16T01:47:39.000Z</updated>
     </entry>
@@ -1169,7 +1170,8 @@ ps：这一段很难懂，我将在后面写入我的理解与思考。&lt;/p&gt
 &lt;p&gt;我们可以合法地指责它们（形而上学），指责它们通过忽视或无视唯一关乎我的确定性即自我的确定性，从来瞄准的只是一种第二性的、派生的、不相干的，而且最终为毫无价值的确定性。&lt;/p&gt;
 &lt;/blockquote&gt;
 </content>
-        <category term="读书笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
         <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
         <updated>2024-05-08T08:57:36.000Z</updated>
     </entry>
@@ -1192,6 +1194,7 @@ ps：这一段很难懂，我将在后面写入我的理解与思考。&lt;/p&gt
 前几天又面临情感上的困惑，强烈而沉重的情感摧毁了我积极生活的欲望，躺着又有什么不好呢。在看 FLCL 之前其实前面的问题已经解决的差不多了，我仍然缺乏激情，但我已经打算重拾生活了，所以我是把 FLCL 当作生活的启动器的&lt;/p&gt;
 </content>
         <category term="鉴赏类" scheme="http://amentiraz.github.io/categories/comment/" />
+        <category term="动画" scheme="http://amentiraz.github.io/categories/comment/%E5%8A%A8%E7%94%BB/" />
         <category term="书评" scheme="http://amentiraz.github.io/tags/%E4%B9%A6%E8%AF%84/" />
         <updated>2024-05-07T09:02:12.000Z</updated>
     </entry>
