@@ -77,13 +77,13 @@ COM: the completeness score&lt;/p&gt;
 &lt;/div&gt;&lt;/details&gt;
 &lt;h1 id=&#34;文章概括&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#文章概括&#34;&gt;#&lt;/a&gt; 文章概括&lt;/h1&gt;
 &lt;p&gt;这篇文章就不摘要观点了，基本都是思路和算法，后面会详尽的列出算法和实现的 python 代码，大致是实现 SpaGCN (HE) 的代码&lt;br&gt;
-这篇文章主要是针对 13 种对于在 34 个 SRT (spatially resolved transcriptomics) 的数据的计算方法做了 benchmark study，并针对 accuracy,sptial continuity,marker genes detection,scalability,and robustness 做了评估。针对各个方法的特点提出了自己的选择建议。并在最后提出了自己针对大规模数据的 Method。&lt;br&gt;
-figure1&lt;br&gt;
- 实验发现没有一种方法是适用于所有的数据的&lt;br&gt;
-&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NkbWJlbmNoLmRyYWkuY24v&#34;&gt;选择方法和数据的网站&lt;/span&gt;&lt;br&gt;
-接着作者检测了现有方法的局限性，利用的数据是 (additional 22 data containing small and non continuous tissue domains, and during multislice analysis on another large-scale dataset containing 31 tissue slices)&lt;br&gt;
- 作者提出解决局限性的策略是 &#39;divide and conquer&#39; strategy&lt;br&gt;
- 最后，作者检测了鲁棒性和其它因素 (gene expression matrix sparsity, spatial resolution, the number of genes and the level of noise)， 也检测了 pre- and postpocessing steps on diffenrent methods&#39; performance.&lt;/p&gt;
+这篇文章主要是针对 13 种对于在 34 个 SRT (spatially resolved transcriptomics) 的数据的计算方法做了 benchmark study，并针对 accuracy,sptial continuity,marker genes detection,scalability,and robustness 做了评估。针对各个方法的特点提出了自己的选择建议。并在最后提出了自己针对大规模数据的 Method。&lt;/p&gt;
+&lt;p&gt;figure1&lt;/p&gt;
+&lt;p&gt;实验发现没有一种方法是适用于所有的数据的&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3NkbWJlbmNoLmRyYWkuY24v&#34;&gt;选择方法和数据的网站&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;接着作者检测了现有方法的局限性，利用的数据是 (additional 22 data containing small and non continuous tissue domains, and during multislice analysis on another large-scale dataset containing 31 tissue slices)&lt;br&gt;
+ 作者提出解决局限性的策略是 &#39;divide and conquer&#39; strategy&lt;/p&gt;
+&lt;p&gt;最后，作者检测了鲁棒性和其它因素 (gene expression matrix sparsity, spatial resolution, the number of genes and the level of noise)， 也检测了 pre- and postpocessing steps on diffenrent methods&#39; performance.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;As these data(10x Visium, stereo-Seq, BaristaSeq, MERFISH, osmFISH, STARmap and STARmap*) were pproduced using distinct spatial technologies, they exhibit different data characteristics and collectively span a wide range of potential spatiial transcriptomics data types, which allows users of different spatial technologies to benefit from study&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -249,6 +249,156 @@ All methods encountered time and/or memory issues when applied to the dataset&lt
 &lt;li&gt;&lt;strong&gt;可扩展性&lt;/strong&gt;：运行时间和内存占用是衡量方法可扩展性的重要指标，尤其是在大规模数据集上。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;数据集选择&lt;/strong&gt;：优先选择带有可靠 “ground truth” 的数据集。如果没有可靠的真实数据集，模拟数据可作为替代品。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;method&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#method&#34;&gt;#&lt;/a&gt; Method&lt;/h2&gt;
+&lt;p&gt;we adopted two approaches based on the capabili- ties of the methods.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;For algorithms where we could directly input the expected number of spatial domains (for example, SpaGCN and BayesSpace), we set the parameter to the actual number of domains obtained from our ground truth.&lt;/li&gt;
+&lt;li&gt;For those algorithms that could only accept clustering resolution, we searched the resolution that best matches the expected number of spatial domains.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;空间聚类方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#空间聚类方法&#34;&gt;#&lt;/a&gt; 空间聚类方法：&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Louvain&lt;/strong&gt;：一种非空间聚类算法，基于模块度优化，通过反复合并和分割社区来分配每个点，直到得到期望的聚类结果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Leiden&lt;/strong&gt;：类似于 Louvain 的非空间聚类算法，但进一步改进，可以通过合并相似社区来增强聚类效果。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SpaGCN&lt;/strong&gt;：利用图卷积网络（GCN）将基因表达、空间位置和组织学信息整合起来，通过无监督的迭代聚类划分空间域。用于无图像数据的情况。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SpaGCN(HE)&lt;/strong&gt;：类似于 SpaGCN，但适用于有 H&amp;amp;E 组织学图像的数据，通过将 RGB 值转换为 3D 坐标以计算空间点之间的欧几里得距离。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BayesSpace&lt;/strong&gt;：贝叶斯统计方法，利用基因表达矩阵的低维表示进行空间聚类，通过空间先验鼓励相邻点属于同一簇。适用于 “spot” 形式的空间数据。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;stLearn&lt;/strong&gt;：基于空间形态学基因表达（SME）归一化数据进行无监督聚类，将相似点归为同一簇，并利用空间信息识别组织内的子类群。需要组织学图像作为输入。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SEDR&lt;/strong&gt;：使用深度自编码器构建基因表达数据的低维表示，然后与空间信息结合，通过变分图自编码器进行同时的空间嵌入和聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;CCST&lt;/strong&gt;：将细胞位置和基因表达信息编码为邻接矩阵和基因表达矩阵，通过深度图信息最大化网络获取包含空间和基因表达信息的节点嵌入，并通过主成分分析（PCA）和 k-means++ 进行聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SCAN-IT&lt;/strong&gt;：使用图像分割方法处理空间聚类问题，将细胞视为图像中的像素，基因表达视为类似 RGB 通道的数据，构建几何感知的空间邻接图，利用深度图信息最大化生成低维嵌入进行聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;STAGATE&lt;/strong&gt;：将空间位置信息转化为空间邻居网络，并结合基因表达信息，通过图注意力自编码网络生成低维嵌入，用于空间聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SpaceFlow&lt;/strong&gt;：利用深度图神经网络（GNN）将基因表达相似性和空间信息融合，通过空间正则化生成空间一致的低维嵌入，用于聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;conST&lt;/strong&gt;：基于对比学习方法，整合多模态的空间转录组学（SRT）数据（如基因表达、空间信息和形态学），通过数据增强和三层对比学习生成低维嵌入进行聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BASS&lt;/strong&gt;：一种多尺度、多样本的空间转录组学数据分析方法，采用贝叶斯分层建模框架进行聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;GraphST&lt;/strong&gt;：通过图自监督对比学习模型进行空间聚类，结合 GNN 和自监督学习，学习空间转录组数据中的基因表达和空间位置信息嵌入，用于聚类。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这些方法都致力于结合空间位置信息和基因表达数据，通过不同的模型和算法来提高空间聚类效果。&lt;/p&gt;
+&lt;h3 id=&#34;simulated-data&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#simulated-data&#34;&gt;#&lt;/a&gt; Simulated data&lt;/h3&gt;
+&lt;p&gt;分别考察了不同的 spatial resolutions\expression matrix sparsity\gene subsampling rate\various levels of noise, 使用了不同的方法&lt;/p&gt;
+&lt;h3 id=&#34;benchmark-metrics&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#benchmark-metrics&#34;&gt;#&lt;/a&gt; Benchmark metrics&lt;/h3&gt;
+&lt;h4 id=&#34;nmi&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nmi&#34;&gt;#&lt;/a&gt; NMI&lt;/h4&gt;
+&lt;p&gt;衡量两个聚类之间的相似性，NMI 属于 0-1 之间，越接近 1 说明越相似。&lt;br&gt;
+衡量的是从一个聚类结果预测另一个聚类结果所需的额外信息量&lt;br&gt;
+适用于类别数量不一致的聚类结果评估&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Suppose P is the spatial domain clustering result, T is the ground truth clustering label, their entropies are H(P) and H(T) , respectively, and the mutual information is MI(P,T), then NMI is computed as:&lt;/p&gt;
+&lt;/blockquote&gt;
+\begin{align*}
+  NMI = \frac{MI(P,T)}{\sqrt{H(P)H(T)}}
+\end{align*}
+&lt;h4 id=&#34;ari&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#ari&#34;&gt;#&lt;/a&gt; ARI&lt;/h4&gt;
+&lt;p&gt;比较两个聚类结果种每一对数据点的划分是否一致&lt;br&gt;
+适合在类别数量一致的情况下评估两个聚类结果&lt;br&gt;
+ ARI is computed as:&lt;/p&gt;
+\begin{align*}
+  &amp; ARI =  \frac{TP+TN-E}{TP+TN+FP+FN-E} \\
+  &amp; where: \\
+  &amp; E = \frac{(TP+FP)\times(TP)+(FN+TN)\times(FP+TN)}{TP+TN+FP+FN}
+\end{align*}
+&lt;h4 id=&#34;homhomogeneity-score&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#homhomogeneity-score&#34;&gt;#&lt;/a&gt; HOM（Homogeneity Score）：&lt;/h4&gt;
+&lt;p&gt;衡量聚类结果与已知真实标签相比的同质性。如果一个聚类的每个簇只包含属于同一类别的数据点，则聚类是同质的。HOM 得分范围为 0 到 1，1 表示完全同质。&lt;/p&gt;
+&lt;h4 id=&#34;comcompleteness-score&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#comcompleteness-score&#34;&gt;#&lt;/a&gt; COM（Completeness Score）：&lt;/h4&gt;
+&lt;p&gt;评估聚类结果相对于真实标签的完整性。如果属于同一类别的所有数据点都被正确分配到同一簇，则聚类是完整的。COM 得分范围为 0 到 1，1 表示完全完整。&lt;/p&gt;
+&lt;h4 id=&#34;chaos&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#chaos&#34;&gt;#&lt;/a&gt; CHAOS&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;CHAOS（Continuity Assessment for High-throughput Open Science）&lt;/strong&gt;：用于评估质谱成像和空间转录组学领域中空间连续性的指标。CHAOS 得分越低，表示空间域识别的连续性结果越好。计算过程包括以下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;构建每个数据的 1 - 最近邻（1-NN）图，每个细胞与在物理空间中具有最小欧几里得距离的其他细胞连接。&lt;/li&gt;
+&lt;li&gt;定义连接的权重 \( w_{kij} \)：如果细胞 \( i \) 和细胞 \( j \) 在簇 \( k \) 中相连，则 \( w_{kij} = d_{ij} \)（它们之间的欧几里得距离），否则为 0。&lt;/li&gt;
+&lt;li&gt;CHAOS 得分计算公式为：\begin{align*}
+CHAOS = \sum_{k=1}^{K} \sum_{i=1}^{n_k} w_{kij}
+\end{align*}
+其中 \( n_k \) 是簇 \( k \) 中的细胞数量，\( n \) 是数据中的总细胞数，\( K \) 是唯一空间域的数量。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;paspercentage-of-area-shared&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#paspercentage-of-area-shared&#34;&gt;#&lt;/a&gt; PAS（Percentage of Area Shared）：&lt;/h4&gt;
+&lt;p&gt;用于量化空间转录组学中空间域识别算法的空间同质性指标。较低的 PAS 分数表示检测到的空间域的连续性更好，期望在空间域内细胞的同质性更高。PAS 分数的计算方式是：具有不同空间域标签的细胞占其邻近十个细胞中至少六个的百分比。&lt;/p&gt;
+&lt;h4 id=&#34;aswaverage-silhouette-width&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#aswaverage-silhouette-width&#34;&gt;#&lt;/a&gt; ASW（Average Silhouette Width）：&lt;/h4&gt;
+&lt;p&gt;最初用于评估聚类标签与嵌入（或距离矩阵）之间一致性的指标。ASW 被扩展用于评估预测空间域相对于物理空间的空间一致性。ASW 的值范围为 - 1 到 1（通常重标定到 0-1），ASW 值越接近 1，性能越好。ASW 的计算需要先定义&lt;strong&gt;轮廓宽度（Silhouette Width，SW）&lt;/strong&gt;，SW 的计算方式如下：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;SW 的定义&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;设 \( a \) 为细胞与同一空间域内所有其他细胞的平均距离。&lt;/li&gt;
+&lt;li&gt;设 \( b \) 为细胞与下一个最近聚类中所有其他细胞的平均距离。&lt;/li&gt;
+&lt;li&gt;则细胞的 SW 计算公式为：&lt;/li&gt;
+&lt;/ul&gt;
+\begin{align*}
+SW = \frac{b - a}{\max(a, b)}
+\end{align*}
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;ASW 的计算&lt;/strong&gt;：ASW 通过对所有细胞的 SW 值取平均来获得。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;morans-i&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#morans-i&#34;&gt;#&lt;/a&gt; Moran&#39;s I&lt;/h4&gt;
+&lt;p&gt;是一种用于量化空间自相关程度的指标，广泛应用于空间统计学，尤其是在空间组学领域评估检测到的 SVG（空间变异基因）是否表现出有序的空间表达模式。Moran&#39;s I 的值范围为 - 1 到 1：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;接近 1&lt;/strong&gt;：表示存在明显的空间基因表达模式，说明相似的基因表达值在空间上是聚集的。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接近 0&lt;/strong&gt;：表示随机的空间基因表达模式，说明基因表达在空间上没有显著的规律性。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;接近 - 1&lt;/strong&gt;：表示基因表达模式呈现出棋盘状的分布，即相似和不同的表达值交替分布。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;在计算 Moran&#39;s I 时，假设有两个细胞 \(x_i\) 和 \(x_j\) 的基因表达值，\(\bar{x}\) 是该基因的平均表达值，\(N\) 是细胞的总数。Moran&#39;s I 的计算公式为：&lt;/p&gt;
+\begin{align*}
+&amp; Moran&#39;s \ I = \frac{N}{W} \cdot \frac{\sum_{i=1}^{N} \sum_{j=1}^{N} w_{ij} (x_i - \bar{x})(x_j - \bar{x})}{\sum_{i=1}^{N} (x_i - \bar{x})^2} \\ 
+&amp; where \\
+&amp; w_{ij} = 
+\begin{cases}
+  1,&amp; \text{ifi and j are spatial neighbors} \\ 
+  0,&amp; \text{else}
+\end{cases} \\
+&amp; where \\ 
+&amp; W = \sum_{i,j}{} w_{ij}
+\end{align*}
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\(W\) 是所有权重 \(w_{ij}\) 的总和，通常表示细胞之间的空间权重。&lt;/li&gt;
+&lt;li&gt;\(w_{ij}\) 是细胞 \(i\) 和细胞 \(j\) 之间的空间权重，反映它们在空间上的关系（例如，距离或邻接关系）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;gearys-c&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#gearys-c&#34;&gt;#&lt;/a&gt; Geary&#39;s C&lt;/h4&gt;
+&lt;p&gt;是一种用于量化空间自相关程度的指标，类似于 &lt;strong&gt;Moran&#39;s I&lt;/strong&gt;，但它的计算方式和数值范围有所不同。以下是 Geary&#39;s C 的主要特点和计算方法：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;比较&lt;/strong&gt;：Geary&#39;s C 和 Moran&#39;s I 都用于分析空间自相关，但 Geary&#39;s C 更加关注相邻细胞之间的差异性，而 Moran&#39;s I 更加关注整体的聚集性。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;计算方法&lt;/p&gt;
+&lt;p&gt;在计算 Geary&#39;s C 时，假设使用与 Moran&#39;s I 相同的符号表示，计算公式为：&lt;/p&gt;
+\begin{align*}
+&amp; Geary&#39;s \ C = \frac{N \cdot \sum_{i=1}^{N} \sum_{j=1}^{N} w_{ij} (x_i - x_j)^2}{2W \cdot \sum_{i=1}^{N} (x_i - \bar{x})^2}
+\end{align*}
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;\(N\) 是细胞的总数。&lt;/li&gt;
+&lt;li&gt;\(w_{ij}\) 是细胞 \(i\) 和细胞 \(j\) 之间的空间权重（通常基于距离或邻接关系）。&lt;/li&gt;
+&lt;li&gt;\(x_i\) 和 \(x_j\) 是细胞 \(i\) 和细胞 \(j\) 的基因表达值。&lt;/li&gt;
+&lt;li&gt;\(\bar{x}\) 是该基因的平均表达值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;代码实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#代码实现&#34;&gt;#&lt;/a&gt; 代码实现&lt;/h2&gt;
 </content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
