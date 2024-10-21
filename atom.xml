@@ -8,7 +8,23 @@
     <author>
       <name>Amentiraz</name>
     </author>
-    <updated>2024-10-08T23:56:19.000Z</updated>
+    <updated>2024-10-21T07:25:44.000Z</updated>
+    <entry>
+        <id>http://amentiraz.github.io/%E8%AE%BA%E6%96%87ppt1/</id>
+        <title>论文ppt1</title>
+        <link rel="alternate" href="http://amentiraz.github.io/%E8%AE%BA%E6%96%87ppt1/"/>
+        <content type="html">&lt;p&gt;针对前三篇论文的 PPT 总结&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/%E6%B1%87%E6%8A%A5%20%5B%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E7%9A%84%5D.png&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/%E6%B1%87%E6%8A%A5%20%5B%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E7%9A%84%5D%20(1).png&#34; alt&gt;&lt;/p&gt;
+</content>
+        <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
+        <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+        <category term="PPT" scheme="http://amentiraz.github.io/tags/PPT/" />
+        <updated>2024-10-21T07:25:44.000Z</updated>
+    </entry>
     <entry>
         <id>http://amentiraz.github.io/%E8%A7%81%E5%AD%97%E5%A6%82%E9%9D%A2/</id>
         <title>见字如面</title>
@@ -900,6 +916,28 @@ C 指型&lt;br&gt;
 第四，未来综合利用它们，我们需要以概念为框架，以知识为基底去组织这些知识。(&amp;quot;tree of cell types&amp;quot;)&lt;/p&gt;
 &lt;h1 id=&#34;思考&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#思考&#34;&gt;#&lt;/a&gt; 思考&lt;/h1&gt;
 &lt;p&gt;原本我认为区分细胞是区分人类中的职业，现在我才发现这玩意怕不是类似于区分动植物界的种族。有点抽象。&lt;/p&gt;
+&lt;h1 id=&#34;其它补充&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其它补充&#34;&gt;#&lt;/a&gt; 其它补充&lt;/h1&gt;
+&lt;p&gt;在 &lt;strong&gt;spatially resolved transcriptomics（空间转录组学）&lt;/strong&gt; 中，&lt;strong&gt;in situ&lt;/strong&gt; 方法是指直接在组织切片中进行的实验技术，用于分析不同空间位置的基因表达情况。这些术语代表了不同的技术手段，分别具有以下意义：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In situ imaging&lt;/strong&gt;：&lt;br&gt;
+这是通过显微成像技术直接在组织切片上观察特定基因的表达情况。常用的技术有 ** 荧光原位杂交（FISH）** 和多重荧光成像等。这种方法使用荧光标记的探针与目标 mRNA 结合，然后通过显微镜成像，显示基因在空间位置上的分布。它提供了基因表达的定性或定量信息，结合显微镜的高分辨率，能揭示组织中基因表达的空间异质性。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In situ capture&lt;/strong&gt;：&lt;br&gt;
+这种技术指的是在组织切片的表面上直接捕获并固定 RNA 分子，随后进行测序分析。例如，10X Genomics 的&lt;strong&gt; Visium&lt;/strong&gt; 技术采用了一种包含空间坐标的捕获探针，将切片中的 RNA 分子捕获在特定的网格上。这种方法保留了 RNA 分子的空间信息，后续的测序分析能将这些信息还原到原始的组织切片上，生成基因表达的空间图谱。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;In situ sequencing&lt;/strong&gt;：&lt;br&gt;
+在这种方法中，RNA 分子在原位被逆转录成 cDNA，并在组织切片上直接进行测序。最常见的技术是通过 ** 原位荧光测序（ISS）** 来读取特定位置的基因序列。这样，既保留了 RNA 分子的空间位置信息，又能够读取其序列，从而实现高分辨率的空间转录组数据生成。这一方法可以在空间上精确定位基因表达，并识别不同细胞类型或亚型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;简而言之：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;In situ imaging&lt;/strong&gt;：在组织中通过荧光或显微镜成像观察基因表达。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In situ capture&lt;/strong&gt;：在组织上捕获 RNA，并保留空间位置信息进行测序。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;In situ sequencing&lt;/strong&gt;：在组织中直接测序 RNA，既获得序列信息，又保留其空间位置。&lt;/li&gt;
+&lt;/ul&gt;
 </content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
@@ -1746,28 +1784,5 @@ ps：这一段很难懂，我将在后面写入我的理解与思考。&lt;/p&gt
         <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
         <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
         <updated>2024-05-08T08:57:36.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://amentiraz.github.io/FLCL/</id>
-        <title>FLCL</title>
-        <link rel="alternate" href="http://amentiraz.github.io/FLCL/"/>
-        <content type="html">&lt;p&gt;FLCL（特别的她），四刷纪念文。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;p&gt;FLCL 是一部于千禧年初放送的一部动画，参与人员眼花缭乱：庵野秀明、鹤卷和哉、今石洋之、吉成曜等等业界扛把子的人物，这部作品也不负众望用最顶级的炫技向我们呈现了制作团队最饱满的热情。对我而言，如果要挑出一部作品代表日本动画，那我认为毫无疑问是这部作品。青春、意识流、天马行空的想象力，这些是日本动画最与众不同的地方。&lt;br&gt;
-对我而言这部作品是我极少在 bangumi 上打 10 分的作品，它是我青春期绕不开的话题，这部作品将我带入了成熟，又让我回归青春热情的本心。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;第一次看 FLCL 是在 2020 年的春天，那时的我心灵无法承受现实的残酷，那是高二的寒假，我正沉浸在高中最大的失利中，思考着要不然就摆烂不学了，因为我再也无法承受努力后带来失败的感觉了。在日复一日的看动漫消极度日中，我意外的看到了这部动画。&lt;br&gt;
-那时的我永远不会想到这部动画带给我的影响之深远，毫不夸张的说如果没有这部动画我可能会就此颓废下去、沉浸在失败中，或许要过好几年才能换过来吧。直到现在，明知日本动画有着诸多不能见人的灰色地带，我仍愿意大大方方的承认自己爱好动漫。并不是我对此了解甚少，也不是我不能明辨是非，而是日本动画总能在荒芜中带给我奇迹。&lt;br&gt;
-回到这部动画，当时的我并没有鉴赏它的能力，我能看到的有什么呢？毫不避讳性暗示和性明示，不明觉厉的分镜演出，无法厘清的剧情展开，以及那股浓厚的积极的意味。现在想来，那股感染我的积极是盲目的，无理由的，但是当我看到男主拿着女主的贝斯站在废墟之上仰望天空时，从床上坐起来的我暗暗想到，要不我还是再试试吧，要是再不行再说。毕竟:&amp;quot;如果不挥棒的话，就什么也不会发生&amp;quot;。&lt;br&gt;
-我开始认真学习高考科目，在一次又一次的考试中不断成长，最终在那一年的期末考试中拔得头筹，然而这个头筹并没有让我一往无前，这就是后话了。但是我在现实中挥出了球棒，短暂的成功让我又活了下去。从那以后，我每年总会抽出一段时间来重温 FLCL。每一年我都不能完全看懂它，但我每年都能从中收获许多。比如那巨大的熨斗其实是在抚平大脑的褶皱，我暗暗想自己不能变得麻木不仁；再比如那句 Never knows best，引起了我诸多共鸣。但是我迟早有一天会看懂它的。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;前几年我一直没有看懂 FLCL，甚至连 FLCL 是什么意思都不甚理解。但是从中获取的积极的意味一直感染着我，如果这部片在我眼里一直是积极的意味，那我也不至于在此写影评了。当然我还是想先谈一谈自己，谈一谈如今自认为成熟了的自己。&lt;br&gt;
-我这几年可以说是对事物的认知水平有了显著的提高，也有了自己独特的世界观价值观。我活出了自己想要的大学生活，但我的生活总是枯燥而乏味的。我去参加比赛并不是我想与他人竞争，而是我对此感兴趣；我不愿天天卷绩点，比起这个还不如多弹一会儿吉他，然而弹吉他每天也是控制在 1 个小时；我没有谈恋爱，但我的生活已经足够丰富了。看着一切都很美好，但我知道，自己的生活缺了很重要的一个东西：激情。&lt;br&gt;
-前几天又面临情感上的困惑，强烈而沉重的情感摧毁了我积极生活的欲望，躺着又有什么不好呢。在看 FLCL 之前其实前面的问题已经解决的差不多了，我仍然缺乏激情，但我已经打算重拾生活了，所以我是把 FLCL 当作生活的启动器的&lt;/p&gt;
-</content>
-        <category term="鉴赏类" scheme="http://amentiraz.github.io/categories/comment/" />
-        <category term="动画" scheme="http://amentiraz.github.io/categories/comment/%E5%8A%A8%E7%94%BB/" />
-        <category term="书评" scheme="http://amentiraz.github.io/tags/%E4%B9%A6%E8%AF%84/" />
-        <updated>2024-05-07T09:02:12.000Z</updated>
     </entry>
 </feed>
