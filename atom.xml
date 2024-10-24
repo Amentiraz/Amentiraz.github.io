@@ -19,9 +19,9 @@
 &lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/%E6%B1%87%E6%8A%A5%20%5B%E8%87%AA%E5%8A%A8%E4%BF%9D%E5%AD%98%E7%9A%84%5D%20(1).png&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="PPT" scheme="http://amentiraz.github.io/tags/PPT/" />
         <updated>2024-10-21T07:25:44.000Z</updated>
     </entry>
@@ -446,9 +446,9 @@ SW = \frac{b - a}{\max(a, b)}
 &lt;h4 id=&#34;predict&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#predict&#34;&gt;#&lt;/a&gt; predict&lt;/h4&gt;
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;predict&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;self&lt;/span&gt;):&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    z,q=&lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.model.predict(&lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.embed,&lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.adj_exp)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    y_pred = torch.argmax(q, dim=&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;).data.cpu().numpy()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;comment&#34;&gt;# Max probability plot&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    prob=q.detach().numpy()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; y_pred, prob&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <updated>2024-10-07T03:36:00.000Z</updated>
     </entry>
     <entry>
