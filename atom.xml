@@ -8,7 +8,120 @@
     <author>
       <name>Amentiraz</name>
     </author>
-    <updated>2024-10-21T07:25:44.000Z</updated>
+    <updated>2024-10-28T07:25:11.000Z</updated>
+    <entry>
+        <id>http://amentiraz.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</id>
+        <title>深度学习学习笔记</title>
+        <link rel="alternate" href="http://amentiraz.github.io/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+        <content type="html">&lt;p&gt;泛泛的学习一下深度学习，主要基于的网站是&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly96aC5kMmwuYWkvY2hhcHRlcl9pbnRyb2R1Y3Rpb24vaW5kZXguaHRtbCNpZDI=&#34;&gt;动手学深度学习&lt;/span&gt;。不要求自己学的多深入，毕竟也没人要求我去了解，主要是担心在研究生期间会用到这些知识，主要是一个了解与应用的过程。如果有必要，以后会补上《Deep Learning》这本书的读书笔记。&lt;/p&gt;
+&lt;!--more---&gt;
+&lt;h1 id=&#34;引言&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#引言&#34;&gt;#&lt;/a&gt; 引言&lt;/h1&gt;
+&lt;p&gt;什么是参数呢？ 参数可以被看作旋钮，旋钮的转动可以调整程序的行为。 任一调整参数后的程序被称为模型（model）。 通过操作参数而生成的所有不同程序（输入 - 输出映射）的集合称为 “模型族”。 使用数据集来选择参数的元程序被称为学习算法（learning algorithm）。&lt;/p&gt;
+&lt;p&gt;学习（learning）是一个训练模型的过程。 通过这个过程，我们可以发现正确的参数集，从而使模型强制执行所需的行为。 换句话说，我们用数据训练（train）模型。 如 图 1.1.2 所示，训练过程通常包含如下步骤：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;从一个随机初始化参数的模型开始，这个模型基本没有 “智能”；&lt;/li&gt;
+&lt;li&gt;获取一些数据样本（例如，音频片段以及对应的是或否标签）；&lt;/li&gt;
+&lt;li&gt;调整参数，使模型在这些样本中表现得更好；&lt;/li&gt;
+&lt;li&gt;重复第（2）步和第（3）步，直到模型在任务中的表现令人满意。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://zh.d2l.ai/_images/ml-loop.svg&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;无论什么类型的机器学习问题，都会遇到这些组件：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;可以用来学习的数据（data）；&lt;/li&gt;
+&lt;li&gt;如何转换数据的模型（model）；&lt;/li&gt;
+&lt;li&gt;一个目标函数（objective function），用来量化模型的有效性；&lt;/li&gt;
+&lt;li&gt;调整模型参数以优化目标函数的算法（algorithm）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;与传统机器学习方法相比，深度学习的一个主要优势是可以处理不同长度的数据。&lt;br&gt;
+例如不同维度的数据&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;在一个数据集上，我们可以通过最小化总损失来学习模型参数的最佳值。 该数据集由一些为训练而收集的样本组成，称为训练数据集（training dataset，或称为训练集（training set））。 然而，在训练数据上表现良好的模型，并不一定在 “新数据集” 上有同样的性能，这里的 “新数据集” 通常称为测试数据集（test dataset，或称为测试集（test set））。&lt;/p&gt;
+&lt;h2 id=&#34;监督学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#监督学习&#34;&gt;#&lt;/a&gt; 监督学习&lt;/h2&gt;
+&lt;p&gt;监督学习的学习过程一般可以分为三大步骤：&lt;/p&gt;
+&lt;p&gt;从已知大量数据样本中随机选取一个子集，为每个样本获取真实标签。有时，这些样本已有标签（例如，患者是否在下一年内康复？）；有时，这些样本可能需要被人工标记（例如，图像分类）。这些输入和相应的标签一起构成了训练数据集；&lt;/p&gt;
+&lt;p&gt;选择有监督的学习算法，它将训练数据集作为输入，并输出一个 “已完成学习的模型”；&lt;/p&gt;
+&lt;p&gt;将之前没有见过的样本特征放到这个 “已完成学习的模型” 中，使用模型的输出作为相应标签的预测。&lt;/p&gt;
+&lt;p&gt;整个监督学习过程如 图 1.3.1 所示。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://zh.d2l.ai/_images/supervised-learning.svg&#34; alt&gt;&lt;/p&gt;
+&lt;h3 id=&#34;回归&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#回归&#34;&gt;#&lt;/a&gt; 回归&lt;/h3&gt;
+&lt;p&gt;判断回归问题的一个很好的经验法则是，任何有关 “有多少” 的问题很可能就是回归问题。&lt;/p&gt;
+&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
+&lt;p&gt;一家银行希望在其移动应用程序中添加支票扫描功能。 具体地说，这款应用程序能够自动理解从图像中看到的文本，并将手写字符映射到对应的已知字符之上。 这种 “哪一个” 的问题叫做分类（classification）问题。 分类问题希望模型能够预测样本属于哪个类别（category，正式称为类（class））。 例如，手写数字可能有 10 类，标签被设置为数字 0～9。 最简单的分类问题是只有两类，这被称之为二项分类（binomial classification）。 当有两个以上的类别时，我们把这个问题称为多项分类（multiclass classification）问题。&lt;/p&gt;
+&lt;h3 id=&#34;标记问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#标记问题&#34;&gt;#&lt;/a&gt; 标记问题&lt;/h3&gt;
+&lt;p&gt;学习预测不相互排斥的类别的问题称为多标签分类（multi-label classification）。 举个例子，人们在技术博客上贴的标签，比如 “机器学习”“技术”“小工具”“编程语言”“Linux”“云计算”“AWS”。 一篇典型的文章可能会用 5～10 个标签，因为这些概念是相互关联的。 关于 “云计算” 的帖子可能会提到 “AWS”，而关于 “机器学习” 的帖子也可能涉及 “编程语言”&lt;/p&gt;
+&lt;h3 id=&#34;搜索&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搜索&#34;&gt;#&lt;/a&gt; 搜索&lt;/h3&gt;
+&lt;p&gt;有时，我们不仅仅希望输出一个类别或一个实值。 在信息检索领域，我们希望对一组项目进行排序。 以网络搜索为例，目标不是简单的 “查询（query）- 网页（page）” 分类，而是在海量搜索结果中找到用户最需要的那部分。 搜索结果的排序也十分重要，学习算法需要输出有序的元素子集。 换句话说，如果要求我们输出字母表中的前 5 个字母，返回 “A、B、C、D、E” 和 “C、A、B、E、D” 是不同的。 即使结果集是相同的，集内的顺序有时却很重要。&lt;/p&gt;
+&lt;p&gt;该问题的一种可能的解决方案：首先为集合中的每个元素分配相应的相关性分数，然后检索评级最高的元素。PageRank，谷歌搜索引擎背后最初的秘密武器就是这种评分系统的早期例子，但它的奇特之处在于它不依赖于实际的查询。 在这里，他们依靠一个简单的相关性过滤来识别一组相关条目，然后根据 PageRank 对包含查询条件的结果进行排序。 如今，搜索引擎使用机器学习和用户行为模型来获取网页相关性得分，很多学术会议也致力于这一主题。&lt;/p&gt;
+&lt;h3 id=&#34;推荐系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#推荐系统&#34;&gt;#&lt;/a&gt; 推荐系统&lt;/h3&gt;
+&lt;p&gt;另一类与搜索和排名相关的问题是推荐系统（recommender system），它的目标是向特定用户进行 “个性化” 推荐。 例如，对于电影推荐，科幻迷和喜剧爱好者的推荐结果页面可能会有很大不同。 类似的应用也会出现在零售产品、音乐和新闻推荐等等。&lt;/p&gt;
+&lt;h3 id=&#34;序列学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#序列学习&#34;&gt;#&lt;/a&gt; 序列学习&lt;/h3&gt;
+&lt;p&gt;如果输入的样本之间没有任何关系，以上模型可能完美无缺。 但是如果输入是连续的，模型可能就需要拥有 “记忆” 功能。 比如，我们该如何处理视频片段呢？ 在这种情况下，每个视频片段可能由不同数量的帧组成。 通过前一帧的图像，我们可能对后一帧中发生的事情更有把握。 语言也是如此，机器翻译的输入和输出都为文字序列&lt;/p&gt;
+&lt;h2 id=&#34;无监督学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#无监督学习&#34;&gt;#&lt;/a&gt; 无监督学习&lt;/h2&gt;
+&lt;p&gt;相反，如果工作没有十分具体的目标，就需要 “自发” 地去学习了。 比如，老板可能会给我们一大堆数据，然后要求用它做一些数据科学研究，却没有对结果有要求。 这类数据中不含有 “目标” 的机器学习问题通常被为无监督学习（unsupervised learning）， 本书后面的章节将讨论无监督学习技术。 那么无监督学习可以回答什么样的问题呢？来看看下面的例子。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;聚类（clustering）问题：没有标签的情况下，我们是否能给数据分类呢？比如，给定一组照片，我们能把它们分成风景照片、狗、婴儿、猫和山峰的照片吗？同样，给定一组用户的网页浏览记录，我们能否将具有相似行为的用户聚类呢？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;主成分分析（principal component analysis）问题：我们能否找到少量的参数来准确地捕捉数据的线性相关属性？比如，一个球的运动轨迹可以用球的速度、直径和质量来描述。再比如，裁缝们已经开发出了一小部分参数，这些参数相当准确地描述了人体的形状，以适应衣服的需要。另一个例子：在欧几里得空间中是否存在一种（任意结构的）对象的表示，使其符号属性能够很好地匹配？这可以用来描述实体及其关系，例如 “罗马”-“意大利”+“法国”=“巴黎”。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;因果关系（causality）和概率图模型（probabilistic graphical models）问题：我们能否描述观察到的许多数据的根本原因？例如，如果我们有关于房价、污染、犯罪、地理位置、教育和工资的人口统计数据，我们能否简单地根据经验数据发现它们之间的关系？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;生成对抗性网络（generative adversarial networks）：为我们提供一种合成数据的方法，甚至像图像和音频这样复杂的非结构化数据。潜在的统计机制是检查真实和虚假数据是否相同的测试，它是无监督学习的另一个重要而令人兴奋的领域。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;与环境互动&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#与环境互动&#34;&gt;#&lt;/a&gt; 与环境互动&lt;/h2&gt;
+&lt;p&gt;有人一直心存疑虑：机器学习的输入（数据）来自哪里？机器学习的输出又将去往何方？ 到目前为止，不管是监督学习还是无监督学习，我们都会预先获取大量数据，然后启动模型，不再与环境交互。 这里所有学习都是在算法与环境断开后进行的，被称为离线学习（offline learning）。 对于监督学习，从环境中收集数据的过程类似于 图 1.3.6。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://zh.d2l.ai/_images/data-collection.svg&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;强化学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#强化学习&#34;&gt;#&lt;/a&gt; 强化学习&lt;/h2&gt;
+&lt;p&gt;在强化学习问题中，智能体（agent）在一系列的时间步骤上与环境交互。 在每个特定时间点，智能体从环境接收一些观察（observation），并且必须选择一个动作（action），然后通过某种机制（有时称为执行器）将其传输回环境，最后智能体从环境中获得奖励（reward）。 此后新一轮循环开始，智能体接收后续观察，并选择后续操作，依此类推。 强化学习的过程在 图 1.3.7 中进行了说明。 请注意，强化学习的目标是产生一个好的策略（policy）。 强化学习智能体选择的 “动作” 受策略控制，即一个从环境观察映射到行动的功能。&lt;br&gt;
+&lt;img data-src=&#34;https://zh.d2l.ai/_images/rl-environment.svg&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;强化学习框架的通用性十分强大。 例如，我们可以将任何监督学习问题转化为强化学习问题。 假设我们有一个分类问题，可以创建一个强化学习智能体，每个分类对应一个 “动作”。 然后，我们可以创建一个环境，该环境给予智能体的奖励。 这个奖励与原始监督学习问题的损失函数是一致的。&lt;/p&gt;
+&lt;p&gt;当然，强化学习还可以解决许多监督学习无法解决的问题。 例如，在监督学习中，我们总是希望输入与正确的标签相关联。 但在强化学习中，我们并不假设环境告诉智能体每个观测的最优动作。 一般来说，智能体只是得到一些奖励。 此外，环境甚至可能不会告诉是哪些行为导致了奖励。&lt;/p&gt;
+&lt;p&gt;以强化学习在国际象棋的应用为例。 唯一真正的奖励信号出现在游戏结束时：当智能体获胜时，智能体可以得到奖励 1；当智能体失败时，智能体将得到奖励 - 1。 因此，强化学习者必须处理学分分配（credit assignment）问题：决定哪些行为是值得奖励的，哪些行为是需要惩罚的。 就像一个员工升职一样，这次升职很可能反映了前一年的大量的行动。 要想在未来获得更多的晋升，就需要弄清楚这一过程中哪些行为导致了晋升。&lt;/p&gt;
+&lt;p&gt;强化学习可能还必须处理部分可观测性问题。 也就是说，当前的观察结果可能无法阐述有关当前状态的所有信息。 比方说，一个清洁机器人发现自己被困在一个许多相同的壁橱的房子里。 推断机器人的精确位置（从而推断其状态），需要在进入壁橱之前考虑它之前的观察结果。&lt;/p&gt;
+&lt;p&gt;最后，在任何时间点上，强化学习智能体可能知道一个好的策略，但可能有许多更好的策略从未尝试过的。 强化学习智能体必须不断地做出选择：是应该利用当前最好的策略，还是探索新的策略空间（放弃一些短期回报来换取知识）。&lt;/p&gt;
+&lt;p&gt;一般的强化学习问题是一个非常普遍的问题。 智能体的动作会影响后续的观察，而奖励只与所选的动作相对应。 环境可以是完整观察到的，也可以是部分观察到的，解释所有这些复杂性可能会对研究人员要求太高。 此外，并不是每个实际问题都表现出所有这些复杂性。 因此，学者们研究了一些特殊情况下的强化学习问题。&lt;/p&gt;
+&lt;p&gt;当环境可被完全观察到时，强化学习问题被称为马尔可夫决策过程（markov decision process）。 当状态不依赖于之前的操作时，我们称该问题为上下文赌博机（contextual bandit problem）。 当没有状态，只有一组最初未知回报的可用动作时，这个问题就是经典的多臂赌博机（multi-armed bandit problem）。&lt;/p&gt;
+&lt;h2 id=&#34;其它&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#其它&#34;&gt;#&lt;/a&gt; 其它&lt;/h2&gt;
+&lt;p&gt;神经网络（neural networks）的得名源于生物灵感。 一个多世纪以来（追溯到 1873 年亚历山大・贝恩和 1890 年詹姆斯・谢林顿的模型），研究人员一直试图组装类似于相互作用的神经元网络的计算电路。 随着时间的推移，对生物学的解释变得不再肤浅，但这个名字仍然存在。 其核心是当今大多数网络中都可以找到的几个关键原则：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;线性和非线性处理单元的交替，通常称为层（layers）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用链式规则（也称为反向传播（backpropagation））一次性调整网络中的全部参数。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;小结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#小结&#34;&gt;#&lt;/a&gt; 小结&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;机器学习研究计算机系统如何利用经验（通常是数据）来提高特定任务的性能。它结合了统计学、数据挖掘和优化的思想。通常，它是被用作实现人工智能解决方案的一种手段。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;表示学习作为机器学习的一类，其研究的重点是如何自动找到合适的数据表示方式。深度学习是通过学习多层次的转换来进行的多层次的表示学习。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;深度学习不仅取代了传统机器学习的浅层模型，而且取代了劳动密集型的特征工程。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;最近在深度学习方面取得的许多进展，大都是由廉价传感器和互联网规模应用所产生的大量数据，以及（通过 GPU）算力的突破来触发的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;整个系统优化是获得高性能的关键环节。有效的深度学习框架的开源使得这一点的设计和实现变得非常容易。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;预备知识&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#预备知识&#34;&gt;#&lt;/a&gt; 预备知识&lt;/h1&gt;
+</content>
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="深度学习" scheme="http://amentiraz.github.io/categories/note/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" />
+        <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
+        <category term="深度学习" scheme="http://amentiraz.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" />
+        <updated>2024-10-28T07:25:11.000Z</updated>
+    </entry>
     <entry>
         <id>http://amentiraz.github.io/%E8%AE%BA%E6%96%87ppt1/</id>
         <title>论文ppt1</title>
@@ -1247,12 +1360,102 @@ Boosting：弱学习器提升为强学习器&lt;br&gt;
         <title>现象学导论读书笔记</title>
         <link rel="alternate" href="http://amentiraz.github.io/%E7%8E%B0%E8%B1%A1%E5%AD%A6%E5%AF%BC%E8%AE%BA%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
         <content type="html">&lt;p&gt;《现象学导论》读书笔记&lt;br&gt;
-采用手写的方式记录。&lt;/p&gt;
+采用手写的方式记录。&lt;br&gt;
+2024-10-30：似乎时间有点不够用，后面的章节由电脑打字记入。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;&lt;img data-src=&#34;1.jpg&#34; alt&gt;&lt;br&gt;
 &lt;img data-src=&#34;2.jpg&#34; alt&gt;&lt;br&gt;
 &lt;img data-src=&#34;3.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;4.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;img data-src=&#34;4.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/%E7%8E%B0%E8%B1%A1%E5%AD%A6%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0.jpg&#34; alt&gt;&lt;/p&gt;
+&lt;h1 id=&#34;第五章-知觉-记忆和想象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第五章-知觉-记忆和想象&#34;&gt;#&lt;/a&gt; 第五章 知觉、记忆和想象&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;甚至在我想象的时候，一切意向性所固有的同一性综合仍然生效。想象的对象经过对它的很多想象而保持同一&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们想象的事物对我们能够就其做出的幻想是有所限制的&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;想象也是在一种信念样态中运作，但是这种信念样态不同于知觉和记忆的信念样态；它是非现实的，仅仅是 “好像”。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（预期形式的想象）我们不是在复活以前的经验，而是在预期未来的经验。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;我们以不同的方式把自己投射到将来完成式&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;要能有效的实行这种透视，还是得需要相当大的自我力量才行&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;自我的移置&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自我的移置&#34;&gt;#&lt;/a&gt; 自我的移置&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;在自我的移置中，此时此地的我能够想象、回忆或者预期我自己处在别的某时某地的鲸鱼，因此，这种移置的形式结构是我们可以生活在未来和过去，生活在自由想象的无人之境。意识的这些被移置的形式都是基于知觉而派生的，知觉给它们提供类原材料和内容。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;因为在看到新事物并且把某种倾向性加诸其上的时候，我们以前看到的东西又重新苏醒过来。移置使得这样的情况能够发生&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;自然态度在这些事务上显得十分笨拙，它总是指望某种事物般的替身，让这个替身在作为接收者的我们和在场与缺席的事物之间充当中介&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;第六章-语词-图像和象征&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第六章-语词-图像和象征&#34;&gt;#&lt;/a&gt; 第六章 语词、图像和象征&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;知觉使我们接触到世界中的事物，知觉的变化形式则可能发生在诠释方面，即我们如何直接的诠释世界呈现给我们的对象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;语词的在场&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#语词的在场&#34;&gt;#&lt;/a&gt; 语词的在场&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;一种新的意向开始活动，它使这些被知觉到的标记变成语词。这种新的意向被称作符号性的意向，因为它把意义赋予标记。它显然是一种空虚意向。它是一种被奠基的意向性，属于某种更大的整体的一个非独立部分，因为它依赖于把变成语词的标记呈现出来的知觉基础。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向之 “箭” 直接穿过被知觉到的语词而指向晒在的布利特宾馆，而不是指向一个意象。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向也不同于那种伴随着知觉的空虚意向。渗透在知觉中的空虚意向都是连续而不断变化的。言辞的符号性意向则相反，它是离散的、不连续的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向把那些可以放入句法并组成称述的诸多离散的意义确立起来。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;现象学的批评者常常说现象学依赖内省，依赖对于主观的心理之物的直观。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;知觉性直观充实了许多空虚的符号性意向，又激发起更多的意向。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向指向缺席的事物，但是这种意向也能够在知觉、在直观之中得到充实。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向引入三个元素：指称、语词和意义或含义&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;图像&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#图像&#34;&gt;#&lt;/a&gt; 图像&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;符号性意向向外指向事物，而图像性意向则把事物拉到近前。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图像行为更加具体，而符号行为更加抽象&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图像的在场具有两可性&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;指号-象征或信号&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#指号-象征或信号&#34;&gt;#&lt;/a&gt; 指号、象征或信号&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;语句通常为我们联结对象；它们给对象命名，然后就该对象有所言说。指示性符号和语词之间的一个重要差别在于，前者没有进入语法，而后者本质上是句法性的。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;多样性的丰富同一性的增强&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#多样性的丰富同一性的增强&#34;&gt;#&lt;/a&gt; 多样性的丰富，同一性的增强&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;同一个对象或者事件可以被象征、被图像化，以言辞的方式被意向，也可以被知觉；它也可以被想象、回忆和预期，它历经所有这些变换而依然是同一个事物。我们不是看到我们把很多不同的显像与同一个事物联系起来，而是同一个事物本身就在各种新的方式上被给予。在这种呈现之流之中，同一个事物被一次又一次地辨识出来。它自己地同一性得到增进和强化。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h1 id=&#34;第七章-范畴意向和范畴对象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第七章-范畴意向和范畴对象&#34;&gt;#&lt;/a&gt; 第七章 范畴意向和范畴对象&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;范畴&lt;/strong&gt;的意向性：这是对事态和命题进行联结的意向，是我们在进行述谓、联系、汇集以及把逻辑操作引入我们经验到的东西的时候发挥作用的意向&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;两种意向活动的差异：一种是对于某个对象的简单意向，另一种则是形成有关这个对象的判断。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;范畴的 (caregorial)&lt;/strong&gt; 指的是那种把某个对象加以联结、把句法引入到我们所经验到的东西之中的意向活动。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;来自经验的判断之发生&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#来自经验的判断之发生&#34;&gt;#&lt;/a&gt; 来自经验的判断之发生&lt;/h2&gt;
+&lt;blockquote&gt;&lt;/blockquote&gt;
 </content>
         <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
         <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
@@ -1653,136 +1856,5 @@ mvn exec:java -Dexec.mainClass=&amp;quot;Publisher&amp;quot; -Dexec.args=&amp;qu
         <category term="代码" scheme="http://amentiraz.github.io/tags/%E4%BB%A3%E7%A0%81/" />
         <category term="分布式" scheme="http://amentiraz.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" />
         <updated>2024-05-10T09:07:10.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://amentiraz.github.io/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
-        <title>《情爱现象学》读书笔记</title>
-        <link rel="alternate" href="http://amentiraz.github.io/%E3%80%8A%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
-        <content type="html">&lt;p&gt;本书从爱出发，将爱与存在的理论相结合，在阅读此书前已对大致内容有所了解，自认为能够解决目前我所遇到的精神危机，特此做笔记摘录并留下自己些许思考。&lt;br&gt;
-笔记的内容分为对文章内容的概括，值得思考的原文，和自己的一些思索。若能对读者你或者今后的我有所帮助就再好不过了！&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;h1 id=&#34;爱的沉默&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#爱的沉默&#34;&gt;#&lt;/a&gt; 爱的沉默&lt;/h1&gt;
-&lt;h2 id=&#34;爱的沉默-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#爱的沉默-2&#34;&gt;#&lt;/a&gt; 爱的沉默&lt;/h2&gt;
-&lt;h3 id=&#34;原文摘录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原文摘录&#34;&gt;#&lt;/a&gt; 原文摘录&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;所有那些去爱却并不完全知道爱意味着什么，也不完全知道爱想要他们做什么，尤其是不完全知道如何将爱延续下去的人 —— 他们首先就是你和我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;哲学只在它去爱的范围内理解 —— 我爱理解，因此我去爱以便去理解&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人们要想达到真理，应该首先去欲求真理，因此去爱真理&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人并不自发地爱真理，而且只要一谎言向他保证权势，他就经常为这种谎言而牺牲真理。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;宣称 “我爱你” 在最好的情况下，听起来就如一种猥亵或一种嘲讽，以至于在良好的社会，在受教育者的社会之中，更没有人敢认真地大声说出这样一种无意义 (non-sens)&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人们一认为有理由区分爱的各种有分歧的、甚至不可调和的词义，就削弱和损害了每一种爱的概念；例如人们一上来就把爱与仁慈对立起来，把假定为占有性的欲望与假定为不求回报的善心对立起来，把合理性的爱与非理性的激情对立起来，就像这是一件无可争议的明显的事情一样。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;爱只有在一种独一无二的意义中才能自称是单义的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;爱从属于爱洛斯的合理性&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;人们在此预设，想要被爱或者使自己被爱，首先必须存在。然而有关爱洛斯现象的最少经验都证实了相反的情况 —— 我完全能够爱并不存在或不再存在的那位，以及我同样能够使自己被不再存在、还没有存在或其存在保持为未定的那位所爱。反之，一位存在者确定地存在并没有使他获得资格以至我爱他或他爱我，同样，他的不确定性再也没有使我在爱洛斯意义上对他无动于衷。&lt;br&gt;
-研究应该在爱洛斯现象特有的域 —— 一种不具存在的爱之域 —— 之中来描述爱洛斯现象&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;为什么人们让爱随风四处散开？....... 因为人们把爱定义为一种激情，因此把它定义为 “主体” 的一种派生的、甚至是随意的样式，这一 “主体” 自身被只适用于各种对象和各种存在者的合理性的运用所定义，且通过思源初地存在。&lt;br&gt;
-在思地自我只有与爱洛斯的行动者相反且只有通过压抑这一爱洛斯的行动者，才能自身建立起来。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;（笛卡尔对自我的定义）通过遗漏导致的是，我既不再被视为去爱者也不再被视为去恨者；更恰当地说：至少在初审中，我是如此存在，以至于我既不需要去爱，也不需要去恨。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们应该通过重新定义自我：把自我重新定义为去爱且尤其去恨的那位，重新定义为由于首先去爱而思的思者，简言之，重新定义为爱洛斯者 (amant)[在爱的自我 (ego amans)]..... 通过用原初的爱的自我来代替不去爱的在思的自我...... 我们应该用各种爱洛斯沉思代替各种形而上学沉思&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;爱的每一种行为永远地刻在我之中且明确地勾画出我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我既不是通过第三者去爱，也不是通过中间人去爱，而是作为肉 (chair) 去爱&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我在爱中不愿意与我所爱者相区分，同样，我爱的事实无法与自我相区分。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;既然在此我为以我的专名来说话而付出代价，那么，你将让我以你的名义来说话。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&#34;内容概括&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内容概括&#34;&gt;#&lt;/a&gt; 内容概括&lt;/h3&gt;
-&lt;p&gt;本章由哲学对爱保持沉默，而且爱在这种沉默之中变得模糊这种现象开始，论证为什么&lt;strong&gt;哲学&lt;/strong&gt;并不喜欢爱，为什么&lt;strong&gt;哲学&lt;/strong&gt;在沉默之下跳过爱，接着论证&lt;strong&gt;人们&lt;/strong&gt;为什么逃避并抛弃爱。最后说明对爱的诊断要回归哲学并强调定义爱的概念的困难性。&lt;/p&gt;
-&lt;p&gt;作者由爱在哲学被否认的之处反过来对爱进行理解，最终认为哲学拒绝了爱的统一性、合理性和至上性。接下来作者详细论述了为什么爱具有统一性、合理性并说明了对爱洛斯现象的研究应该在一种不具存在的爱之域中研究。接着作者由笛卡尔对自我的定义反过来说明了上面论证的合理性，并剖析了为什么笛卡尔对自我的定义是在压抑爱洛斯中建立起来的。并且通过重新定义自我为在爱的自我，进而用爱洛斯沉思代替各种形而上学沉思。&lt;/p&gt;
-&lt;p&gt;那么我们该如何完成上述的定义呢，也就是方法论是什么呢：不能依赖传统，通过现象出发构造每一个概念，让爱洛斯现象本身显现出来。然而接下来是作者一大段的 “免责声明”，因为爱总是以第一人称出发，有着大量的主观性，所以作者也认识到可能它写这本书后不过是一种 “自命不凡的表面中立”，但是他也认为自己的经历会在概念的精确性之中消除。最后是致谢。&lt;/p&gt;
-&lt;h3 id=&#34;自己的思考&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自己的思考&#34;&gt;#&lt;/a&gt; 自己的思考&lt;/h3&gt;
-&lt;p&gt;阅读完这一章后对本书想达成什么目的有了较为清晰的认识。在阅读时本来以为自己会有许多思考记录，最不济也会有一些问题。但在阅读时涌出的问题过几天再去思考也发现其内在逻辑的严密。所以这个板块在以后的章节如果没有必要便不再论述了，当然如果有什么难以理解的问题和自己的浅薄想法也会记录。&lt;/p&gt;
-&lt;h1 id=&#34;论一种根本还原&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#论一种根本还原&#34;&gt;#&lt;/a&gt; 论一种根本还原&lt;/h1&gt;
-&lt;h2 id=&#34;怀疑确定性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#怀疑确定性&#34;&gt;#&lt;/a&gt; 怀疑确定性&lt;/h2&gt;
-&lt;h3 id=&#34;原文摘录-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原文摘录-2&#34;&gt;#&lt;/a&gt; 原文摘录&lt;/h3&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们并不欲求认知，而是欲求享乐我们自身&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;欲望即使在认识中，也只欲求自身享乐&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;认知欲望是朝着已知者或可知者 —— 然而它首先且最终是为了认知者的利益。在认知者之中，包围自身的欲望，即享乐自身的欲望，显得比认知欲望更根本。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;科学只有区分各种事物中那些能够被还原至永恒的事物和那些不能被还原的事物，才能取得其确定性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;谁画出了确定者与可疑者、对象与不可对象化者之间的界限呢？是那个认知者，是自我（ego）—— 是哪个把将成为其对象的东西与将不成为其对象且逃避其的东西区分开来的我（je）。因此确定性表示已知者转到自我之上，以至于在认识对象中，更多地设计对象化对象、构成对象和完全确证对象的那个自我，而非这一对象。&lt;br&gt;
-当然，对象因确定性而闪耀，然而，如果这种确定性不参照自我，它就不会有任何意义，只有自我才发现确定性且尤其创立确定性。&lt;br&gt;
-ps：这一段很难懂，我将在后面写入我的理解与思考。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;即使一种唯一的确定性支配着自我及其对象，如果自我不得不面对与确定性可以消除的怀疑完全不同的另一种怀疑的话，那么自我仍然会逃离确定性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我依据我的&lt;strong&gt;肉&lt;/strong&gt;存在....... 只是因为它本身显示为可感 - 受的。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;就在我掌握了各种贫乏现象的确定性的那一时刻，该确定性就不再令我感兴趣了：该确定性只涉及不同于我的现象的另一类现象的使用，但丝毫不涉及我特有的方式，也不涉及我的不可兼得、不可确证的肉的独一无二的自我性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;自我要想弄错或被骗，就必须思，因此必须存在。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;对象可能并不总是呈现于思，而我将总是能够自思，因为思只取决于我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我不是自我，而且，对象 - 自我的确定性并没有触及到我所是的我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;一旦我对实存确信无疑，我就能够真正怀疑自我。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;多次成功之后，我看到了这些成功的无意义，我由此重新回到了我当初的不确定。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在此我看到了我的信念之少和我的愚蠢，我没有丝毫的满意，尤其不满意于智慧或毅力方面的长进。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;即使已知的各种对象对我们来说已是确定的了，即使在我们之中它们的那个自我同样是确定的了，我们仍然可以长久地、根本地进行怀疑。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;也许怀疑并没有努力地去生产确定性，而是努力去超越确定性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;在我的不可还原的自我性之上建立起某种确定性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;我们可以合法地指责它们（形而上学），指责它们通过忽视或无视唯一关乎我的确定性即自我的确定性，从来瞄准的只是一种第二性的、派生的、不相干的，而且最终为毫无价值的确定性。&lt;/p&gt;
-&lt;/blockquote&gt;
-</content>
-        <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
-        <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
-        <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
-        <updated>2024-05-08T08:57:36.000Z</updated>
     </entry>
 </feed>
