@@ -1053,7 +1053,25 @@ p_{ij} = \frac{q_{ij}^2 / {\sum^{N}_{i=1}} q_{ij}}{\sum_{j^{\prime}}^{K}(q_{ij^{
 &lt;p&gt;&lt;code&gt;lambda x: -x[1]&lt;/code&gt;  是一个匿名函数，接受一个二元组  &lt;code&gt;x&lt;/code&gt;  作为输入，返回  &lt;code&gt;-x[1]&lt;/code&gt; ，即二元组的第二个元素的负值。&lt;/p&gt;
 &lt;p&gt;其实具体就是把论文中提到的给实现了，没什么好说的&lt;/p&gt;
 &lt;h2 id=&#34;实际使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#实际使用&#34;&gt;#&lt;/a&gt; 实际使用&lt;/h2&gt;
-&lt;p&gt;这里就具体记录一下自己复现过程遇到的问题吧&lt;/p&gt;
+&lt;p&gt;这里就具体记录一下自己复现过程遇到的问题吧&lt;br&gt;
+算了，实际上也没遇到什么问题，下面是跑出来的结果&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0001.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0002.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0003.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0004.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0005.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0006.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0007.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0008.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0009.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0010.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0011.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0012.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0013.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0014.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0015.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0016.jpg&#34; alt&gt;&lt;br&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/tutorial_pages-to-jpg-0017.jpg&#34; alt&gt;&lt;/p&gt;
 </content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
