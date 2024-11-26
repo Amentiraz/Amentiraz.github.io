@@ -773,6 +773,60 @@ dim=-1 表示在最后一个维度新增一个轴。&lt;/li&gt;
 &lt;h4 id=&#34;2-自动解包&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-自动解包&#34;&gt;#&lt;/a&gt; &lt;strong&gt;(2) 自动解包&lt;/strong&gt;&lt;/h4&gt;
 &lt;p&gt;&lt;code&gt;MessagePassing&lt;/code&gt;  框架会根据  &lt;code&gt;message&lt;/code&gt;  方法的参数名，自动解包传入的张量并映射到适当的索引位置。&lt;/p&gt;
 &lt;hr&gt;
+&lt;p&gt;注意数据集 data 的 data.x 指的是 adata.X，也就是每个节点 (spot) 对应 features 的 gene 表达值；data.edge_index 指的是邻接关系。&lt;/p&gt;
+&lt;p&gt;对于这一行的代码&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;KNN_list.append(pd.DataFrame(&lt;span class=&#34;built_in&#34;&gt;zip&lt;/span&gt;([it]*indices.shape[&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;],indices[it,:], distances[it,:])))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这行代码的作用是将每个点（ &lt;code&gt;it&lt;/code&gt; ）的邻居信息（包括邻居的索引和距离）以  &lt;code&gt;DataFrame&lt;/code&gt;  的形式追加到  &lt;code&gt;KNN_list&lt;/code&gt;  列表中。具体来说，它是构造一个包含当前点与其邻居的关系的  &lt;code&gt;DataFrame&lt;/code&gt; 。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;indices[it,:]&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;indices&lt;/code&gt;  是一个二维数组，表示每个点的邻居索引。 &lt;code&gt;indices[it,:]&lt;/code&gt;  表示第  &lt;code&gt;it&lt;/code&gt;  个点的所有邻居的索引。&lt;/li&gt;
+&lt;li&gt;假设  &lt;code&gt;indices[it,:]&lt;/code&gt;  是一个一维数组，包含第  &lt;code&gt;it&lt;/code&gt;  个点的所有邻居的索引，例如：[0, 3, 5, 6]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;distances[it,:]&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;distances&lt;/code&gt;  是一个二维数组，表示每个点到其邻居的距离。 &lt;code&gt;distances[it,:]&lt;/code&gt;  表示第  &lt;code&gt;it&lt;/code&gt;  个点到所有邻居的距离。&lt;/li&gt;
+&lt;li&gt;假设  &lt;code&gt;distances[it,:]&lt;/code&gt;  是一个一维数组，包含第  &lt;code&gt;it&lt;/code&gt;  个点到各个邻居的距离，例如：[0.1, 0.2, 0.4, 0.5]。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;[it]*indices.shape[1]&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;indices.shape[1]&lt;/code&gt;  表示  &lt;code&gt;it&lt;/code&gt;  点的邻居数量（即列数）。比如，如果  &lt;code&gt;indices[it,:]&lt;/code&gt;  有 4 个元素，则  &lt;code&gt;indices.shape[1]&lt;/code&gt;  是 4。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;[it]*indices.shape[1]&lt;/code&gt;  会生成一个列表，其中的每个元素都是  &lt;code&gt;it&lt;/code&gt; （即当前点的索引）。比如， &lt;code&gt;[it]*4&lt;/code&gt;  生成的列表是  &lt;code&gt;[it, it, it, it]&lt;/code&gt; ，表示当前点与其 4 个邻居的连接。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;zip([it]*indices.shape[1], indices[it,:], distances[it,:])&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;zip&lt;/code&gt;  将这三个列表打包成一个迭代器。每次迭代返回一个元组，包含当前点的索引、邻居的索引和邻居之间的距离。例如，如果  &lt;code&gt;it=0&lt;/code&gt; ， &lt;code&gt;indices[it,:] = [0, 3, 5, 6]&lt;/code&gt;  和  &lt;code&gt;distances[it,:] = [0.1, 0.2, 0.4, 0.5]&lt;/code&gt; ，则  &lt;code&gt;zip&lt;/code&gt;  生成的内容如下：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[(&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0.1&lt;/span&gt;), (&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0.2&lt;/span&gt;), (&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0.4&lt;/span&gt;), (&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)]&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;pd.DataFrame(zip([it]*indices.shape[1], indices[it,:], distances[it,:]))&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;pd.DataFrame()&lt;/code&gt;  将  &lt;code&gt;zip&lt;/code&gt;  生成的元组转换为一个  &lt;code&gt;DataFrame&lt;/code&gt; ，并自动为其分配列名（默认为 0, 1, 2）。例如，转换后的  &lt;code&gt;DataFrame&lt;/code&gt;  可能是：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;    &lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0.1&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0.2&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0.4&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;  &lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+其中：
+&lt;ul&gt;
+&lt;li&gt;第一列 ( &lt;code&gt;0&lt;/code&gt; ) 是当前点的索引（即  &lt;code&gt;it&lt;/code&gt; ）。&lt;/li&gt;
+&lt;li&gt;第二列 ( &lt;code&gt;1&lt;/code&gt; ) 是邻居的索引（即  &lt;code&gt;indices[it,:]&lt;/code&gt; ）。&lt;/li&gt;
+&lt;li&gt;第三列 ( &lt;code&gt;2&lt;/code&gt; ) 是对应的距离（即  &lt;code&gt;distances[it,:]&lt;/code&gt; ）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;KNN_list.append(...)&lt;/code&gt; &lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;最后， &lt;code&gt;DataFrame&lt;/code&gt;  被添加到  &lt;code&gt;KNN_list&lt;/code&gt;  列表中。 &lt;code&gt;KNN_list&lt;/code&gt;  最终将包含所有点与其邻居的连接信息。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这行代码的核心功能是为每个点创建一个  &lt;code&gt;DataFrame&lt;/code&gt; ，该  &lt;code&gt;DataFrame&lt;/code&gt;  包含当前点与其邻居的连接信息，并将这些  &lt;code&gt;DataFrame&lt;/code&gt;  依次添加到  &lt;code&gt;KNN_list&lt;/code&gt;  中。最终， &lt;code&gt;KNN_list&lt;/code&gt;  会保存所有点的邻接信息，其中每个  &lt;code&gt;DataFrame&lt;/code&gt;  包含一个点与其邻居的索引和距离。&lt;/p&gt;
 </content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
@@ -3902,7 +3956,7 @@ C 指型&lt;br&gt;
         <id>http://amentiraz.github.io/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/</id>
         <title>《蓝色恐惧》观后感</title>
         <link rel="alternate" href="http://amentiraz.github.io/%E8%93%9D%E8%89%B2%E6%81%90%E6%83%A7-%E8%A7%82%E5%90%8E%E6%84%9F/"/>
-        <content type="html">&lt;p&gt;《蓝色恐惧》是今敏监督的处女座，然而它在 Bangumi 平台上享有盛誉，排名在全年代前 20。本文是对《蓝色恐惧》（未麻的部屋）的观后感与解读。&lt;/p&gt;
+        <content type="html">&lt;p&gt;《蓝色恐惧》是今敏监督的处女座，然而它在 Bangumi 平台上享有盛誉，排名在全年代前 20。本文是对《蓝色恐惧》（未麻的部屋）的观后感与解读。这篇文章写的时间跨度有点大，很多剧情已经记不太起来了，但想表达的东西大致是没有太多变化的。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
 &lt;p&gt;“我” 是什么呢？这个命题在哲学上有着诸多的讨论，更专业的术语是自我同一性是怎样的呢？&lt;/p&gt;
 &lt;p&gt;在 EVA 中对于自我的表述是这样的：真嗣是由人们眼中的真嗣组成，借此强调人与他人的联系。在哲学上也有相关问题，例如泥沼人 —— 如果当下的你死去，而一个与你一模一样并继承了你的思想的人同时刻出现了，那么这个人能算做是你吗。泥沼人问题在《重启咲良田》也有提及，只不过也是泛泛而谈。谈的比较深入的有《攻壳机动队》和《Lain》，分别从肉体与网络现实去进行了讨论。在我大一参加哲学选修课时，老师也向我们提问：此刻的你，和前一刻的你是同一个人吗？而这位老师给出的答案是因为后一刻的你是前面的累积，那么当然是同一个你。然而当时我并不这么认为：假设人是一个函数 &lt;code&gt;y=f(x)&lt;/code&gt; ，那么老师对人的理解是 &lt;code&gt;f(x)&lt;/code&gt; ，这个函数本身，而我认为如果 &lt;code&gt;y&lt;/code&gt;  不同了，那么当然每时每刻的人也当然是不同的。&lt;/p&gt;
@@ -3912,13 +3966,15 @@ C 指型&lt;br&gt;
 &lt;p&gt;与其说是偶像与生活，不如说是工作与生活。在学校里面对他人时，我们微笑着，扮演着我们应当扮演的角色。常常有人这样去形容，与他人来往时我们常常是戴着面具的。然而工作毕竟占据了我们生活的一个重要的板块，对于不成熟的人来说很多时候会把工作的面孔带入生活。然而剧中的未麻便分割的很好。离开舞台便全然是另一副模样，这便引出了另一个问题：工作时的我和生活中的我是同一个我吗？&lt;/p&gt;
 &lt;h2 id=&#34;生活转变前后的我&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#生活转变前后的我&#34;&gt;#&lt;/a&gt; 生活转变前后的我&lt;/h2&gt;
 &lt;p&gt;这部动画有着浓厚的时代的气质，里面很多场景在生活中都能产生共鸣。为了更好的生活，未麻选择退出偶像行业，铤而走险转行到演员行业。在这个过程中也并非一帆风顺。虽然是主角可开始只有一句台词；好不容易争取到了更多的演出机会，却被迫要出演一场强暴戏码；受此影响，进一步拍摄全裸照等等。从以往冰清玉洁，天使一般的形象，转眼便被推翻。剧中有一处细节弄得特别好，之前的三人团体在她退出后反倒碟片销量迎来了新高。如今 “我” 这样的转变是正确的吗？我真的甘心做这份工作吗？更严肃的问题是，我是否在追求更好的生活时迷失了初心，我现在的选择只不过是利益熏心的结果？&lt;/p&gt;
-&lt;p&gt;现实生活中的我们不也常常遇到这样的问题吗？工作转行、选择考研还是工作、出国还是留在国内等等，在面临重要抉择时，我们总是割裂的。我常常这样想，如果存在两个我，分别选择了截然不同的两条路，那么这两个 “我” 还能说是同一个 “我” 吗？显然不是的，那 “我” 究竟又怎样具有同一性呢？娱乐化来说的话，究竟是我过生活，还是生活过我呢？&lt;/p&gt;
+&lt;p&gt;现实生活中的我们不也常常遇到这样的问题吗？工作转行、选择考研还是工作、出国还是留在国内等等，在面临重要抉择时，我们总是割裂的。我常常这样想，如果存在两个我，分别选择了截然不同的两条路，那么这两个 “我” 还能说是同一个 “我” 吗？显然不是的，那 “我” 究竟又怎样具有同一性呢？娱乐化来说的话，究竟是我 “过” 生活，还是生活 “过” 我呢？&lt;/p&gt;
 &lt;h2 id=&#34;时间上每时每刻的我&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#时间上每时每刻的我&#34;&gt;#&lt;/a&gt; 时间上每时每刻的我&lt;/h2&gt;
 &lt;p&gt;生活的转变还是显得太粗糙了，动画进行了进一步的细化。每天的我，每时每刻的我是相同的吗。借用动画中的话来说：“你怎么知道知道前一秒的自己和现在的自己是同一个人呢”，这不得不提到动画精湛的演出。在经历工作与生活高压下的未麻精神已经极度不稳定了，在拍摄现场神情恍惚，一睁眼又是一天，却很难察觉到今日的生活与昨日的不同。不断交错的画面，不仅让剧情的氛围更加的紧张与惊悚，伴随着未麻的喃喃自语，让演出呈现出一种惊悚的感觉，这不禁让我想起了《闪灵》的观看体验。没有鬼怪，动画中人物情绪的紧绷已经足够让人感到恐惧。在这样的氛围中，演出画面的切换同时切割了剧内的时间与空间，更是把每时每刻的未麻进行割裂。通过生活的割裂，进一步影响了每时每刻自我的割裂，这不由得让我想起了佛教那通过 “刹那” 来切割生活的举措，顺带一提，在我看来，佛教中的 “无我” 本质是对生活的逃避。而我们最终是要面对生活的，如果像佛教那般否定自我的同一性，那便是落得轻松，未麻并没有选择这样做，但受限于生活经验的影响，判断在时间长河的同一性成了困扰她的问题。&lt;/p&gt;
 &lt;p&gt;而针对动画中的问题，里面的回答是：“不过是记忆的连续性罢了，我们就是仅凭这一点制造一贯的自我认同幻想”。这不过是一个粗糙的解释，显然这也并没有说服未麻，而且 “自我认同幻想” 听起来便不太像一个好词，那么我们该如何去判断时间上的我是同一个我呢？&lt;/p&gt;
 &lt;h2 id=&#34;网络中的我和现实中的我&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#网络中的我和现实中的我&#34;&gt;#&lt;/a&gt; 网络中的我和现实中的我&lt;/h2&gt;
-&lt;p&gt;这个问题在《Lain》这部动画也有着解释&lt;/p&gt;
+&lt;p&gt;这个问题在《Lain》这部动画也有着解释。在《Lain》中，一个人在网络上的言行影响到了现实中他的生活，甚至导致了现实中人的自杀，坐牢等等。放在如今的现实生活也是如此，舆论战，公关战，本质上都是在处理现实与网络生活的关系。而在《未麻的部屋》中更是凸显了这一点。网络上一个小小的博客网站，竟然能够塑造出一个来源于未麻但不同于未麻的人格。相较于现实，网络上的未麻表面上是记录未麻的生活，实际上这种记录夹杂着作者本身的主观意识，再加上作者本身对未麻进行了崇高化，使她带有神性，于是作为一个人的未麻在试图脱离这种印象时受到了抨击。事实上，我认为对于他人进行追捧，甚至神化的过程本质上来说是一个否定 “人” 的过程。一方面，基于自身的印象，去将他人的形象涂抹上自己心中的色彩，从而让真实的人失真，这是否定受追捧的人的 “人” 的过程，另一方面，主动把自己归为两者关系中弱势和受支配的一方也是否定自身作为 “人” 的过程。&lt;/p&gt;
+&lt;p&gt;在不断思考人与人之间关系的过程中，我其实是越来越悲观的。大多数人并不期待着自己作为 “人” 而存在，因为这样太累了，大多数人的思考并不能让他们有资格去找到自己的主体性。也因此，在网络社会如此发达的现在，我们自身与网络的关系越来越紧密，某种意义上讲，我们甚至能将生活的一个主要部分寄托在网络身上，而网络本身是对他人开放的，我们不得不受到各路人士的审视。那么在此背景下，我们该如何处理网络上的我和现实中的我的关系呢？&lt;/p&gt;
 &lt;h2 id=&#34;他人眼中的我和我认可的我&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#他人眼中的我和我认可的我&#34;&gt;#&lt;/a&gt; 他人眼中的我和我认可的我&lt;/h2&gt;
+&lt;p&gt;其实，网络上的我可以看作是他人眼中的我的一个子类，一个更具有神圣性的子类。在《未麻的部屋》结尾，我们可以看到未麻的女经纪人竟然化身成了偶像时期的未麻本身试图杀掉如今的未麻。当然，我们的女主并没有因为身边人的反对而放弃自身的决定。&lt;/p&gt;
 </content>
         <category term="鉴赏类" scheme="http://amentiraz.github.io/categories/comment/" />
         <category term="动画" scheme="http://amentiraz.github.io/categories/comment/%E5%8A%A8%E7%94%BB/" />
