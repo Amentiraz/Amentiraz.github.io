@@ -8,7 +8,355 @@
     <author>
       <name>Amentiraz</name>
     </author>
-    <updated>2024-12-01T04:12:31.000Z</updated>
+    <updated>2024-12-06T02:40:37.000Z</updated>
+    <entry>
+        <id>http://amentiraz.github.io/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
+        <title>scanpy数据使用记录</title>
+        <link rel="alternate" href="http://amentiraz.github.io/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+        <content type="html">&lt;p&gt;Scanpy 是一个专门用于单细胞 RNA 测序 (scRNA-seq) 数据分析的 Python 库，它的核心数据结构是  &lt;code&gt;AnnData&lt;/code&gt; （Annotated Data）。了解  &lt;code&gt;AnnData&lt;/code&gt;  数据类型是使用 Scanpy 的关键。以下是对  &lt;code&gt;AnnData&lt;/code&gt;  的详细介绍：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-anndata-的结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-anndata-的结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.  &lt;code&gt;AnnData&lt;/code&gt;  的结构&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;AnnData&lt;/code&gt;  是一种基于矩阵的数据结构，专为处理大规模高维数据设计。它将表达矩阵和注释信息结合起来，支持存储和处理实验数据的多个层面。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心组成部分：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;X&lt;/code&gt;  (主矩阵)&lt;/strong&gt;：存储主要的数据，例如基因表达矩阵。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据类型：通常是 NumPy 数组 ( &lt;code&gt;numpy.ndarray&lt;/code&gt; ) 或稀疏矩阵 ( &lt;code&gt;scipy.sparse&lt;/code&gt; )，以节省内存。&lt;/li&gt;
+&lt;li&gt;维度：形状为  &lt;code&gt;(n_obs, n_vars)&lt;/code&gt; ，即细胞数 × 基因数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;obs&lt;/code&gt;  (观测样本注释)&lt;/strong&gt;：存储细胞的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;行：对应细胞，列：存储细胞的注释信息（如细胞类型、实验条件等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;var&lt;/code&gt;  (变量注释)&lt;/strong&gt;：存储基因的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;行：对应基因，列：存储基因的注释信息（如基因名称、功能分类等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;obsm&lt;/code&gt;  (观测样本多维数据)&lt;/strong&gt;：存储额外的细胞数据，例如降维结果（如 PCA、t-SNE 或 UMAP）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典，值通常是 NumPy 数组或稀疏矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;varm&lt;/code&gt;  (变量多维数据)&lt;/strong&gt;：存储额外的基因数据，例如 PCA 的基因负载矩阵。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;uns&lt;/code&gt;  (未分类信息)&lt;/strong&gt;：存储任意未分类的附加信息，例如绘图参数或聚类结果的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;layers&lt;/code&gt; &lt;/strong&gt;：支持存储多个版本的主矩阵  &lt;code&gt;X&lt;/code&gt; ，例如原始数据、归一化数据、去噪数据等。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典，键为层的名称，值为矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-示例结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-示例结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 示例结构&lt;/strong&gt;&lt;/h3&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个简单的 AnnData 对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;X = np.random.rand(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 5 个细胞 × 3 个基因&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;cell1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell3&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell4&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell5&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;C&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个细胞的分组信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;gene1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene3&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var[&lt;span class=&#34;string&#34;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;Enzyme&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个基因的类型信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.AnnData(X, obs=obs, var=var)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看 AnnData 的基本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出结果：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;AnnData object with n_obs × n_vars = 5 × 3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    obs: &amp;#x27;group&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var: &amp;#x27;type&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-常用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-常用方法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 常用方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据访问与修改：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.X           &lt;span class=&#34;comment&#34;&gt;# 主矩阵数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obs         &lt;span class=&#34;comment&#34;&gt;# 细胞注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.var         &lt;span class=&#34;comment&#34;&gt;# 基因注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obsm        &lt;span class=&#34;comment&#34;&gt;# 多维细胞数据（降维结果等）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.layers[&lt;span class=&#34;string&#34;&gt;&amp;quot;raw&amp;quot;&lt;/span&gt;] = adata.X.copy()  &lt;span class=&#34;comment&#34;&gt;# 创建新数据层&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;读写文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 保存到文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 从文件加载&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据筛选：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = adata[adata.obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] == &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, :]  &lt;span class=&#34;comment&#34;&gt;# 筛选分组为 A 的细胞&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-使用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-使用场景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 使用场景&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;降维分析&lt;/strong&gt;： &lt;code&gt;obsm&lt;/code&gt;  中存储 PCA、t-SNE 或 UMAP 的结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;细胞聚类&lt;/strong&gt;： &lt;code&gt;obs&lt;/code&gt;  中存储聚类标签。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基因功能注释&lt;/strong&gt;： &lt;code&gt;var&lt;/code&gt;  中存储基因相关信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可视化&lt;/strong&gt;：通过  &lt;code&gt;uns&lt;/code&gt;  传递绘图参数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-优势&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-优势&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 优势&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高效内存管理&lt;/strong&gt;：支持稀疏矩阵存储大规模数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活性强&lt;/strong&gt;：便于同时存储多种数据层和分析结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;兼容性好&lt;/strong&gt;：与 NumPy、Pandas 和其他生物信息学工具协作性强。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;使用实例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用实例&#34;&gt;#&lt;/a&gt; 使用实例&lt;/h1&gt;
+&lt;p&gt;后面记录一下自己遇到的处理 scanpy 数据的 python 代码&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.obs[obs_name].cat.categories&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个返回的是 &lt;code&gt;adata.obs&lt;/code&gt;  指定列: &lt;code&gt;obs_name&lt;/code&gt;  的所有类别值&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.cat&lt;/code&gt;  意味着我们可以访问与分类相关的操作和属性&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.categories&lt;/code&gt;  返回这一列所有类别值（唯一值）&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;spatialmat = adata.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cur_distmat = squareform(pdist(spatialmat))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里的 &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  表示的是一个 n_cell * dimension 的数据，表示它的空间距离&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pdist&lt;/code&gt;  返回长度为  &lt;code&gt;n_cells * (n_cells - 1) / 2&lt;/code&gt;  的一维数组。目的是计算 &lt;code&gt;spatialmat&lt;/code&gt;  中所有点两两之间的欧氏距离&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;squareform&lt;/code&gt;  将 &lt;code&gt;pdist&lt;/code&gt;  的数据转换成方阵的形式，也就是距离矩阵 &lt;code&gt;n_cells*n_cells&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这段代码使用了 Squidpy 的功能来计算空间邻居关系，涉及构建空间图（spatial graph），它是 Squidpy 的核心工具之一，用于分析空间转录组数据的空间关系。让我们逐步解析每个参数和方法的作用。&lt;/p&gt;
+&lt;h3 id=&#34;1-方法介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-方法介绍&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 方法介绍&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sq.gr.spatial_neighbors()&lt;/code&gt;  是 Squidpy 提供的函数，用于基于空间坐标计算邻接关系（spatial neighbors）。它会在  &lt;code&gt;AnnData&lt;/code&gt;  对象中添加与邻接关系相关的信息，通常用于后续的图分析和空间分析。&lt;/p&gt;
+&lt;h4 id=&#34;调用语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#调用语法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;调用语法&lt;/strong&gt;&lt;/h4&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    adata, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    coord_type=&lt;span class=&#34;string&#34;&gt;&amp;quot;generic&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    n_neighs=&lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    radius=&lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    delaunay=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    key_added=&lt;span class=&#34;string&#34;&gt;&amp;quot;spatial_neighbors&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    set_diag=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;2-参数解析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-参数解析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 参数解析&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;adata_tmp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#adata_tmp&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;adata_tmp&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;输入的  &lt;code&gt;AnnData&lt;/code&gt;  对象。&lt;/li&gt;
+&lt;li&gt;包含细胞的空间坐标，通常存储在  &lt;code&gt;adata_tmp.obsm[&#39;spatial&#39;]&lt;/code&gt;  中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;coord_typegeneric&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#coord_typegeneric&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;coord_type=&#39;generic&#39;&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;指定空间坐标的类型。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#39;generic&#39;&lt;/code&gt; ：使用任意空间坐标。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;grid&#39;&lt;/code&gt; ：适用于规则网格数据。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;visium&#39;&lt;/code&gt; ：专门用于 10x Genomics Visium 数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：告诉函数如何解释  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  中的坐标。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;n_neighsselfnn_paracur_scale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n_neighsselfnn_paracur_scale&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;n_neighs=self.nn_para+cur_scale&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;指定每个点的邻居数。&lt;/li&gt;
+&lt;li&gt;具体值是  &lt;code&gt;self.nn_para&lt;/code&gt; （一个基准邻居数）加上  &lt;code&gt;cur_scale&lt;/code&gt; （可能是一个动态调整的值）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：决定空间图中每个点将连接多少个邻居。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;set_diagselfinclude_self&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#set_diagselfinclude_self&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;set_diag=self.include_self&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;控制邻接矩阵是否设置对角线为 1（即点是否与自己相连）。&lt;/li&gt;
+&lt;li&gt;如果  &lt;code&gt;self.include_self=True&lt;/code&gt; ，邻接矩阵的对角线值会被设置为 1。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-函数的主要功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-函数的主要功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 函数的主要功能&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;空间坐标：来自  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;邻居数、对角线选项等配置。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;处理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据空间坐标构建 K 邻居图或基于 Delaunay 三角剖分的邻居关系图。&lt;/li&gt;
+&lt;li&gt;生成邻接矩阵并存储到  &lt;code&gt;AnnData&lt;/code&gt;  对象中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在  &lt;code&gt;adata_tmp.uns&lt;/code&gt;  中添加邻接关系的元数据（默认键为  &lt;code&gt;&#39;spatial_neighbors&#39;&lt;/code&gt; ）。&lt;/li&gt;
+&lt;li&gt;在  &lt;code&gt;adata_tmp.obsp&lt;/code&gt;  中添加稀疏邻接矩阵（默认键为  &lt;code&gt;&#39;spatial_distances&#39;&lt;/code&gt;  和  &lt;code&gt;&#39;spatial_connectivities&#39;&lt;/code&gt; ）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-工作原理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 工作原理&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;邻接图构建：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果  &lt;code&gt;n_neighs&lt;/code&gt;  被指定，会使用 K - 邻居算法。&lt;/li&gt;
+&lt;li&gt;如果没有指定  &lt;code&gt;n_neighs&lt;/code&gt; ，默认使用 Delaunay 三角剖分算法构建邻接图。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;稀疏矩阵生成：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;spatial_distances&lt;/code&gt; ：存储点之间的距离（欧氏距离）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spatial_connectivities&lt;/code&gt; ：存储点之间的连接权重（默认是 0 或 1，表示是否连接）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-示例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-示例&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 示例&lt;/strong&gt;&lt;/h3&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; squidpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sq&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个 AnnData 对象并添加空间坐标&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp = sc.AnnData()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;] = [[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 使用 spatial_neighbors 计算邻接图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(adata_tmp, coord_type=&lt;span class=&#34;string&#34;&gt;&amp;#x27;generic&amp;#x27;&lt;/span&gt;, n_neighs=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, set_diag=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.obsp[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_connectivities&amp;#x27;&lt;/span&gt;].toarray())  &lt;span class=&#34;comment&#34;&gt;# 稀疏连接矩阵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.uns[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_neighbors&amp;#x27;&lt;/span&gt;])  &lt;span class=&#34;comment&#34;&gt;# 元数据信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出可能类似：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[[1. 1. 1. 0.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 1. 0. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 0. 1. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [0. 1. 1. 1.]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;#x27;n_neighs&amp;#x27;: 2, &amp;#x27;coord_type&amp;#x27;: &amp;#x27;generic&amp;#x27;, &amp;#x27;params&amp;#x27;: &amp;#123;...&amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Scanpy 是一个用于单细胞转录组数据分析的 Python 包，它集成了多种功能，涵盖了数据的预处理、降维、聚类、差异基因分析以及可视化等多种步骤。以下是一些常用的函数及其用途。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-数据读取和保存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-数据读取和保存&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 数据读取和保存&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;11-scread&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-scread&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.1  &lt;code&gt;sc.read()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用于读取  &lt;code&gt;.h5ad&lt;/code&gt;  格式的 AnnData 文件。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;#x27;example.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12-scread_10x_mtx&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-scread_10x_mtx&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.2  &lt;code&gt;sc.read_10x_mtx()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;读取 10x Genomics 数据（稀疏矩阵格式）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read_10x_mtx(&lt;span class=&#34;string&#34;&gt;&amp;#x27;filtered_feature_bc_matrix/&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13-adatawrite&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-adatawrite&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.3  &lt;code&gt;adata.write()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;保存 AnnData 对象到文件。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;#x27;output.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-数据预处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-数据预处理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 数据预处理&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;21-scppfilter_cells-和-scppfilter_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-scppfilter_cells-和-scppfilter_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.1  &lt;code&gt;sc.pp.filter_cells()&lt;/code&gt;  和  &lt;code&gt;sc.pp.filter_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;按细胞或基因的特定条件过滤。&lt;/li&gt;
+&lt;li&gt;示例：去除少于 200 个基因表达的细胞：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.filter_cells(adata, min_genes=&lt;span class=&#34;number&#34;&gt;200&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22-scppnormalize_total&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-scppnormalize_total&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.2  &lt;code&gt;sc.pp.normalize_total()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对数据进行归一化，使每个细胞的总表达量相同。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.normalize_total(adata, target_sum=&lt;span class=&#34;number&#34;&gt;1e4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23-scpplog1p&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#23-scpplog1p&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.3  &lt;code&gt;sc.pp.log1p()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对归一化数据取对数变换。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.log1p(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;24-scpphighly_variable_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#24-scpphighly_variable_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.4  &lt;code&gt;sc.pp.highly_variable_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;筛选高变异基因。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.highly_variable_genes(adata, n_top_genes=&lt;span class=&#34;number&#34;&gt;2000&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;25-scppscale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#25-scppscale&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.5  &lt;code&gt;sc.pp.scale()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;标准化每个基因，使其均值为 0、标准差为 1。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.scale(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-降维&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-降维&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 降维&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;31-scpppca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-scpppca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.1  &lt;code&gt;sc.pp.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;进行主成分分析（PCA）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.pca(adata, n_comps=&lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32-sctltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-sctltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.2  &lt;code&gt;sc.tl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;进行 t-SNE 分析。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.tsne(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33-sctlumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-sctlumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.3  &lt;code&gt;sc.tl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;计算 UMAP（常用的降维可视化方法）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.neighbors(adata)  &lt;span class=&#34;comment&#34;&gt;# 先构建邻居图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.umap(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-聚类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-聚类&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 聚类&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;41-sctlleiden&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-sctlleiden&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.1  &lt;code&gt;sc.tl.leiden()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Leiden 聚类算法。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.leiden(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42-sctllouvain&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-sctllouvain&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.2  &lt;code&gt;sc.tl.louvain()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Louvain 聚类算法。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.louvain(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-差异表达分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-差异表达分析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 差异表达分析&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;51-sctlrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-sctlrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.1  &lt;code&gt;sc.tl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对聚类的分组进行差异表达分析。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.rank_genes_groups(adata, groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;, method=&lt;span class=&#34;string&#34;&gt;&amp;#x27;t-test&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52-scplrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#52-scplrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.2  &lt;code&gt;sc.pl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;可视化差异基因分析结果。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.rank_genes_groups(adata, n_genes=&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;6-可视化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-可视化&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6. 可视化&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;61-scplpca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#61-scplpca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.1  &lt;code&gt;sc.pl.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;PCA 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.pca(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;62-scplumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#62-scplumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.2  &lt;code&gt;sc.pl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;UMAP 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.umap(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;63-scpltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#63-scpltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.3  &lt;code&gt;sc.pl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;t-SNE 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.tsne(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;64-scplheatmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#64-scplheatmap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.4  &lt;code&gt;sc.pl.heatmap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;绘制热图，显示差异基因在各组中的表达情况。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.heatmap(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;65-scplstacked_violin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#65-scplstacked_violin&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.5  &lt;code&gt;sc.pl.stacked_violin()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;绘制分组基因表达的堆叠小提琴图。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.stacked_violin(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;7-计算基因集评分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-计算基因集评分&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7. 计算基因集评分&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;71-sctlscore_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#71-sctlscore_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.1  &lt;code&gt;sc.tl.score_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;为指定基因集计算评分。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes(adata, gene_list=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene2&amp;#x27;&lt;/span&gt;], score_name=&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene_Score&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;72-sctlscore_genes_cell_cycle&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#72-sctlscore_genes_cell_cycle&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.2  &lt;code&gt;sc.tl.score_genes_cell_cycle()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;计算细胞周期评分。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes_cell_cycle(adata, s_genes=your_s_genes, g2m_genes=your_g2m_genes)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;8-扩展功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#8-扩展功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8. 扩展功能&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;81-数据整合&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#81-数据整合&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.1 数据整合&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;使用  &lt;code&gt;sc.pp.bbknn()&lt;/code&gt;  或  &lt;code&gt;sc.external.pp.harmony_integrate()&lt;/code&gt;  实现跨批次数据整合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;82-可视化空间数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#82-可视化空间数据&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.2 可视化空间数据&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;如果处理空间转录组数据，可以用  &lt;code&gt;squidpy&lt;/code&gt; （与 Scanpy 兼容）实现更高级的空间可视化。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+        <category term="代码" scheme="http://amentiraz.github.io/categories/note/%E4%BB%A3%E7%A0%81/" />
+        <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <updated>2024-12-06T02:40:37.000Z</updated>
+    </entry>
     <entry>
         <id>http://amentiraz.github.io/MENDER/</id>
         <title>MENDER</title>
@@ -74,8 +422,55 @@ All GNN-based methods have better scalability and speed than BN-based methods an
 &lt;p&gt;The spatial coordinate of the i-th cell is nored as &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;(x_i,y_i)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;,&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;i\in[1,N]&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69862em;vertical-align:-0.0391em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;The number of ranges if set to &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;S&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;. The radius is set to &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;R&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Then the multi-range neighborhood representation matrix,&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;Z&lt;/mi&gt;&lt;mrow&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;M\in Z^{+N\times (S\times C)}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.72243em;vertical-align:-0.0391em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.8879999999999999em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;Z&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.8879999999999999em;&#34;&gt;&lt;span style=&#34;top:-3.063em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mopen mtight&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;, in which the i-th row is the context-aware representation of the i-th cell.&lt;/p&gt;
-\begin{equation}
-M_{i,(s-1)\times C+c=|{j|(s-1)\times R\leq Dist(i,j)</content>
+&lt;p&gt;&lt;span class=&#34;katex-display&#34;&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34; display=&#34;block&#34;&gt;&lt;semantics&gt;&lt;mtable rowspacing=&#34;0.15999999999999992em&#34; columnalign=&#34;center&#34; columnspacing=&#34;1em&#34;&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;msub&gt;&lt;mi&gt;M&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mo&gt;&amp;lt;&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;mi&gt;R&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;∩&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;mo&gt;∩&lt;/mo&gt;&lt;mrow&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;msub&gt;&lt;mi&gt;l&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;g&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;/msub&gt;&lt;/mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;/mrow&gt;&lt;/msub&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;mrow&gt;&lt;mi&gt;w&lt;/mi&gt;&lt;mi&gt;h&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo&gt;:&lt;/mo&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;mrow&gt;&lt;mi&gt;D&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/mrow&gt;&lt;mo&gt;=&lt;/mo&gt;&lt;msqrt&gt;&lt;mrow&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;x&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;mo&gt;+&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;(&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;/msub&gt;&lt;mo&gt;−&lt;/mo&gt;&lt;msub&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;/msub&gt;&lt;msup&gt;&lt;mo stretchy=&#34;false&#34;&gt;)&lt;/mo&gt;&lt;mn&gt;2&lt;/mn&gt;&lt;/msup&gt;&lt;/mrow&gt;&lt;/msqrt&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;mrow&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;j&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;N&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;mrow&gt;&lt;mi&gt;s&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;S&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;mtr&gt;&lt;mtd&gt;&lt;mstyle scriptlevel=&#34;0&#34; displaystyle=&#34;false&#34;&gt;&lt;mrow&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mo&gt;∈&lt;/mo&gt;&lt;mo stretchy=&#34;false&#34;&gt;[&lt;/mo&gt;&lt;mn&gt;1&lt;/mn&gt;&lt;mo separator=&#34;true&#34;&gt;,&lt;/mo&gt;&lt;mi&gt;C&lt;/mi&gt;&lt;mo stretchy=&#34;false&#34;&gt;]&lt;/mo&gt;&lt;/mrow&gt;&lt;/mstyle&gt;&lt;/mtd&gt;&lt;/mtr&gt;&lt;/mtable&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\begin{array}{c}
+M_{i,(s-1)\times C+c=|{j|(s-1)\times R\leq Dist(i,j)&amp;lt;s\times R}\cap{j|slice_j=slice_i}\cap{j|cell_j=g_c}|} \\
+where: \\
+Dist{i,j} = \sqrt {(x_j-x_i)^2+(y_j-y_i)^2} \\
+i,j\in [1,N] \\
+s \in [1,S] \\ 
+c \in [1,C]
+\end{array}&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:7.294466em;vertical-align:-3.397233em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mtable&#34;&gt;&lt;span class=&#34;arraycolsep&#34; style=&#34;width:0.5em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;col-align-c&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:3.897233em;&#34;&gt;&lt;span style=&#34;top:-6.057232999999999em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;M&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.34479999999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5198em;margin-left:-0.10903em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct mtight&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mopen mtight&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mopen mtight&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;≤&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mopen mtight&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct mtight&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mclose mtight&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;×&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.00773em;&#34;&gt;R&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;∩&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3280857142857143em;&#34;&gt;&lt;span style=&#34;top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.5em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size3 size1 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2818857142857143em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3280857142857143em;&#34;&gt;&lt;span style=&#34;top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.5em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size3 size1 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.143em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mbin mtight&#34;&gt;∩&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.01968em;&#34;&gt;l&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3280857142857143em;&#34;&gt;&lt;span style=&#34;top:-2.357em;margin-left:-0.01968em;margin-right:0.07142857142857144em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.5em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size3 size1 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.2818857142857143em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mrel mtight&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.03588em;&#34;&gt;g&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.16454285714285719em;&#34;&gt;&lt;span style=&#34;top:-2.357em;margin-left:-0.03588em;margin-right:0.07142857142857144em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.5em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size3 size1 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;c&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.143em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mord mtight&#34;&gt;∣&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.3775199999999999em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-4.839713000000001em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02691em;&#34;&gt;w&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;h&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;r&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;:&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-3.5627670000000005em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;D&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;t&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord sqrt&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.916946em;&#34;&gt;&lt;span class=&#34;svg-align&#34; style=&#34;top:-3.2em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.2em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34; style=&#34;padding-left:1em;&#34;&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.311664em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.286108em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.740108em;&#34;&gt;&lt;span style=&#34;top:-2.9890000000000003em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;+&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.311664em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.286108em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;−&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03588em;&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t vlist-t2&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.31166399999999994em;&#34;&gt;&lt;span style=&#34;top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mathnormal mtight&#34;&gt;i&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.15em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;&lt;span class=&#34;mclose&#34;&gt;)&lt;/span&gt;&lt;span class=&#34;msupsub&#34;&gt;&lt;span class=&#34;vlist-t&#34;&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.740108em;&#34;&gt;&lt;span style=&#34;top:-2.9890000000000003em;margin-right:0.05em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:2.7em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;sizing reset-size6 size3 mtight&#34;&gt;&lt;span class=&#34;mord mtight&#34;&gt;2&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.8769460000000002em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3.2em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;hide-tail&#34; style=&#34;min-width:1.02em;height:1.28em;&#34;&gt;&lt;svg width=&#34;400em&#34; height=&#34;1.28em&#34; viewbox=&#34;0 0 400000 1296&#34; preserveaspectratio=&#34;xMinYMin slice&#34;&gt;&lt;path d=&#34;M263,681c0.7,0,18,39.7,52,119
+c34,79.3,68.167,158.7,102.5,238c34.3,79.3,51.8,119.3,52.5,120
+c340,-704.7,510.7,-1060.3,512,-1067
+l0 -0
+c4.7,-7.3,11,-11,19,-11
+H40000v40H1012.3
+s-271.3,567,-271.3,567c-38.7,80.7,-84,175,-136,283c-52,108,-89.167,185.3,-111.5,232
+c-22.3,46.7,-33.8,70.3,-34.5,71c-4.7,4.7,-12.3,7,-23,7s-12,-1,-12,-1
+s-109,-253,-109,-253c-72.7,-168,-109.3,-252,-110,-252c-10.7,8,-22,16.7,-34,26
+c-22,17.3,-33.3,26,-34,26s-26,-26,-26,-26s76,-59,76,-59s76,-60,76,-60z
+M1001 80h400000v40h-400000z&#34;/&gt;&lt;/svg&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:0.32305399999999995em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-2.3627670000000003em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;i&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05724em;&#34;&gt;j&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.10903em;&#34;&gt;N&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:-1.1627670000000003em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;s&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.05764em;&#34;&gt;S&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;top:0.037232999999999905em;&#34;&gt;&lt;span class=&#34;pstrut&#34; style=&#34;height:3em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;c&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mrel&#34;&gt;∈&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2777777777777778em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mopen&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;mpunct&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.16666666666666666em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07153em;&#34;&gt;C&lt;/span&gt;&lt;span class=&#34;mclose&#34;&gt;]&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-s&#34;&gt;​&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;vlist-r&#34;&gt;&lt;span class=&#34;vlist&#34; style=&#34;height:3.397233em;&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;arraycolsep&#34; style=&#34;width:0.5em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;这里的 M 指的是满足这个条件的数量，&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;mo&gt;⋅&lt;/mo&gt;&lt;mi mathvariant=&#34;normal&#34;&gt;∣&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;|\cdot|&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mbin&#34;&gt;⋅&lt;/span&gt;&lt;span class=&#34;mspace&#34; style=&#34;margin-right:0.2222222222222222em;&#34;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:1em;vertical-align:-0.25em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;∣&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 表示数量的计算。&lt;/p&gt;
+&lt;h2 id=&#34;总结一下&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结一下&#34;&gt;#&lt;/a&gt; 总结一下&lt;/h2&gt;
+&lt;p&gt;说白了这玩意还是把基因的信息和 spatial 的基因结合并凸显它们的特征然后利用得到的信息进行聚类，只不过把范围扩大到了多 slice 的情况。&lt;/p&gt;
+&lt;h1 id=&#34;评价环节&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#评价环节&#34;&gt;#&lt;/a&gt; 评价环节&lt;/h1&gt;
+&lt;p&gt;又到了喜闻乐见的吹水环节，这里就把我认为比较有代表性的图片粘贴上来&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER4.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER5.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER6.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER7.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;The original publication supplied both fine and coarse cell classifications.&lt;/p&gt;
+&lt;p&gt;we define patient representation using MENDER domain proportion as &amp;quot;MENDER repr&amp;quot;.&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER8.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;这里的每一个点指的是 S slice &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\times&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.66666em;vertical-align:-0.08333em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord&#34;&gt;×&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; replicated runs&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER9.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;这张图片表示了对于同一个 spatial domain 也能体现出细胞 context 的 variation。对于后两个图片是基于不同的分辨率得到的。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/MENDER10.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;这是对于图片的解释&lt;/p&gt;
+&lt;h1 id=&#34;discussions&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#discussions&#34;&gt;#&lt;/a&gt; Discussions&lt;/h1&gt;
+&lt;p&gt;这篇文章的 discussion 写的确实挺不错的，有些观点可以记录一下&lt;/p&gt;
+&lt;p&gt;There are primarily two factors that can influence the determination of spatial domain labels:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The first factor is cellular context because MENDER relies on the representation of cellular context tot determine spatial domain labels.&lt;/li&gt;
+&lt;li&gt;The second factor is the Leiden clustering resolution.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There were two folds of analytical contributions:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;we identified consistent nerghborhood statistics across different spatial technologies in different tissue systems,&lt;/li&gt;
+&lt;li&gt;we found that simple cellular context analysis might have improved performance compared to state-of-art complex models in both supervised and unsupervised settings.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;code&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#code&#34;&gt;#&lt;/a&gt; Code&lt;/h1&gt;
+</content>
         <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -4089,74 +4484,5 @@ C 指型&lt;br&gt;
         <category term="动画" scheme="http://amentiraz.github.io/categories/comment/%E5%8A%A8%E7%94%BB/" />
         <category term="书评" scheme="http://amentiraz.github.io/tags/%E4%B9%A6%E8%AF%84/" />
         <updated>2024-09-19T09:06:49.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://amentiraz.github.io/%E4%BF%9D%E7%A0%94%E5%A4%8D%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%80%BB%E6%8B%AC/</id>
-        <title>保研复试复习总括</title>
-        <link rel="alternate" href="http://amentiraz.github.io/%E4%BF%9D%E7%A0%94%E5%A4%8D%E8%AF%95%E5%A4%8D%E4%B9%A0%E6%80%BB%E6%8B%AC/"/>
-        <content type="html">&lt;p&gt;本文针对保研复试进行总复习，对目前的自己针对机器学习、计算机组织，包括数学建模、ACM 等等学科进行自己的理解和概括，以总述为主，内容复习为辅。&lt;br&gt;
-目的是为了在复试时更好的吹牛 qwq。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;h1 id=&#34;机器学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#机器学习&#34;&gt;#&lt;/a&gt; 机器学习&lt;/h1&gt;
-&lt;h2 id=&#34;内容复习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内容复习&#34;&gt;#&lt;/a&gt; 内容复习&lt;/h2&gt;
-&lt;h3 id=&#34;绪论&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#绪论&#34;&gt;#&lt;/a&gt; 绪论&lt;/h3&gt;
-&lt;p&gt;无论学习算法 A 多聪明，学习算法 B 多笨拙，期望性能是完全相同的。（NFL 定理）&lt;br&gt;
-脱离实际问题，空泛的谈论算法优劣没有意义。&lt;br&gt;
-机器学习为交叉学习提供技术支撑，本质上机器学习就是利用大数据&lt;br&gt;
-数据库为数据挖掘提供数据管理技术，机器学习和统计学提供数据分析技术。&lt;/p&gt;
-&lt;h3 id=&#34;模型评估与选择&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#模型评估与选择&#34;&gt;#&lt;/a&gt; 模型评估与选择&lt;/h3&gt;
-&lt;p&gt;过拟合无法彻底避免，我们能做的只有缓解&lt;br&gt;
-调参和算法选择没有什么本质区别&lt;br&gt;
-泛化误差可分解为偏差、方差和噪声之和。&lt;/p&gt;
-&lt;h3 id=&#34;线性模型&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#线性模型&#34;&gt;#&lt;/a&gt; 线性模型&lt;/h3&gt;
-&lt;p&gt;形式简单、易于建模。&lt;br&gt;
-线性回归：均方误差最小化&lt;br&gt;
-线性判别分析：将样本投到一条直线上（更低维的空间）。&lt;br&gt;
-多分类问题：一对一、一对多、多对多。&lt;/p&gt;
-&lt;h3 id=&#34;决策树&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#决策树&#34;&gt;#&lt;/a&gt; 决策树&lt;/h3&gt;
-&lt;p&gt;信息增益、希望决策树的样本划分尽可能属于同一类别，数据挖掘里面讲到过。还有剪枝的内容，泛化能力更强。&lt;/p&gt;
-&lt;h3 id=&#34;神经网络&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#神经网络&#34;&gt;#&lt;/a&gt; 神经网络&lt;/h3&gt;
-&lt;p&gt;感知机（Perception）&lt;br&gt;
-BP 算法（误差逆传播）（error BackPropagation)&lt;/p&gt;
-&lt;h3 id=&#34;支持向量机&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#支持向量机&#34;&gt;#&lt;/a&gt; 支持向量机&lt;/h3&gt;
-&lt;p&gt;划分的超平面对于训练样本的局部扰动的 “容忍” 性最好&lt;br&gt;
-软间隔、正则化（一种罚函数）&lt;/p&gt;
-&lt;h3 id=&#34;贝叶斯分类器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#贝叶斯分类器&#34;&gt;#&lt;/a&gt; 贝叶斯分类器&lt;/h3&gt;
-&lt;p&gt;基于后验概率&lt;/p&gt;
-&lt;h3 id=&#34;集成学习&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#集成学习&#34;&gt;#&lt;/a&gt; 集成学习&lt;/h3&gt;
-&lt;p&gt;构建并结合多个学习器来完成学习任务，也被称为多分类器系统。&lt;br&gt;
-Boosting：弱学习器提升为强学习器&lt;br&gt;
- bagging：自助法啥的&lt;/p&gt;
-&lt;h3 id=&#34;聚类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#聚类&#34;&gt;#&lt;/a&gt; 聚类&lt;/h3&gt;
-&lt;p&gt;无监督。。。&lt;/p&gt;
-&lt;h2 id=&#34;理念概括&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#理念概括&#34;&gt;#&lt;/a&gt; 理念概括&lt;/h2&gt;
-&lt;p&gt;利用数据对未来情况进行预测，模型构建的过程中算法从数据提取特征和规律，构建数学模型来表示复杂的关系，希望具有泛化的能力和持续改进的功能。&lt;br&gt;
-数据质量，特征提取，模型选择，过拟合欠拟合找到平衡，选用适当的评估指标，模型的可解释性，数据的划分，运行的成本&lt;/p&gt;
-&lt;h1 id=&#34;数据挖掘&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据挖掘&#34;&gt;#&lt;/a&gt; 数据挖掘&lt;/h1&gt;
-&lt;h2 id=&#34;内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#内容&#34;&gt;#&lt;/a&gt; 内容&lt;/h2&gt;
-&lt;h3 id=&#34;绪论-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#绪论-2&#34;&gt;#&lt;/a&gt; 绪论&lt;/h3&gt;
-&lt;p&gt;数据挖掘是在大型数据存储库中，自动的发现有用信息的过程。数据挖掘技术用来探查大型数据库，发现先前未知的有用模式。&lt;br&gt;
-数据预处理是将未加工的输入数据转换成适合分析的形式&lt;br&gt;
-任务：预测任务，描述任务，预测建模&lt;/p&gt;
-&lt;h3 id=&#34;数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据&#34;&gt;#&lt;/a&gt; 数据&lt;/h3&gt;
-&lt;p&gt;数据类型、数据质量、预处理步骤，数据之间的联系。&lt;br&gt;
-&lt;img data-src=&#34;1.jpg&#34; alt&gt;&lt;br&gt;
-数据预处理：聚类、抽样、维归约、特征子集选择、特征创建、离散化和二元化、变量变换&lt;/p&gt;
-&lt;h3 id=&#34;探索数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#探索数据&#34;&gt;#&lt;/a&gt; 探索数据&lt;/h3&gt;
-&lt;p&gt;对于有序数据，考虑值的百分位数更有意义。第 &lt;code&gt;p&lt;/code&gt;  个百分位数 &lt;code&gt;xp&lt;/code&gt;  是一个 &lt;code&gt;x&lt;/code&gt;  值，使得 &lt;code&gt;x&lt;/code&gt;  的 &lt;code&gt;p%&lt;/code&gt;  的观测值小于 &lt;code&gt;xp&lt;/code&gt; &lt;br&gt;
- 可视化：直方图、盒状图、饼图、散布图&lt;/p&gt;
-&lt;h3 id=&#34;分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分类&#34;&gt;#&lt;/a&gt; 分类&lt;/h3&gt;
-&lt;p&gt;略&lt;/p&gt;
-&lt;h2 id=&#34;理念概括-2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#理念概括-2&#34;&gt;#&lt;/a&gt; 理念概括&lt;/h2&gt;
-&lt;p&gt;没什么好概括的&lt;br&gt;
-实际和机器学习概括的差不多&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;一坨屎，妈的，我已经足够了解这个方面的知识了，明天问啥答啥，爱要不要。&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;结果复习一天的内容屁都没用上，面试就是即兴英语口语 + 竞赛经历讲解 + tree new bee。老师问啥我答啥，照这些老师喜欢的方向去回答，最后目测这些老师都挺满意的，应该问题不大（希望不是 flag）。这玩意还是得硬实力够啊，我看前面的都挺折磨，估计是项目经历不真实导致的吧。&lt;/p&gt;
-&lt;p&gt;就我个人观察而言，面试技巧已经没啥特别加分的作用了，大家都会，老师也都知道，反套路搞你几句你也寄。实际上，在大家都不会面试技巧时，考察的是情商；然而，在大家都会面试技巧时，考察的照样是情商。走捷径是没有用的。&lt;/p&gt;
-</content>
-        <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
-        <updated>2024-09-19T02:26:45.000Z</updated>
     </entry>
 </feed>
