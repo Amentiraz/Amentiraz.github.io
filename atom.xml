@@ -8,7 +8,151 @@
     <author>
       <name>Amentiraz</name>
     </author>
-    <updated>2024-12-13T08:51:45.000Z</updated>
+    <updated>2024-12-16T02:20:53.000Z</updated>
+    <entry>
+        <id>http://amentiraz.github.io/BayesSpace/</id>
+        <title>BayesSpace</title>
+        <link rel="alternate" href="http://amentiraz.github.io/BayesSpace/"/>
+        <content type="html">&lt;p&gt;Spatial transcriptomics at subspot resolution with BayesSpace&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#abstract&#34;&gt;#&lt;/a&gt; Abstract&lt;/h1&gt;
+&lt;p&gt;BayesSpace, a fully Bayesian statistical method that uses the information from spatial neighborhoods for resolution enhancement of spatial transcriptomic data and for clustering analysis.&lt;/p&gt;
+&lt;p&gt;we show that BayesSpace resolves tiissue structure that is not detectable at the original resolution and identifies transcriptional heterpgeneity inaccessible to histological analysis.&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#introduction&#34;&gt;#&lt;/a&gt; Introduction&lt;/h1&gt;
+&lt;h2 id=&#34;background&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#background&#34;&gt;#&lt;/a&gt; Background&lt;/h2&gt;
+&lt;p&gt;Single-cell RNA sequencing (scRNA-seq) achieves high-throughput and high-resolution profiling of gene expression, but because tissue is dissociated for sample preparation, spatial information is not retained.&lt;/p&gt;
+&lt;p&gt;Studies performed with the Spatial Transcriptomics (ST) platform and the improved Visium platform have already generated insights into diverse areas. The primary technological limitation of these spatial gene expression platforms is resolution, with the unit of observation being spots that are 100 μm in diameter on the ST platform and 55 μm in diameter on the Visium platform. As such, the number of cells within a spot may range from one to 30 on the Visium platform and up to 200 on the older ST platform, depending on the biological tissue.&lt;/p&gt;
+&lt;p&gt;Alternative approaches include fluorescence in situ hybridization (FISH) technologies, such as seqFISH and multiplexed error-robust FISH, and other recently developed spatial sequencing methods, such as Slide-seq and ZipSeq. While these methods provide increased resolution, most are lower throughput, less sensitive, rely on custom protocols or are not widely available.&lt;/p&gt;
+&lt;h2 id=&#34;brief-method&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#brief-method&#34;&gt;#&lt;/a&gt; brief Method&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace1.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;BayesSpace enables spatial clustering by modeling a low-dimensional representation of the gene expression matrix and encouraging neighboring spots to belong to the same cluster via a spatial prior.&lt;/p&gt;
+&lt;p&gt;Compared with previous approaches, BayesSpace allows for a more flexible specification of the clustering structure and error term than alternative spproaches.&lt;/p&gt;
+&lt;p&gt;BayesSpace improves the identification of spatially distributed tissue domains through spatial clustering and enhances the resolution of gene expression maps.&lt;/p&gt;
+&lt;h1 id=&#34;results&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#results&#34;&gt;#&lt;/a&gt; Results&lt;/h1&gt;
+&lt;h2 id=&#34;spatial-clustering-improves-identification-of-known-layers-in-brain-tissues&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#spatial-clustering-improves-identification-of-known-layers-in-brain-tissues&#34;&gt;#&lt;/a&gt; Spatial clustering improves identification of known layers in brain tissues.&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace2.webp&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;increased-resolution-clustering-leads-to-identification-of-known-tissue-structures-missed-by-other-methods&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#increased-resolution-clustering-leads-to-identification-of-known-tissue-structures-missed-by-other-methods&#34;&gt;#&lt;/a&gt; Increased resolution clustering leads to identification of known tissue structures missed by other methods.&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace3.webp&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace4.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;能够检测到淋巴细胞和肿瘤边界&lt;/p&gt;
+&lt;h2 id=&#34;immunohistochemistry-validates-enhanced-resolution-clusters&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#immunohistochemistry-validates-enhanced-resolution-clusters&#34;&gt;#&lt;/a&gt; Immunohistochemistry validates enhanced-resolution clusters&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace5.webp&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace7.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace6.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Negative Log-Likelihood Curve (负对数似然曲线)&lt;/strong&gt; 是一种常用于评估模型性能或选择最佳参数的方法，尤其是在聚类分析中，它可以用于确定聚类数量（即分类簇数）。以下是关于它的详细介绍：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-什么是负对数似然-negative-log-likelihood-nll&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-什么是负对数似然-negative-log-likelihood-nll&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 什么是负对数似然 (Negative Log-Likelihood, NLL)?&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;似然函数&lt;/strong&gt;（Likelihood Function）是统计模型中数据与参数匹配程度的度量，表示在给定参数下，观察到数据的概率。&lt;br&gt;
+公式形式为：&lt;/p&gt;
+\begin{equation}
+L(\theta) = P(X | \theta)
+\end{equation}
+&lt;p&gt;其中：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;X&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;X&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.68333em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.07847em;&#34;&gt;X&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是数据；&lt;/li&gt;
+&lt;li&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;θ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是模型参数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;负对数似然&lt;/strong&gt;：为了便于计算和优化，我们通常使用对数似然的负数：&lt;/p&gt;
+\begin{equation}
+\text{NLL} = - \log L(\theta)
+\end{equation}
+&lt;p&gt;NLL 越小，表示模型越能够解释数据，参数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;θ&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;\theta&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.02778em;&#34;&gt;θ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 越接近真实值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-在聚类分析中的作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-在聚类分析中的作用&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 在聚类分析中的作用&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在聚类问题中，NLL 可用于评估数据被分配到簇中的 “拟合质量”。常见方法包括基于混合模型的聚类（如高斯混合模型，GMM）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;混合模型聚类&lt;/strong&gt;：&lt;br&gt;
+在 GMM 中，我们假设数据来自多个正态分布（簇），每个簇由其均值和方差参数化。NLL 衡量模型的参数（包括簇数）对数据的解释能力。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;NLL 随簇数变化的趋势&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果簇数太少，模型的表达能力不足，NLL 会较高（模型不能很好地解释数据）。&lt;/li&gt;
+&lt;li&gt;随着簇数增加，NLL 会逐渐减小，因为更多的簇能更细致地拟合数据。&lt;/li&gt;
+&lt;li&gt;当簇数超过一定值后，NLL 的下降幅度减小，甚至趋于平稳（过拟合开始出现）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这种趋势可以通过绘制 NLL 曲线来可视化。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-如何用-nll-确定最佳簇数&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-如何用-nll-确定最佳簇数&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 如何用 NLL 确定最佳簇数？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;通过绘制 &lt;strong&gt;负对数似然曲线 (NLL Curve)&lt;/strong&gt;，我们可以选择一个合理的聚类数量。以下是具体方法：&lt;/p&gt;
+&lt;h4 id=&#34;步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#步骤&#34;&gt;#&lt;/a&gt; &lt;strong&gt;步骤：&lt;/strong&gt;&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;对于每个候选簇数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;（如 2 到 10 个簇）：
+&lt;ul&gt;
+&lt;li&gt;训练模型（如 GMM）。&lt;/li&gt;
+&lt;li&gt;计算对应的 NLL 值。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;绘制 NLL 曲线，横轴为簇数 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;，纵轴为 NLL。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;分析曲线&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#分析曲线&#34;&gt;#&lt;/a&gt; &lt;strong&gt;分析曲线：&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;曲线的 &lt;strong&gt;“肘点”（Elbow Point）&lt;/strong&gt;：
+&lt;ul&gt;
+&lt;li&gt;当 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 增大时，NLL 减少的速度变慢。&lt;/li&gt;
+&lt;li&gt;曲线的 “拐点” 对应的 &lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 是一个合理的选择。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;结合其他指标（如 BIC、AIC）验证，避免过拟合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-与其他指标的关系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-与其他指标的关系&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 与其他指标的关系&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;在确定聚类数量时，NLL 通常与其他模型选择指标配合使用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;AIC（赤池信息准则）&lt;/strong&gt;：&lt;/p&gt;
+\begin{equation}
+\text{AIC} = 2k - 2 \log L(\theta)
+\end{equation}
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;k&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;k&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.69444em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34; style=&#34;margin-right:0.03148em;&#34;&gt;k&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 为参数数量，权衡拟合质量与模型复杂度。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;BIC（贝叶斯信息准则）&lt;/strong&gt;：&lt;/p&gt;
+\begin{equation}
+\text{BIC} = k \log n - 2 \log L(\theta)
+\end{equation}
+&lt;p&gt;&lt;span class=&#34;katex&#34;&gt;&lt;span class=&#34;katex-mathml&#34;&gt;&lt;math xmlns=&#34;http://www.w3.org/1998/Math/MathML&#34;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;/mrow&gt;&lt;annotation encoding=&#34;application/x-tex&#34;&gt;n&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&#34;katex-html&#34; aria-hidden=&#34;true&#34;&gt;&lt;span class=&#34;base&#34;&gt;&lt;span class=&#34;strut&#34; style=&#34;height:0.43056em;vertical-align:0em;&#34;&gt;&lt;/span&gt;&lt;span class=&#34;mord mathnormal&#34;&gt;n&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt; 为样本数，更注重惩罚复杂模型。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;bayesspace-distinguishes-intratumoral-heterogeneity-in-idc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bayesspace-distinguishes-intratumoral-heterogeneity-in-idc&#34;&gt;#&lt;/a&gt; BayesSpace distinguishes intratumoral heterogeneity in IDC&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace8.webp&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace9.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;这里的聚类标签源自于这：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace10.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;bayesspace-enhances-gene-expression-patterns-to-near-single-cell-resolution-on-in-silico-spatial-data&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#bayesspace-enhances-gene-expression-patterns-to-near-single-cell-resolution-on-in-silico-spatial-data&#34;&gt;#&lt;/a&gt; BayesSpace enhances gene expression patterns to near single-cell resolution on in silico spatial data.&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace11.webp&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;b 图：In N = 20 replicates for the simulation performed at the subspot level, BayesSpace enhanced clustering outperforms the optimal spot-level clustering (red dotted line)&lt;/p&gt;
+&lt;h2 id=&#34;enhanced-resolution-clustering-resolves-keratinocyte-structure-in-squamous-cell-carcinoma&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#enhanced-resolution-clustering-resolves-keratinocyte-structure-in-squamous-cell-carcinoma&#34;&gt;#&lt;/a&gt; Enhanced-resolution clustering resolves keratinocyte structure in squamous cell carcinoma.&lt;/h2&gt;
+&lt;p&gt;略&lt;/p&gt;
+&lt;h1 id=&#34;discussion&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#discussion&#34;&gt;#&lt;/a&gt; Discussion&lt;/h1&gt;
+&lt;p&gt;BayesSpace is a spatial transcriptomic model-based clustering method that uses a t-distributed error model to identify spatial clusters that are more robust to the presence of outliers caused bytechnical noise.&lt;/p&gt;
+&lt;p&gt;The resolution enhancement approaches single-cell resolution, with approximately three cells per subspot for data acquired with the Visium platform, without the need for external single-cell data.&lt;/p&gt;
+&lt;p&gt;However, there is potential for the enhanced data to be integrated with external single-cell data through deconvolution or label-transfer methods.&lt;/p&gt;
+&lt;p&gt;It may be possible to enhance the resolution of spot-level cell-type proportion estimates by using a Dirichlet regression model with enhanced PCs as predictors.&lt;/p&gt;
+&lt;p&gt;文章读下来感觉怪得很，后面恐怕需要再读几次。&lt;/p&gt;
+&lt;h1 id=&#34;methods&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#methods&#34;&gt;#&lt;/a&gt; Methods&lt;/h1&gt;
+&lt;h2 id=&#34;data-description&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#data-description&#34;&gt;#&lt;/a&gt; Data description&lt;/h2&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/BayesSpace12.png&#34; alt&gt;&lt;/p&gt;
+&lt;h2 id=&#34;preprocessing-and-dimension-reduction&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#preprocessing-and-dimension-reduction&#34;&gt;#&lt;/a&gt; Preprocessing and dimension reduction&lt;/h2&gt;
+&lt;p&gt;log transformed and normalized&lt;/p&gt;
+&lt;p&gt;PCA&lt;/p&gt;
+&lt;h2 id&gt;&lt;a class=&#34;anchor&#34; href=&#34;#&#34;&gt;#&lt;/a&gt; &lt;/h2&gt;
+</content>
+        <category term="论文类" scheme="http://amentiraz.github.io/categories/article/" />
+        <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+        <updated>2024-12-16T02:20:53.000Z</updated>
+    </entry>
     <entry>
         <id>http://amentiraz.github.io/%E5%AF%B9%E5%A9%9A%E5%A7%BB%E7%9A%84%E7%9C%8B%E6%B3%95/</id>
         <title>对婚姻的看法</title>
@@ -4424,69 +4568,5 @@ C 指型&lt;br&gt;
         <category term="论文" scheme="http://amentiraz.github.io/tags/%E8%AE%BA%E6%96%87/" />
         <category term="笔记" scheme="http://amentiraz.github.io/tags/%E7%AC%94%E8%AE%B0/" />
         <updated>2024-09-27T03:04:05.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://amentiraz.github.io/%E6%8C%87%E5%BC%B9%E8%B0%B1%E5%90%88%E9%9B%86/</id>
-        <title>指弹谱合集</title>
-        <link rel="alternate" href="http://amentiraz.github.io/%E6%8C%87%E5%BC%B9%E8%B0%B1%E5%90%88%E9%9B%86/"/>
-        <content type="html">&lt;p&gt;一路走来也算是弹了不少的曲子，从最开始追求技巧的卓越，到现在追求情感的表达，吉他技术不断上升的同时对音乐的理解也不断的提高。后面有机会会继续学习乐理方面的内容。如果有机会会把我弹奏版本的音频放在每个曲谱上面，算是对每首曲子的一个总结了。&lt;/p&gt;
-&lt;p&gt;当然，本篇主要是作为记录自己弹奏的曲子，便于查阅方便使用。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;《River Flows in You》 郑晟河2022&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/1.jpeg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/2.jpeg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/3.jpeg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/4.jpeg&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;warning&#34;&gt;&lt;summary&gt;《无题》 陈亮&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wt1.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wt2.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wt3.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wt4.avif&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details&gt;&lt;summary&gt;《Fight!》 押尾&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/f1.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/f2.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/f3.avif&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;《花》 岸部真明&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/hana1.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/hana2.avif&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;info&#34;&gt;&lt;summary&gt;《Distance》 伍伍慧&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/dis1.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/dis2.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/dis3.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/dis4.avif&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;primary&#34;&gt;&lt;summary&gt;《风之诗》 押尾十周年&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wind1.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wind2.avif&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/wind3.avif&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;warning&#34;&gt;&lt;summary&gt;《遇见》 郑晟河&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet1.png&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet2.png&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/meet3.png&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details&gt;&lt;summary&gt;《Like a Star》金永所&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star1.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star2.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star3.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star4.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star5.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star6.jpg&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/star7.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-&lt;details class=&#34;danger&#34;&gt;&lt;summary&gt;《November》岸部真明&lt;/summary&gt;&lt;div&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/nov1.png&#34; alt&gt;&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/nov2.png&#34; alt&gt;&lt;/p&gt;
-&lt;/div&gt;&lt;/details&gt;
-</content>
-        <category term="吉他类" scheme="http://amentiraz.github.io/categories/guitar/" />
-        <category term="乐谱" scheme="http://amentiraz.github.io/categories/guitar/%E4%B9%90%E8%B0%B1/" />
-        <category term="指弹" scheme="http://amentiraz.github.io/tags/%E6%8C%87%E5%BC%B9/" />
-        <category term="音乐" scheme="http://amentiraz.github.io/tags/%E9%9F%B3%E4%B9%90/" />
-        <updated>2024-09-26T09:03:16.000Z</updated>
     </entry>
 </feed>
