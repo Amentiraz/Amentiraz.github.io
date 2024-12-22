@@ -10,8 +10,67 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Tue, 17 Dec 2024 16:50:41 +0800</pubDate>
-        <lastBuildDate>Tue, 17 Dec 2024 16:50:41 +0800</lastBuildDate>
+        <pubDate>Sun, 22 Dec 2024 15:54:48 +0800</pubDate>
+        <lastBuildDate>Sun, 22 Dec 2024 15:54:48 +0800</lastBuildDate>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/%E9%98%BF%E9%87%8C%E4%BA%91ECS%E8%BF%9C%E7%A8%8B%E8%BF%90%E8%A1%8C%E7%AC%94%E8%AE%B0/</guid>
+            <title>阿里云ECS远程运行笔记</title>
+            <link>http://amentiraz.github.io/%E9%98%BF%E9%87%8C%E4%BA%91ECS%E8%BF%9C%E7%A8%8B%E8%BF%90%E8%A1%8C%E7%AC%94%E8%AE%B0/</link>
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="代码" scheme="http://amentiraz.github.io/tags/%E4%BB%A3%E7%A0%81/" />
+            <category term="ECS" scheme="http://amentiraz.github.io/tags/ECS/" />
+            <pubDate>Sun, 22 Dec 2024 15:54:48 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;第一次尝试远程跑代码，记录一下流程，免得以后忘了。&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;先用的它的免费送的一个试用版，配置是 2 核 (vGPU) 8GiB 通用算力型 u1，Ubuntu 系统&lt;/p&gt;
+&lt;h1 id=&#34;配置安全组&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置安全组&#34;&gt;#&lt;/a&gt; 配置安全组&lt;/h1&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/ECS1.png&#34; alt&gt;&lt;/p&gt;
+&lt;p&gt;默认应该是好的&lt;/p&gt;
+&lt;h1 id=&#34;连接到ecs实例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#连接到ecs实例&#34;&gt;#&lt;/a&gt; 连接到 ECS 实例&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;本地生成 SSH 密钥&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh-keygen -t rsa -b 4096&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;登录 ECS&lt;/li&gt;
+&lt;/ol&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;ssh root@&amp;lt;ECS实例公网IP&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;第一次登陆会出现提示，直接点 yes 就行&lt;/p&gt;
+&lt;p&gt;发现连接不上，去阿里云主页的这个实例下点击远程链接，重置了密码 Simp4hanekawa&lt;/p&gt;
+&lt;p&gt;然后在浏览器上登录显示成功。&lt;/p&gt;
+&lt;p&gt;再次尝试在命令指示符运行该指令显示登陆成功&lt;/p&gt;
+&lt;h1 id=&#34;设置权限&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#设置权限&#34;&gt;#&lt;/a&gt; 设置权限&lt;/h1&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;mkdir&lt;/span&gt; -p ~/.ssh&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;chmod&lt;/span&gt; 700 ~/.ssh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;上传公钥&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上传公钥&#34;&gt;#&lt;/a&gt; 上传公钥&lt;/h1&gt;
+&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;lt;粘贴公钥内容&amp;gt;&amp;quot;&lt;/span&gt; &amp;gt;&amp;gt; ~/.ssh/authorized_keys&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;chmod&lt;/span&gt; 600 ~/.ssh/authorized_keys&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h1 id=&#34;在pycharm中配置环境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在pycharm中配置环境&#34;&gt;#&lt;/a&gt; 在 pycharm 中配置环境&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;配置 SSH 连接&lt;/li&gt;
+&lt;li&gt;打开 PyCharm，点击顶部菜单 File &amp;gt; Settings。&lt;/li&gt;
+&lt;li&gt;进入 Project: &lt;Your project&gt; &amp;gt; Python Interpreter。&lt;/Your&gt;&lt;/li&gt;
+&lt;li&gt;点击右上角的齿轮图标，选择 Add Interpreter &amp;gt; SSH Interpreter。&lt;/li&gt;
+&lt;li&gt;输入 ECS 实例的公网 IP 和用户名（通常是 root 或创建的用户）。&lt;/li&gt;
+&lt;li&gt;配置 SSH 密钥或密码完成连接。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;在实例中安装conda&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#在实例中安装conda&#34;&gt;#&lt;/a&gt; 在实例中安装 conda&lt;/h1&gt;
+ &lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;mkdir&lt;/span&gt; -p ~/miniconda3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda3/miniconda.sh&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;bash ~/miniconda3/miniconda.sh -b -u -p ~/miniconda3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;rm&lt;/span&gt; ~/miniconda3/miniconda.sh&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;按照官方的说法进行了安装&lt;br&gt;
+然后剩下的操作就很简单了，直接用 conda 创建环境就行了&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E6%9D%BF%E5%9D%971%E6%80%BB%E7%BB%93/</guid>
+            <title>情爱现象学板块1总结</title>
+            <link>http://amentiraz.github.io/%E6%83%85%E7%88%B1%E7%8E%B0%E8%B1%A1%E5%AD%A6%E6%9D%BF%E5%9D%971%E6%80%BB%E7%BB%93/</link>
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/categories/note/" />
+            <category term="现象学" scheme="http://amentiraz.github.io/categories/note/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
+            <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
+            <pubDate>Sat, 21 Dec 2024 12:34:31 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;六个沉思中的第一个沉思&lt;/p&gt;
+&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
+&lt;p&gt;这玩意给我看 emo 了，可能受限于自己本身的认识不足和确实这本书的信息熵以及非同寻常认识的价值观体系，给我硬生生冲击的自闭了一天。自闭的原因是感觉自己这辈子也无法达到或者退一步来说认识到 “至善”。由于认识到 “爱洛斯还原” 大概是个什么玩意，要真按照这样还原，恐怕除了我愿意还原到自身的他者，其它的东西无法引起我的兴趣了，直接导致了以下结果：生活快乐的阈值被无限的拔高，以至于让生活本身不快乐了，当然这上面的理解可能还是由于我自己对这本书表达的内容还存在很多误解的地方。昨天狠狠看了几集不用思考的动漫，降低了一下自己的思考强度才缓过来。看这种书还是要注意别把自己内心冲击烂了，也就是不要走火入魔了。&lt;/p&gt;
+ ]]></description>
+        </item>
         <item>
             <guid isPermalink="true">http://amentiraz.github.io/%E6%95%B0%E6%8D%AE%E9%9B%86%E8%AE%B0%E5%BD%95/</guid>
             <title>数据集记录</title>
@@ -84,6 +143,28 @@
 &lt;p&gt;协议是： MERFISH&lt;/p&gt;
 &lt;p&gt;保存了 csv 文件&lt;/p&gt;
 &lt;p&gt;对于数据： 5665 cells. 161 genes.&lt;/p&gt;
+&lt;p&gt;接下来是 STAGATE 的数据集，目测没有什么好下载的，对于它的 3D 数据可以记录一下。&lt;/p&gt;
+&lt;h1 id=&#34;adult-mouse-brain-section-1-coronal&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#adult-mouse-brain-section-1-coronal&#34;&gt;#&lt;/a&gt; Adult Mouse Brain Section 1 (Coronal)&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuMTB4Z2Vub21pY3MuY29tL2RhdGFzZXRzL2FkdWx0LW1vdXNlLWJyYWluLXNlY3Rpb24tMS1jb3JvbmFsLXN0YWlucy1kYXBpLWFudGktbmV1LW4tMS1zdGFuZGFyZC0xLTEtMA==&#34;&gt;下载地址&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;协议： Visium Spatial protocols&lt;/p&gt;
+&lt;p&gt;保存了 h5 文件&lt;/p&gt;
+&lt;p&gt;对于数据：&lt;br&gt;
+Spots detected under tissue: 2,903&lt;/p&gt;
+&lt;p&gt;Median genes per spot: 4,635&lt;/p&gt;
+&lt;p&gt;Median UMI counts per spot: 12,911&lt;/p&gt;
+&lt;h1 id=&#34;slide-seqv2-mouse-olfactory-bulb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#slide-seqv2-mouse-olfactory-bulb&#34;&gt;#&lt;/a&gt; Slide-seqV2 mouse olfactory bulb&lt;/h1&gt;
+&lt;p&gt;这个和之前那个是一样的，这里点明了用的是 Puck_200127_15 的数据&lt;/p&gt;
+&lt;p&gt;spots: 20139&lt;/p&gt;
+&lt;h1 id=&#34;stereo-seq-mouse-olfactory-bulb&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#stereo-seq-mouse-olfactory-bulb&#34;&gt;#&lt;/a&gt; Stereo-seq mouse olfactory bulb&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL0ppbm1pYW9DaGVuTGFiL1NFRFJfYW5hbHlzZXMvdHJlZS9tYXN0ZXIvZGF0YQ==&#34;&gt;下载地址&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;spots: 19109&lt;/p&gt;
+&lt;h1 id=&#34;seven-hippocampus-sections-profiled-by-slide-seq&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#seven-hippocampus-sections-profiled-by-slide-seq&#34;&gt;#&lt;/a&gt; seven hippocampus sections profiled by Slide-seq&lt;/h1&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9kcml2ZS5nb29nbGUuY29tL2RyaXZlL2ZvbGRlcnMvMTBsaHo1Vlk3WWZ2SHJ0VjQwTXdhcUxtV3o1NlU5ZUJQP3VzcD1zaGFyaW5n&#34;&gt;处理后的数据&lt;/span&gt;&lt;br&gt;
+&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wb3J0YWxzLmJyb2FkaW5zdGl0dXRlLm9yZy9zaW5nbGVfY2VsbC9zdHVkeS9zbGlkZS1zZXEtc3R1ZHk=&#34;&gt;原始数据&lt;/span&gt;&lt;br&gt;
+ Puck_180531_23: spots 18509&lt;/p&gt;
+&lt;p&gt;接下来是 MENDER 的数据，挺多且挺杂的&lt;/p&gt;
+&lt;p&gt;MENDER 的数据集感觉就是在推荐它的 pysodb 的库，不用记录数据来源了，可以直接调用的&lt;/p&gt;
+&lt;p&gt;接下来是 BayesSpace，&lt;/p&gt;
  ]]></description>
         </item>
         <item>
@@ -4589,55 +4670,6 @@ SW = \frac{b - a}{\max(a, b)}
             <category term="RnB" scheme="http://amentiraz.github.io/tags/RnB/" />
             <pubDate>Tue, 01 Oct 2024 16:30:55 +0800</pubDate>
             <description><![CDATA[  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E5%90%89%E4%BB%96%E4%B9%90%E7%90%86-Funk%E7%B1%BB/</guid>
-            <title>吉他乐理-Funk类</title>
-            <link>http://amentiraz.github.io/%E5%90%89%E4%BB%96%E4%B9%90%E7%90%86-Funk%E7%B1%BB/</link>
-            <category term="吉他类" scheme="http://amentiraz.github.io/categories/guitar/" />
-            <category term="乐理" scheme="http://amentiraz.github.io/categories/guitar/%E4%B9%90%E7%90%86/" />
-            <category term="吉他" scheme="http://amentiraz.github.io/tags/%E5%90%89%E4%BB%96/" />
-            <category term="指弹" scheme="http://amentiraz.github.io/tags/%E6%8C%87%E5%BC%B9/" />
-            <category term="乐理" scheme="http://amentiraz.github.io/tags/%E4%B9%90%E7%90%86/" />
-            <category term="Funk" scheme="http://amentiraz.github.io/tags/Funk/" />
-            <pubDate>Tue, 01 Oct 2024 16:30:39 +0800</pubDate>
-            <description><![CDATA[  ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E5%90%89%E4%BB%96%E4%B9%90%E7%90%86-POP/</guid>
-            <title>吉他乐理-POP</title>
-            <link>http://amentiraz.github.io/%E5%90%89%E4%BB%96%E4%B9%90%E7%90%86-POP/</link>
-            <category term="吉他类" scheme="http://amentiraz.github.io/categories/guitar/" />
-            <category term="乐理" scheme="http://amentiraz.github.io/categories/guitar/%E4%B9%90%E7%90%86/" />
-            <category term="吉他" scheme="http://amentiraz.github.io/tags/%E5%90%89%E4%BB%96/" />
-            <category term="指弹" scheme="http://amentiraz.github.io/tags/%E6%8C%87%E5%BC%B9/" />
-            <category term="乐理" scheme="http://amentiraz.github.io/tags/%E4%B9%90%E7%90%86/" />
-            <category term="POP" scheme="http://amentiraz.github.io/tags/POP/" />
-            <pubDate>Tue, 01 Oct 2024 16:30:21 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;报了个吉他乐理班，现在从零开始学吉他乐理，他的课程分为 5 个板块，分别是&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;流行&lt;/li&gt;
-&lt;li&gt;爵士&lt;/li&gt;
-&lt;li&gt;乡村与美式&lt;/li&gt;
-&lt;li&gt;RnB 与 Neo Soul&lt;/li&gt;
-&lt;li&gt;Funk 与 Smooth&lt;br&gt;
- 由于爵士太难，乡村美式歌曲我听得较少，所以只选择了其中的三个板块进行学习。例如本篇就是用来记录流行乐板块的内容。后面大概率也会补上爵士和乡村美式这两个板块的内容。希望每个课程学完后能做到即兴、Cover 歌曲和做出自己的一首指弹乐曲。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;当然这是比较难的，预计会耗费我大概两年左右的时间能全部完成。我希望我每个板块到了最后能附上自己创作的音频或视频。&lt;/p&gt;
-&lt;p&gt;每个板块我会记录下自己学到的知识进行强化和巩固。&lt;/p&gt;
-&lt;h1 id=&#34;caged系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#caged系统&#34;&gt;#&lt;/a&gt; CAGED 系统&lt;/h1&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/Cchord.jpg&#34; alt&gt;&lt;br&gt;
-C 指型&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/Cminor.jpg&#34; alt&gt;&lt;br&gt;
-把 3 音换成降 3 音变成小调 C 指型&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/Clicks.jpg&#34; alt&gt;&lt;br&gt;
-利用和弦内音丰富乐句，例如 4 音修饰 3 音，降 6 在和声大调中用于修饰 5 音，利用击勾弦进一步修饰&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogpic/Gchord.jpg&#34; alt&gt;&lt;br&gt;
- G 指型，同理&lt;br&gt;
-自己整理的一个指板&lt;br&gt;
-&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/CAGEDsystem.jpg&#34; alt&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/blogtab/%E4%BA%94%E5%A3%B0%E9%9F%B3%E9%98%B6%E6%91%B8%E8%BF%9Bpattern1.jpg&#34; alt&gt;&lt;/p&gt;
- ]]></description>
         </item>
     </channel>
 </rss>
