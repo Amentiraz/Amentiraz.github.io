@@ -103,8 +103,8 @@
 &lt;/div&gt;
 &lt;script data-pjax src=&#34;/lib/hbe.js&#34;&gt;&lt;/script&gt;&lt;link href=&#34;/css/hbe.style.css&#34; rel=&#34;stylesheet&#34; type=&#34;text/css&#34;&gt;</content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
-        <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
         <category term="毕业设计" scheme="http://amentiraz.github.io/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/" />
+        <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
         <updated>2025-04-11T06:43:37.000Z</updated>
     </entry>
     <entry>
@@ -621,9 +621,9 @@ A: 超越施虐 - 受虐的二元结构并非易事，因为它不仅是一个�
 &lt;p&gt;由于各类空间聚类方法在假设和数据依赖方面存在差异，它们在划分空间域时产生的结果也存在差异 [&lt;sup&gt;17]。具体方法的效果还会受到组织复杂程度的影响 [&lt;/sup&gt;18]，这也增加了在新数据集中选择合适方法的难度。一个应对策略是开发集成方法（ensemble methods），通过整合多个基础方法的结果提高稳健性 [^19]。然而，集成方法也面临两个主要挑战：（i）不同基础方法可能生成不同数量和类型的空间域，使得结果整合变得复杂；（ii）方法性能在不同数据集间表现不一致，难以自动评估并融合各方法的效果。&lt;/p&gt;
 </content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <updated>2025-03-15T13:38:28.000Z</updated>
     </entry>
     <entry>
@@ -2473,9 +2473,9 @@ Given a vector of cluster membership numbers, where the number of entries is the
 &lt;/div&gt;&lt;/details&gt;
 </content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <updated>2025-02-17T03:01:55.000Z</updated>
     </entry>
     <entry>
@@ -2952,9 +2952,9 @@ L_d=-\frac{1}{N}\sum_i\sum^m_{d=1}D_{id}log({p_{id}}),
 &lt;p&gt;这篇文章通过详细的实验和对比，展示了 DeepST 在空间转录组学中的强大能力，尤其是在识别复杂组织中的空间域和处理多批次数据方面的优势。&lt;/p&gt;
 </content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <updated>2025-02-01T03:15:16.000Z</updated>
     </entry>
     <entry>
@@ -3363,7 +3363,8 @@ Spots detected under tissue: 2,903&lt;/p&gt;
         <id>http://amentiraz.github.io/other/%E8%A7%82%E5%89%8D%E9%A1%BB%E7%9F%A5/</id>
         <title>观前须知</title>
         <link rel="alternate" href="http://amentiraz.github.io/other/%E8%A7%82%E5%89%8D%E9%A1%BB%E7%9F%A5/"/>
-        <content type="html">&lt;p&gt;这个博客建立的目的纯属当作记录自己当下生活的类似笔记本的平台，里面包含大量自己的主观臆断。里面的大部分观点是拾人牙慧，自己的看法也大多浅薄且偏激，不具有任何现实意义。或许今天我支持这篇文章的观点，明天我就想通了便反对。本人也无意去传播自己的思想，也不屑于拿自己的认识去洗脑别人。当你与我交流时 —— 无论以什么方式，我都会把你看作是与我对等的，具有独立思考能力，具有主体性的，具有共情能力的个体。&lt;/p&gt;
+        <content type="html">&lt;p&gt;这个博客建立的目的纯属当作记录自己当下生活和类似笔记本的平台，里面包含大量自己的主观臆断。里面的大部分观点是拾人牙慧，自己的看法也大多浅薄且偏激，不具有任何现实意义。我也无意去传播自己的思想，也不屑于拿自己的认识去洗脑别人。当你与我交流时 —— 无论以什么方式，我都会把你看作是与我对等的，具有独立思考能力，具有主体性的，具有共情能力的个体。&lt;/p&gt;
+&lt;p&gt;博客已经将内容做好了分类，你可以进入到对应的板块去寻找自己感兴趣的内容。同时本博客除非特殊情况不会删除自己以往的文章，或许它们文笔粗糙且内涵幼稚，但也算是我成长的一部分。&lt;/p&gt;
 &lt;p&gt;最后，对于不知从什么渠道了解到这个博客的你，如果这个博客对你有帮助，那便是再好不过的事情了。&lt;/p&gt;
 </content>
         <category term="其它" scheme="http://amentiraz.github.io/categories/other/" />
@@ -4061,9 +4062,9 @@ p(\{z_i\} | \text{data}) \propto p(\text{data} | \{z_i\}) \cdot \pi(\{z_i\})
 &lt;p&gt;总之对于这篇文章阅读完毕了，代码不总结了，R 语言学不来，后面再看吧。&lt;/p&gt;
 </content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
-        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
         <updated>2024-12-16T02:20:53.000Z</updated>
     </entry>
     <entry>
@@ -4099,354 +4100,6 @@ p(\{z_i\} | \text{data}) \propto p(\text{data} | \{z_i\}) \cdot \pi(\{z_i\})
         <category term="思考" scheme="http://amentiraz.github.io/categories/life/%E6%80%9D%E8%80%83/" />
         <category term="生活" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E6%B4%BB/" />
         <updated>2024-12-13T08:51:45.000Z</updated>
-    </entry>
-    <entry>
-        <id>http://amentiraz.github.io/code/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
-        <title>scanpy数据使用笔记</title>
-        <link rel="alternate" href="http://amentiraz.github.io/code/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
-        <content type="html">&lt;p&gt;Scanpy 是一个专门用于单细胞 RNA 测序 (scRNA-seq) 数据分析的 Python 库，它的核心数据结构是  &lt;code&gt;AnnData&lt;/code&gt; （Annotated Data）。了解  &lt;code&gt;AnnData&lt;/code&gt;  数据类型是使用 Scanpy 的关键。以下是对  &lt;code&gt;AnnData&lt;/code&gt;  的详细介绍：&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;1-anndata-的结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-anndata-的结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.  &lt;code&gt;AnnData&lt;/code&gt;  的结构&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;AnnData&lt;/code&gt;  是一种基于矩阵的数据结构，专为处理大规模高维数据设计。它将表达矩阵和注释信息结合起来，支持存储和处理实验数据的多个层面。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;核心组成部分：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;X&lt;/code&gt;  (主矩阵)&lt;/strong&gt;：存储主要的数据，例如基因表达矩阵。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;数据类型：通常是 NumPy 数组 ( &lt;code&gt;numpy.ndarray&lt;/code&gt; ) 或稀疏矩阵 ( &lt;code&gt;scipy.sparse&lt;/code&gt; )，以节省内存。&lt;/li&gt;
-&lt;li&gt;维度：形状为  &lt;code&gt;(n_obs, n_vars)&lt;/code&gt; ，即细胞数 × 基因数。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;obs&lt;/code&gt;  (观测样本注释)&lt;/strong&gt;：存储细胞的元数据。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;行：对应细胞，列：存储细胞的注释信息（如细胞类型、实验条件等）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;var&lt;/code&gt;  (变量注释)&lt;/strong&gt;：存储基因的元数据。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;行：对应基因，列：存储基因的注释信息（如基因名称、功能分类等）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;obsm&lt;/code&gt;  (观测样本多维数据)&lt;/strong&gt;：存储额外的细胞数据，例如降维结果（如 PCA、t-SNE 或 UMAP）。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型：字典，值通常是 NumPy 数组或稀疏矩阵。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;varm&lt;/code&gt;  (变量多维数据)&lt;/strong&gt;：存储额外的基因数据，例如 PCA 的基因负载矩阵。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型：字典。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;uns&lt;/code&gt;  (未分类信息)&lt;/strong&gt;：存储任意未分类的附加信息，例如绘图参数或聚类结果的元数据。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型：字典。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt; &lt;code&gt;layers&lt;/code&gt; &lt;/strong&gt;：支持存储多个版本的主矩阵  &lt;code&gt;X&lt;/code&gt; ，例如原始数据、归一化数据、去噪数据等。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;类型：字典，键为层的名称，值为矩阵。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2-示例结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-示例结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 示例结构&lt;/strong&gt;&lt;/h3&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个简单的 AnnData 对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;X = np.random.rand(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 5 个细胞 × 3 个基因&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;cell1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell3&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell4&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell5&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;C&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个细胞的分组信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;gene1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene3&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var[&lt;span class=&#34;string&#34;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;Enzyme&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个基因的类型信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.AnnData(X, obs=obs, var=var)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看 AnnData 的基本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;输出结果：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;AnnData object with n_obs × n_vars = 5 × 3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    obs: &amp;#x27;group&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var: &amp;#x27;type&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;3-常用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-常用方法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 常用方法&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;数据访问与修改：&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.X           &lt;span class=&#34;comment&#34;&gt;# 主矩阵数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obs         &lt;span class=&#34;comment&#34;&gt;# 细胞注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.var         &lt;span class=&#34;comment&#34;&gt;# 基因注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obsm        &lt;span class=&#34;comment&#34;&gt;# 多维细胞数据（降维结果等）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.layers[&lt;span class=&#34;string&#34;&gt;&amp;quot;raw&amp;quot;&lt;/span&gt;] = adata.X.copy()  &lt;span class=&#34;comment&#34;&gt;# 创建新数据层&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;读写文件：&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 保存到文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 从文件加载&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;数据筛选：&lt;/strong&gt;&lt;/p&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = adata[adata.obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] == &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, :]  &lt;span class=&#34;comment&#34;&gt;# 筛选分组为 A 的细胞&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;4-使用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-使用场景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 使用场景&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;降维分析&lt;/strong&gt;： &lt;code&gt;obsm&lt;/code&gt;  中存储 PCA、t-SNE 或 UMAP 的结果。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;细胞聚类&lt;/strong&gt;： &lt;code&gt;obs&lt;/code&gt;  中存储聚类标签。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;基因功能注释&lt;/strong&gt;： &lt;code&gt;var&lt;/code&gt;  中存储基因相关信息。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;可视化&lt;/strong&gt;：通过  &lt;code&gt;uns&lt;/code&gt;  传递绘图参数。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;5-优势&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-优势&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 优势&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;高效内存管理&lt;/strong&gt;：支持稀疏矩阵存储大规模数据。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;灵活性强&lt;/strong&gt;：便于同时存储多种数据层和分析结果。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;兼容性好&lt;/strong&gt;：与 NumPy、Pandas 和其他生物信息学工具协作性强。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;使用实例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用实例&#34;&gt;#&lt;/a&gt; 使用实例&lt;/h1&gt;
-&lt;p&gt;后面记录一下自己遇到的处理 scanpy 数据的 python 代码&lt;/p&gt;
-&lt;hr&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.obs[obs_name].cat.categories&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这个返回的是 &lt;code&gt;adata.obs&lt;/code&gt;  指定列: &lt;code&gt;obs_name&lt;/code&gt;  的所有类别值&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;.cat&lt;/code&gt;  意味着我们可以访问与分类相关的操作和属性&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;.categories&lt;/code&gt;  返回这一列所有类别值（唯一值）&lt;/p&gt;
-&lt;hr&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;spatialmat = adata.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cur_distmat = squareform(pdist(spatialmat))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;这里的 &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  表示的是一个 n_cell * dimension 的数据，表示它的空间距离&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;pdist&lt;/code&gt;  返回长度为  &lt;code&gt;n_cells * (n_cells - 1) / 2&lt;/code&gt;  的一维数组。目的是计算 &lt;code&gt;spatialmat&lt;/code&gt;  中所有点两两之间的欧氏距离&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;squareform&lt;/code&gt;  将 &lt;code&gt;pdist&lt;/code&gt;  的数据转换成方阵的形式，也就是距离矩阵 &lt;code&gt;n_cells*n_cells&lt;/code&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;这段代码使用了 Squidpy 的功能来计算空间邻居关系，涉及构建空间图（spatial graph），它是 Squidpy 的核心工具之一，用于分析空间转录组数据的空间关系。让我们逐步解析每个参数和方法的作用。&lt;/p&gt;
-&lt;h3 id=&#34;1-方法介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-方法介绍&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 方法介绍&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;code&gt;sq.gr.spatial_neighbors()&lt;/code&gt;  是 Squidpy 提供的函数，用于基于空间坐标计算邻接关系（spatial neighbors）。它会在  &lt;code&gt;AnnData&lt;/code&gt;  对象中添加与邻接关系相关的信息，通常用于后续的图分析和空间分析。&lt;/p&gt;
-&lt;h4 id=&#34;调用语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#调用语法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;调用语法&lt;/strong&gt;&lt;/h4&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    adata, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    coord_type=&lt;span class=&#34;string&#34;&gt;&amp;quot;generic&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    n_neighs=&lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    radius=&lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    delaunay=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    key_added=&lt;span class=&#34;string&#34;&gt;&amp;quot;spatial_neighbors&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    set_diag=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&#34;2-参数解析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-参数解析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 参数解析&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;adata_tmp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#adata_tmp&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;adata_tmp&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;输入的  &lt;code&gt;AnnData&lt;/code&gt;  对象。&lt;/li&gt;
-&lt;li&gt;包含细胞的空间坐标，通常存储在  &lt;code&gt;adata_tmp.obsm[&#39;spatial&#39;]&lt;/code&gt;  中。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;coord_typegeneric&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#coord_typegeneric&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;coord_type=&#39;generic&#39;&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;指定空间坐标的类型。
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;&#39;generic&#39;&lt;/code&gt; ：使用任意空间坐标。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&#39;grid&#39;&lt;/code&gt; ：适用于规则网格数据。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;&#39;visium&#39;&lt;/code&gt; ：专门用于 10x Genomics Visium 数据。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：告诉函数如何解释  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  中的坐标。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;n_neighsselfnn_paracur_scale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n_neighsselfnn_paracur_scale&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;n_neighs=self.nn_para+cur_scale&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;指定每个点的邻居数。&lt;/li&gt;
-&lt;li&gt;具体值是  &lt;code&gt;self.nn_para&lt;/code&gt; （一个基准邻居数）加上  &lt;code&gt;cur_scale&lt;/code&gt; （可能是一个动态调整的值）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：决定空间图中每个点将连接多少个邻居。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;set_diagselfinclude_self&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#set_diagselfinclude_self&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;set_diag=self.include_self&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;控制邻接矩阵是否设置对角线为 1（即点是否与自己相连）。&lt;/li&gt;
-&lt;li&gt;如果  &lt;code&gt;self.include_self=True&lt;/code&gt; ，邻接矩阵的对角线值会被设置为 1。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;3-函数的主要功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-函数的主要功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 函数的主要功能&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;空间坐标：来自  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt; 。&lt;/li&gt;
-&lt;li&gt;邻居数、对角线选项等配置。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;处理：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;根据空间坐标构建 K 邻居图或基于 Delaunay 三角剖分的邻居关系图。&lt;/li&gt;
-&lt;li&gt;生成邻接矩阵并存储到  &lt;code&gt;AnnData&lt;/code&gt;  对象中。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;在  &lt;code&gt;adata_tmp.uns&lt;/code&gt;  中添加邻接关系的元数据（默认键为  &lt;code&gt;&#39;spatial_neighbors&#39;&lt;/code&gt; ）。&lt;/li&gt;
-&lt;li&gt;在  &lt;code&gt;adata_tmp.obsp&lt;/code&gt;  中添加稀疏邻接矩阵（默认键为  &lt;code&gt;&#39;spatial_distances&#39;&lt;/code&gt;  和  &lt;code&gt;&#39;spatial_connectivities&#39;&lt;/code&gt; ）。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;4-工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-工作原理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 工作原理&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;邻接图构建：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如果  &lt;code&gt;n_neighs&lt;/code&gt;  被指定，会使用 K - 邻居算法。&lt;/li&gt;
-&lt;li&gt;如果没有指定  &lt;code&gt;n_neighs&lt;/code&gt; ，默认使用 Delaunay 三角剖分算法构建邻接图。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;稀疏矩阵生成：&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;spatial_distances&lt;/code&gt; ：存储点之间的距离（欧氏距离）。&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;spatial_connectivities&lt;/code&gt; ：存储点之间的连接权重（默认是 0 或 1，表示是否连接）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;5-示例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-示例&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 示例&lt;/strong&gt;&lt;/h3&gt;
-&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; squidpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sq&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个 AnnData 对象并添加空间坐标&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp = sc.AnnData()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;] = [[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 使用 spatial_neighbors 计算邻接图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(adata_tmp, coord_type=&lt;span class=&#34;string&#34;&gt;&amp;#x27;generic&amp;#x27;&lt;/span&gt;, n_neighs=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, set_diag=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.obsp[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_connectivities&amp;#x27;&lt;/span&gt;].toarray())  &lt;span class=&#34;comment&#34;&gt;# 稀疏连接矩阵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.uns[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_neighbors&amp;#x27;&lt;/span&gt;])  &lt;span class=&#34;comment&#34;&gt;# 元数据信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;输出可能类似：&lt;/p&gt;
-&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[[1. 1. 1. 0.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 1. 0. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 0. 1. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [0. 1. 1. 1.]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;#x27;n_neighs&amp;#x27;: 2, &amp;#x27;coord_type&amp;#x27;: &amp;#x27;generic&amp;#x27;, &amp;#x27;params&amp;#x27;: &amp;#123;...&amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;hr&gt;
-&lt;p&gt;Scanpy 是一个用于单细胞转录组数据分析的 Python 包，它集成了多种功能，涵盖了数据的预处理、降维、聚类、差异基因分析以及可视化等多种步骤。以下是一些常用的函数及其用途。&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;1-数据读取和保存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-数据读取和保存&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 数据读取和保存&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;11-scread&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-scread&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.1  &lt;code&gt;sc.read()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;用于读取  &lt;code&gt;.h5ad&lt;/code&gt;  格式的 AnnData 文件。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;#x27;example.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;12-scread_10x_mtx&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-scread_10x_mtx&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.2  &lt;code&gt;sc.read_10x_mtx()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;读取 10x Genomics 数据（稀疏矩阵格式）。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read_10x_mtx(&lt;span class=&#34;string&#34;&gt;&amp;#x27;filtered_feature_bc_matrix/&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;13-adatawrite&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-adatawrite&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.3  &lt;code&gt;adata.write()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;保存 AnnData 对象到文件。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;#x27;output.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;2-数据预处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-数据预处理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 数据预处理&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;21-scppfilter_cells-和-scppfilter_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-scppfilter_cells-和-scppfilter_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.1  &lt;code&gt;sc.pp.filter_cells()&lt;/code&gt;  和  &lt;code&gt;sc.pp.filter_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;按细胞或基因的特定条件过滤。&lt;/li&gt;
-&lt;li&gt;示例：去除少于 200 个基因表达的细胞：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.filter_cells(adata, min_genes=&lt;span class=&#34;number&#34;&gt;200&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;22-scppnormalize_total&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-scppnormalize_total&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.2  &lt;code&gt;sc.pp.normalize_total()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;对数据进行归一化，使每个细胞的总表达量相同。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.normalize_total(adata, target_sum=&lt;span class=&#34;number&#34;&gt;1e4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;23-scpplog1p&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#23-scpplog1p&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.3  &lt;code&gt;sc.pp.log1p()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;对归一化数据取对数变换。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.log1p(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;24-scpphighly_variable_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#24-scpphighly_variable_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.4  &lt;code&gt;sc.pp.highly_variable_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;筛选高变异基因。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.highly_variable_genes(adata, n_top_genes=&lt;span class=&#34;number&#34;&gt;2000&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;25-scppscale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#25-scppscale&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.5  &lt;code&gt;sc.pp.scale()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;标准化每个基因，使其均值为 0、标准差为 1。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.scale(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;3-降维&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-降维&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 降维&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;31-scpppca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-scpppca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.1  &lt;code&gt;sc.pp.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;进行主成分分析（PCA）。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.pca(adata, n_comps=&lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;32-sctltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-sctltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.2  &lt;code&gt;sc.tl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;进行 t-SNE 分析。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.tsne(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;33-sctlumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-sctlumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.3  &lt;code&gt;sc.tl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;计算 UMAP（常用的降维可视化方法）。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.neighbors(adata)  &lt;span class=&#34;comment&#34;&gt;# 先构建邻居图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.umap(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;4-聚类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-聚类&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 聚类&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;41-sctlleiden&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-sctlleiden&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.1  &lt;code&gt;sc.tl.leiden()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Leiden 聚类算法。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.leiden(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;42-sctllouvain&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-sctllouvain&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.2  &lt;code&gt;sc.tl.louvain()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;Louvain 聚类算法。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.louvain(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;5-差异表达分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-差异表达分析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 差异表达分析&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;51-sctlrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-sctlrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.1  &lt;code&gt;sc.tl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;对聚类的分组进行差异表达分析。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.rank_genes_groups(adata, groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;, method=&lt;span class=&#34;string&#34;&gt;&amp;#x27;t-test&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;52-scplrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#52-scplrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.2  &lt;code&gt;sc.pl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;可视化差异基因分析结果。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.rank_genes_groups(adata, n_genes=&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;6-可视化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-可视化&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6. 可视化&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;61-scplpca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#61-scplpca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.1  &lt;code&gt;sc.pl.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;PCA 结果可视化。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.pca(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;62-scplumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#62-scplumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.2  &lt;code&gt;sc.pl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;UMAP 结果可视化。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.umap(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;63-scpltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#63-scpltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.3  &lt;code&gt;sc.pl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;t-SNE 结果可视化。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.tsne(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;64-scplheatmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#64-scplheatmap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.4  &lt;code&gt;sc.pl.heatmap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;绘制热图，显示差异基因在各组中的表达情况。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.heatmap(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;65-scplstacked_violin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#65-scplstacked_violin&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.5  &lt;code&gt;sc.pl.stacked_violin()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;绘制分组基因表达的堆叠小提琴图。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.stacked_violin(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;7-计算基因集评分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-计算基因集评分&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7. 计算基因集评分&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;71-sctlscore_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#71-sctlscore_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.1  &lt;code&gt;sc.tl.score_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;为指定基因集计算评分。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes(adata, gene_list=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene2&amp;#x27;&lt;/span&gt;], score_name=&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene_Score&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;72-sctlscore_genes_cell_cycle&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#72-sctlscore_genes_cell_cycle&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.2  &lt;code&gt;sc.tl.score_genes_cell_cycle()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;计算细胞周期评分。&lt;/li&gt;
-&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes_cell_cycle(adata, s_genes=your_s_genes, g2m_genes=your_g2m_genes)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;8-扩展功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#8-扩展功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8. 扩展功能&lt;/strong&gt;&lt;/h3&gt;
-&lt;h4 id=&#34;81-数据整合&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#81-数据整合&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.1 数据整合&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;使用  &lt;code&gt;sc.pp.bbknn()&lt;/code&gt;  或  &lt;code&gt;sc.external.pp.harmony_integrate()&lt;/code&gt;  实现跨批次数据整合。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;82-可视化空间数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#82-可视化空间数据&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.2 可视化空间数据&lt;/strong&gt;&lt;/h4&gt;
-&lt;ul&gt;
-&lt;li&gt;如果处理空间转录组数据，可以用  &lt;code&gt;squidpy&lt;/code&gt; （与 Scanpy 兼容）实现更高级的空间可视化。&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-        <category term="代码" scheme="http://amentiraz.github.io/categories/code/" />
-        <category term="编程语言" scheme="http://amentiraz.github.io/categories/code/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" />
-        <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
-        <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
-        <updated>2024-12-06T02:40:37.000Z</updated>
     </entry>
     <entry>
         <id>http://amentiraz.github.io/article/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
@@ -4792,6 +4445,354 @@ p(\{z_i\} | \text{data}) \propto p(\text{data} | \{z_i\}) \cdot \pi(\{z_i\})
 </content>
         <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
         <category term="数据" scheme="http://amentiraz.github.io/categories/article/%E6%95%B0%E6%8D%AE/" />
+        <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+        <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+        <updated>2024-12-06T02:40:37.000Z</updated>
+    </entry>
+    <entry>
+        <id>http://amentiraz.github.io/code/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/</id>
+        <title>scanpy数据使用笔记</title>
+        <link rel="alternate" href="http://amentiraz.github.io/code/scanpy%E6%95%B0%E6%8D%AE%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/"/>
+        <content type="html">&lt;p&gt;Scanpy 是一个专门用于单细胞 RNA 测序 (scRNA-seq) 数据分析的 Python 库，它的核心数据结构是  &lt;code&gt;AnnData&lt;/code&gt; （Annotated Data）。了解  &lt;code&gt;AnnData&lt;/code&gt;  数据类型是使用 Scanpy 的关键。以下是对  &lt;code&gt;AnnData&lt;/code&gt;  的详细介绍：&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-anndata-的结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-anndata-的结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.  &lt;code&gt;AnnData&lt;/code&gt;  的结构&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;AnnData&lt;/code&gt;  是一种基于矩阵的数据结构，专为处理大规模高维数据设计。它将表达矩阵和注释信息结合起来，支持存储和处理实验数据的多个层面。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;核心组成部分：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;X&lt;/code&gt;  (主矩阵)&lt;/strong&gt;：存储主要的数据，例如基因表达矩阵。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数据类型：通常是 NumPy 数组 ( &lt;code&gt;numpy.ndarray&lt;/code&gt; ) 或稀疏矩阵 ( &lt;code&gt;scipy.sparse&lt;/code&gt; )，以节省内存。&lt;/li&gt;
+&lt;li&gt;维度：形状为  &lt;code&gt;(n_obs, n_vars)&lt;/code&gt; ，即细胞数 × 基因数。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;obs&lt;/code&gt;  (观测样本注释)&lt;/strong&gt;：存储细胞的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;行：对应细胞，列：存储细胞的注释信息（如细胞类型、实验条件等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;var&lt;/code&gt;  (变量注释)&lt;/strong&gt;：存储基因的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型： &lt;code&gt;pandas.DataFrame&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;行：对应基因，列：存储基因的注释信息（如基因名称、功能分类等）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;obsm&lt;/code&gt;  (观测样本多维数据)&lt;/strong&gt;：存储额外的细胞数据，例如降维结果（如 PCA、t-SNE 或 UMAP）。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典，值通常是 NumPy 数组或稀疏矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;varm&lt;/code&gt;  (变量多维数据)&lt;/strong&gt;：存储额外的基因数据，例如 PCA 的基因负载矩阵。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;uns&lt;/code&gt;  (未分类信息)&lt;/strong&gt;：存储任意未分类的附加信息，例如绘图参数或聚类结果的元数据。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt; &lt;code&gt;layers&lt;/code&gt; &lt;/strong&gt;：支持存储多个版本的主矩阵  &lt;code&gt;X&lt;/code&gt; ，例如原始数据、归一化数据、去噪数据等。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;类型：字典，键为层的名称，值为矩阵。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-示例结构&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-示例结构&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 示例结构&lt;/strong&gt;&lt;/h3&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; numpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; np&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; pandas &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; pd&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个简单的 AnnData 对象&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;X = np.random.rand(&lt;span class=&#34;number&#34;&gt;5&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;3&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 5 个细胞 × 3 个基因&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;cell1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell3&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell4&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;cell5&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;B&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;C&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个细胞的分组信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var = pd.DataFrame(index=[&lt;span class=&#34;string&#34;&gt;&amp;quot;gene1&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene2&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;gene3&amp;quot;&lt;/span&gt;])&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;var[&lt;span class=&#34;string&#34;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;] = [&lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;TF&amp;quot;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;quot;Enzyme&amp;quot;&lt;/span&gt;]  &lt;span class=&#34;comment&#34;&gt;# 每个基因的类型信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.AnnData(X, obs=obs, var=var)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看 AnnData 的基本信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出结果：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;AnnData object with n_obs × n_vars = 5 × 3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    obs: &amp;#x27;group&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    var: &amp;#x27;type&amp;#x27;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-常用方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-常用方法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 常用方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据访问与修改：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.X           &lt;span class=&#34;comment&#34;&gt;# 主矩阵数据&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obs         &lt;span class=&#34;comment&#34;&gt;# 细胞注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.var         &lt;span class=&#34;comment&#34;&gt;# 基因注释&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.obsm        &lt;span class=&#34;comment&#34;&gt;# 多维细胞数据（降维结果等）&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata.layers[&lt;span class=&#34;string&#34;&gt;&amp;quot;raw&amp;quot;&lt;/span&gt;] = adata.X.copy()  &lt;span class=&#34;comment&#34;&gt;# 创建新数据层&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;读写文件：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 保存到文件&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;quot;data.h5ad&amp;quot;&lt;/span&gt;)  &lt;span class=&#34;comment&#34;&gt;# 从文件加载&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;数据筛选：&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = adata[adata.obs[&lt;span class=&#34;string&#34;&gt;&amp;quot;group&amp;quot;&lt;/span&gt;] == &lt;span class=&#34;string&#34;&gt;&amp;quot;A&amp;quot;&lt;/span&gt;, :]  &lt;span class=&#34;comment&#34;&gt;# 筛选分组为 A 的细胞&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-使用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-使用场景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 使用场景&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;降维分析&lt;/strong&gt;： &lt;code&gt;obsm&lt;/code&gt;  中存储 PCA、t-SNE 或 UMAP 的结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;细胞聚类&lt;/strong&gt;： &lt;code&gt;obs&lt;/code&gt;  中存储聚类标签。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;基因功能注释&lt;/strong&gt;： &lt;code&gt;var&lt;/code&gt;  中存储基因相关信息。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可视化&lt;/strong&gt;：通过  &lt;code&gt;uns&lt;/code&gt;  传递绘图参数。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-优势&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-优势&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 优势&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;高效内存管理&lt;/strong&gt;：支持稀疏矩阵存储大规模数据。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;灵活性强&lt;/strong&gt;：便于同时存储多种数据层和分析结果。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;兼容性好&lt;/strong&gt;：与 NumPy、Pandas 和其他生物信息学工具协作性强。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;使用实例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用实例&#34;&gt;#&lt;/a&gt; 使用实例&lt;/h1&gt;
+&lt;p&gt;后面记录一下自己遇到的处理 scanpy 数据的 python 代码&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.obs[obs_name].cat.categories&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这个返回的是 &lt;code&gt;adata.obs&lt;/code&gt;  指定列: &lt;code&gt;obs_name&lt;/code&gt;  的所有类别值&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.cat&lt;/code&gt;  意味着我们可以访问与分类相关的操作和属性&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;.categories&lt;/code&gt;  返回这一列所有类别值（唯一值）&lt;/p&gt;
+&lt;hr&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;spatialmat = adata.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;cur_distmat = squareform(pdist(spatialmat))&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这里的 &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  表示的是一个 n_cell * dimension 的数据，表示它的空间距离&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;pdist&lt;/code&gt;  返回长度为  &lt;code&gt;n_cells * (n_cells - 1) / 2&lt;/code&gt;  的一维数组。目的是计算 &lt;code&gt;spatialmat&lt;/code&gt;  中所有点两两之间的欧氏距离&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;squareform&lt;/code&gt;  将 &lt;code&gt;pdist&lt;/code&gt;  的数据转换成方阵的形式，也就是距离矩阵 &lt;code&gt;n_cells*n_cells&lt;/code&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;这段代码使用了 Squidpy 的功能来计算空间邻居关系，涉及构建空间图（spatial graph），它是 Squidpy 的核心工具之一，用于分析空间转录组数据的空间关系。让我们逐步解析每个参数和方法的作用。&lt;/p&gt;
+&lt;h3 id=&#34;1-方法介绍&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-方法介绍&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 方法介绍&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;sq.gr.spatial_neighbors()&lt;/code&gt;  是 Squidpy 提供的函数，用于基于空间坐标计算邻接关系（spatial neighbors）。它会在  &lt;code&gt;AnnData&lt;/code&gt;  对象中添加与邻接关系相关的信息，通常用于后续的图分析和空间分析。&lt;/p&gt;
+&lt;h4 id=&#34;调用语法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#调用语法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;调用语法&lt;/strong&gt;&lt;/h4&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    adata, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    coord_type=&lt;span class=&#34;string&#34;&gt;&amp;quot;generic&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    n_neighs=&lt;span class=&#34;number&#34;&gt;6&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    radius=&lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    delaunay=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    key_added=&lt;span class=&#34;string&#34;&gt;&amp;quot;spatial_neighbors&amp;quot;&lt;/span&gt;, &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    set_diag=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&#34;2-参数解析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-参数解析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 参数解析&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;adata_tmp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#adata_tmp&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;adata_tmp&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;输入的  &lt;code&gt;AnnData&lt;/code&gt;  对象。&lt;/li&gt;
+&lt;li&gt;包含细胞的空间坐标，通常存储在  &lt;code&gt;adata_tmp.obsm[&#39;spatial&#39;]&lt;/code&gt;  中。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;coord_typegeneric&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#coord_typegeneric&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;coord_type=&#39;generic&#39;&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;指定空间坐标的类型。
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;&#39;generic&#39;&lt;/code&gt; ：使用任意空间坐标。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;grid&#39;&lt;/code&gt; ：适用于规则网格数据。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;&#39;visium&#39;&lt;/code&gt; ：专门用于 10x Genomics Visium 数据。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：告诉函数如何解释  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt;  中的坐标。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;n_neighsselfnn_paracur_scale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#n_neighsselfnn_paracur_scale&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;n_neighs=self.nn_para+cur_scale&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;指定每个点的邻居数。&lt;/li&gt;
+&lt;li&gt;具体值是  &lt;code&gt;self.nn_para&lt;/code&gt; （一个基准邻居数）加上  &lt;code&gt;cur_scale&lt;/code&gt; （可能是一个动态调整的值）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;作用&lt;/strong&gt;：决定空间图中每个点将连接多少个邻居。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;set_diagselfinclude_self&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#set_diagselfinclude_self&#34;&gt;#&lt;/a&gt; &lt;strong&gt; &lt;code&gt;set_diag=self.include_self&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;控制邻接矩阵是否设置对角线为 1（即点是否与自己相连）。&lt;/li&gt;
+&lt;li&gt;如果  &lt;code&gt;self.include_self=True&lt;/code&gt; ，邻接矩阵的对角线值会被设置为 1。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-函数的主要功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-函数的主要功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 函数的主要功能&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;输入：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;空间坐标：来自  &lt;code&gt;adata.obsm[&#39;spatial&#39;]&lt;/code&gt; 。&lt;/li&gt;
+&lt;li&gt;邻居数、对角线选项等配置。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;处理：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;根据空间坐标构建 K 邻居图或基于 Delaunay 三角剖分的邻居关系图。&lt;/li&gt;
+&lt;li&gt;生成邻接矩阵并存储到  &lt;code&gt;AnnData&lt;/code&gt;  对象中。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;输出：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在  &lt;code&gt;adata_tmp.uns&lt;/code&gt;  中添加邻接关系的元数据（默认键为  &lt;code&gt;&#39;spatial_neighbors&#39;&lt;/code&gt; ）。&lt;/li&gt;
+&lt;li&gt;在  &lt;code&gt;adata_tmp.obsp&lt;/code&gt;  中添加稀疏邻接矩阵（默认键为  &lt;code&gt;&#39;spatial_distances&#39;&lt;/code&gt;  和  &lt;code&gt;&#39;spatial_connectivities&#39;&lt;/code&gt; ）。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-工作原理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-工作原理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 工作原理&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;邻接图构建：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;如果  &lt;code&gt;n_neighs&lt;/code&gt;  被指定，会使用 K - 邻居算法。&lt;/li&gt;
+&lt;li&gt;如果没有指定  &lt;code&gt;n_neighs&lt;/code&gt; ，默认使用 Delaunay 三角剖分算法构建邻接图。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;稀疏矩阵生成：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;spatial_distances&lt;/code&gt; ：存储点之间的距离（欧氏距离）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;spatial_connectivities&lt;/code&gt; ：存储点之间的连接权重（默认是 0 或 1，表示是否连接）。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-示例&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-示例&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 示例&lt;/strong&gt;&lt;/h3&gt;
+&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; squidpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sq&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 创建一个 AnnData 对象并添加空间坐标&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp = sc.AnnData()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata_tmp.obsm[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial&amp;#x27;&lt;/span&gt;] = [[&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;], [&lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;, &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 使用 spatial_neighbors 计算邻接图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sq.gr.spatial_neighbors(adata_tmp, coord_type=&lt;span class=&#34;string&#34;&gt;&amp;#x27;generic&amp;#x27;&lt;/span&gt;, n_neighs=&lt;span class=&#34;number&#34;&gt;2&lt;/span&gt;, set_diag=&lt;span class=&#34;literal&#34;&gt;True&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;# 查看结果&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.obsp[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_connectivities&amp;#x27;&lt;/span&gt;].toarray())  &lt;span class=&#34;comment&#34;&gt;# 稀疏连接矩阵&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;built_in&#34;&gt;print&lt;/span&gt;(adata_tmp.uns[&lt;span class=&#34;string&#34;&gt;&amp;#x27;spatial_neighbors&amp;#x27;&lt;/span&gt;])  &lt;span class=&#34;comment&#34;&gt;# 元数据信息&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;输出可能类似：&lt;/p&gt;
+&lt;figure class=&#34;highlight plaintext&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;[[1. 1. 1. 0.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 1. 0. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [1. 0. 1. 1.]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; [0. 1. 1. 1.]]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&amp;#123;&amp;#x27;n_neighs&amp;#x27;: 2, &amp;#x27;coord_type&amp;#x27;: &amp;#x27;generic&amp;#x27;, &amp;#x27;params&amp;#x27;: &amp;#123;...&amp;#125;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Scanpy 是一个用于单细胞转录组数据分析的 Python 包，它集成了多种功能，涵盖了数据的预处理、降维、聚类、差异基因分析以及可视化等多种步骤。以下是一些常用的函数及其用途。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;1-数据读取和保存&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-数据读取和保存&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. 数据读取和保存&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;11-scread&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#11-scread&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.1  &lt;code&gt;sc.read()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;用于读取  &lt;code&gt;.h5ad&lt;/code&gt;  格式的 AnnData 文件。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;keyword&#34;&gt;import&lt;/span&gt; scanpy &lt;span class=&#34;keyword&#34;&gt;as&lt;/span&gt; sc&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read(&lt;span class=&#34;string&#34;&gt;&amp;#x27;example.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;12-scread_10x_mtx&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-scread_10x_mtx&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.2  &lt;code&gt;sc.read_10x_mtx()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;读取 10x Genomics 数据（稀疏矩阵格式）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata = sc.read_10x_mtx(&lt;span class=&#34;string&#34;&gt;&amp;#x27;filtered_feature_bc_matrix/&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;13-adatawrite&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-adatawrite&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.3  &lt;code&gt;adata.write()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;保存 AnnData 对象到文件。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;adata.write(&lt;span class=&#34;string&#34;&gt;&amp;#x27;output.h5ad&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;2-数据预处理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#2-数据预处理&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2. 数据预处理&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;21-scppfilter_cells-和-scppfilter_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#21-scppfilter_cells-和-scppfilter_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.1  &lt;code&gt;sc.pp.filter_cells()&lt;/code&gt;  和  &lt;code&gt;sc.pp.filter_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;按细胞或基因的特定条件过滤。&lt;/li&gt;
+&lt;li&gt;示例：去除少于 200 个基因表达的细胞：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.filter_cells(adata, min_genes=&lt;span class=&#34;number&#34;&gt;200&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;22-scppnormalize_total&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#22-scppnormalize_total&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.2  &lt;code&gt;sc.pp.normalize_total()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对数据进行归一化，使每个细胞的总表达量相同。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.normalize_total(adata, target_sum=&lt;span class=&#34;number&#34;&gt;1e4&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;23-scpplog1p&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#23-scpplog1p&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.3  &lt;code&gt;sc.pp.log1p()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对归一化数据取对数变换。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.log1p(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;24-scpphighly_variable_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#24-scpphighly_variable_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.4  &lt;code&gt;sc.pp.highly_variable_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;筛选高变异基因。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.highly_variable_genes(adata, n_top_genes=&lt;span class=&#34;number&#34;&gt;2000&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;25-scppscale&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#25-scppscale&#34;&gt;#&lt;/a&gt; &lt;strong&gt;2.5  &lt;code&gt;sc.pp.scale()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;标准化每个基因，使其均值为 0、标准差为 1。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.scale(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;3-降维&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#3-降维&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3. 降维&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;31-scpppca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#31-scpppca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.1  &lt;code&gt;sc.pp.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;进行主成分分析（PCA）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.pca(adata, n_comps=&lt;span class=&#34;number&#34;&gt;50&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;32-sctltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#32-sctltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.2  &lt;code&gt;sc.tl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;进行 t-SNE 分析。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.tsne(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;33-sctlumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#33-sctlumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;3.3  &lt;code&gt;sc.tl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;计算 UMAP（常用的降维可视化方法）。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pp.neighbors(adata)  &lt;span class=&#34;comment&#34;&gt;# 先构建邻居图&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.umap(adata)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;4-聚类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#4-聚类&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4. 聚类&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;41-sctlleiden&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#41-sctlleiden&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.1  &lt;code&gt;sc.tl.leiden()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Leiden 聚类算法。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.leiden(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;42-sctllouvain&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#42-sctllouvain&#34;&gt;#&lt;/a&gt; &lt;strong&gt;4.2  &lt;code&gt;sc.tl.louvain()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Louvain 聚类算法。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.louvain(adata, resolution=&lt;span class=&#34;number&#34;&gt;0.5&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;5-差异表达分析&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#5-差异表达分析&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5. 差异表达分析&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;51-sctlrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#51-sctlrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.1  &lt;code&gt;sc.tl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;对聚类的分组进行差异表达分析。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.rank_genes_groups(adata, groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;, method=&lt;span class=&#34;string&#34;&gt;&amp;#x27;t-test&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;52-scplrank_genes_groups&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#52-scplrank_genes_groups&#34;&gt;#&lt;/a&gt; &lt;strong&gt;5.2  &lt;code&gt;sc.pl.rank_genes_groups()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;可视化差异基因分析结果。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.rank_genes_groups(adata, n_genes=&lt;span class=&#34;number&#34;&gt;10&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;6-可视化&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#6-可视化&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6. 可视化&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;61-scplpca&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#61-scplpca&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.1  &lt;code&gt;sc.pl.pca()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;PCA 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.pca(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;62-scplumap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#62-scplumap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.2  &lt;code&gt;sc.pl.umap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;UMAP 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.umap(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;63-scpltsne&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#63-scpltsne&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.3  &lt;code&gt;sc.pl.tsne()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;t-SNE 结果可视化。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.tsne(adata, color=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;64-scplheatmap&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#64-scplheatmap&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.4  &lt;code&gt;sc.pl.heatmap()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;绘制热图，显示差异基因在各组中的表达情况。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.heatmap(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;65-scplstacked_violin&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#65-scplstacked_violin&#34;&gt;#&lt;/a&gt; &lt;strong&gt;6.5  &lt;code&gt;sc.pl.stacked_violin()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;绘制分组基因表达的堆叠小提琴图。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.pl.stacked_violin(adata, var_names=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;gene2&amp;#x27;&lt;/span&gt;], groupby=&lt;span class=&#34;string&#34;&gt;&amp;#x27;leiden&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;7-计算基因集评分&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#7-计算基因集评分&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7. 计算基因集评分&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;71-sctlscore_genes&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#71-sctlscore_genes&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.1  &lt;code&gt;sc.tl.score_genes()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;为指定基因集计算评分。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes(adata, gene_list=[&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene1&amp;#x27;&lt;/span&gt;, &lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene2&amp;#x27;&lt;/span&gt;], score_name=&lt;span class=&#34;string&#34;&gt;&amp;#x27;Gene_Score&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;72-sctlscore_genes_cell_cycle&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#72-sctlscore_genes_cell_cycle&#34;&gt;#&lt;/a&gt; &lt;strong&gt;7.2  &lt;code&gt;sc.tl.score_genes_cell_cycle()&lt;/code&gt; &lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;计算细胞周期评分。&lt;/li&gt;
+&lt;li&gt;示例：&lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;sc.tl.score_genes_cell_cycle(adata, s_genes=your_s_genes, g2m_genes=your_g2m_genes)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;8-扩展功能&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#8-扩展功能&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8. 扩展功能&lt;/strong&gt;&lt;/h3&gt;
+&lt;h4 id=&#34;81-数据整合&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#81-数据整合&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.1 数据整合&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;使用  &lt;code&gt;sc.pp.bbknn()&lt;/code&gt;  或  &lt;code&gt;sc.external.pp.harmony_integrate()&lt;/code&gt;  实现跨批次数据整合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;82-可视化空间数据&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#82-可视化空间数据&#34;&gt;#&lt;/a&gt; &lt;strong&gt;8.2 可视化空间数据&lt;/strong&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;如果处理空间转录组数据，可以用  &lt;code&gt;squidpy&lt;/code&gt; （与 Scanpy 兼容）实现更高级的空间可视化。&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="代码" scheme="http://amentiraz.github.io/categories/code/" />
+        <category term="编程语言" scheme="http://amentiraz.github.io/categories/code/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" />
         <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
         <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
         <updated>2024-12-06T02:40:37.000Z</updated>
