@@ -10,12 +10,151 @@
         </author>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Fri, 24 Oct 2025 09:47:42 +0800</pubDate>
-        <lastBuildDate>Fri, 24 Oct 2025 09:47:42 +0800</lastBuildDate>
+        <pubDate>Sun, 09 Nov 2025 23:14:27 +0800</pubDate>
+        <lastBuildDate>Sun, 09 Nov 2025 23:14:27 +0800</lastBuildDate>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/kanekoayano/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/CellFM/</guid>
+            <title>CellFM</title>
+            <link>http://amentiraz.github.io/CellFM/</link>
+            <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+            <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+            <pubDate>Sun, 09 Nov 2025 23:14:27 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0035.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0036.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0037.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0038.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0039.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0040.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0041.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0042.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/GeneFormer/</guid>
+            <title>GeneFormer</title>
+            <link>http://amentiraz.github.io/GeneFormer/</link>
+            <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+            <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+            <pubDate>Sun, 09 Nov 2025 23:14:19 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0002.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0003.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0004.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0005.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0006.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0007.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0008.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0009.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0010.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0011.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0012.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/scFoundation/</guid>
+            <title>scFoundation</title>
+            <link>http://amentiraz.github.io/scFoundation/</link>
+            <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+            <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+            <pubDate>Sun, 09 Nov 2025 23:14:10 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0023.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0024.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0025.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0026.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0027.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0028.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0029.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0030.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0031.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0032.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0033.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0034.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/scGPT/</guid>
+            <title>scGPT</title>
+            <link>http://amentiraz.github.io/scGPT/</link>
+            <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
+            <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
+            <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
+            <category term="算法" scheme="http://amentiraz.github.io/tags/%E7%AE%97%E6%B3%95/" />
+            <pubDate>Sun, 09 Nov 2025 23:14:02 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0013.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0014.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0015.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0016.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0017.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0018.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0019.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0020.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0021.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0022.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/report-2025y11m8d/</guid>
+            <title>report_2025y11m8d</title>
+            <link>http://amentiraz.github.io/report-2025y11m8d/</link>
+            <category term="其它" scheme="http://amentiraz.github.io/categories/other/" />
+            <category term="工作总结" scheme="http://amentiraz.github.io/categories/other/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
+            <category term="工作总结" scheme="http://amentiraz.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
+            <category term="生物信息学" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" />
+            <pubDate>Sun, 09 Nov 2025 23:09:55 +0800</pubDate>
+            <description><![CDATA[ &lt;p&gt;&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0001.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0002.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0003.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0004.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0005.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0006.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0007.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0008.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0009.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0010.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0011.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0012.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0013.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0014.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0015.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0016.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0017.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0018.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0019.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0020.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0021.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0022.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0023.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0024.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0025.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0026.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0027.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0028.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0029.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0030.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0031.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0032.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0033.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0034.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0035.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0036.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0037.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0038.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0039.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0040.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0041.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0042.jpg&#34; alt=&#34;&#34; /&gt;&lt;br /&gt;
+&lt;img data-src=&#34;https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/report_2025y11m8d_page-0043.jpg&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+        <item>
+            <guid isPermalink="true">http://amentiraz.github.io/life/kanekoayano/</guid>
             <title>kanekoayano</title>
-            <link>http://amentiraz.github.io/kanekoayano/</link>
+            <link>http://amentiraz.github.io/life/kanekoayano/</link>
             <category term="生活" scheme="http://amentiraz.github.io/categories/life/" />
             <category term="演奏会" scheme="http://amentiraz.github.io/categories/life/%E6%BC%94%E5%A5%8F%E4%BC%9A/" />
             <category term="音乐" scheme="http://amentiraz.github.io/tags/%E9%9F%B3%E4%B9%90/" />
@@ -39,9 +178,9 @@
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/English-Anime/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/life/English-Anime/</guid>
             <title>English_Anime</title>
-            <link>http://amentiraz.github.io/English-Anime/</link>
+            <link>http://amentiraz.github.io/life/English-Anime/</link>
             <category term="影视书籍" scheme="http://amentiraz.github.io/categories/note/" />
             <category term="动漫" scheme="http://amentiraz.github.io/categories/note/%E5%8A%A8%E6%BC%AB/" />
             <category term="动漫" scheme="http://amentiraz.github.io/tags/%E5%8A%A8%E6%BC%AB/" />
@@ -79,9 +218,9 @@ Perhaps anime simply satisfies our desires. What we need to do is not lose ourse
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/report-2025y10m23d/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/other/report-2025y10m23d/</guid>
             <title>report_2025y10m23d</title>
-            <link>http://amentiraz.github.io/report-2025y10m23d/</link>
+            <link>http://amentiraz.github.io/other/report-2025y10m23d/</link>
             <category term="其它" scheme="http://amentiraz.github.io/categories/other/" />
             <category term="工作总结" scheme="http://amentiraz.github.io/categories/other/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
             <category term="工作总结" scheme="http://amentiraz.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
@@ -103,9 +242,9 @@ Perhaps anime simply satisfies our desires. What we need to do is not lose ourse
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/Virtual-Challenge/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/Virtual-Challenge/</guid>
             <title>Virtual_Challenge</title>
-            <link>http://amentiraz.github.io/Virtual-Challenge/</link>
+            <link>http://amentiraz.github.io/article/Virtual-Challenge/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -173,9 +312,9 @@ gene expression profile.&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/Systema/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/Systema/</guid>
             <title>Systema</title>
-            <link>http://amentiraz.github.io/Systema/</link>
+            <link>http://amentiraz.github.io/article/Systema/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -369,9 +508,9 @@ M = \frac{1}{2}(P+Q)
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/Simple-Perform-better/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/Simple-Perform-better/</guid>
             <title>Simple_Perform_better</title>
-            <link>http://amentiraz.github.io/Simple-Perform-better/</link>
+            <link>http://amentiraz.github.io/article/Simple-Perform-better/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -413,9 +552,9 @@ $$\begin{equation}
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/Transport/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/Transport/</guid>
             <title>Optimal Transport</title>
-            <link>http://amentiraz.github.io/Transport/</link>
+            <link>http://amentiraz.github.io/article/Transport/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -431,9 +570,9 @@ $$\begin{equation}
 &lt;figure class=&#34;highlight txt&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;70&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;71&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;72&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;73&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;74&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;75&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;76&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;77&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;78&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;79&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;80&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;81&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;82&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;83&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;84&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;85&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;86&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;87&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;88&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;89&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;90&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;91&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;92&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;93&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;94&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;95&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;96&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;97&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;98&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;99&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;100&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;101&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;102&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;103&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;104&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;105&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;106&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;107&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;108&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;109&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;110&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;111&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;112&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;113&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;114&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;115&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;116&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;117&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;118&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;119&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;120&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;121&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;122&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;123&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;124&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;125&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;126&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;127&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;128&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;129&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;130&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;131&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;132&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;133&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;134&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;135&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;136&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;137&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;138&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;139&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;140&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;141&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;142&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;143&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;144&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;145&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;146&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;147&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;148&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;149&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;150&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;151&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;152&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;153&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;154&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;155&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;156&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;157&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;158&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;159&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;160&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;161&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;162&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;163&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;164&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;165&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;166&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;167&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;168&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;169&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;170&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;171&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;172&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;173&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;174&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;175&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;176&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;177&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;178&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;179&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;180&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;181&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;182&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;183&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;184&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;185&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;186&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;187&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;188&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;189&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;190&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;191&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;192&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;193&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;194&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;195&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;196&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;197&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;198&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;199&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;200&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;201&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;202&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;203&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;204&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;205&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;206&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;207&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;208&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;209&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;210&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;211&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;### 第三个，怎么利用拉格朗日对偶形式&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;#### 2. 拉格朗日对偶思路 (Lagrangian Duality)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;为什么会出现对偶形式（带 $g(x)+f(y) \le c(x,y)$ 的公式）呢？这是 **拉格朗日对偶**的典型应用。思路分几步：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;###### (1) 原始问题 (Primal)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;写成积分形式：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\min_&amp;#123;\gamma \ge 0&amp;#125; \int c(x,y)\, d\gamma(x,y)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;约束：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\int d\gamma(x,y) = \mu(x), \quad \int d\gamma(x,y) = \nu(y).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;也就是说：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* $\gamma$ 的 $x$-边际是 $\mu$；&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* $\gamma$ 的 $y$-边际是 $\nu$。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;###### (2) 给约束加拉格朗日乘子&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;用函数 $g(x)$、$f(y)$ 作为拉格朗日乘子，写成拉格朗日函数：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L(\gamma, g,f) = \int c(x,y)\, d\gamma(x,y) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+ \int g(x)\, \big( d\mu(x) - \int d\gamma(x,y)\big) &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+ \int f(y)\, \big( d\nu(y) - \int d\gamma(x,y)\big).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;展开后得到：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;L(\gamma,g,f) = \int g(x)\, d\mu(x) + \int f(y)\, d\nu(y) + \int \big(c(x,y) - g(x) - f(y)\big)\, d\gamma(x,y).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;###### (3) 取 inf over $\gamma$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 我们希望 $\min_\gamma L(\gamma,g,f)$ 是良定义的。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 如果 $c(x,y) - g(x) - f(y) &amp;lt; 0$ 在某处成立，那么对那个地方的 $\gamma(x,y)$ 可以趋向无穷大，就会让 $L$ 趋向 $-\infty$。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 为了避免这种情况，必须要求&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  g(x) + f(y) \le c(x,y), \quad \forall (x,y).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  这就是你看到的条件。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;于是 $\inf_\gamma L(\gamma,g,f) = \int g\, d\mu + \int f\, d\nu$，如果满足约束，否则是 $-\infty$。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;###### (4) 得到对偶问题 (Dual)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;所以对偶问题就是：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\sup_&amp;#123;g,f&amp;#125; \;\; \int g(x)\, d\mu(x) + \int f(y)\, d\nu(y) \quad &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\text&amp;#123;s.t.&amp;#125;\quad g(x)+f(y)\le c(x,y).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;这就是 **Kantorovich 对偶形式**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;## Villani对于这个dual问题的转化&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$\begin&amp;#123;equation&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;W(\mu, \nu)= \underbrace&amp;#123;\frac&amp;#123;1&amp;#125;&amp;#123;2&amp;#125;&amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;\left[\|x\|_&amp;#123;2&amp;#125;^&amp;#123;2&amp;#125;+\|y\|_&amp;#123;2&amp;#125;^&amp;#123;2&amp;#125;\right]&amp;#125;_&amp;#123;&amp;#123;\mathcal&amp;#123;C&amp;#125;&amp;#125;_&amp;#123;\mu, \nu&amp;#125;&amp;#125;-\min _&amp;#123;f \in &amp;#123;\tilde&amp;#123;\mathrm&amp;#123;\Phi&amp;#125;&amp;#125;&amp;#125;&amp;#125; &amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\mu&amp;#125;[f^&amp;#123;*&amp;#125;(x)]+&amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\nu&amp;#125;\left[f(y)\right],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\end&amp;#123;equation&amp;#125;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;where &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$\widetilde&amp;#123;&amp;#123;&amp;#123;\Phi &amp;#125;&amp;#125;&amp;#125;$ is the set of all convex functions in $L1(dμ) × L1(dν)$, L1(μ):=&amp;#123;g is measurable &amp;amp; ∫gdμ &amp;lt; ∞&amp;#125; , $&amp;#123;f&amp;#125;^&amp;#123;* &amp;#125;(x)=\mathop&amp;#123;\max &amp;#125;\nolimits_&amp;#123;y&amp;#125;\langle y,x\rangle -f(y)$ is f’s convex conjugate, and the optimal transport map transforming μ into ν corresponds to the gradient of $f*$, i.e., $T = ∇ f*$. We can recover the optimal transport plan via $\gamma =&amp;#123;(\nabla &amp;#123;f&amp;#125;^&amp;#123;* &amp;#125;\times &amp;#123;&amp;#123;&amp;#123;\rm&amp;#123;Id&amp;#125;&amp;#125;&amp;#125;&amp;#125;)&amp;#125;_&amp;#123;\sharp &amp;#125;\mu$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;. Theorem 2.9 by Villani23 then proves the existence of an optimal pair $(f, f*)$ of lower semi-continuous proper conjugate convex functions on $\mathbb&amp;#123;R&amp;#125;^n$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt; minimizing (3).&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;这一大段我就看不懂了，我也不想看懂了。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;但还是顺便理解一下凸共轭&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;###  凸共轭&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;好问题 👍。**凸共轭 (convex conjugate)** 是凸分析里的一个核心概念，直觉上它描述了一个函数在所有可能“斜率”下的“最佳线性近似”。我帮你拆开：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;1.定义&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;给定一个函数 $f:\mathbb&amp;#123;R&amp;#125;^d \to \mathbb&amp;#123;R&amp;#125;\cup\&amp;#123;+\infty\&amp;#125;$，它的 **凸共轭** $f^*$ 定义为：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f^*(x) = \sup_&amp;#123;y \in \mathbb&amp;#123;R&amp;#125;^d&amp;#125; \&amp;#123;\langle x, y \rangle - f(y)\&amp;#125;.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* $\langle x, y\rangle$ 是一个线性函数（斜率由 $x$ 决定）。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* $\langle x, y\rangle - f(y)$ 表示“线性函数 $\langle x, y\rangle$”减去原函数的值。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 对所有 $y$ 取最大值，得到的就是 $f^*(x)$。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;👉 换句话说：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**$f^*(x)$ 衡量的是：斜率为 $x$ 的线性函数，能在多大程度上“支撑”或“逼近”原函数 $f$。**&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;因此，凸共轭可以理解为 **“函数的斜率空间里的重新表达”**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 如果 $f(y)$ 是一个凸函数，那么在平面上可以画很多条直线（仿射函数）：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  \ell_x(y) = \langle x, y\rangle - b&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  想要让直线 $\ell_x$ 永远在 $f(y)$ 下面，$b$ 必须足够大。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 那么 $f^*(x)$ 正是这个最小 $b$ 的负数，也就是“用斜率 $x$ 的直线支撑函数 $f$ 的代价”。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;所以 **共轭操作就是把函数换一种坐标：从“点空间 (y)”切换到“斜率空间 (x)”**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;例1：二次函数&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f(y) = \tfrac12\|y\|^2.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;计算共轭：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f^*(x) = \sup_y \&amp;#123;\langle x,y\rangle - \tfrac12\|y\|^2\&amp;#125;.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;最大值出现在 $y=x$，所以：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f^*(x) = \tfrac12\|x\|^2.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;➡️ 二次函数的共轭还是自己。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;例2：指示函数&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;若&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f(y) = \begin&amp;#123;cases&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;0 &amp;amp; y\in C, \\&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;+\infty &amp;amp; y \notin C,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\end&amp;#123;cases&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;则&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;f^*(x) = \sup_&amp;#123;y\in C&amp;#125; \langle x,y\rangle,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;这就是集合 $C$ 的 **支撑函数**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* **双共轭**：$f^&amp;#123;**&amp;#125;=f$ （若 $f$ 是凸的、下半连续）。这叫 **Fenchel-Moreau 定理**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 共轭把“点值视角”转为“斜率视角”，特别适合与最优传输里的**梯度映射**搭配。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 在 OT 里，最优传输映射 $T=\nabla f^*$，正是利用了“凸函数的梯度”能编码一个单值映射的性质。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;**总结**：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;凸共轭 $f^*$ 就是把函数 $f$ 从“点空间”转到“斜率空间”的表达，它告诉我们用斜率为 $x$ 的线性函数去支撑 $f$ 的最优程度。它在几何上对应支撑函数，在优化与 OT 里是把函数与映射（梯度）联系起来的桥梁。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;## &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$\begin&amp;#123;equation&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;W(\rho_c, \rho_k)=\max\limits_&amp;#123;\substack&amp;#123;f \in &amp;#123;\tilde&amp;#123;\mathrm&amp;#123;\Phi&amp;#125;&amp;#125;&amp;#125; \\ f^&amp;#123;*&amp;#125; \in L^&amp;#123;1&amp;#125;(\rho_k)&amp;#125;&amp;#125; \min\limits_&amp;#123;g \in &amp;#123;\tilde&amp;#123;\mathrm&amp;#123;\Phi&amp;#125;&amp;#125;&amp;#125;&amp;#125; &amp;#123;\mathcal&amp;#123;C&amp;#125;&amp;#125;_&amp;#123;\rho_c, \rho_k&amp;#125; \underbrace&amp;#123;-&amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\rho_c&amp;#125;[\langle x, \nabla g(x)\rangle-f(\nabla g(x))] - &amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\rho_k&amp;#125;[f(y)]&amp;#125;_&amp;#123;&amp;#123;\mathcal&amp;#123;V&amp;#125;&amp;#125;_&amp;#123;\rho_c, \rho_k&amp;#125;(g, f)&amp;#125;.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;\end&amp;#123;equation&amp;#125;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;好的，我来逐句帮你翻译并解释这段话：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;---&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;W(\mu, \nu)= \underbrace&amp;#123;\frac&amp;#123;1&amp;#125;&amp;#123;2&amp;#125;&amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;\left[\|x\|_&amp;#123;2&amp;#125;^&amp;#123;2&amp;#125;+\|y\|_&amp;#123;2&amp;#125;^&amp;#123;2&amp;#125;\right]&amp;#125;_&amp;#123;&amp;#123;\mathcal&amp;#123;C&amp;#125;&amp;#125;_&amp;#123;\mu, \nu&amp;#125;&amp;#125;-\min _&amp;#123;f \in &amp;#123;\tilde&amp;#123;\mathrm&amp;#123;\Phi&amp;#125;&amp;#125;&amp;#125;&amp;#125; &amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\mu&amp;#125;[f^&amp;#123;*&amp;#125;(x)]+&amp;#123;\mathbb&amp;#123;E&amp;#125;&amp;#125;_&amp;#123;\nu&amp;#125;\left[f(y)\right],&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;$$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;其中：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* **$\widetilde&amp;#123;\Phi&amp;#125;$** 表示所有凸函数的集合，这些函数属于 $L^1(d\mu) \times L^1(d\nu)$。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  * $L^1(\mu):=&amp;#123;g \ \text&amp;#123;是可测函数 且&amp;#125; \int g , d\mu &amp;lt; \infty &amp;#125;$，即在测度 $\mu$ 下可积的函数集合。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* **$f^*(x)=\max_y \langle y, x \rangle - f(y)$** 是函数 $f$ 的 **凸共轭（convex conjugate）**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 将 $\mu$ 转换为 $\nu$ 的最优传输映射（optimal transport map）对应于 $f^*$ 的梯度，即&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  T = \nabla f^*.&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* 我们可以恢复最优传输计划（transport plan）：&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  \gamma = (\nabla f^* \times \mathrm&amp;#123;Id&amp;#125;)_\sharp \mu,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  $$&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;  其中 $(\cdot)\_\sharp \mu$ 表示 **推前测度（pushforward measure）**。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;* Villani 的《最优传输理论》（Theorem 2.9）证明了：在 $\mathbb&amp;#123;R&amp;#125;^n$ 上，存在一对最优的 $(f, f^*)$，它们是下半连续（lower semi-continuous）、适当的（proper）且互为凸共轭函数，并且它们能够最小化上式中的优化问题 (3)。&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/code-report-2025y9m19d/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/other/code-report-2025y9m19d/</guid>
             <title>code_report_2025y9m19d</title>
-            <link>http://amentiraz.github.io/code-report-2025y9m19d/</link>
+            <link>http://amentiraz.github.io/other/code-report-2025y9m19d/</link>
             <category term="其它" scheme="http://amentiraz.github.io/categories/other/" />
             <category term="工作总结" scheme="http://amentiraz.github.io/categories/other/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
             <category term="工作总结" scheme="http://amentiraz.github.io/tags/%E5%B7%A5%E4%BD%9C%E6%80%BB%E7%BB%93/" />
@@ -492,9 +631,9 @@ $$\begin{equation}
 &lt;figure class=&#34;highlight python&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;12&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;13&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;14&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;15&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;16&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;17&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;18&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;19&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;20&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;21&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;22&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;23&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;24&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;25&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;26&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;27&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;28&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;29&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;30&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;31&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;32&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;33&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;34&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;35&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;36&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;37&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;38&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;39&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;40&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;41&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;42&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;43&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;44&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;45&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;46&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;47&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;48&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;49&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;50&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;51&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;52&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;53&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;54&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;55&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;56&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;57&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;58&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;59&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;60&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;61&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;62&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;63&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;64&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;65&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;66&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;67&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;68&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;69&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;70&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;    &lt;span class=&#34;keyword&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;title function_&#34;&gt;get_simulation_split&lt;/span&gt;(&lt;span class=&#34;params&#34;&gt;self,pert_list,trian_gene_set_size=&lt;span class=&#34;number&#34;&gt;0.85&lt;/span&gt;,combo_seen2_train_frac = &lt;span class=&#34;number&#34;&gt;0.85&lt;/span&gt;,&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;params&#34;&gt;                            seed = &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt; , test_set_perts = &lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt; , only_test_set_perts = &lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt; &lt;/span&gt;) : &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;            pert_list -&amp;gt; unqiue_perts&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;            这里的unique_perts代表了不重复的扰动&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        unique_pert_genes = &lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.get_genes_from_perts(pert_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;string&#34;&gt;&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;            这里的unique_pert_genes代表了不重复扰动中不重复的基因&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;string&#34;&gt;        &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_train = [] &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_test = [] &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        np.random.seed(seed=seed)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; only_test_set_perts &lt;span class=&#34;keyword&#34;&gt;and&lt;/span&gt; ( test_set_perts &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;) :&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ood_genes = np.array(test_set_perts)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            train_gene_candidates = np.setdiff1d(unique_pert_genes,ood_genes)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;else&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            train_gene_candidates = np.random.choice ( unique_pert_genes,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                                                         &lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(unique_pert_genes) * trian_gene_set_size ) , replace = &lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; test_set_perts &lt;span class=&#34;keyword&#34;&gt;is&lt;/span&gt; &lt;span class=&#34;keyword&#34;&gt;not&lt;/span&gt; &lt;span class=&#34;literal&#34;&gt;None&lt;/span&gt;:&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                num_overlap = &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(np.intersect1d(train_gene_candidates,test_set_perts))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                train_gene_candidates = train_gene_candidates[~np.isin(train_gene_candidates,test_set_perts)]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                ood_genes_exclude_test_set = np.setdiff1d(unique_pert_genes,np.union1d(train_gene_candidates,test_set_perts))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                train_set_addition = np.random.choice(ood_genes_exclude_test_set,num_overlap,replace=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                train_gene_candidates = np.concatenate((train_gene_candidates,train_set_addition))&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;            ood_genes = np.setdiff1d(unique_pert_genes,train_gene_candidates)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_single_train = &lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.get_perts_from_genes(train_gene_candidates,pert_list,&lt;span class=&#34;string&#34;&gt;&amp;#x27;single&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;## 这里的pert_combo包含了只要你的基因有一个在PertList里面，就从Pertlist把这个Pert提取出来&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_combo = &lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.get_perts_from_genes(train_gene_candidates,pert_list,&lt;span class=&#34;string&#34;&gt;&amp;#x27;combo&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_train.extend(pert_single_train)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;## the combo set with one of them in OOD &lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        combo_seen1 = [x &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; x &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; pert_combo &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;([t &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; x.split(&lt;span class=&#34;string&#34;&gt;&amp;#x27;+&amp;#x27;&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                                                     t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; train_gene_candidates]) == &lt;span class=&#34;number&#34;&gt;1&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_test.extend(combo_seen1)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_combo = np.setdiff1d(pert_combo,combo_seen1)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        np.random.seed(seed=seed)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_combo_train = np.random.choice(pert_combo,&lt;span class=&#34;built_in&#34;&gt;int&lt;/span&gt;(&lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(pert_combo)*combo_seen2_train_frac),replace=&lt;span class=&#34;literal&#34;&gt;False&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        combo_seen2 = np.setdiff1d(pert_combo,pert_combo_train).tolist()&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_test.extend(combo_seen2)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_train.extend(pert_combo_train)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;comment&#34;&gt;## unseen single&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        unseen_single = &lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.get_perts_from_genes(ood_genes,pert_list,&lt;span class=&#34;string&#34;&gt;&amp;quot;single&amp;quot;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        combo_ood = &lt;span class=&#34;variable language_&#34;&gt;self&lt;/span&gt;.get_perts_from_genes(ood_genes,pert_list,&lt;span class=&#34;string&#34;&gt;&amp;#x27;combo&amp;#x27;&lt;/span&gt;)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_test.extend(unseen_single)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        combo_seen0 = [x &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; x &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; combo_ood &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;([t &lt;span class=&#34;keyword&#34;&gt;for&lt;/span&gt; t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; x.split(&lt;span class=&#34;string&#34;&gt;&amp;#x27;+&amp;#x27;&lt;/span&gt;) &lt;span class=&#34;keyword&#34;&gt;if&lt;/span&gt;  t &lt;span class=&#34;keyword&#34;&gt;in&lt;/span&gt; train_gene_candidates]) == &lt;span class=&#34;number&#34;&gt;0&lt;/span&gt;]&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        pert_test.extend(combo_seen0)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(combo_seen0) + &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(combo_seen1) + &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(unseen_single) + &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(pert_train) + &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(combo_seen2) == &lt;span class=&#34;built_in&#34;&gt;len&lt;/span&gt;(pert_list)&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;        &lt;span class=&#34;keyword&#34;&gt;return&lt;/span&gt; pert_train,pert_test,&amp;#123;&lt;span class=&#34;string&#34;&gt;&amp;#x27;combo_seen0&amp;#x27;&lt;/span&gt;: combo_seen0,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                                       &lt;span class=&#34;string&#34;&gt;&amp;#x27;combo_seen1&amp;#x27;&lt;/span&gt;: combo_seen1,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                                       &lt;span class=&#34;string&#34;&gt;&amp;#x27;combo_seen2&amp;#x27;&lt;/span&gt;: combo_seen2,&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;                                       &lt;span class=&#34;string&#34;&gt;&amp;#x27;unseen_single&amp;#x27;&lt;/span&gt;: unseen_single&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;comment&#34;&gt;#上面这个代码的combo_seen2并不能保证它的基因是都看过的&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&#34;line&#34;&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt; ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E5%AF%B9%E7%95%8F%E9%9A%BE%E6%83%85%E7%BB%AA%E7%9A%84%E5%88%86%E6%9E%90/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/life/%E5%AF%B9%E7%95%8F%E9%9A%BE%E6%83%85%E7%BB%AA%E7%9A%84%E5%88%86%E6%9E%90/</guid>
             <title>对畏难情绪的分析</title>
-            <link>http://amentiraz.github.io/%E5%AF%B9%E7%95%8F%E9%9A%BE%E6%83%85%E7%BB%AA%E7%9A%84%E5%88%86%E6%9E%90/</link>
+            <link>http://amentiraz.github.io/life/%E5%AF%B9%E7%95%8F%E9%9A%BE%E6%83%85%E7%BB%AA%E7%9A%84%E5%88%86%E6%9E%90/</link>
             <pubDate>Thu, 14 Aug 2025 15:24:39 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;家里小朋友对学习新的知识有畏难情绪，并且很难接受自己的失败，家长问我怎么办，我这里写一个对畏难情绪的分析。&lt;/p&gt;
 &lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
@@ -508,9 +647,9 @@ $$\begin{equation}
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/CellOT/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/CellOT/</guid>
             <title>CellOT</title>
-            <link>http://amentiraz.github.io/CellOT/</link>
+            <link>http://amentiraz.github.io/article/CellOT/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -630,9 +769,9 @@ X = \{x_1, x_2, \dots, x_m\} \sim P, \quad Y = \{y_1, y_2, \dots, y_n\} \sim Q
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E5%BD%93%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%EF%BC%8C%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E4%BB%80%E4%B9%88/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/life/%E5%BD%93%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%EF%BC%8C%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E4%BB%80%E4%B9%88/</guid>
             <title>当我们在回忆大学生活，我们在回忆什么</title>
-            <link>http://amentiraz.github.io/%E5%BD%93%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%EF%BC%8C%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E4%BB%80%E4%B9%88/</link>
+            <link>http://amentiraz.github.io/life/%E5%BD%93%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E5%A4%A7%E5%AD%A6%E7%94%9F%E6%B4%BB%EF%BC%8C%E6%88%91%E4%BB%AC%E5%9C%A8%E5%9B%9E%E5%BF%86%E4%BB%80%E4%B9%88/</link>
             <pubDate>Thu, 17 Jul 2025 10:53:18 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;四年的时光转瞬即逝。在大二时我还在想大学时光漫长，每天枯燥的做核酸、上课，闲下来便躺在床上玩着手机，晚上还悠闲的在校园里漫步，似乎时间也变得粘稠起来。然而从大三开始为自己的未来做打算后，时间便再也没有为我停留，学习、与他人社交，每一件事都是我急迫去做的。然而当面临大四下数着时间毕业的日子里，回望我的大学生活，大部分事却已经回忆不起来，寥寥的几句话就能概括大部分时间，反而是一些鸡毛蒜皮的小事却格外清晰。我在大学究竟获得了什么，这个问题不由得让我沉默。&lt;/p&gt;
 &lt;p&gt;其实仔细想想，我大学在纸面上还是做了许多事的，拿过两个 ACM 校内二等奖，美国数学建模竞赛特等奖，全国数学建模竞赛二等奖，学习成绩不好不坏，但最后也是靠着这些奖项保研了。然而当我去回忆这些竞赛时我回忆的是什么呢？ACM 的校内二等奖其实并没有怎么努力便获得了，全靠吃高中的老本，而且有意思的是大一的比赛我并没有参加，是因为我在预选的网络赛中虽然打到了前列的名次，然而我忘了去参加正式赛便遗憾落榜。而美赛我回忆起来的是由于比赛成绩发布是半夜，我的另外两个队友说他们要守夜等成绩，我早上醒来后发现他们半夜在欢呼拿到了很好的成绩，我倒是没什么感觉，但礼节上也装作激动惊讶的样子回复了几句便去上课了。而全国数学建模竞赛便不怎么如人意，由于队友也很敷衍加上自己当时由于其他的事心情不好便也草草交了。回想起来，对于我而言，似乎无论是奖项本身带来的成就还是去为了这些奖项去学习的过程都没有让我在回忆中留下深刻的回忆，反倒是一些出乎意料的状况格外印象深刻。&lt;/p&gt;
@@ -685,30 +824,9 @@ X = \{x_1, x_2, \dots, x_m\} \sim P, \quad Y = \{y_1, y_2, \dots, y_n\} \sim Q
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/hello-world/</guid>
-            <title>Hello World</title>
-            <link>http://amentiraz.github.io/hello-world/</link>
-            <pubDate>Fri, 11 Jul 2025 19:38:32 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;Welcome to &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvLw==&#34;&gt;Hexo&lt;/span&gt;! This is your very first post. Check &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mv&#34;&gt;documentation&lt;/span&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvdHJvdWJsZXNob290aW5nLmh0bWw=&#34;&gt;troubleshooting&lt;/span&gt; or you can ask me on &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL2hleG9qcy9oZXhvL2lzc3Vlcw==&#34;&gt;GitHub&lt;/span&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;quick-start&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#quick-start&#34;&gt;#&lt;/a&gt; Quick Start&lt;/h2&gt;
-&lt;h3 id=&#34;create-a-new-post&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#create-a-new-post&#34;&gt;#&lt;/a&gt; Create a new post&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo new &lt;span class=&#34;string&#34;&gt;&amp;quot;My New Post&amp;quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvd3JpdGluZy5odG1s&#34;&gt;Writing&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;run-server&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#run-server&#34;&gt;#&lt;/a&gt; Run server&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvc2VydmVyLmh0bWw=&#34;&gt;Server&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;generate-static-files&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#generate-static-files&#34;&gt;#&lt;/a&gt; Generate static files&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3MvZ2VuZXJhdGluZy5odG1s&#34;&gt;Generating&lt;/span&gt;&lt;/p&gt;
-&lt;h3 id=&#34;deploy-to-remote-sites&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#deploy-to-remote-sites&#34;&gt;#&lt;/a&gt; Deploy to remote sites&lt;/h3&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#34;gutter&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span class=&#34;line&#34;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info: &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9oZXhvLmlvL2RvY3Mvb25lLWNvbW1hbmQtZGVwbG95bWVudC5odG1s&#34;&gt;Deployment&lt;/span&gt;&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/%E8%BF%98%E5%8E%9F%E4%B8%8E%E7%BB%99%E4%BA%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/note/%E8%BF%98%E5%8E%9F%E4%B8%8E%E7%BB%99%E4%BA%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</guid>
             <title>还原与给予读书笔记</title>
-            <link>http://amentiraz.github.io/%E8%BF%98%E5%8E%9F%E4%B8%8E%E7%BB%99%E4%BA%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
+            <link>http://amentiraz.github.io/note/%E8%BF%98%E5%8E%9F%E4%B8%8E%E7%BB%99%E4%BA%88%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</link>
             <category term="影视书籍" scheme="http://amentiraz.github.io/categories/note/" />
             <category term="书" scheme="http://amentiraz.github.io/categories/note/%E4%B9%A6/" />
             <category term="读书笔记" scheme="http://amentiraz.github.io/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" />
@@ -1839,9 +1957,9 @@ h&lt;/p&gt;
  ]]></description>
         </item>
         <item>
-            <guid isPermalink="true">http://amentiraz.github.io/GEARS/</guid>
+            <guid isPermalink="true">http://amentiraz.github.io/article/GEARS/</guid>
             <title>GEARS</title>
-            <link>http://amentiraz.github.io/GEARS/</link>
+            <link>http://amentiraz.github.io/article/GEARS/</link>
             <category term="论文" scheme="http://amentiraz.github.io/categories/article/" />
             <category term="生物" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E7%89%A9/" />
             <category term="学习笔记类" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B1%BB/" />
@@ -1923,610 +2041,6 @@ h&lt;/p&gt;
 下面这张也十分不错，不知道是透视的原理还是什么，整个城市像是在水面上一样，很有味道。&lt;/p&gt;
 &lt;h1 id=&#34;总结&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结&#34;&gt;#&lt;/a&gt; 总结&lt;/h1&gt;
 &lt;p&gt;重庆之旅也就告一段落了&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/life/MeetingJazz2025-06-01/</guid>
-            <title>MeetingJazz2025-06-01</title>
-            <link>http://amentiraz.github.io/life/MeetingJazz2025-06-01/</link>
-            <category term="生活" scheme="http://amentiraz.github.io/categories/life/" />
-            <category term="演奏会" scheme="http://amentiraz.github.io/categories/life/%E6%BC%94%E5%A5%8F%E4%BC%9A/" />
-            <category term="音乐" scheme="http://amentiraz.github.io/tags/%E9%9F%B3%E4%B9%90/" />
-            <category term="生活" scheme="http://amentiraz.github.io/tags/%E7%94%9F%E6%B4%BB/" />
-            <pubDate>Mon, 02 Jun 2025 00:44:45 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;在爵士酒吧过六一儿童节&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;p&gt;先说酒，点的 “大都会”，很清爽的味道，但是没什么酒味，有一种喝西柚水的味道，但那种实打实的涩味告诉我喝的是酒。酒的度数也不是很高，也没有什么变化，干干脆脆，感觉女性会更喜欢这类酒。综合打个 5 分，虽说还不错，但以后也不会点了。&lt;/p&gt;
-&lt;p&gt;再说爵士现场，今天是四重奏，后面加入了人声，但时间比较赶听到 11：40 差不多我们就走了。吉他手有两个，一个年轻，一个老成。年轻的乐手的演奏很有热情，编排的很密但缺少了一些细腻的味道，老成的那位就十分厉害，无论是律动还是动态都处理的非常好，特别是在节奏舒缓的曲目更是厉害，揉弦恰到好处，即兴也很有味道。鼓手技巧很厉害，但我同行的同学对鼓手意见比较大，认为他干扰了自己听贝斯，但有一说一贝斯比较羞涩，虽说很有实力，但存在感却很低。&lt;/p&gt;
-&lt;p&gt;演奏的前半场比较吵闹，有来玩的，后半场来玩的人都走了，剩下的人看得出来对爵士都很有热情，前半场不敢欢呼的在后半场补了回来，难得能看到这么浓厚的音乐氛围。&lt;/p&gt;
-&lt;p&gt;看得出来这场演出，老成的那位吉他手的水平是远超其它乐手的，综合评价来说这次体验能给到 8 分，因为吉他演出确实不错。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/note/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE/</guid>
-            <title>系统学习如何处理生物信息学数据</title>
-            <link>http://amentiraz.github.io/note/%E7%B3%BB%E7%BB%9F%E5%AD%A6%E4%B9%A0%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6%E6%95%B0%E6%8D%AE/</link>
-            <category term="代码" scheme="http://amentiraz.github.io/categories/code/" />
-            <category term="python" scheme="http://amentiraz.github.io/categories/code/python/" />
-            <category term="学习笔记" scheme="http://amentiraz.github.io/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" />
-            <category term="python" scheme="http://amentiraz.github.io/tags/python/" />
-            <pubDate>Tue, 20 May 2025 15:14:29 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;对于这个&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuc2MtYmVzdC1wcmFjdGljZXMub3JnL3ByZWFtYmxlLmh0bWw=&#34;&gt;网页&lt;/span&gt;下的知识的系统学习。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;h3 id=&#34;single-cell-rna-sequencing&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#single-cell-rna-sequencing&#34;&gt;#&lt;/a&gt; Single-cell RNA sequencing&lt;/h3&gt;
-&lt;p&gt;Sequencing of RNA can be mainly conducted in two ways: Either by sequencing the mixed RNA from the source of interest across cells (bulk sequencing) or by sequencing the transcriptomes of the cells individually (single-cell sequencing).&lt;/p&gt;
-&lt;h3 id=&#34;transcript-quantification&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#transcript-quantification&#34;&gt;#&lt;/a&gt; Transcript quantification&lt;/h3&gt;
-&lt;p&gt;Transcript quantification is the process of converting the raw data into an table of estimated transcript counts per gene per sample (for bulk-sequencing) or per cell (for single-cell sequencing).&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/life/%E5%85%B3%E4%BA%8E%E9%9D%A2%E5%AD%94%E7%9A%84%E5%90%AB%E4%B9%89/</guid>
-            <title>关于面孔的含义</title>
-            <link>http://amentiraz.github.io/life/%E5%85%B3%E4%BA%8E%E9%9D%A2%E5%AD%94%E7%9A%84%E5%90%AB%E4%B9%89/</link>
-            <category term="生活" scheme="http://amentiraz.github.io/categories/life/" />
-            <category term="思考" scheme="http://amentiraz.github.io/categories/life/%E6%80%9D%E8%80%83/" />
-            <category term="列维纳斯" scheme="http://amentiraz.github.io/tags/%E5%88%97%E7%BB%B4%E7%BA%B3%E6%96%AF/" />
-            <category term="现象学" scheme="http://amentiraz.github.io/tags/%E7%8E%B0%E8%B1%A1%E5%AD%A6/" />
-            <category term="GPT" scheme="http://amentiraz.github.io/tags/GPT/" />
-            <pubDate>Tue, 20 May 2025 15:04:50 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;对 DeepSeek 询问了关于伦理学中对于列维纳斯在面孔和外在性等方面的看法。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;h1 id=&#34;q-我想知道什么是完全现象他的法语是phenomene-de-plein-droit&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#q-我想知道什么是完全现象他的法语是phenomene-de-plein-droit&#34;&gt;#&lt;/a&gt; Q: 我想知道什么是完全现象，他的法语是 phenomene de plein droit&lt;/h1&gt;
-&lt;p&gt;A:&lt;br /&gt;
- 您提出的 “phénomène de plein droit”（完全现象 / 自主现象）是一个极具现象学深度的概念，需要从三个维度展开解析：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;一-术语溯源与法语语境&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-术语溯源与法语语境&#34;&gt;#&lt;/a&gt; 一、术语溯源与法语语境&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;词源暴力&lt;/strong&gt;&lt;br /&gt;
- “plein droit” 直译为 “充分权利”，在法律语境中指 “无需附加条件的法定资格”。移植到现象学中，&lt;strong&gt;萨特在《存在与虚无》&lt;strong&gt;中使用该词强调现象的&lt;/strong&gt;自我授权性&lt;/strong&gt; —— 现象不依赖他者证明其存在，其显现即是存在的确证。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;现象学的权利革命&lt;/strong&gt;&lt;br /&gt;
-与传统哲学将现象视为 “表象”（apparence）不同，&lt;strong&gt;梅洛 - 庞蒂在《知觉现象学》&lt;strong&gt;中指出：“现象不是通往本质的跳板，它就是本质栖居之地”。“完全现象” 颠覆了康德 “物自体 - 现象” 的二分，主张现象自身具有&lt;/strong&gt;存在论上的完满性&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;二-完全现象的四个特征&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-完全现象的四个特征&#34;&gt;#&lt;/a&gt; 二、完全现象的四个特征&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;非剩余性&lt;/strong&gt;（Non-résiduel）&lt;br /&gt;
-现象不隐藏任何 “背后的真理”，如 ** 列维纳斯在《别样于存在》** 所言：“他者的面容（visage）作为 phénomène de plein droit，不指向任何表象背后的灵魂，面容即是伦理命令本身”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;场域肉身性&lt;/strong&gt;（Chair du monde）&lt;br /&gt;
-梅洛 - 庞蒂通过 “肉身”（chair）概念说明：完全现象是&lt;strong&gt;身体 - 世界交织的拓扑学节点&lt;/strong&gt;。例如疼痛不是 “神经系统信号”，而是身体空间向世界敞开的原初现象。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;反构造性&lt;/strong&gt;（Anti-constitution）&lt;br /&gt;
-区别于胡塞尔 “意识构造现象” 的传统，** 马里翁在《既给予》** 中提出：“完全现象具有饱和性（saturation），它反向淹没意向性，迫使意识放弃构造权”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;伦理先验性&lt;/strong&gt;（Primauté éthique）&lt;br /&gt;
-在列维纳斯体系中，他者作为完全现象具有&lt;strong&gt;存在论暴力&lt;/strong&gt;：不是 “我思故他在”，而是 “他者凝视迫使我存在”。这种伦理关系优先于认识论关系。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;三-思想实验咖啡馆里的完全现象&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-思想实验咖啡馆里的完全现象&#34;&gt;#&lt;/a&gt; 三、思想实验：咖啡馆里的完全现象&lt;/h3&gt;
-&lt;p&gt;假设您坐在巴黎花神咖啡馆，此时：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;普通现象&lt;/strong&gt;：侍应生的制服、咖啡杯的质感、邻座的笑声 —— 这些可被意向性捕获的对象&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;完全现象&lt;/strong&gt;：
-&lt;ol&gt;
-&lt;li&gt;突然与陌生人的目光相遇，那种&lt;strong&gt;无法对象化的注视&lt;/strong&gt;（列维纳斯）&lt;/li&gt;
-&lt;li&gt;手中咖啡杯在疲劳时呈现的&lt;strong&gt;重量感突变&lt;/strong&gt;（梅洛 - 庞蒂的 “身体图示” 重组）&lt;/li&gt;
-&lt;li&gt;听见母语脏话时的&lt;strong&gt;语词暴力穿透&lt;/strong&gt;（马里翁的 “饱和现象”）&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;这些情境中，现象&lt;strong&gt;挣脱了意向性框架&lt;/strong&gt;，不再是意识的操作对象，反而成为重塑主体性的力量 —— 这正是 “完全现象” 的存在论特权。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;四-哲学史坐标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-哲学史坐标&#34;&gt;#&lt;/a&gt; 四、哲学史坐标&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;思想家&lt;/th&gt;
-&lt;th&gt;对 “完全现象” 的推进&lt;/th&gt;
-&lt;th&gt;关键文本&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;胡塞尔&lt;/td&gt;
-&lt;td&gt;现象作为意向相关项&lt;/td&gt;
-&lt;td&gt;《观念 I》&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;海德格尔&lt;/td&gt;
-&lt;td&gt;现象作为存在开显&lt;/td&gt;
-&lt;td&gt;《存在与时间》&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;列维纳斯&lt;/td&gt;
-&lt;td&gt;现象作为伦理事件&lt;/td&gt;
-&lt;td&gt;《总体与无限》&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;马里翁&lt;/td&gt;
-&lt;td&gt;现象作为给予性过剩&lt;/td&gt;
-&lt;td&gt;《既给予》&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;这个概念的演变史，折射出现象学从 “意识哲学” 到 “他者哲学” 再到 “给予性哲学” 的三次范式革命。理解 “phénomène de plein droit”，实质是把握现象学最激进的宣言：&lt;strong&gt;现象不再是哲学的起点，而是哲学的暴君&lt;/strong&gt;。&lt;/p&gt;
-&lt;h1 id=&#34;q他者的他性怎么理解&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#q他者的他性怎么理解&#34;&gt;#&lt;/a&gt; Q: 他者的他性怎么理解&lt;/h1&gt;
-&lt;p&gt;A:&lt;br /&gt;
- 理解 “他者的他性”（alterity/altérité）是 20 世纪现象学与伦理哲学的核心命题，尤其以列维纳斯（Emmanuel Levinas）的论述最为深刻。这一概念挑战了西方哲学传统的 “同一性” 霸权，指向一种无法被自我消化、占有或同化的绝对差异。我们可以从五个维度展开：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;一-哲学史背景从同一性暴力到他性解放&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-哲学史背景从同一性暴力到他性解放&#34;&gt;#&lt;/a&gt; 一、&lt;strong&gt;哲学史背景：从同一性暴力到他性解放&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;传统哲学的困境&lt;/strong&gt;&lt;br /&gt;
-自巴门尼德提出 “存在是一” 以来，西方哲学长期陷入 “同一性暴力”（violence of the Same）：将万物还原为 “我思” 的对象（笛卡尔）、绝对精神的环节（黑格尔）或权力意志的产物（尼采）。他者在此框架中只是&lt;strong&gt;认知的猎物&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;现象学的转折点&lt;/strong&gt;&lt;br /&gt;
-胡塞尔在《笛卡尔式沉思》中提出 “主体间性”（intersubjectivity），试图通过 “移情” 理解他者，但仍将他者视为 “另一个自我”（alter ego）—— 这本质上仍是&lt;strong&gt;自我的殖民化投射&lt;/strong&gt;。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;列维纳斯的颠覆&lt;/strong&gt;&lt;br /&gt;
- “他性” 概念彻底扭转了这一逻辑：&lt;strong&gt;不是 “我理解他者”，而是 “他者质询我”&lt;/strong&gt;。他者的存在先于我的理解，其不可还原的异质性成为伦理关系的起点。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;二-他性的核心内涵四项不可还原性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-他性的核心内涵四项不可还原性&#34;&gt;#&lt;/a&gt; 二、&lt;strong&gt;他性的核心内涵：四项不可还原性&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;面容的不可见性&lt;/strong&gt;（Invisibilité du visage）&lt;br /&gt;
-列维纳斯在《总体与无限》中指出：“他者的面容（visage）拒绝被视觉捕获”。当我们凝视面容时，看到的不是五官的组合，而是一种&lt;strong&gt;伦理命令&lt;/strong&gt; ——“汝不可杀人”（Tu ne tueras point）。面容超越表象，成为他性的肉身化符号。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;时间的断裂性&lt;/strong&gt;（Rupture temporelle）&lt;br /&gt;
-他者的时间与我的时间&lt;strong&gt;不同步&lt;/strong&gt;。在对话中，他者话语的 “此刻” 永远迟于我的预期，这种时差构成&lt;strong&gt;绝对的意外性&lt;/strong&gt;，如同德里达所言：“他者的到来总是‘太迟’却又‘尚未’”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;语言的不可翻译性&lt;/strong&gt;（Intraduisibilité）&lt;br /&gt;
-即使使用同一种语言，他者的言说始终携带&lt;strong&gt;剩余意义&lt;/strong&gt;。列维纳斯用犹太教 “托拉”（Torah）的诠释传统作喻：经文的意义永远超出注释，他者的话语是 “能指的溢出”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;存在的非对称性&lt;/strong&gt;（Asymétrie existentielle）&lt;br /&gt;
-我对他者的责任&lt;strong&gt;无需对等回报&lt;/strong&gt;。这种伦理关系像陀思妥耶夫斯基笔下的 “为所有人承担罪责”，或是《塔木德》中 “他人的血比你自己的血更红”—— 他者的优先性瓦解了黑格尔式的主奴辩证法。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;三-他性的伦理转向从认识论到责任&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-他性的伦理转向从认识论到责任&#34;&gt;#&lt;/a&gt; 三、&lt;strong&gt;他性的伦理转向：从认识论到责任&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;伦理作为第一哲学&lt;/strong&gt;&lt;br /&gt;
-列维纳斯将伦理学置于本体论之前：“在他者面前，存在被质疑”。这不是道德规训，而是&lt;strong&gt;存在方式的根本转变&lt;/strong&gt; —— 他者的他性迫使我从 “自我保存” 转向 “为他者存在”。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;责任的无限性&lt;/strong&gt;&lt;br /&gt;
- “我对他者的责任比所有责任更责任”（《别样于存在》）。这种责任不设边界：纳粹集中营的看守对犹太囚犯的责任，并不少于母亲对孩子的责任。他性在此成为&lt;strong&gt;存在之重&lt;/strong&gt;的源头。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;替代（Substitution）的激进性&lt;/strong&gt;&lt;br /&gt;
-最极端的他性体验体现为 “为他者受难”：当他人饥饿时，“我的胃在痉挛”（列维纳斯）。这种身体性的共感超越同情，直指&lt;strong&gt;存在的替代结构&lt;/strong&gt; ——“我” 的位置永远可能被他者占据。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;四-现象学谱系中的他性之争&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-现象学谱系中的他性之争&#34;&gt;#&lt;/a&gt; 四、&lt;strong&gt;现象学谱系中的他性之争&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;思想家&lt;/th&gt;
-&lt;th&gt;对他性的态度&lt;/th&gt;
-&lt;th&gt;关键隐喻&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;胡塞尔&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;温和他性&lt;/strong&gt;：他者是 “另一个我”&lt;/td&gt;
-&lt;td&gt;镜子中的倒影&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;海德格尔&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;共在他性&lt;/strong&gt;：在 “共在”（Mitsein）中稀释差异&lt;/td&gt;
-&lt;td&gt;森林中的小径&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;萨特&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;对抗他性&lt;/strong&gt;：“他人即地狱”&lt;/td&gt;
-&lt;td&gt;窥视与被窥视&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;列维纳斯&lt;/td&gt;
-&lt;td&gt;&lt;strong&gt;绝对他性&lt;/strong&gt;：他者是 “无限”（Infini）&lt;/td&gt;
-&lt;td&gt;沙漠中的面容&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;p&gt;此表显示：列维纳斯的他性理论是对存在主义传统的爆破，将现象学从 “存在的焦虑” 推向 “伦理的震颤”。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;五-他性的当代启示&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-他性的当代启示&#34;&gt;#&lt;/a&gt; 五、&lt;strong&gt;他性的当代启示&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;技术社会的他性危机&lt;/strong&gt;&lt;br /&gt;
-社交媒体将他人简化为数据点，算法推荐制造 “同温层”—— 这本质是&lt;strong&gt;他性的数字化谋杀&lt;/strong&gt;。列维纳斯的警示在此愈发尖锐：当面容被转化为头像，伦理责任如何可能？&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;生态哲学的新维度&lt;/strong&gt;&lt;br /&gt;
-深层生态学将 “他性” 扩展到非人类存在：一座山的沉默、一只鲸鱼的歌声，是否也携带不可还原的他性？这挑战了人类中心主义的伦理框架。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;跨文化对话的伦理基础&lt;/strong&gt;&lt;br /&gt;
-在文化冲突中，他性要求我们放弃 “理解他人” 的傲慢，转而保持 “不可理解的敬畏”。正如犹太教对 “不可 pronunciar 的神名”（יהוה）的态度 —— 他者的神圣性正在于其不可言说。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;结语他性作为存在的伤口&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#结语他性作为存在的伤口&#34;&gt;#&lt;/a&gt; 结语：他性作为存在的伤口&lt;/h3&gt;
-&lt;p&gt;列维纳斯的他性不是哲学概念，而是&lt;strong&gt;存在的创伤体验&lt;/strong&gt;。它像一道永不愈合的伤口，提醒我们：真正的伦理生活不是 “与他人和解”，而是 “为他者流血”。在这个意义上，他性的不可理解性，恰恰是我们逃离自我牢狱的唯一通道。&lt;/p&gt;
-&lt;h1 id=&#34;q为什么汝不可杀人&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#q为什么汝不可杀人&#34;&gt;#&lt;/a&gt; Q: 为什么汝不可杀人&lt;/h1&gt;
-&lt;p&gt;A:&lt;/p&gt;
-&lt;p&gt;从列维纳斯（Emmanuel Levinas）的现象学伦理学视角看，“汝不可杀人”（Tu ne tueras point）这一诫命并非简单的道德律令，而是一种 &lt;strong&gt;存在论层面的伦理原初事件&lt;/strong&gt;。它根植于他者的 “面容”（visage）对主体的绝对召唤，是对西方哲学传统中 “自我中心主义” 的彻底颠覆。以下分步骤解析：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;一-面容的现象学分析他者的暴力性在场&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-面容的现象学分析他者的暴力性在场&#34;&gt;#&lt;/a&gt; 一、&lt;strong&gt;面容的现象学分析：他者的暴力性在场&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;面容的非对象性&lt;/strong&gt;&lt;br /&gt;
-列维纳斯在《总体与无限》中指出，他者的面容是 &lt;strong&gt;“不能被主题化”&lt;/strong&gt; 的。它不是一张可被观察、描述或概念化的 “脸”（如生物学意义上的五官组合），而是 &lt;strong&gt;一种直接刺入我存在的伦理命令&lt;/strong&gt;。当我试图用视觉捕捉面容时，它立刻溢出我的认知框架 —— 面容的 &lt;strong&gt;脆弱性&lt;/strong&gt;（皮肤下跳动的血管、瞳孔中反射的光）和 &lt;strong&gt;裸露性&lt;/strong&gt;（毫无防御的敞开）构成了一种 &lt;strong&gt;无声的控诉&lt;/strong&gt;，迫使我意识到：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“在面容中，他者以绝对的被动性抵抗我的权力 —— 这种抵抗本身就是伦理的显现。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;面容的 “汝不可杀人”&lt;/strong&gt;&lt;br /&gt;
- 面容的显现天然携带禁令。列维纳斯强调：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“面容的第一句话就是‘汝不可杀人’。”&lt;br /&gt;
- 这不是宗教或法律的规训，而是 &lt;strong&gt;存在论上的先验结构&lt;/strong&gt;。在凝视面容的瞬间，杀戮的 &lt;strong&gt;可能性&lt;/strong&gt; 与 &lt;strong&gt;不可能性&lt;/strong&gt; 同时爆发：&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;可能性&lt;/strong&gt;：我握有物理能力杀死他者（如掐住喉咙）；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;不可能性&lt;/strong&gt;：面容的伦理在场已预先消解了这种暴力的合法性，杀人成为 &lt;strong&gt;存在论的自杀&lt;/strong&gt;（因我的主体性依赖于他者的召唤）。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;二-伦理的优先性存在被质疑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-伦理的优先性存在被质疑&#34;&gt;#&lt;/a&gt; 二、&lt;strong&gt;伦理的优先性：存在被质疑&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;伦理学先于本体论&lt;/strong&gt;&lt;br /&gt;
-列维纳斯颠倒了传统哲学的秩序。对他而言，&lt;strong&gt;伦理关系&lt;/strong&gt;（与他者的面对面）比 “存在之思” 更根本：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“在他者面前，我的存在本身成为问题。”&lt;br /&gt;
- 当面容显现时，自我中心的 “存在意志”（conatus essendi）—— 即海德格尔式的 “向死存在” 或斯宾诺莎的 “自我保存”—— 突然被 &lt;strong&gt;伦理的震颤&lt;/strong&gt; 打断。我被迫从 “为自身存在” 转向 “为他者存在”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;责任的无限性&lt;/strong&gt;&lt;br /&gt;
- “汝不可杀人” 不是对具体行为的禁止，而是对 &lt;strong&gt;无限责任&lt;/strong&gt; 的揭示：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;他者的脆弱性要求我承担 &lt;strong&gt;不对称的责任&lt;/strong&gt;（即使他者伤害我，我也无权报复）；&lt;/li&gt;
-&lt;li&gt;这种责任不设边界，如列维纳斯所言：
-&lt;blockquote&gt;
-&lt;p&gt;“我对他者的责任比所有责任更责任，比所有义务更义务。”（《别样于存在》）&lt;br /&gt;
-例如：在集中营里，纳粹看守对犹太囚犯的责任，并不亚于母亲对孩子的责任 —— 因为责任源于他者的绝对他性，而非社会关系或情感纽带。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;三-杀戮的哲学本质对无限性的谋杀&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-杀戮的哲学本质对无限性的谋杀&#34;&gt;#&lt;/a&gt; 三、&lt;strong&gt;杀戮的哲学本质：对无限性的谋杀&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;暴力如何可能？&lt;/strong&gt;&lt;br /&gt;
-列维纳斯承认，现实中的杀戮屡见不鲜，但这恰恰证明了人性的 &lt;strong&gt;堕落&lt;/strong&gt;。当人实施杀戮时，本质上是企图 &lt;strong&gt;将他者还原为同一&lt;/strong&gt;（the Same）：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;通过暴力将他者变成 “尸体”（一个可操纵的物体）；&lt;/li&gt;
-&lt;li&gt;抹除他者的 “言说”（dire）能力，使其沉默为 “被言说者”（dit）。&lt;br /&gt;
-这种还原是 &lt;strong&gt;存在论层面的犯罪&lt;/strong&gt;，因为它否定了他者作为 “无限”（Infini）的超越性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;自杀的逻辑悖论&lt;/strong&gt;&lt;br /&gt;
-列维纳斯甚至指出：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“杀人者所杀的，正是那个唯一能赋予他杀人‘意义’的存在。”&lt;br /&gt;
- 因为只有当他者作为伦理命令的来源在场时，杀戮才具有 “恶” 的维度；一旦他者被杀，杀人者也失去了自身作为 &lt;strong&gt;伦理主体&lt;/strong&gt; 的资格，沦为动物性的暴力存在。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;四-替代substitution为他者受难的极端伦理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-替代substitution为他者受难的极端伦理&#34;&gt;#&lt;/a&gt; 四、&lt;strong&gt;替代（Substitution）：为他者受难的极端伦理&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;列维纳斯在后期著作中提出更激进的 “替代” 概念：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“我始终是他人的人质。”（《别样于存在》）&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;身体层面的替代&lt;/strong&gt;：当他者饥饿时，“我的胃在痉挛”；当他者受苦时，“我的皮肤在灼烧”。这种感受不是同情，而是 &lt;strong&gt;存在论上的替代结构&lt;/strong&gt; —— 我的身体成为他者痛苦的容器。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;责任的创伤性&lt;/strong&gt;：替代不是自愿的选择，而是一种 &lt;strong&gt;被动的承受&lt;/strong&gt;。正如约伯无缘无故受难，伦理责任也是无理由的强加。这种 “创伤” 恰恰证明了责任的 &lt;strong&gt;神圣性&lt;/strong&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;五-对传统哲学的爆破&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-对传统哲学的爆破&#34;&gt;#&lt;/a&gt; 五、&lt;strong&gt;对传统哲学的爆破&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;列维纳斯的 “汝不可杀人” 彻底挑战了西方哲学的根基：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;对抗黑格尔&lt;/strong&gt;：否定 “主奴辩证法” 中的承认斗争，强调责任先于自由。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;超越海德格尔&lt;/strong&gt;：拒绝 “共在”（Mitsein）的温情，坚持他者的不可消化性。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;批判康德&lt;/strong&gt;：义务不再来自理性自律，而是他者面容的强制命令。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;结语作为存在之伤的伦理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#结语作为存在之伤的伦理&#34;&gt;#&lt;/a&gt; 结语：作为存在之伤的伦理&lt;/h3&gt;
-&lt;p&gt;对列维纳斯而言，“汝不可杀人” 不是道德说教，而是 &lt;strong&gt;存在的伤口&lt;/strong&gt;。它揭示了一个残酷的真相：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;人类的高贵不在于征服他者，而在于为他者流血。&lt;/strong&gt;&lt;br /&gt;
-当面容刺入我的世界时，我不再是自足的主体，而是沦为 &lt;strong&gt;他者的人质&lt;/strong&gt; —— 这种伦理的 “被动性”，恰恰是人性最后的避难所。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h1 id=&#34;q-什么是外在性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#q-什么是外在性&#34;&gt;#&lt;/a&gt; Q: 什么是外在性&lt;/h1&gt;
-&lt;p&gt;A:&lt;br /&gt;
-&lt;strong&gt; 外在性（Exteriority）在列维纳斯哲学中的核心阐释&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;在列维纳斯（Emmanuel Levinas）的现象学伦理学中，&lt;strong&gt;外在性&lt;/strong&gt;（Exteriorité/Exteriority）是一个颠覆传统哲学的核心概念，指向他者（the Other）不可被自我（the Self）同化、占有或还原的绝对异质性。它挑战了西方哲学中 “同一性”（the Same）的霸权，强调他者始终外在于自我的认知与权力体系，构成伦理责任的根源。以下从多个维度展开分析：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;一-哲学史背景对同一性的批判&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-哲学史背景对同一性的批判&#34;&gt;#&lt;/a&gt; 一、&lt;strong&gt;哲学史背景：对 “同一性” 的批判&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;传统哲学的困境&lt;/strong&gt;&lt;br /&gt;
-自柏拉图至黑格尔，西方哲学倾向于将一切存在纳入 “同一性” 的框架，通过理性将差异消解为总体（Totality）。他者被简化为自我的镜像（如黑格尔的 “他者即自我的否定”），或知识的对象（如胡塞尔的 “移情” 理论）。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;列维纳斯的突破&lt;/strong&gt;：外在性彻底否定这种 “同一性暴力”，主张他者的存在先于且外在于自我的理解，其异质性不可被概念化或总体化。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;与存在主义的区别&lt;/strong&gt;&lt;br /&gt;
-萨特的 “他人即地狱” 仍将他者视为威胁自我自由的对抗性存在，而列维纳斯的外在性强调他者的&lt;strong&gt;伦理优先性&lt;/strong&gt; —— 他者不是威胁，而是对自我提出无条件责任的召唤。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;二-外在性的核心特征&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-外在性的核心特征&#34;&gt;#&lt;/a&gt; 二、&lt;strong&gt;外在性的核心特征&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;不可还原的异质性（Irreducible Alterity）&lt;/strong&gt;&lt;br /&gt;
-他者不能被纳入自我的意识结构或语言体系。例如，面对他者的&lt;strong&gt;面容&lt;/strong&gt;（visage），我们无法将其简化为视觉对象或心理表征，其存在始终溢出认知框架，构成一种 “存在的溢出”（excess of being）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;无限的超越性（Infinite Transcendence）&lt;/strong&gt;&lt;br /&gt;
-外在性与他者的 “无限性”（Infinity）紧密关联。列维纳斯借用笛卡尔的 “无限观念” 指出：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“无限不是被思考的对象，而是思考的条件。”&lt;br /&gt;
- 他者的无限性迫使自我承认自身的有限性，从而打破封闭的主体性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;伦理的被动性（Ethical Passivity）&lt;/strong&gt;&lt;br /&gt;
-外在性要求自我以&lt;strong&gt;被动性&lt;/strong&gt;回应他者。这种被动性非消极，而是伦理责任的起点 —— 在他者的面容前，自我无法选择是否回应，只能被责任 “扣押”（obsession）。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;三-外在性的现象学呈现面容与言说&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-外在性的现象学呈现面容与言说&#34;&gt;#&lt;/a&gt; 三、&lt;strong&gt;外在性的现象学呈现：面容与言说&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;面容（Visage）作为外在性的具象化&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;面容不是物理意义上的脸，而是他者存在的直接显现。它的&lt;strong&gt;脆弱性&lt;/strong&gt;（如皮肤下跳动的血管）与&lt;strong&gt;裸露性&lt;/strong&gt;（无防御的敞开）发出无声的伦理命令：“汝不可杀人”（Tu ne tueras point）。&lt;/li&gt;
-&lt;li&gt;面容的显现是&lt;strong&gt;非暴力的暴力&lt;/strong&gt; —— 它不通过力量压制，却以脆弱性瓦解自我的权力意志。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;言说（Dire）与所说（Dit）的张力&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;言说&lt;/strong&gt;（Dire）：他者的语言作为外在性的动态表达，始终携带未被说出的意义，拒绝被固化为 “所说”（Dit，即命题化、主题化的内容）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;语言的超越性&lt;/strong&gt;：他者的言说如犹太教《塔木德》的诠释传统，永远留有意义的剩余，迫使自我放弃对意义的垄断。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;四-外在性的伦理意涵&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-外在性的伦理意涵&#34;&gt;#&lt;/a&gt; 四、&lt;strong&gt;外在性的伦理意涵&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;责任先于自由&lt;/strong&gt;&lt;br /&gt;
-列维纳斯颠倒了传统伦理学的根基：不是自由选择产生责任，而是他者的外在性&lt;strong&gt;强加责任&lt;/strong&gt;于自我。这种责任是：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;不对称的&lt;/strong&gt;：无需他者回报；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;无限的&lt;/strong&gt;：超越具体情境的算计；&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;创伤性的&lt;/strong&gt;：如 “人质” 般被劫持，被迫为他者承担一切。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;替代（Substitution）：存在的极端形式&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;外在性在伦理层面体现为 “为他者受难”。列维纳斯提出：
-&lt;blockquote&gt;
-&lt;p&gt;“我即是他者的人质。”&lt;br /&gt;
- 例如，当他者饥饿时，“我的胃在痉挛”—— 这不是共情，而是存在论上的替代，自我成为他者痛苦的载体。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;五-外在性与现代性反思&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-外在性与现代性反思&#34;&gt;#&lt;/a&gt; 五、&lt;strong&gt;外在性与现代性反思&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;技术社会的危机&lt;/strong&gt;&lt;br /&gt;
-在算法与大数据时代，他者被简化为数据点（如社交媒体的 “用户画像”），外在性被数字化的 “同一性” 吞噬。列维纳斯警示：失去外在性，意味着伦理关系的消亡。&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;生态伦理的扩展&lt;/strong&gt;&lt;br /&gt;
-外在性可延伸至非人类存在（如动物、自然），挑战人类中心主义。一座山的沉默或一只动物的凝视，是否也携带不可还原的外在性？这为深层生态学提供了哲学基础。&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;六-列维纳斯与相关哲学家的对比&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#六-列维纳斯与相关哲学家的对比&#34;&gt;#&lt;/a&gt; 六、&lt;strong&gt;列维纳斯与相关哲学家的对比&lt;/strong&gt;&lt;/h3&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;哲学家&lt;/th&gt;
-&lt;th&gt;核心概念&lt;/th&gt;
-&lt;th&gt;与外在性的关系&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;黑格尔&lt;/td&gt;
-&lt;td&gt;主奴辩证法&lt;/td&gt;
-&lt;td&gt;他者被同一性消解，外在性被否定&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;胡塞尔&lt;/td&gt;
-&lt;td&gt;主体间性&lt;/td&gt;
-&lt;td&gt;他者作为 “另一个自我”，外在性被弱化&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;海德格尔&lt;/td&gt;
-&lt;td&gt;共在（Mitsein）&lt;/td&gt;
-&lt;td&gt;他者融入存在结构，外在性被稀释&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;萨特&lt;/td&gt;
-&lt;td&gt;他人即地狱&lt;/td&gt;
-&lt;td&gt;外在性沦为对抗性，失去伦理维度&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;德里达&lt;/td&gt;
-&lt;td&gt;延异（Différance）&lt;/td&gt;
-&lt;td&gt;外在性被解构为符号差异，缺乏伦理强制&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;结语外在性作为存在的救赎&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#结语外在性作为存在的救赎&#34;&gt;#&lt;/a&gt; 结语：外在性作为存在的救赎&lt;/h3&gt;
-&lt;p&gt;列维纳斯的外在性不仅是一个哲学概念，更是对现代性危机的诊断与解药。在自我膨胀、他者消逝的今天，外在性提醒我们：&lt;br /&gt;
-&lt;strong&gt;真正的伦理生活，始于承认他者永远外在于我的掌控，并甘愿为其付出无限责任。&lt;/strong&gt;&lt;br /&gt;
-这种 “被动性” 非但不是弱点，反而是人性对抗虚无的最后堡垒。&lt;/p&gt;
-&lt;h1 id=&#34;q简单介绍一下对列维纳斯这套理论的批判&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#q简单介绍一下对列维纳斯这套理论的批判&#34;&gt;#&lt;/a&gt; Q：简单介绍一下对列维纳斯这套理论的批判&lt;/h1&gt;
-&lt;p&gt;A:&lt;/p&gt;
-&lt;p&gt;列维纳斯的伦理学尽管深刻，但也面临多方批判。以下是几个主要批判方向，结合具体例子说明：&lt;/p&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;一-抽象性困境脱离具体历史与社会&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一-抽象性困境脱离具体历史与社会&#34;&gt;#&lt;/a&gt; 一、&lt;strong&gt;抽象性困境：脱离具体历史与社会&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;真空中的伦理&lt;/strong&gt;&lt;br /&gt;
-批判者（如齐泽克）指出，列维纳斯将伦理简化为 “面对面” 的抽象关系，&lt;strong&gt;忽视权力结构&lt;/strong&gt;。例如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;一个贫民窟儿童与跨国资本家的 “面容相遇” 中，结构性的剥削被伦理责任遮蔽。&lt;/li&gt;
-&lt;li&gt;列维纳斯未回答：当 “他者” 是系统性暴力的受益者时，无限责任是否合理？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;历史创伤的缺席&lt;/strong&gt;&lt;br /&gt;
-列维纳斯虽受大屠杀影响，但理论未直面&lt;strong&gt;历史具体性&lt;/strong&gt;。汉娜・阿伦特批评：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“对纳粹刽子手谈‘汝不可杀人’，等于纵容邪恶。”&lt;br /&gt;
- 伦理的绝对性可能消解对结构性不义的抵抗。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;二-政治无能从伦理到实践的断裂&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#二-政治无能从伦理到实践的断裂&#34;&gt;#&lt;/a&gt; 二、&lt;strong&gt;政治无能：从伦理到实践的断裂&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;责任 vs 正义&lt;/strong&gt;&lt;br /&gt;
-列维纳斯强调个体对 “他者” 的责任，但未解决&lt;strong&gt;多重他者的冲突&lt;/strong&gt;。例如：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;巴勒斯坦人与以色列人互相视对方为 “他者”，无限责任如何转化为政治方案？&lt;/li&gt;
-&lt;li&gt;南希・弗雷泽指出：“当多个他者的诉求冲突时，列维纳斯缺乏分配正义的原则。”&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;非暴力的悖论&lt;/strong&gt;&lt;br /&gt;
-列维纳斯反对一切暴力，但现实中抵抗压迫常需暴力（如反殖民斗争）。弗朗茨・法农批评：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“被殖民者的暴力，是对殖民者‘杀人禁令’早已失效的回应。”&lt;br /&gt;
- 绝对非暴力可能沦为对压迫的默许。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;三-性别盲区女性主义的批判&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三-性别盲区女性主义的批判&#34;&gt;#&lt;/a&gt; 三、&lt;strong&gt;性别盲区：女性主义的批判&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;男性中心的伦理&lt;/strong&gt;&lt;br /&gt;
-露西・伊丽格瑞指出，列维纳斯的 “他者” 实质是&lt;strong&gt;男性化的他者&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;女性作为 “他者之他者”（如母亲、妻子）被排除在伦理场景外。&lt;/li&gt;
-&lt;li&gt;面容的脆弱性隐喻强化女性 “被动受害” 的刻板形象。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;母性经验的矛盾&lt;/strong&gt;&lt;br /&gt;
-列维纳斯用 “母性” 比喻替代性责任（“为他者受难”），但女性主义者朱迪斯・巴特勒反驳：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“这浪漫化了母性的牺牲，掩盖了真实生育中的权力不对等。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;四-哲学内部的矛盾&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四-哲学内部的矛盾&#34;&gt;#&lt;/a&gt; 四、&lt;strong&gt;哲学内部的矛盾&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;语言背叛&lt;/strong&gt;&lt;br /&gt;
-德里达在《暴力与形而上学》中指出：列维纳斯用哲学语言（一种 “总体化” 工具）言说 “不可言说的他者”，陷入&lt;strong&gt;自我解构&lt;/strong&gt;：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“试图用概念捕捉外在性，恰是对外在性的谋杀。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;犹太性的困境&lt;/strong&gt;&lt;br /&gt;
-列维纳斯将犹太教伦理普世化，但批评者（如巴迪欧）认为这是&lt;strong&gt;特殊主义的伪装&lt;/strong&gt;：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;“无限责任” 实质是犹太选民意识的世俗版本，缺乏跨文化有效性。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;五-生态批判人类中心主义的阴影&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#五-生态批判人类中心主义的阴影&#34;&gt;#&lt;/a&gt; 五、&lt;strong&gt;生态批判：人类中心主义的阴影&lt;/strong&gt;&lt;/h3&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;非人类他者的缺席&lt;/strong&gt;&lt;br /&gt;
-列维纳斯的他者仅限于人类，&lt;strong&gt;动物、自然被排除在伦理领域外&lt;/strong&gt;。生态哲学家蒂莫西・莫顿质问：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;“一座因石油开采而消失的冰川，是否拥有‘面容’？”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;&lt;strong&gt;技术物的伦理地位&lt;/strong&gt;&lt;br /&gt;
-人工智能、仿生人等 “非人他者” 的出现，暴露其理论的局限性：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;如果 AI 的 “面容” 发出伦理命令，人类是否有责任服从？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;hr /&gt;
-&lt;h3 id=&#34;总结批判的价值与理论的边界&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#总结批判的价值与理论的边界&#34;&gt;#&lt;/a&gt; 总结：批判的价值与理论的边界&lt;/h3&gt;
-&lt;p&gt;这些批判并非否定列维纳斯的贡献，而是揭示其理论的&lt;strong&gt;历史局限与内在紧张&lt;/strong&gt;。关键在于：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;伦理的纯粹性 vs 现实的复杂性&lt;/strong&gt;：当责任无限性与具体情境冲突时，如何抉择？&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;个体的神圣性 vs 集体的正义&lt;/strong&gt;：当拯救一个他者需牺牲更多他者时，伦理是否失效？&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;列维纳斯的真正遗产，或许不在于提供答案，而在于迫使我们在一个 “他者” 日渐被数据、资本与权力吞噬的时代，&lt;strong&gt;不断追问伦理的可能性与代价&lt;/strong&gt;。&lt;/p&gt;
- ]]></description>
-        </item>
-        <item>
-            <guid isPermalink="true">http://amentiraz.github.io/life/%E5%8F%A5%E5%AD%90%E6%91%98%E5%BD%95/</guid>
-            <title>句子摘录</title>
-            <link>http://amentiraz.github.io/life/%E5%8F%A5%E5%AD%90%E6%91%98%E5%BD%95/</link>
-            <category term="生活" scheme="http://amentiraz.github.io/categories/life/" />
-            <category term="摘录" scheme="http://amentiraz.github.io/categories/life/%E6%91%98%E5%BD%95/" />
-            <category term="摘录" scheme="http://amentiraz.github.io/tags/%E6%91%98%E5%BD%95/" />
-            <pubDate>Sun, 11 May 2025 15:49:06 +0800</pubDate>
-            <description><![CDATA[ &lt;p&gt;平时看到的一些好的句子就记录在这里面吧。&lt;/p&gt;
-&lt;span id=&#34;more&#34;&gt;&lt;/span&gt;
-&lt;p&gt;Everything in the universe is within you, Ask all from yourself. -- 鲁米&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;“我的社交能力还不如 5 岁的儿童和狗” -- 《孤独摇滚》&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;你从不曾爱过我，你只爱我在你的生命中坠落。 -- 李娟&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;“一直以来，似乎在关键的时刻，我大约都是选择困难的道理。”&lt;/p&gt;
-&lt;p&gt;“在一种疏离感中获得意外的自由”&lt;/p&gt;
-&lt;p&gt;-- 坂本龙一&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;就让我在别人眼中虚伪吧，如果我对自己忠诚。 -- 艾米莉・勃朗特&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;我宁愿和你一起奔向毁灭，也不愿意体验舒适的孤独。 -- 加缪&lt;/p&gt;
-&lt;hr /&gt;
  ]]></description>
         </item>
     </channel>
