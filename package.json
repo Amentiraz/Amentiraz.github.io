@@ -1,0 +1,28 @@
+{
+  "name": "minimal-blog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "migrate": "node ./scripts/migrate-posts.mjs",
+    "build": "node ./scripts/build.mjs",
+    "preview": "node ./scripts/preview.mjs",
+    "dev": "npm run build && npm run preview"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "clean-css": "^5.3.3",
+    "highlight.js": "^11.10.0",
+    "js-yaml": "^4.1.0",
+    "katex": "^0.16.11",
+    "markdown-it": "^14.1.0",
+    "markdown-it-footnote": "^4.0.0",
+    "markdown-it-mark": "^4.0.0",
+    "markdown-it-multimd-table": "^4.2.3",
+    "markdown-it-sub": "^2.0.0",
+    "markdown-it-sup": "^2.0.0",
+    "markdown-it-task-checkbox": "^1.1.0"
+  }
+}
