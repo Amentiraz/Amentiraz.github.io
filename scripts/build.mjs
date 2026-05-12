@@ -25,7 +25,7 @@ const CONTENT_DIR = path.join(ROOT, "content", "posts");
 const OUT_DIR = path.join(ROOT, "dist");
 const SRC_ASSETS_DIR = path.join(ROOT, "src", "assets");
 const STATIC_DIR = path.join(ROOT, "public");
-const KATEX_DIST = path.join(ROOT, "..", "node_modules", "katex", "dist");
+const KATEX_DIST = path.dirname(require.resolve("katex/dist/katex.min.css"));
 const DATE_FORMATTER = new Intl.DateTimeFormat(site.language || "zh-CN", {
   year: "numeric",
   month: "2-digit",
