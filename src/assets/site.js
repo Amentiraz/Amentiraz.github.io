@@ -192,7 +192,7 @@ async function initSearch() {
   try {
     const response = await fetch("../search-index.json");
     index = await response.json();
-    meta.textContent = `索引已加载，共 ${index.length} 篇文章。`;
+    meta.textContent = "";
   } catch {
     meta.textContent = "搜索索引加载失败。";
     return;
@@ -210,7 +210,7 @@ async function initSearch() {
     if (!query) {
       currentParams.delete("q");
       window.history.replaceState({}, "", `${window.location.pathname}${currentParams.toString() ? `?${currentParams}` : ""}`);
-      meta.textContent = `索引已加载，共 ${index.length} 篇文章。`;
+      meta.textContent = "";
       results.innerHTML = "";
       return;
     }

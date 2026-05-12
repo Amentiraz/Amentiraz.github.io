@@ -432,28 +432,16 @@ function renderShell({ pageTitle, description, activeHref, content, bodyClass = 
     "  <main>",
     content,
     "  </main>",
-    "  <footer class=\"site-footer\">",
-    "    <div class=\"shell shell--wide\">",
-    `      <p>${escapeHtml(site.footerNote)}</p>`,
-    "    </div>",
-    "  </footer>",
     "</body>",
     "</html>"
   ].join("\n");
 }
 
-function homeIntro(stats) {
+function homeIntro() {
   return [
     '<section class="hero shell shell--wide">',
     '  <div class="hero__copy">',
-    '    <div class="eyebrow">Minimal blog</div>',
     `    <h1>${escapeHtml(site.title)}</h1>`,
-    `    <p class="hero__lead">${escapeHtml(site.description)}</p>`,
-    '    <div class="hero__stats">',
-    `      <div><strong>${stats.postCount}</strong><span>篇文章</span></div>`,
-    `      <div><strong>${stats.tagCount}</strong><span>个标签</span></div>`,
-    `      <div><strong>${stats.categoryCount}</strong><span>个分类</span></div>`,
-    "    </div>",
     "  </div>",
     '  <aside class="hero__aside">',
     `    ${renderPublicInfoCard({ compact: true })}`,
@@ -671,7 +659,6 @@ async function buildPostPages(posts, lookups) {
         `    <div class="post-header__pills">${renderPills(post.categories, lookups.categoryLookup, "category")}${renderPills(post.tags, lookups.tagLookup, "tag")}</div>`,
         "  </header>",
         bodyContent,
-        renderPublicInfoCard(),
         "</article>"
       ].join("\n")
     });
@@ -680,7 +667,7 @@ async function buildPostPages(posts, lookups) {
   }
 }
 
-async function buildHomePages(posts, lookups, stats) {
+async function buildHomePages(posts, lookups) {
   const totalPages = Math.max(1, Math.ceil(posts.length / site.postsPerPage));
 
   for (let page = 1; page <= totalPages; page += 1) {
@@ -690,10 +677,7 @@ async function buildHomePages(posts, lookups, stats) {
       current === 1 ? withBase("/") : withBase(`/page/${current}/`)
     );
 
-    const intro =
-      page === 1
-        ? homeIntro(stats)
-        : `<section class="shell shell--wide page-intro"><div class="section-heading"><h1>第 ${page} 页</h1><p>继续往前翻翻。</p></div></section>`;
+    const intro = page === 1 ? homeIntro() : "";
 
     const html = listPage({
       title: page === 1 ? "最新文章" : `第 ${page} 页`,
@@ -718,7 +702,7 @@ async function buildArchivePage(posts) {
     bodyClass: "page-archive",
     content: [
       '<section class="shell shell--wide page-intro">',
-      '  <div class="section-heading"><h1>归档</h1><p>按年份顺着读下来，会很清楚地看到写作轨迹。</p></div>',
+      '  <div class="section-heading"><h1>归档</h1></div>',
       "</section>",
       `<section class="shell shell--wide archive">${renderArchiveGroups(posts)}</section>`
     ].join("\n")
@@ -756,7 +740,7 @@ async function buildTaxonomyPages(posts, lookups) {
     bodyClass: "page-taxonomy",
     content: [
       '<section class="shell shell--wide page-intro">',
-      '  <div class="section-heading"><h1>标签</h1><p>按主题快速找文章。</p></div>',
+      '  <div class="section-heading"><h1>标签</h1></div>',
       "</section>",
       `<section class="shell shell--wide taxonomy-grid">${renderTaxonomyIndex(tagItems, "标签", "标签")}</section>`
     ].join("\n")
@@ -769,7 +753,7 @@ async function buildTaxonomyPages(posts, lookups) {
     bodyClass: "page-taxonomy",
     content: [
       '<section class="shell shell--wide page-intro">',
-      '  <div class="section-heading"><h1>分类</h1><p>按类别整理过的写作内容。</p></div>',
+      '  <div class="section-heading"><h1>分类</h1></div>',
       "</section>",
       `<section class="shell shell--wide taxonomy-grid">${renderTaxonomyIndex(categoryItems, "分类", "分类")}</section>`
     ].join("\n")
@@ -785,7 +769,7 @@ async function buildTaxonomyPages(posts, lookups) {
       activeHref: withBase("/tags/"),
       intro: [
         '<section class="shell shell--wide page-intro">',
-        `  <div class="section-heading"><h1>${escapeHtml(item.label)}</h1><p>${item.count} 篇文章</p></div>`,
+        `  <div class="section-heading"><h1>${escapeHtml(item.label)}</h1></div>`,
         "</section>"
       ].join("\n"),
       posts: tagPosts.get(item.label) || [],
@@ -801,7 +785,7 @@ async function buildTaxonomyPages(posts, lookups) {
       activeHref: withBase("/categories/"),
       intro: [
         '<section class="shell shell--wide page-intro">',
-        `  <div class="section-heading"><h1>${escapeHtml(item.label)}</h1><p>${item.count} 篇文章</p></div>`,
+        `  <div class="section-heading"><h1>${escapeHtml(item.label)}</h1></div>`,
         "</section>"
       ].join("\n"),
       posts: categoryPosts.get(item.label) || [],
@@ -819,11 +803,11 @@ async function buildSearchPage() {
     bodyClass: "page-search",
     content: [
       '<section class="shell shell--wide page-intro">',
-      '  <div class="section-heading"><h1>搜索</h1><p>索引文件随站点一起生成，搜索不依赖外部服务。</p></div>',
+      '  <div class="section-heading"><h1>搜索</h1></div>',
       "</section>",
       '<section class="shell shell--wide search-panel" data-search-root>',
-      `  <label class="search-box"><span>输入关键词</span><input data-search-input type="search" placeholder="${escapeHtml(site.searchPlaceholder)}" /></label>`,
-      '  <div class="search-meta" data-search-meta>输入关键词后开始搜索。</div>',
+      `  <label class="search-box"><input data-search-input type="search" placeholder="${escapeHtml(site.searchPlaceholder)}" /></label>`,
+      '  <div class="search-meta" data-search-meta></div>',
       '  <div class="search-results" data-search-results></div>',
       "</section>"
     ].join("\n")
@@ -857,7 +841,6 @@ async function build404Page() {
       '<section class="shell shell--wide not-found">',
       '  <div class="section-heading">',
       "    <h1>页面不存在</h1>",
-      "    <p>也许文章已经换了位置，或者链接写错了。</p>",
       `    <a class="button-link" href="${withBase("/")}">回到首页</a>`,
       "  </div>",
       "</section>"
@@ -893,15 +876,9 @@ async function main() {
   const tagLookup = buildLookup(tags, "tags", postsByTag);
   const categoryLookup = buildLookup(categories, "categories", postsByCategory);
   const lookups = { tagLookup, categoryLookup };
-  const stats = {
-    postCount: posts.length,
-    tagCount: tags.size,
-    categoryCount: categories.size
-  };
-
   await copyAssets();
   await buildPostPages(posts, lookups);
-  await buildHomePages(posts, lookups, stats);
+  await buildHomePages(posts, lookups);
   await buildArchivePage(posts);
   await buildTaxonomyPages(posts, lookups);
   await buildSearchPage();
