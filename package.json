@@ -7,7 +7,8 @@
     "migrate": "node ./scripts/migrate-posts.mjs",
     "build": "node ./scripts/build.mjs",
     "preview": "node ./scripts/preview.mjs",
-    "dev": "npm run build && npm run preview"
+    "dev": "npm run build && npm run preview",
+    "publish:posts": "powershell -ExecutionPolicy Bypass -File ./scripts/publish-posts.ps1"
   },
   "engines": {
     "node": ">=20"
