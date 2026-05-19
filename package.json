@@ -4,6 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "new": "powershell -ExecutionPolicy Bypass -File ./scripts/new-post.ps1",
     "migrate": "node ./scripts/migrate-posts.mjs",
     "build": "node ./scripts/build.mjs",
     "preview": "node ./scripts/preview.mjs",

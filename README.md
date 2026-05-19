@@ -13,6 +13,7 @@
 
 ```bash
 npm install
+npm run new -- "我的新文章"
 npm run migrate
 npm run build
 npm run preview
@@ -36,6 +37,37 @@ categories:
 - [生活, 记录]
 ---
 ```
+
+## 新建文章
+
+如果你想要类似 `hexo new xxx` 的体验，可以直接运行：
+
+```bash
+npm run new -- "我的新文章"
+```
+
+如果你想把文章建到某个子目录里，也可以这样：
+
+```bash
+npm run new -- "life/我的新文章"
+```
+
+这个命令会自动完成：
+
+1. 在 `content/posts` 下创建对应的 `.md` 文件
+2. 自动写入 `title`、`date`、`tags`、`categories` 和 `<!--more-->`
+3. 自动创建同名资源文件夹，方便你放图片和附件
+
+例如执行：
+
+```bash
+npm run new -- "life/夏天的随笔"
+```
+
+会生成：
+
+- `content/posts/life/夏天的随笔.md`
+- `content/posts/life/夏天的随笔/`
 
 ## 本地预览
 
