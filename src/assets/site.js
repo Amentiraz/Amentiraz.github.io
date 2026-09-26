@@ -129,6 +129,80 @@ function initMenu() {
   });
 }
 
+function initToc() {
+  const toc = document.querySelector("[data-toc]");
+  if (!toc) {
+    return;
+  }
+
+  const links = [...toc.querySelectorAll("[data-toc-link]")];
+  const entries = links
+    .map((link) => {
+      const id = decodeURIComponent((link.getAttribute("href") || "").replace(/^#/, ""));
+      return { link, heading: document.getElementById(id) };
+    })
+    .filter((entry) => entry.heading);
+
+  if (!entries.length) {
+    return;
+  }
+
+  const details = toc.querySelector("details");
+  if (details && window.matchMedia("(min-width: 1041px)").matches) {
+    details.open = true;
+  }
+
+  let frame = 0;
+  let activeLink = null;
+  const update = () => {
+    frame = 0;
+    const threshold = Math.min(160, window.innerHeight * 0.25);
+    let active = entries[0];
+    for (const entry of entries) {
+      if (entry.heading.getBoundingClientRect().top <= threshold) {
+        active = entry;
+      } else {
+        break;
+      }
+    }
+
+    for (const entry of entries) {
+      const isActive = entry === active;
+      entry.link.classList.toggle("is-active", isActive);
+      if (isActive) {
+        entry.link.setAttribute("aria-current", "location");
+      } else {
+        entry.link.removeAttribute("aria-current");
+      }
+    }
+
+    if (active.link !== activeLink) {
+      activeLink = active.link;
+      const linkTop = activeLink.offsetTop;
+      const linkBottom = linkTop + activeLink.offsetHeight;
+      const visibleTop = toc.scrollTop + 48;
+      const visibleBottom = toc.scrollTop + toc.clientHeight - 32;
+      if (toc.scrollHeight > toc.clientHeight && (linkTop < visibleTop || linkBottom > visibleBottom)) {
+        toc.scrollTo({
+          top: Math.max(0, linkTop - toc.clientHeight / 3),
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
+  const scheduleUpdate = () => {
+    if (!frame) {
+      frame = window.requestAnimationFrame(update);
+    }
+  };
+
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
+  window.addEventListener("hashchange", scheduleUpdate);
+  update();
+}
+
 async function unlockProtectedPost(root) {
   const form = root.querySelector("[data-protected-form]");
   const status = root.querySelector("[data-protected-status]");
@@ -306,6 +380,7 @@ async function initSearch() {
 
 document.addEventListener("DOMContentLoaded", () => {
   initMenu();
+  initToc();
   initProtectedPosts();
   initSearch();
   initCodeBlocks(document);

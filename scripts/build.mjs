@@ -94,8 +94,20 @@ function createMarkdownRenderer() {
       }
 
       const inline = state.tokens[index + 1];
+      const inlineText = (inline?.children || [])
+        .map((child) => {
+          if (["text", "code_inline", "emoji", "image"].includes(child.type)) {
+            return child.content || "";
+          }
+          if (["softbreak", "hardbreak"].includes(child.type)) {
+            return " ";
+          }
+          return "";
+        })
+        .join("")
+        .trim();
       const text =
-        restoreMathText(inline?.content?.trim(), state.env.mathPlaceholders) || `section-${index}`;
+        restoreMathText(inlineText || inline?.content?.trim(), state.env.mathPlaceholders) || `section-${index}`;
       const level = Number.parseInt(token.tag.replace("h", ""), 10) || 2;
       const baseId = slugifyHeading(text);
       const count = usedIds.get(baseId) || 0;
@@ -519,20 +531,49 @@ function renderPills(values, lookup, type) {
 
 function renderHeadingToc(headings) {
   const filtered = headings.filter((item) => item.level >= 2 && item.level <= 3);
-  if (filtered.length < 2) {
+  if (filtered.length < 3) {
     return "";
   }
   const items = filtered
     .map(
       (item) =>
-        `<a class="toc__item toc__item--level-${item.level}" href="#${escapeHtml(item.id)}">${escapeHtml(item.text)}</a>`
+        `<a class="toc__item toc__item--level-${item.level}" href="#${escapeHtml(item.id)}" data-toc-link>${escapeHtml(item.text)}</a>`
     )
     .join("");
   return [
-    '<aside class="toc">',
-    '  <div class="toc__title">目录</div>',
-    `  <div class="toc__items">${items}</div>`,
+    '<aside class="toc" aria-label="文章内导航" data-toc>',
+    "  <details>",
+    '    <summary class="toc__title">文章内导航</summary>',
+    `    <nav class="toc__items">${items}</nav>`,
+    "  </details>",
     "</aside>"
+  ].join("\n");
+}
+
+function renderPostNavigation(previousPost, nextPost) {
+  if (!previousPost && !nextPost) {
+    return "";
+  }
+
+  const renderLink = (post, direction) => {
+    if (!post) {
+      return "";
+    }
+    const isPrevious = direction === "previous";
+    return [
+      `<a class="post-navigation__link post-navigation__link--${direction}" href="${post.url}">`,
+      `  <span class="post-navigation__label">${isPrevious ? "← 上一篇" : "下一篇 →"}</span>`,
+      `  <strong>${escapeHtml(post.title)}</strong>`,
+      `  <time datetime="${formatDateMachine(post.date)}">${escapeHtml(formatDate(post.date))}</time>`,
+      "</a>"
+    ].join("\n");
+  };
+
+  return [
+    '<nav class="post-navigation" aria-label="文章翻页">',
+    renderLink(previousPost, "previous"),
+    renderLink(nextPost, "next"),
+    "</nav>"
   ].join("\n");
 }
 
@@ -985,15 +1026,21 @@ async function copyAssets() {
 }
 
 async function buildPostPages(posts, lookups) {
-  for (const post of posts) {
+  for (let index = 0; index < posts.length; index += 1) {
+    const post = posts[index];
     await fs.mkdir(post.outputDir, { recursive: true });
     if (existsSync(post.assetDirectory)) {
       await copyDirectory(post.assetDirectory, post.outputDir);
     }
 
+    const toc = post.password ? "" : renderHeadingToc(post.headings);
     const bodyContent = post.password
       ? renderProtectedContent(post)
-      : `${renderHeadingToc(post.headings)}<div class="post-body">${post.contentHtml}</div>`;
+      : toc
+        ? `<div class="post-content-layout">${toc}<div class="post-body">${post.contentHtml}</div></div>`
+        : `<div class="post-body">${post.contentHtml}</div>`;
+    const previousPost = posts[index + 1] || null;
+    const nextPost = posts[index - 1] || null;
 
     const page = renderShell({
       pageTitle: post.title,
@@ -1001,7 +1048,7 @@ async function buildPostPages(posts, lookups) {
       activeHref: "",
       bodyClass: "page-post",
       content: [
-        '<article class="shell post-shell">',
+        `<article class="shell post-shell${toc ? " post-shell--with-toc" : ""}">`,
         '  <header class="post-header">',
         post.categories.length
           ? `    <div class="eyebrow">${escapeHtml(post.categories.join(" / "))}</div>`
@@ -1011,6 +1058,7 @@ async function buildPostPages(posts, lookups) {
         `    <div class="post-header__pills">${renderPills(post.categories, lookups.categoryLookup, "category")}${renderPills(post.tags, lookups.tagLookup, "tag")}</div>`,
         "  </header>",
         bodyContent,
+        renderPostNavigation(previousPost, nextPost),
         "</article>"
       ].join("\n")
     });
