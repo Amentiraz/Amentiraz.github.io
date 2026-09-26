@@ -1,7 +1,7 @@
 export const site = {
   title: "Lemon Sour",
-  tagline: "写作、阅读、代码与生活",
-  description: "一个轻量、安静、兼容 Markdown 的个人博客。",
+  tagline: "紫琴抚虚弦，墨云倾远岫",
+  description: "记录代码、研究、阅读、音乐与生活。",
   author: "Lemon Sour",
   email: "violemon@163.com",
   profileTitle: "公开信息",
@@ -9,7 +9,7 @@ export const site = {
   language: "zh-CN",
   url: "https://amentiraz.github.io",
   basePath: "/",
-  postsPerPage: 10,
-  footerNote: "一个简洁的静态博客，适合直接部署到 GitHub Pages。",
+  postsPerPage: 20,
+  footerNote: "工作与生活。",
   searchPlaceholder: "搜索标题、标签、分类或正文"
 };

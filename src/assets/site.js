@@ -41,7 +41,77 @@ function activateMath(root = document.body) {
       { left: "\\(", right: "\\)", display: false },
       { left: "\\[", right: "\\]", display: true }
     ],
+    throwOnError: false,
+    strict: "ignore",
     ignoredTags: ["script", "noscript", "style", "textarea", "pre", "code"]
+  });
+}
+
+function formatCodeLanguage(value) {
+  const aliases = {
+    bash: "Shell",
+    c: "C",
+    cpp: "C++",
+    css: "CSS",
+    html: "HTML",
+    javascript: "JavaScript",
+    js: "JavaScript",
+    json: "JSON",
+    markdown: "Markdown",
+    md: "Markdown",
+    python: "Python",
+    py: "Python",
+    shell: "Shell",
+    text: "Text",
+    typescript: "TypeScript",
+    ts: "TypeScript",
+    yaml: "YAML",
+    yml: "YAML"
+  };
+  const normalized = String(value || "text").toLowerCase();
+  return aliases[normalized] || normalized.toUpperCase();
+}
+
+function initCodeBlocks(root = document) {
+  root.querySelectorAll("pre").forEach((pre) => {
+    if (pre.closest(".code-frame")) {
+      return;
+    }
+
+    const code = pre.querySelector("code");
+    if (!code || !pre.parentNode) {
+      return;
+    }
+
+    const frame = document.createElement("div");
+    frame.className = "code-frame";
+    const toolbar = document.createElement("div");
+    toolbar.className = "code-frame__toolbar";
+
+    const language = document.createElement("span");
+    language.className = "code-frame__language";
+    language.textContent = formatCodeLanguage(pre.dataset.language);
+
+    const copy = document.createElement("button");
+    copy.className = "code-frame__copy";
+    copy.type = "button";
+    copy.textContent = "复制";
+    copy.setAttribute("aria-label", "复制代码");
+    copy.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(code.innerText);
+        copy.textContent = "已复制";
+      } catch {
+        copy.textContent = "复制失败";
+      }
+      window.setTimeout(() => {
+        copy.textContent = "复制";
+      }, 1600);
+    });
+
+    toolbar.append(language, copy);
+    pre.parentNode.insertBefore(frame, pre);
+    frame.append(toolbar, pre);
   });
 }
 
@@ -107,6 +177,7 @@ async function unlockProtectedPost(root) {
       status.textContent = "已解锁。";
       root.classList.add("is-unlocked");
 
+      initCodeBlocks(content);
       activateMath(content);
     } catch {
       status.textContent = "密码不正确，或者这篇文章无法解锁。";
@@ -237,5 +308,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initMenu();
   initProtectedPosts();
   initSearch();
+  initCodeBlocks(document);
   activateMath(document.body);
 });

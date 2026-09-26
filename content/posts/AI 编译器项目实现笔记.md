@@ -3,6 +3,7 @@ title: AI 编译器项目实现笔记
 date: 2026-09-09 10:49:00
 tags:
 categories:
+- 学习笔记
 ---
 <!--more-->
 写一个做项目时的笔记，记录一下
@@ -494,5 +495,4 @@ flowchart TD
     N --> O["从头执行完整计算图"]
     O --> P["Reshape Kernel<br/>复制 X 数据到 Y"]
 ```
-
 

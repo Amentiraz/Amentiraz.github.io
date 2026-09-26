@@ -7,6 +7,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 const require = createRequire(import.meta.url);
 const MarkdownIt = require("markdown-it");
+const katex = require("katex");
 const yaml = require("js-yaml");
 const hljs = require("highlight.js");
 const CleanCSS = require("clean-css");
@@ -26,13 +27,32 @@ const OUT_DIR = path.join(ROOT, "dist");
 const SRC_ASSETS_DIR = path.join(ROOT, "src", "assets");
 const STATIC_DIR = path.join(ROOT, "public");
 const KATEX_DIST = path.dirname(require.resolve("katex/dist/katex.min.css"));
+const WENKAI_DIST = path.dirname(require.resolve("lxgw-wenkai-screen-web/package.json"));
 const DATE_FORMATTER = new Intl.DateTimeFormat(site.language || "zh-CN", {
   year: "numeric",
   month: "2-digit",
   day: "2-digit"
 });
 
+const BOARD_DEFINITIONS = {
+  tech: {
+    key: "tech",
+    title: "工作",
+    description: "工作相关文章。",
+    href: "/tech/",
+    categories: new Set(["代码", "论文", "学习笔记"])
+  },
+  life: {
+    key: "life",
+    title: "生活",
+    description: "生活相关文章。",
+    href: "/life/",
+    categories: new Set(["生活", "影视书籍", "音乐", "其它"])
+  }
+};
+
 const md = createMarkdownRenderer();
+const mathValidationErrors = new Map();
 
 function createMarkdownRenderer() {
   const instance = new MarkdownIt({
@@ -42,9 +62,9 @@ function createMarkdownRenderer() {
     typographer: true,
     highlight(code, language) {
       if (language && hljs.getLanguage(language)) {
-        return `<pre class="hljs"><code>${hljs.highlight(code, { language }).value}</code></pre>`;
+        return `<pre class="hljs" data-language="${escapeHtml(language)}"><code>${hljs.highlight(code, { language }).value}</code></pre>`;
       }
-      return `<pre class="hljs"><code>${instance.utils.escapeHtml(code)}</code></pre>`;
+      return `<pre class="hljs" data-language="text"><code>${instance.utils.escapeHtml(code)}</code></pre>`;
     }
   });
 
@@ -74,7 +94,8 @@ function createMarkdownRenderer() {
       }
 
       const inline = state.tokens[index + 1];
-      const text = inline?.content?.trim() || `section-${index}`;
+      const text =
+        restoreMathText(inline?.content?.trim(), state.env.mathPlaceholders) || `section-${index}`;
       const level = Number.parseInt(token.tag.replace("h", ""), 10) || 2;
       const baseId = slugifyHeading(text);
       const count = usedIds.get(baseId) || 0;
@@ -134,6 +155,10 @@ function stripHtml(html) {
     .replace(/<[^>]+>/g, " ")
     .replace(/&nbsp;/g, " ")
     .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -188,15 +213,268 @@ function preprocessMarkdown(source) {
     });
 }
 
-function renderMarkdown(source) {
-  const env = {};
-  const html = md
-    .render(preprocessMarkdown(source), env)
-    .replace(/<img /g, '<img loading="lazy" decoding="async" ');
+function isEscaped(source, index) {
+  let slashCount = 0;
+  for (let cursor = index - 1; cursor >= 0 && source[cursor] === "\\"; cursor -= 1) {
+    slashCount += 1;
+  }
+  return slashCount % 2 === 1;
+}
+
+function findClosingDelimiter(source, delimiter, start, { singleDollar = false } = {}) {
+  let cursor = start;
+  while (cursor < source.length) {
+    const index = source.indexOf(delimiter, cursor);
+    if (index === -1) {
+      return -1;
+    }
+    if (singleDollar) {
+      const newline = source.indexOf("\n", cursor);
+      if (newline !== -1 && newline < index) {
+        return -1;
+      }
+    }
+    const touchesAnotherDollar =
+      singleDollar && (source[index - 1] === "$" || source[index + 1] === "$");
+    if (!isEscaped(source, index) && !touchesAnotherDollar) {
+      return index;
+    }
+    cursor = index + delimiter.length;
+  }
+  return -1;
+}
+
+function validateMath(formula, displayMode) {
+  const normalized = formula.trim();
+  if (!normalized) {
+    return;
+  }
+  const key = `${displayMode ? "display" : "inline"}:${normalized}`;
+  if (mathValidationErrors.has(key)) {
+    return;
+  }
+  try {
+    katex.renderToString(normalized, {
+      displayMode,
+      strict: "ignore",
+      throwOnError: true,
+      trust: false
+    });
+  } catch (error) {
+    mathValidationErrors.set(key, error instanceof Error ? error.message : String(error));
+  }
+}
+
+function normalizeMathSource(formula) {
+  return formula.trim().replace(/\\text\{([^{}]*)\}/g, (_, content) => {
+    const escapedText = content.replace(/(^|[^\\])_/g, "$1\\_");
+    return `\\text{${escapedText}}`;
+  });
+}
+
+function protectMath(source, { allowBracketDelimiters = false } = {}) {
+  const placeholders = [];
+  const prefix = "LEMONSOURMATHPLACEHOLDER";
+  let output = "";
+  let cursor = 0;
+  let lineStart = true;
+  let fence = null;
+
+  function addPlaceholder(formula, displayMode) {
+    const normalized = normalizeMathSource(formula);
+    validateMath(normalized, displayMode);
+    const token = `${prefix}${placeholders.length.toString(36).toUpperCase()}TOKEN`;
+    const delimiter = displayMode ? "$$" : "$";
+    placeholders.push({
+      token,
+      text: normalized,
+      html: `${delimiter}${escapeHtml(normalized)}${delimiter}`
+    });
+    output += token;
+  }
+
+  while (cursor < source.length) {
+    if (lineStart) {
+      const newline = source.indexOf("\n", cursor);
+      const lineEnd = newline === -1 ? source.length : newline;
+      const line = source.slice(cursor, lineEnd).replace(/\r$/, "");
+      const fenceMatch = line.match(/^ {0,3}(`{3,}|~{3,})/);
+
+      if (fence) {
+        output += source.slice(cursor, newline === -1 ? source.length : newline + 1);
+        const closingPattern = new RegExp(
+          `^ {0,3}${fence.character === "`" ? "`" : "~"}{${fence.length},}\\s*$`
+        );
+        if (closingPattern.test(line)) {
+          fence = null;
+        }
+        cursor = newline === -1 ? source.length : newline + 1;
+        lineStart = true;
+        continue;
+      }
+
+      if (fenceMatch) {
+        fence = { character: fenceMatch[1][0], length: fenceMatch[1].length };
+        output += source.slice(cursor, newline === -1 ? source.length : newline + 1);
+        cursor = newline === -1 ? source.length : newline + 1;
+        lineStart = true;
+        continue;
+      }
+
+    }
+
+    if (source[cursor] === "`") {
+      let tickLength = 1;
+      while (source[cursor + tickLength] === "`") {
+        tickLength += 1;
+      }
+      const marker = "`".repeat(tickLength);
+      const closing = source.indexOf(marker, cursor + tickLength);
+      if (closing !== -1) {
+        const end = closing + tickLength;
+        const chunk = source.slice(cursor, end);
+        output += chunk;
+        lineStart = chunk.endsWith("\n");
+        cursor = end;
+        continue;
+      }
+    }
+
+    if (source.startsWith("$$", cursor) && !isEscaped(source, cursor)) {
+      const closing = findClosingDelimiter(source, "$$", cursor + 2);
+      const environment = source.slice(cursor + 2).match(/^\s*\\begin\{([A-Za-z*]+)\}/);
+      if (environment) {
+        const endMarker = `\\end{${environment[1]}}`;
+        const environmentEnd = source.indexOf(endMarker, cursor + 2);
+        if (environmentEnd !== -1) {
+          const inferredClosing = environmentEnd + endMarker.length;
+          const gapToExplicitClosing =
+            closing === -1 ? source.slice(inferredClosing) : source.slice(inferredClosing, closing);
+          if (closing === -1 || /\S/.test(gapToExplicitClosing)) {
+            addPlaceholder(source.slice(cursor + 2, inferredClosing), true);
+            cursor = inferredClosing;
+            lineStart = false;
+            continue;
+          }
+        }
+      }
+      if (closing !== -1) {
+        addPlaceholder(source.slice(cursor + 2, closing), true);
+        cursor = closing + 2;
+        lineStart = false;
+        continue;
+      }
+    }
+
+    if (source[cursor] === "$" && source.startsWith("\\(", cursor + 1)) {
+      const closing = findClosingDelimiter(source, "\\)", cursor + 3);
+      if (closing !== -1 && source[closing + 2] === "$") {
+        addPlaceholder(source.slice(cursor + 3, closing), false);
+        cursor = closing + 3;
+        lineStart = false;
+        continue;
+      }
+    }
+
+    if (source.startsWith("\\(", cursor) && !isEscaped(source, cursor)) {
+      const closing = findClosingDelimiter(source, "\\)", cursor + 2);
+      if (closing !== -1) {
+        addPlaceholder(source.slice(cursor + 2, closing), false);
+        cursor = closing + 2;
+        lineStart = false;
+        continue;
+      }
+    }
+
+    if (
+      allowBracketDelimiters &&
+      source.startsWith("\\[", cursor) &&
+      !isEscaped(source, cursor)
+    ) {
+      const closing = findClosingDelimiter(source, "\\]", cursor + 2);
+      if (closing !== -1) {
+        addPlaceholder(source.slice(cursor + 2, closing), true);
+        cursor = closing + 2;
+        lineStart = false;
+        continue;
+      }
+    }
+
+    if (
+      source[cursor] === "$" &&
+      source[cursor + 1] !== "$" &&
+      source[cursor - 1] !== "$" &&
+      !/\s/.test(source[cursor + 1] || "") &&
+      !isEscaped(source, cursor)
+    ) {
+      const closing = findClosingDelimiter(source, "$", cursor + 1, { singleDollar: true });
+      if (closing !== -1) {
+        addPlaceholder(source.slice(cursor + 1, closing), false);
+        cursor = closing + 1;
+        lineStart = false;
+        continue;
+      }
+    }
+
+    const character = source[cursor];
+    output += character;
+    lineStart = character === "\n";
+    cursor += 1;
+  }
+
+  return { source: output, placeholders };
+}
+
+function restoreMathText(value, placeholders = []) {
+  let restored = String(value || "");
+  for (const placeholder of placeholders) {
+    restored = restored.replaceAll(placeholder.token, () => placeholder.text);
+  }
+  return restored;
+}
+
+function restoreMathHtml(value, placeholders = []) {
+  let restored = value;
+  for (const placeholder of placeholders) {
+    restored = restored.replaceAll(placeholder.token, () => placeholder.html);
+  }
+  return restored;
+}
+
+function renderMarkdown(source, { allowBracketDelimiters = false } = {}) {
+  const protectedMath = protectMath(preprocessMarkdown(source), { allowBracketDelimiters });
+  const env = { mathPlaceholders: protectedMath.placeholders };
+  const html = restoreMathHtml(md.render(protectedMath.source, env), protectedMath.placeholders).replace(
+    /<img /g,
+    '<img loading="lazy" decoding="async" '
+  );
   return {
     html,
     headings: env.headings || []
   };
+}
+
+function localizeArticleAssets(source, assetDirectory) {
+  function localUrl(remoteUrl) {
+    try {
+      const url = new URL(remoteUrl);
+      const filename = decodeURIComponent(path.basename(url.pathname));
+      return filename && existsSync(path.join(assetDirectory, filename)) ? encodeURI(filename) : remoteUrl;
+    } catch {
+      return remoteUrl;
+    }
+  }
+
+  return source
+    .replace(/(!\[[^\]]*\]\()([^\s)]+)(\))/g, (match, prefix, url, suffix) => {
+      if (!/^https?:\/\//i.test(url)) {
+        return match;
+      }
+      return `${prefix}${localUrl(url)}${suffix}`;
+    })
+    .replace(/(<img\b[^>]*\bsrc=["'])(https?:\/\/[^"']+)(["'])/gi, (_, prefix, url, suffix) => {
+      return `${prefix}${localUrl(url)}${suffix}`;
+    });
 }
 
 function withBase(pathname = "/") {
@@ -337,12 +615,24 @@ function renderPagination(currentPage, totalPages, hrefBuilder) {
 
 function renderCard(post, lookups) {
   return [
-    '<article class="post-card">',
-    `  <div class="post-card__meta">${escapeHtml(formatDate(post.date))} · ${post.readingMinutes} 分钟阅读${post.protected ? " · 私密" : ""}</div>`,
-    `  <h2><a href="${post.url}">${escapeHtml(post.title)}</a></h2>`,
-    `  <p>${escapeHtml(post.summaryText)}</p>`,
-    `  <div class="post-card__pills">${renderPills(post.categories, lookups.categoryLookup, "category")}${renderPills(post.tags, lookups.tagLookup, "tag")}</div>`,
+    `<article class="post-card" data-board="${post.board}">`,
+    '  <div class="post-card__body">',
+    `    <div class="post-card__meta">${escapeHtml(formatDate(post.date))}${post.protected ? " · 私密" : ""}</div>`,
+    `    <h2><a href="${post.url}">${escapeHtml(post.title)}</a></h2>`,
+    `    <p>${escapeHtml(post.summaryText)}</p>`,
+    `    <div class="post-card__pills">${renderPills(post.categories.slice(0, 2), lookups.categoryLookup, "category")}${renderPills(post.tags.slice(0, 3), lookups.tagLookup, "tag")}</div>`,
+    "  </div>",
+    `  <a class="post-card__arrow" href="${post.url}" aria-label="阅读《${escapeHtml(post.title)}》">↗</a>`,
     "</article>"
+  ].join("\n");
+}
+
+function renderCompactPost(post) {
+  return [
+    `<a class="compact-post" href="${post.url}">`,
+    `  <span class="compact-post__title">${escapeHtml(post.title)}</span>`,
+    `  <time datetime="${formatDateMachine(post.date)}">${escapeHtml(formatDate(post.date))}</time>`,
+    "</a>"
   ].join("\n");
 }
 
@@ -374,7 +664,7 @@ function renderTaxonomyIndex(items, title, singular) {
   const cards = items
     .map(
       (item) =>
-        `<a class="taxonomy-card" href="${item.url}"><span class="taxonomy-card__label">${escapeHtml(item.label)}</span><span class="taxonomy-card__count">${item.count} 篇${escapeHtml(singular)}</span></a>`
+        `<a class="taxonomy-card" href="${item.url}"><span class="taxonomy-card__label">${escapeHtml(item.label)}</span><span class="taxonomy-card__count">${item.count} 篇</span></a>`
     )
     .join("");
   return cards || '<p class="empty-state">这里还没有内容。</p>';
@@ -383,10 +673,10 @@ function renderTaxonomyIndex(items, title, singular) {
 function renderNav(activeHref) {
   const items = [
     { label: "首页", href: withBase("/") },
+    { label: "工作", href: withBase("/tech/") },
+    { label: "生活", href: withBase("/life/") },
     { label: "归档", href: withBase("/archives/") },
-    { label: "标签", href: withBase("/tags/") },
-    { label: "分类", href: withBase("/categories/") },
-    { label: "搜索", href: withBase("/search/") }
+    { label: "标签", href: withBase("/tags/") }
   ];
 
   const links = items
@@ -401,10 +691,9 @@ function renderNav(activeHref) {
     "  <div class=\"shell shell--wide site-header__inner\">",
     `    <a class="brand" href="${withBase("/")}">`,
     `      <span class="brand__title">${escapeHtml(site.title)}</span>`,
-    `      <span class="brand__tagline">${escapeHtml(site.tagline)}</span>`,
     "    </a>",
     "    <button class=\"menu-toggle\" type=\"button\" data-menu-toggle aria-label=\"切换导航\">菜单</button>",
-    `    <nav class="site-nav" data-menu>${links}</nav>`,
+    `    <nav class="site-nav" data-menu>${links}<a class="site-nav__search" href="${withBase("/search/")}" aria-label="搜索"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="5.75"></circle><path d="m15 15 4.25 4.25"></path></svg></a></nav>`,
     "  </div>",
     "</header>"
   ].join("\n");
@@ -420,6 +709,9 @@ function renderShell({ pageTitle, description, activeHref, content, bodyClass = 
     '  <meta name="viewport" content="width=device-width, initial-scale=1" />',
     `  <title>${escapeHtml(title)}</title>`,
     `  <meta name="description" content="${escapeHtml(description || site.description)}" />`,
+    `  <link rel="icon" type="image/svg+xml" href="${withBase("/favicon.svg")}" />`,
+    `  <link rel="stylesheet" href="${withBase("/assets/fonts/wenkai/result.css")}" />`,
+    `  <link rel="stylesheet" href="${withBase("/assets/fonts/wenkai-mono/result.css")}" />`,
     `  <link rel="stylesheet" href="${withBase("/assets/styles.css")}" />`,
     `  <link rel="stylesheet" href="${withBase("/assets/vendor/katex/katex.min.css")}" />`,
     extraHead,
@@ -432,25 +724,56 @@ function renderShell({ pageTitle, description, activeHref, content, bodyClass = 
     "  <main>",
     content,
     "  </main>",
+    '  <footer class="site-footer">',
+    '    <div class="shell shell--wide site-footer__inner">',
+    `      <span>© ${new Date().getFullYear()} ${escapeHtml(site.author)}</span>`,
+    '      <nav aria-label="页脚导航">',
+    `        <a href="${withBase("/tags/")}">标签</a>`,
+    `        <a href="${withBase("/categories/")}">分类</a>`,
+    `        <a href="${withBase("/search/")}">搜索</a>`,
+    "      </nav>",
+    "    </div>",
+    "  </footer>",
     "</body>",
     "</html>"
   ].join("\n");
 }
 
-function homeIntro() {
+function renderBoardPanel(board, posts) {
+  const latest = posts.slice(0, 5).map(renderCompactPost).join("\n");
   return [
-    '<section class="hero shell shell--wide">',
-    '  <div class="hero__copy">',
-    `    <h1>${escapeHtml(site.title)}</h1>`,
+    `<section class="board-panel" data-board="${board.key}">`,
+    '  <div class="board-panel__head">',
+    `    <span>${posts.length} 篇文章</span>`,
     "  </div>",
-    '  <aside class="hero__aside">',
-    `    ${renderPublicInfoCard({ compact: true })}`,
-    "  </aside>",
+    `  <h2>${escapeHtml(board.title)}</h2>`,
+    `  <div class="board-panel__posts">${latest}</div>`,
+    `  <a class="board-panel__more" href="${withBase(board.href)}">查看全部 <span aria-hidden="true">→</span></a>`,
     "</section>"
   ].join("\n");
 }
 
-function listPage({ title, description, activeHref, intro, posts, lookups, pagination = "" }) {
+function homePage(posts) {
+  const techPosts = posts.filter((post) => post.board === "tech");
+  const lifePosts = posts.filter((post) => post.board === "life");
+  return renderShell({
+    description: site.description,
+    activeHref: withBase("/"),
+    bodyClass: "page-home",
+    content: [
+      '<section class="home-intro shell shell--wide">',
+      `  <h1>${escapeHtml(site.title)}</h1>`,
+      `  <p class="home-intro__subtitle">${escapeHtml(site.tagline)}</p>`,
+      "</section>",
+      '<div class="board-grid shell shell--wide">',
+      renderBoardPanel(BOARD_DEFINITIONS.tech, techPosts),
+      renderBoardPanel(BOARD_DEFINITIONS.life, lifePosts),
+      "</div>"
+    ].join("\n")
+  });
+}
+
+function listPage({ title, description, activeHref, intro, posts, lookups, pagination = "", sectionLabel = "" }) {
   const cards = posts.length
     ? posts.map((post) => renderCard(post, lookups)).join("\n")
     : '<p class="empty-state">这里还没有内容。</p>';
@@ -463,7 +786,7 @@ function listPage({ title, description, activeHref, intro, posts, lookups, pagin
     content: [
       intro,
       '<section class="shell shell--wide listing">',
-      `  <div class="section-heading"><h2>${escapeHtml(title || "文章")}</h2></div>`,
+      `  <div class="section-heading"><h2>${escapeHtml(sectionLabel || title || "文章")}</h2></div>`,
       `  <div class="post-grid">${cards}</div>`,
       pagination,
       "</section>"
@@ -557,17 +880,18 @@ async function loadPosts() {
     const protectedPost = frontMatter.password ? String(frontMatter.password) : "";
     const abstract = frontMatter.abstract ? String(frontMatter.abstract).trim() : "";
     const message = frontMatter.message ? String(frontMatter.message).trim() : "";
-    const withMore = markdown.split(/<!--more-->/i);
-    const summarySource = withMore[0] || markdown;
-    const summaryRender = renderMarkdown(summarySource);
-    const fullRender = renderMarkdown(markdown);
+    const assetDirectory = path.join(CONTENT_DIR, ...relativeWithoutExtension.split("/"));
+    const localizedMarkdown = localizeArticleAssets(markdown, assetDirectory);
+    const withMore = localizedMarkdown.split(/<!--more-->/i);
+    const summarySource = withMore[0] || localizedMarkdown;
+    const mathOptions = { allowBracketDelimiters: Boolean(frontMatter.math) };
+    const summaryRender = renderMarkdown(summarySource, mathOptions);
+    const fullRender = renderMarkdown(localizedMarkdown, mathOptions);
     const summaryText =
       abstract ||
       trimText(stripHtml(summaryRender.html || fullRender.html), 180) ||
       trimText(stripHtml(fullRender.html), 180);
     const contentText = protectedPost ? summaryText : stripHtml(fullRender.html);
-    const assetDirectory = path.join(CONTENT_DIR, ...relativeWithoutExtension.split("/"));
-
     posts.push({
       id: relativeWithoutExtension,
       filePath,
@@ -594,8 +918,25 @@ async function loadPosts() {
     });
   }
 
+  for (const post of posts) {
+    post.board = classifyBoard(post);
+  }
   posts.sort((left, right) => right.date.getTime() - left.date.getTime());
   return posts;
+}
+
+function classifyBoard(post) {
+  if (post.categories.some((category) => BOARD_DEFINITIONS.tech.categories.has(category))) {
+    return "tech";
+  }
+  if (post.categories.some((category) => BOARD_DEFINITIONS.life.categories.has(category))) {
+    return "life";
+  }
+  return /(?:代码|编译|模型|算法|系统|网络|Python|C\+\+|CUDA|vLLM|nano|ONNX|论文|数据|生物|AI)/i.test(
+    `${post.relativeFile} ${post.title}`
+  )
+    ? "tech"
+    : "life";
 }
 
 async function writeFile(targetPath, content) {
@@ -608,6 +949,17 @@ async function copyAssets() {
   const cssOutput = new CleanCSS().minify(cssSource).styles;
   await writeFile(path.join(OUT_DIR, "assets", "styles.css"), cssOutput);
   await fs.copyFile(path.join(SRC_ASSETS_DIR, "site.js"), path.join(OUT_DIR, "assets", "site.js"));
+
+  await copyDirectory(
+    path.join(WENKAI_DIST, "lxgwwenkaiscreen"),
+    path.join(OUT_DIR, "assets", "fonts", "wenkai"),
+    { overwrite: true }
+  );
+  await copyDirectory(
+    path.join(WENKAI_DIST, "lxgwwenkaimonoscreen"),
+    path.join(OUT_DIR, "assets", "fonts", "wenkai-mono"),
+    { overwrite: true }
+  );
 
   const katexOutDir = path.join(OUT_DIR, "assets", "vendor", "katex");
   await fs.mkdir(katexOutDir, { recursive: true });
@@ -667,30 +1019,30 @@ async function buildPostPages(posts, lookups) {
   }
 }
 
-async function buildHomePages(posts, lookups) {
-  const totalPages = Math.max(1, Math.ceil(posts.length / site.postsPerPage));
+async function buildHomePages(posts) {
+  await writeFile(path.join(OUT_DIR, "index.html"), homePage(posts));
+}
 
-  for (let page = 1; page <= totalPages; page += 1) {
-    const start = (page - 1) * site.postsPerPage;
-    const pagePosts = posts.slice(start, start + site.postsPerPage);
-    const pagination = renderPagination(page, totalPages, (current) =>
-      current === 1 ? withBase("/") : withBase(`/page/${current}/`)
-    );
-
-    const intro = page === 1 ? homeIntro() : "";
-
+async function buildBoardPages(posts, lookups) {
+  for (const board of Object.values(BOARD_DEFINITIONS)) {
+    const boardPosts = posts.filter((post) => post.board === board.key);
     const html = listPage({
-      title: page === 1 ? "最新文章" : `第 ${page} 页`,
-      description: site.description,
-      activeHref: withBase("/"),
-      intro,
-      posts: pagePosts,
+      title: board.title,
+      description: board.description,
+      activeHref: withBase(board.href),
+      intro: [
+        `<section class="board-intro shell shell--wide" data-board="${board.key}">`,
+        '  <div class="board-intro__copy">',
+        `    <h1>${escapeHtml(board.title)}</h1>`,
+        `    <p>${boardPosts.length} 篇文章</p>`,
+        "  </div>",
+        "</section>"
+      ].join("\n"),
+      posts: boardPosts,
       lookups,
-      pagination
+      sectionLabel: "全部文章"
     });
-
-    const outputDir = page === 1 ? OUT_DIR : path.join(OUT_DIR, "page", String(page));
-    await writeFile(path.join(outputDir, "index.html"), html);
+    await writeFile(path.join(OUT_DIR, board.key, "index.html"), html);
   }
 }
 
@@ -850,6 +1202,7 @@ async function build404Page() {
 }
 
 async function main() {
+  await fs.rm(OUT_DIR, { recursive: true, force: true });
   await fs.mkdir(OUT_DIR, { recursive: true });
 
   const posts = await loadPosts();
@@ -878,13 +1231,24 @@ async function main() {
   const lookups = { tagLookup, categoryLookup };
   await copyAssets();
   await buildPostPages(posts, lookups);
-  await buildHomePages(posts, lookups);
+  await buildHomePages(posts);
+  await buildBoardPages(posts, lookups);
   await buildArchivePage(posts);
   await buildTaxonomyPages(posts, lookups);
   await buildSearchPage();
   await buildSearchIndex(posts);
   await build404Page();
   await writeFile(path.join(OUT_DIR, ".nojekyll"), "");
+
+  if (mathValidationErrors.size > 0) {
+    console.warn(`KaTeX found ${mathValidationErrors.size} formula(s) that need attention:`);
+    for (const [formula, message] of [...mathValidationErrors.entries()].slice(0, 12)) {
+      console.warn(`- ${formula.slice(0, 120)}: ${message}`);
+    }
+    if (mathValidationErrors.size > 12) {
+      console.warn(`- ...and ${mathValidationErrors.size - 12} more`);
+    }
+  }
 
   console.log(`Built ${posts.length} posts to ${OUT_DIR}`);
 }

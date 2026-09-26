@@ -3,6 +3,7 @@ title: nano-vllm 学习笔记-量化
 date: 2026-07-17 18:09:25
 tags:
 categories:
+- 学习笔记
 ---
 <!--more-->
 这里我打算围绕着AWQ去做，然后我发现AWQ在vLLM里面实际只支持FP16这个格式，如果要支持Qwen3和Llama里的BF16的格式，需要再添加一个接口做awq_marlin，这个再vLLM中也是实现了的。

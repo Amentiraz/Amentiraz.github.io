@@ -3,6 +3,7 @@ title: nano-vllm 学习笔记-Llama
 date: 2026-07-12 20:03:06
 tags:
 categories:
+- 学习笔记
 ---
 <!--more-->
 
@@ -470,6 +471,5 @@ num_attention_heads % tensor_parallel_size == 0
 num_key_value_heads % tensor_parallel_size == 0
 
 Qwen3可能有q_norm/k_norm，而Llama一般没有
-
 
 
