@@ -148,8 +148,22 @@ function initToc() {
   }
 
   const details = toc.querySelector("details");
-  if (details && window.matchMedia("(min-width: 1041px)").matches) {
-    details.open = true;
+  const wideViewport = window.matchMedia("(min-width: 1240px)");
+  if (details) {
+    details.open = wideViewport.matches;
+    const syncTocState = () => {
+      toc.classList.toggle("is-collapsed", !details.open);
+    };
+    details.addEventListener("toggle", syncTocState);
+    syncTocState();
+
+    for (const link of links) {
+      link.addEventListener("click", () => {
+        if (!wideViewport.matches) {
+          details.open = false;
+        }
+      });
+    }
   }
 
   let frame = 0;
@@ -182,7 +196,7 @@ function initToc() {
       const linkBottom = linkTop + activeLink.offsetHeight;
       const visibleTop = toc.scrollTop + 48;
       const visibleBottom = toc.scrollTop + toc.clientHeight - 32;
-      if (toc.scrollHeight > toc.clientHeight && (linkTop < visibleTop || linkBottom > visibleBottom)) {
+      if (details?.open && toc.scrollHeight > toc.clientHeight && (linkTop < visibleTop || linkBottom > visibleBottom)) {
         toc.scrollTo({
           top: Math.max(0, linkTop - toc.clientHeight / 3),
           behavior: "smooth"

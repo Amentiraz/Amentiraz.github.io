@@ -541,9 +541,9 @@ function renderHeadingToc(headings) {
     )
     .join("");
   return [
-    '<aside class="toc" aria-label="文章内导航" data-toc>',
+    '<aside class="toc" aria-label="导航" data-toc>',
     "  <details>",
-    '    <summary class="toc__title">文章内导航</summary>',
+    '    <summary class="toc__title"><span class="toc__label">导航</span><span class="toc__icon" aria-hidden="true"></span></summary>',
     `    <nav class="toc__items">${items}</nav>`,
     "  </details>",
     "</aside>"
