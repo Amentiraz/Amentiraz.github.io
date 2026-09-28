@@ -207,3 +207,140 @@ scalar、float2 和 float4 分别生成了32位、64位和128位全局访存指�
 
 还是把ppt的内容粘上来吧www：
 ![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20260928225804310.png)
+```c++
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <cuda_runtime.h>
+#include <cstdint> 
+#include <type_traits>
+
+
+#define CUDA_CHECK(call) { \
+    cudaError_t err = call ;   \
+    if (err != cudaSuccess){ \
+        std::cerr << "CUDA error at " << __FILE__ << ":" << __LINE__ << ": " \
+                  << cudaGetErrorString(err) << '\n'; \
+        exit(1); \
+    }    \
+} \
+
+template <typename T> 
+__device__ T add(const T &a, const T &b){
+    if constexpr (std::is_same_v<T, float>) {
+        return a + b;
+    }
+    else if constexpr (std::is_same_v<T, float2>) {
+        return make_float2(a.x + b.x, a.y + b.y);
+    }
+    else if constexpr (std::is_same_v<T, float4>) {
+        return make_float4(a.x + b.x, a.y + b.y, a.z + b.z, a.w + b.w);
+    }
+}
+
+template <typename T>
+__global__ void add_kernel(T *c, const T *a, const T *b, size_t n, size_t step) {
+    size_t idx = (blockDim.x) * blockIdx.x + threadIdx.x;
+    for (size_t i = idx; i < n; i += step) {
+        c[i] = add(a[i] , b[i]) ;
+    }
+}
+
+template <typename T>
+void vector_add(T *c, const T *a, const T *b, size_t n, const dim3 &grid, const dim3 &block){
+    size_t step = grid.x * block.x;
+    add_kernel<T><<<grid, block>>>(c, a, b, n, step);
+}
+
+
+void free_device_memory(float *d_a, float *d_b, float *d_c) {
+    if(d_a) CUDA_CHECK(cudaFree(d_a));
+    if(d_b) CUDA_CHECK(cudaFree(d_b));
+    if(d_c) CUDA_CHECK(cudaFree(d_c));
+}
+
+bool run_case(size_t n, unsigned int block_size, unsigned int grid_size){
+    const size_t SIZE = n ;
+
+    if (grid_size == 0) {
+        grid_size = static_cast<unsigned int>(
+            n / block_size + (n % block_size != 0)
+        );
+    }
+
+    if (SIZE == 0) {
+        std::cout << "Empty input: passed!\n";
+        return true;
+    }
+
+    std::vector<float> h_a(SIZE, 1) ;
+    std::vector<float> h_b(SIZE, 2);
+    std::vector<float> h_c(SIZE, 0);
+    std::vector<float> ref(SIZE);
+
+    float *d_a, *d_b, *d_c;
+    d_a = d_b = d_c = nullptr;
+
+    for (size_t i = 0; i < SIZE; i ++){
+        h_a[i] = static_cast<float>(i % 97) - 48.0f;
+        h_b[i] = static_cast<float>(i % 31) * 0.25f;
+        ref[i] = h_a[i] + h_b[i];
+    }
+     
+    size_t size_bytes = SIZE * sizeof(float);
+
+    CUDA_CHECK(cudaMalloc(&d_a, size_bytes));
+    CUDA_CHECK(cudaMalloc(&d_b, size_bytes));
+    CUDA_CHECK(cudaMalloc(&d_c, size_bytes));
+
+    CUDA_CHECK(cudaMemcpy(d_a, h_a.data(), size_bytes, cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_b, h_b.data(), size_bytes, cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_c, h_c.data(), size_bytes, cudaMemcpyHostToDevice));
+    
+    unsigned int BLOCK_SIZE = block_size;
+    dim3 block_dim(BLOCK_SIZE);
+    size_t vector_count = n / 2;
+    size_t vector_elements = vector_count * 2;
+    unsigned int vector_grid_size = static_cast<unsigned int>(vector_count / block_size + (vector_count % block_size != 0));
+    dim3 grid_dim(vector_grid_size) ;
+
+    vector_add<float2>(
+        reinterpret_cast<float2*>(d_c),
+        reinterpret_cast<const float2*>(d_a),
+        reinterpret_cast<const float2*>(d_b),
+        vector_count,
+        grid_dim,
+        block_dim
+    );
+    
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+
+    CUDA_CHECK(cudaMemcpy(h_c.data(), d_c, size_bytes, cudaMemcpyDeviceToHost));
+
+    for (size_t i = 0; i < SIZE; i ++) {
+        if (fabs(h_c[i] - ref[i]) > 1e-5){
+            std::cerr <<  "Verification failed at index " << i << ": "
+                        << h_c[i] << " != 3.0\n";
+            free_device_memory(d_a, d_b, d_c);
+            d_a = d_b = d_c = nullptr;
+            printf("failed!\n");
+            return false;
+        }
+    }
+
+    free_device_memory(d_a, d_b, d_c);
+    d_a = d_b = d_c = nullptr;
+    printf("passed!\n"); 
+    return true ;
+}
+
+int main () {
+    const size_t SIZE = 1 << 20 ;
+    run_case(SIZE,256,256);
+    
+}
+```
