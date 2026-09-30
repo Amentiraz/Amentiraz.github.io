@@ -207,5 +207,22 @@ reduce_smem_tree_kernel<float>
 ```
 第三个启动参数就是为每个block分配的动态共享内存大小
 
+现在我把目前得到的结果的性能给汇总一下
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20260930222159649.png)
+- `v2_block` 相比 `v1_atomic` 快约 `5.36x`。
+- `v2_warp` 相比 `v2_block` 快约 `3.41x`。
+- `v3_smem` 相比 `v2_warp` 快约 `2.43x`。
+- `v3_smem` 相比 `v1_atomic` 快约 `44.35x`。
+
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20260930222250325.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20260930222410970.png)
+
+所有版本的计算强度都远低于约 `20.59 FLOP/byte` 的 Ridge Point，因此在经典双屋顶图中位于带宽斜线一侧。但这只说明 DRAM 屋顶低于 FP32 计算屋顶，不表示实际执行一定已经被 DRAM 带宽卡住。
+
+- `v1_atomic` 远低于自己的内存屋顶，并且 DRAM 利用率只有 `1.73%`。主要瓶颈是大量线程竞争同一个全局原子地址。
+- `v2_block` 的有效 AI 已恢复到约 `0.25`，但 Achieved Occupancy 只有 `16.34%`。每个 block 只有线程 0 工作，绝大多数线程资源没有产生有效计算。
+- `v2_warp` 增加了工作线程数量，性能明显提升；但每个 warp 仍只有 lane 0 工作，NCU 观察到约 `10.09 MB` 的 DRAM 流量，高于输入的 `4.00 MiB`。
+- `v3_smem` 使用合并的全局内存读取，并将全局原子操作降到每个 block 一次，因此是当前最快的正确版本。
+- `v3_smem` 的 DRAM 利用率只有 `16.40%`，而 LSU/shared-memory 相关吞吐达到约 `84%`。当前继续优化时应重点减少共享内存指令和 `__syncthreads()`，例如在最后一个 warp 中使用 `__shfl_down_sync`。
 
 
