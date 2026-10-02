@@ -225,4 +225,80 @@ reduce_smem_tree_kernel<float>
 - `v3_smem` 使用合并的全局内存读取，并将全局原子操作降到每个 block 一次，因此是当前最快的正确版本。
 - `v3_smem` 的 DRAM 利用率只有 `16.40%`，而 LSU/shared-memory 相关吞吐达到约 `84%`。当前继续优化时应重点减少共享内存指令和 `__syncthreads()`，例如在最后一个 warp 中使用 `__shfl_down_sync`。
 
+## warp规约优化 
+### __shfl_down_sync
+__shfl_down_sync是允许线程直接从同一个warp中另一个线程的寄存器中读取数据。数据传输直接在寄存器之间完成，完全不需要占用Shared Memory资源。这释放了Shared Memory供其他计算或更大的Block使用。
 
+寄存器（Registers）是 GPU 上访问速度最快的存储介质。寄存器之间的直接数据交换（通过硬件层面的 Shuffle 单元）比经过 Shared Memory 读写的时延低得多，执行速度更快。
+
+这里会注意到它不需要同步，因为上一例中我们使用了__syncthreads去做块内同步，而在Warp 内部，32 个线程本来就是以 SIMT（单指令多线程）方式隐式同步执行的。
+
+使用 __shfl_down_sync 时，掩码（如代码中的 0xFFFFFFFF，代表 Warp 内所有 32 个线程全部参与）能够安全地在指令级别协调数据传输，省去了编写 __syncthreads() 的麻烦，同时也避免了因错误同步导致的性能下降或死锁风险。
+
+### 具体实现
+```c++
+template <typename T> 
+__global__ void reduce_warp_shfl_register_kernel(T *output, const T *input, size_t n){
+    size_t tid = threadIdx.x;
+    size_t idx = blockIdx.x * blockDim.x + tid;
+
+    T sum = 0;
+    for (size_t i = idx; i < n; i += blockDim.x * gridDim.x) {
+        sum += input[i] ;
+    }
+
+    for (int offset = 16; offset > 0; offset >>= 1) {
+        sum += __shfl_down_sync(0xFFFFFFF, sum, offset);
+    }
+
+    if (tid % 32 == 0) {
+        atomicAdd(output, sum);
+    }
+}
+```
+
+这里利用了 CUDA 的 Warp Shuffle（束内洗牌） 机制，在同一个 Warp（包含 32 个线程）内部进行树状相加。
+
+offset 从 16 开始，每次减半（16 -> 8 -> 4 -> 2 -> 1）。
+
+循环结束后，每个 Warp 内的第 0 号线程（Lane 0）的 sum 寄存器中，就保存了该 Warp 所负责处理的所有数据的总和。
+
+这里确实有明显的提升，但是跟目前最快的smem-tree比起来差距还是很大，这是因为我们没对warp间规约优化，于是我们想到，将原来的smem手动树状规约换成warp-shuffle规约：
+
+### 更牛的规约
+```c++
+template <typename T>
+__device__ T warp_reduce(T val){
+#pragma unroll
+    for (int offset = 16; offset > 0; offset >>= 1) {
+        val += __shfl_down_sync(0xFFFFFFF, val, offset);
+    }
+    return val;
+}
+
+template <typename T> 
+__global__ void reduce_warp_shuffle_kernel(T *output, const T *input, size_t n){
+    extern __shared__ T smem[];
+    size_t tid = threadIdx.x;
+    size_t idx = blockIdx.x * blockDim.x + tid;
+
+    T sum = 0;
+    for (size_t i = idx; i < n; i += blockDim.x * gridDim.x) {
+        sum += input[i]; 
+    }
+    T warp_sum = warp_reduce(sum);
+    if (tid % 32 == 0) {
+        smem[tid / 32] = warp_sum;
+    }
+    __syncthreads();
+
+    if (tid < 32) {
+        T block_sum = (tid < (blockDim.x + 31) / 32) ? smem[tid] : T(0);
+        block_sum = warp_reduce(block_sum);
+        if (tid == 0) {
+            atomicAdd(output, block_sum);
+        }
+    }
+}
+```
+这个不仅在warp内做规约，也在block内做规约
