@@ -301,4 +301,208 @@ __global__ void reduce_warp_shuffle_kernel(T *output, const T *input, size_t n){
     }
 }
 ```
-这个不仅在warp内做规约，也在block内做规约
+这个不仅在warp内做规约，也在block内做规约,但是我们注意到在block间，它还是使用了原子操作，这里我们还可以对它进行优化。
+
+## cooperative优化
+
+最后看一段代码，我们就基本结束在规约优化上的学习。这里我写的细致一点，因为一方面确实比较难细节比较多，另一方面我自己也好梳理相关内容。
+
+```c++
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <cuda_runtime.h>
+#include <cstdint> 
+#include <type_traits>
+#include <cooperative_groups.h>
+namespace cg = cooperative_groups;
+
+
+#define CUDA_CHECK(call) { \
+    cudaError_t err = call ;   \
+    if (err != cudaSuccess){ \
+        std::cerr << "CUDA error at " << __FILE__ << ":" << __LINE__ << ": " \
+                  << cudaGetErrorString(err) << '\n'; \
+        exit(1); \
+    }    \
+} \
+
+template <typename T>
+__device__ T warp_reduce(T val){
+#pragma unroll
+    for (int offset = 16; offset > 0; offset >>= 1) {
+        val += __shfl_down_sync(0xFFFFFFFF, val, offset);
+    }
+    return val;
+}
+
+template <typename T>
+__global__ void reduce_cooperative_kernel(T *output, const T *input, size_t n) {
+    extern __shared__ __align__(sizeof(T)) unsigned char shared_mem_raw[];
+    T* coop_smem = reinterpret_cast<T*>(shared_mem_raw);
+
+    auto grid = cg::this_grid();
+    auto block = cg::this_thread_block();
+    size_t tid = threadIdx.x;
+    size_t idx = blockIdx.x * blockDim.x + tid; 
+
+    T sum = 0;
+    for (size_t i = idx; i < n; i += gridDim.x * blockDim.x) {
+        sum += input[i];
+    }
+    
+    T warp_sum = warp_reduce(sum);
+
+    if (tid % 32 == 0) {
+        coop_smem[tid / 32] = warp_sum;
+    }
+    block.sync();
+
+    if (tid < 32) {
+        T block_sum = (tid < (blockDim.x + 31) / 32) ? coop_smem[tid] : T(0);
+        block_sum = warp_reduce(block_sum);
+        if (tid == 0){
+            output[blockIdx.x] = block_sum;
+        }
+    }
+    grid.sync();
+
+    if (blockIdx.x == 0){
+        T final_sum = 0;
+        for (size_t i = tid; i < gridDim.x; i += blockDim.x){
+            final_sum += output[i];        
+        }
+        
+        T warp_val = warp_reduce(final_sum);
+
+        if (tid % 32 == 0) {
+            coop_smem[tid / 32] = warp_val;
+        }
+        block.sync();
+
+        if (tid < 32) {
+            T v = (tid < (blockDim.x + 31) / 32) ? coop_smem[tid] : T(0);
+            T total = warp_reduce(v);
+            if (tid == 0){
+                output[0] = total;
+            }
+        }
+    }
+}
+
+int main(){
+    size_t SIZE = 1 << 20 ;
+    std::vector<float> h_vec(SIZE,0);
+
+    float h_ans = static_cast<float>(0);
+    std::vector<float> d_ans(1);
+
+    for (size_t i = 0; i < SIZE; i ++){
+        h_vec[i] = static_cast<float>(i % 97) - 48.0f;
+        h_ans += h_vec[i];
+    }
+    float *ans = nullptr;
+    float *vec = nullptr;
+
+    CUDA_CHECK(cudaMalloc(&vec, static_cast<size_t>(SIZE * sizeof(float))));
+    
+
+    CUDA_CHECK(cudaMemcpy(vec, h_vec.data(), static_cast<size_t>(SIZE * sizeof(float)), cudaMemcpyHostToDevice));
+    
+
+    cudaDeviceProp props;
+    CUDA_CHECK(cudaGetDeviceProperties(&props, 0));
+
+    const size_t block_size = 256;
+    int grid_size = 0;
+    size_t smem_size = ((block_size + 31) / 32) * sizeof(float);
+    CUDA_CHECK(cudaOccupancyMaxActiveBlocksPerMultiprocessor(
+        &grid_size,
+        reduce_cooperative_kernel<float>,
+        block_size,
+        smem_size
+    ));
+
+    grid_size *= props.multiProcessorCount;
+
+    CUDA_CHECK(cudaMalloc(&ans, static_cast<size_t>(grid_size * sizeof(float))));
+    CUDA_CHECK(cudaMemset(ans, 0, grid_size * sizeof(float)))
+
+    dim3 block_dim(block_size);
+    dim3 grid_dim(grid_size);
+
+    int can_launch = 0;
+    CUDA_CHECK(cudaDeviceGetAttribute(&can_launch, cudaDevAttrCooperativeLaunch, 0));
+    if (!can_launch){
+        std::cerr << "Error: Device does not support cooperative launches! \n";
+        exit(1);
+    }
+
+    void* kernelArgs[] = {&ans, &vec, &SIZE};
+    CUDA_CHECK(cudaLaunchCooperativeKernel(
+        (void *)reduce_cooperative_kernel<float>,
+        grid_dim,
+        block_dim,
+        kernelArgs,
+        smem_size,
+        0
+    ));
+
+    
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+
+    CUDA_CHECK(cudaMemcpy(d_ans.data(), ans, static_cast<size_t>(sizeof(float)), cudaMemcpyDeviceToHost));
+    if (fabs(d_ans[0] - h_ans) > 1e-5){
+        std::cerr << "d_ans: " << d_ans[0] << "\n" << "h_ans: " << h_ans << "\nfailed!\n\n";
+        return 0;
+    }
+    std::cout << "passed!\n\n";
+    return 0;
+}
+```
+### 前置知识 
+我发现其实我对于grid, block, warp, lane还是没有那么清楚，所以这里我详细阐述一下：
+
+grid是网络，是最高层级，代表整个内核函数启动的所有线程的集合，它的大小由gridDim.x决定，这里gridDim.x其实就是一共启动的block数量。
+
+Block是线程块，一个grid由多个block组成，同一个Block 内的线程可以通过共享内存（Shared Memory）通信，这也是为什么我们代码中在做warp_reduce时，一定是同一个block内部做，而且我们可以用block.sync()同步。大小由blockDim.x决定，也就是每个block内有block.Dim.x个线程。
+
+warp是线程束，硬件调度基本单位。GPU 硬件层面强制规定：无论你怎么写，32 个线程组成一个 Warp（SIMT 架构）。如果blockDim.x = 256，那么每个 Block 内部刚好包含 256 / 32 = 8 个 Warp。
+
+Lane，最微观层级。指一个 Warp 内部的具体某一个线程（编号从 0 到 31）。比如代码里的 tid % 32 == 0，就是指每个 Warp 里的 Lane 0（第 0 号线程）。
+
+### 相关代码书写的知识
+block.sync(): __syncthreads() 
+
+grid.sync(): 跨block同步
+
+cudaOccupancyMaxActiveBlocksPerMultiprocessor():获取每SM对给定kernel和配置下的最大的线程块数量。
+
+cudaDevAttrCooperativeLaunch/ prop.cooperativeLaunch: 确保运行环境支持Cooperative Group 
+
+cudaLaunchCooperativeKernel(): 发射使用Cooperative Group的核函数
+
+### 代码逻辑
+
+首先是Grid-stride Loop:以总线程数为步长，跳跃式地读取input中的元素并累加到私有寄存器变量中，所以这里我们每个线程都有相关累加的值了。
+
+然后进行warp内规约，得到每个warp的局部和，然后把warp的局部和写入coop_smem中，这里注意这个coop_smem是每个block都有一个的，随后执行block内同步，等待该block内所有warp写入完毕。
+
+然后我们进行block级别的规约：仅让前 32 个线程（Lane 0 ~ 31）从共享内存中读取数据，再做一次 warp_reduce，得到整个 Block 的最终和（block_sum）。这里注意到tid<32,很自然会想到这万一这个每个block的warp数量大于32怎么办，实际不用担心，因为warp数量规定最多32.
+
+tid == 0 的线程将该 Block 的计算结果写入全局内存的 output[blockIdx.x] 中。此时，output 数组的前 gridDim.x 个元素分别存着各个 Block 的局部和。
+
+然后grid.sync()进行全网格同步，它强制等待整个 GPU 上启动的所有 Block 全部执行完第一阶段，并确保所有 Block 的局部和都已经安全写入了全局内存 output 中。如果没有这个全局同步，后续的跨 Block 归约就会读到脏数据。
+
+最后块0内部采用网格跨步循环的方式读入数据，最后warp规约等等，和前面操作就很类似了。
+
+# Bank Conflict 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261003170655557.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261003171627180.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261003171711946.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261003171835188.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261003171854016.png)
