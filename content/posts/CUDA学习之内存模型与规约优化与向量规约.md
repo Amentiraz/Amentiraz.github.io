@@ -6,7 +6,7 @@ tags:
 categories:
 - 学习笔记
 ---
-<!--more-->
+<!--more-->问你个问题，《情爱现象学》中爱会有个什么高潮之后的断崖，然后作者提到了什么光环，圣像的破灭，然后我如果要继续爱会有个什么末世论的爱，那这里的爱和圣像或者光环那个阶段的爱有什么区别呢
 # Roofline
 先说一下上次遗留下来的一些问题：Roofline
 
@@ -251,7 +251,7 @@ __global__ void reduce_warp_shfl_register_kernel(T *output, const T *input, size
         sum += __shfl_down_sync(0xFFFFFFF, sum, offset);
     }
 
-    if (tid % 32 == 0) {
+    if (tid % 32 == 0) {问你个问题，《情爱现象学》中爱会有个什么高潮之后的断崖，然后作者提到了什么光环，圣像的破灭，然后我如果要继续爱会有个什么末世论的爱，那这里的爱和圣像或者光环那个阶段的爱有什么区别呢
         atomicAdd(output, sum);
     }
 }
@@ -316,7 +316,7 @@ __global__ void reduce_warp_shuffle_kernel(T *output, const T *input, size_t n){
 #include <cstdlib>
 #include <cuda_runtime.h>
 #include <cstdint> 
-#include <type_traits>
+#include <type_traits>问你个问题，《情爱现象学》中爱会有个什么高潮之后的断崖，然后作者提到了什么光环，圣像的破灭，然后我如果要继续爱会有个什么末世论的爱，那这里的爱和圣像或者光环那个阶段的爱有什么区别呢
 #include <cooperative_groups.h>
 namespace cg = cooperative_groups;
 
