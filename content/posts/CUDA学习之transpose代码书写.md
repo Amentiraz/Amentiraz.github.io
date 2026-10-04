@@ -244,3 +244,9 @@ __global__ void transpose_tiled(T *output, const T *input, const size_t N, const
 }
 ```
 这一块就看上一节我最后的图片理解吧，感觉并不难理解
+
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261004233812569.png)
+
+补充：
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261004233953893.png)
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261004234037767.png)
