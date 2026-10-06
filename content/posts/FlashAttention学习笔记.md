@@ -1,5 +1,5 @@
 ---
-title: FlashAttention学习笔记
+title: FlashAttention学习笔记(1)
 date: 2026-10-01 09:37:24
 tags:
 - AI_Infra  
@@ -57,7 +57,7 @@ Flash Attention在做的事情，其实都包含在它的命名中了（Fast and
 # GPU上的存储与计算
 由于Flash attention的优化核心是减少数据读取的时间，而数据读取这块又离不开数据在硬件上的流转过程，所以这里我们简单介绍一些GPU上的存储与计算内容，作为Flash attention的背景知识。
 
-## GPU的存储分类 
+## GPU的存储分类 ![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145911232.png)
 ![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261001101428932.png)
 上图是Flash attention论文所绘制的硬件不同的存储类型、存储大小和带宽。一般来说，GPU上的存储分类，可以按照是否在芯片上分为片上内存(on chip)和片下内存(off chip)。
 
@@ -84,7 +84,7 @@ Flash Attention在做的事情，其实都包含在它的命名中了（Fast and
 ## Kernel融合 
 前面说过，由于从显存读一次数据是耗时的，因此在SRAM存储容许的情况下，能合并的计算我们尽量合并在一起，避免重复从显存读取数据。
 
-举例来说，我现在要做计算A和计算B。在老方法里，我做完A后得到一个中间结果，写回显存，然后再从显存中把这个结果加载到SRAM，做计算B。但是现在我发现SRAM完全有能力存下我的中间结果，那我就可以把A和B放在一起做了，这样就能节省很多读取时间，我们管这样的操作叫kernel融合。
+举例来说，我现在要做计算A和计算B。在老方法里，我做完A后得到一个中间结果，写回显存，然后再从显存中把这个结果加载到SRAM，做计算B。但是现在我发现SRAM完全有能力存下我的中间结果，那我就可以把A![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145911232.png)和B放在一起做了，这样就能节省很多读取时间，我们管这样的操作叫kernel融合。
 
 由于篇幅限制，我们无法详细解释kernel这个概念，在这里大家可以粗犷地理解成是“函数”，它包含对线程结构（grid-block-thread）的定义，以及结构中具体计算逻辑的定义。理解到这一层已不妨碍我们对flash attention的解读了
 
@@ -136,4 +136,56 @@ for 1 <= j <= Tc:
 
 ## 分块计算中的safe softmax 
 
+回顾之前的标准safe softmax流程图，我们知道m，l都是针对完整的一行做rowmax，rowsum后的结果，那么在分块场景下会变成什么样呢？
 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006141043145.png)
+
+这里到了分块场景，如果我们再做rowmax， rowsum显然不能得到和标准场景下一模一样的结果。
+
+所以这里采用了一种巧妙的计算方式：
+- (1)我们假设标准场景下，$S$ 矩阵某一行的向量为$x = [x_1, x_2, ..., x_d]$ ，因为分块的原因，它被我们切成了两部分$x = [x^{(1)}.x^{(2)}]$ 。
+
+- (2) 我们定义：$m(x)$标准场景下，该行的全局最大值,$m(x^{(i)})$分块i的全局最大值，那么易知：$m(x) = max(x^{(1)}.x^{(2)})$
+
+- (3) 我们定义$f(x)$为$exp(x-m(x))$的结果 ，那么易知：$f(x) = [e^{(m(x^{(1)}-m(x))}f(x^{(1)}),e^{(m(x^{(2)}-m(x))}f(x^{(2)})]$
+
+- (4) 我们定义$l(x)$为$rowsum[f(x)]$的结果。那么易知：$l(x)=e^{m(x^{(1)})-m(x)}l(x^{(1)})+e^{m(x^{(1)})-m(x)}l(x^{(1)})$
+
+- 那么safe softmax结果：$softmax(x) = \frac{f(x)}{l(x)} = \frac{[e^{(m(x^{(1)}-m(x))}f(x^{(1)}),e^{(m(x^{(2)}-m(x))}f(x^{(2)})]}{l(x)=e^{m(x^{(1)})-m(x)}l(x^{(1)})+e^{m(x^{(1)})-m(x)}l(x^{(1)})}$
+
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006142848912.png)
+这里我们要着重看第12行，因为实际上我们只是正确的更新了$O_i$。
+
+再看读写量，整个计算过程中，只有$m_i,l_i,O_i$从SRAM写回到显存(HBM)中，这里相当于就在解决memory-bound问题。
+
+## 分块计算中的输出O 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006143605038.png)
+这里的推导恶心的要死，主要的思想就是$O_i = O_i + 当前最新结果$
+
+如果后面发现面经要考这个再看吧。
+
+# Backward运作流程 
+这个更是恶心的不行，我就记录几个关键的结论吧 
+## softmax求导 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006144832594.png)
+
+## 标准backward计算 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006144908518.png)
+## 分块backward 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145001258.png)
+这一块后面有兴趣再看原文吧。
+
+# 计算量和显存需求 
+## 矩阵相乘的计算量：
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145336112.png)
+## FlashAttention的计算量 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145530303.png)
+## 显存需求
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145623686.png)
+
+# IO复杂度 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145713965.png)
+
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145741440.png)
+# 实验 
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261006145911232.png)
