@@ -270,7 +270,6 @@ Warp很多都在等待SMEM（使用过于频繁）
 回顾一下我之前的GEMM代码，它一个线程负责计算C矩阵中的1个元素，每个线程只有一个累加器tmp，每个线程不断从Shared Memory中加载A、B的数据。
 
 而现在我们这样操作，让一个线程同时计算C矩阵同一列中的'THREAD_M'个元素，从而复用从Shared Memory中读取的B元素。
-
 ```c++
 #include <iostream>
 #include <iomanip>
@@ -399,8 +398,8 @@ int main () {
 
     unsigned int block_size = 32;
     dim3 block(block_size, block_size/static_cast<unsigned int>(THREAD_M));
-    unsigned grid_size_x = (N + block.x - 1) / block.x;
-    unsigned grid_size_y = (M + block.y - 1) / block.y;
+    unsigned grid_size_x = (N + block.x - 1) / block_size;
+    unsigned grid_size_y = (M + block.y - 1) / block_size;
     dim3 grid(grid_size_x, grid_size_y);
     
     gemm_smem_caching<float><<<grid, block>>> (M, N, K, alpha, d_A_matrix, d_B_matrix, beta, d_C);
@@ -428,6 +427,44 @@ int main () {
 }
 
 ```
+我来梳理一下这里面的逻辑：
+
+## 理论 
+我们规定一个CUDA Block负责计算C中的一个32*32 的区域 
+
+现在我们希望一个线程同时计算同一列的4个连续元素 
+
+例如对于线程(tx = 3, ty = 2)不再只计算C[2][3],而是计算当前Tile内的：C\[8\]\[3\],C\[9\]\[3\],C\[10\]\[3\],C\[11\]\[3\],这也能解释代码中的：
+```c++ 
+int localRow = ty * THREAD_M + i;
+```
+既然一个线程计算4个元素，那每个线程就需要4个累加器accum[THREAD_M]，这四个累加器分别对应上面的C.
+
+由于每个线程现在计算4个输出，那么总共只需要32 * 32 / 4 = 256个线程 。
+
+这里需要注意，在x方向我们希望一个线程负责一列，在y方向，一个线程负责四行。
+
+这里需要详细说一下Shared Memory部分。首先我们思考，我需要加载什么数据，才能计算当前的32\*32 C tile。很自然的A，B，C都是32\*32，所以我们需要填充：
+```c++ 
+__shared__ T As[32][32];
+__shared__ T Bs[32][32];
+```
+一个Block只有256个线程，而As，Bs分别有1024个元素，所以一个线程必须承担4个As和4个Bs元素的加载任务。
+
+对于固定的tx，8个不同的ty分别负责行0-31。
+
+代码中aRow，aCol分别代表A中的全局行和列。这里都很好理解。但可以更抽象的去理解这个全局坐标是怎么看的：
+$$\begin{equation}
+\boxed{
+\begin{aligned}
+A &: \quad (blockRow+r,\ bk+c)\\
+B &: \quad (bk+r,\ blockCol+c)
+\end{aligned}
+}
+\end{equation}$$
+
+这里我理解不清楚的地方在于为什么我只算了k的0~31就能够说明C的值，这里需要注意我们的for循环嵌套，我们实际上就是取了A的THREAD_M整行和B的THREAD_M整列，请注意这个。
+
 
 # 2D Blocktiling 
 ![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261011231457325.png)
@@ -579,8 +616,8 @@ int main () {
 
     unsigned int block_size = 32;
     dim3 block(block_size/static_cast<unsigned int>(THREAD_N), block_size/static_cast<unsigned int>(THREAD_M));
-    unsigned grid_size_x = (N + block.x - 1) / block.x;
-    unsigned grid_size_y = (M + block.y - 1) / block.y;
+    unsigned grid_size_x = (N + block.x - 1) / block_size;
+    unsigned grid_size_y = (M + block.y - 1) / block_size;
     dim3 grid(grid_size_x, grid_size_y);
     
     gemm_smem_caching<float><<<grid, block>>> (M, N, K, alpha, d_A_matrix, d_B_matrix, beta, d_C);
@@ -608,5 +645,53 @@ int main () {
 }
 
 ```
+
+昨天匆匆忙忙的写完了代码，但是代码里面很多细节我其实没有那么清楚，今天仔细研究一下。
+
+现在我开始对于1d和2d的优化逻辑进行总结
+
+## 小结 
+1D 和 2Dblock tiling本质是让一个线程计算多个C元素，从而把shared memory中读出的数据继续放进寄存器并重复使用。
+
+优点是：1.能够减少shared-memory读取次数，2.降低地址计算，循环控制等指令占比，3.增加相互独立的FMA，隐藏指令延迟，4.减少线程数量和调度开销。
+
+我们一个个的看：
+
+### Naive 
+
+对于naive GEMM，我们每次循环读取一个A和一个B，执行一次FMA，一次FMA计算A * B + sum，这算作2个FLOP，读取2个float，所以：
+```
+2 FLOP / 8 byte = 0.25 FLOP/byte
+```
+
+### Shared Memory 
+
+对于shared memory tiling,每轮加载A tile:32 * 32, B tile: 32 * 32, 然后计算 C tile: 32 * 32，总的流量为：(32 * 32 + 32 * 32) * 4 byte = 8192byte， 计算的次数为：32 * 32 * 32 * 2 = 65536 FLOP, 所以$AI = \frac{65536}{8192} = 8 FLOP/byte$。但是可以主义党，这个方案每个线程只计算一个输出元素，shared memory中的数据还没有充分利用寄存器复用。
+
+### 1D block tiling
+
+对于1D block tiling，我们每个线程计算纵向的4个输出，例如一个线程计算：
+```
+C[row + 0][col]
+C[row + 1][col]
+C[row + 2][col]
+C[row + 3][col]
+```
+
+代码里面我们可以看到，bVal只从shared memory读取一次，却参与4次FMA，可以得知，1d tiling主要复用的是B。
+
+对于这个方案的每次k，我们每个线程读取4个A，1个B，执行4个FMA。这样说还是很抽象，回过头来，为什么我们要设计1D block tiling，我们的目的是解决warp等待SMEM的问题，我们实际上并没有减少计算量，也没有减少每个Block从Global Memory加载的数据量，但是它减少了Shared Memory的重复读取，提高了寄存器的复用，增加了指令级并行。
+
+指令级并行是什么意思，原版的代码：
+```c++
+tmp += As[ty][0] * Bs[0][tx];
+tmp += As[ty][1] * Bs[1][tx];
+tmp += As[ty][2] * Bs[2][tx];
+```
+后一次累加前一次的tmp。
+
+而我们的1D拥有4个累加器。
+### 2D block tiling 
+FMA：读取4个A，4个B，执行16个FMA。其它逻辑差不多。
 
 
