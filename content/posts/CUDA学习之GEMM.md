@@ -1,5 +1,5 @@
 ---
-title: CUDA学习之GEMM
+title: CUDA学习之GEMM（一）
 date: 2026-10-06 18:46:47
 tags:
 - CUDA 
@@ -694,4 +694,276 @@ tmp += As[ty][2] * Bs[2][tx];
 ### 2D block tiling 
 FMA：读取4个A，4个B，执行16个FMA。其它逻辑差不多。
 
+# Warp Tiling 
+## 理论 
+我们假设：
+1. 一个 thread block 负责一个 BM×BN 的 C tile；
+2. block 中的每个 warp 负责一个 WM×WN 的 C tile；
+3. warp 中的每个 lane 负责一个 TM×TN 的 thread tile；
+4. thread tile 的结果保存在该线程的寄存器中。
 
+那么一个warp tile中thread tile的数量必须恰好等于32
+```txt 
+(WM / TM) × (WN / TN) == 32
+```
+一个block中warp数量为：
+```txt 
+NUM_WARPS = (BM / WM) × (BN / WN) 
+```
+block中线程数量为：
+```c++ 
+NUM_THREADS = NUM_WARPS × 32
+```
+
+它的作用是建立更清晰的层级，使得可以系统控制，比如：
+- 每个 block 从 global memory 加载哪些 A、B 元素；
+- 每个 warp 从 shared memory 消费哪些 A、B 数据；
+- 每个线程在寄存器中保存多少个 C 元素；
+- shared memory 到寄存器的数据复用次数；
+- 一个 warp 内的访问是否连续、广播或产生 Bank Conflict；
+- 后续如何加入 float4、双缓冲和 cp.async。
+
+## 代码 
+```c++ 
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+#include <cstdlib>
+#include <cuda_runtime.h>
+#include <cstdint> 
+#include <type_traits>
+
+
+#define CUDA_CHECK(call) { \
+    cudaError_t err = call ;   \
+    if (err != cudaSuccess){ \
+        std::cerr << "CUDA error at " << __FILE__ << ":" << __LINE__ << ": " \
+                  << cudaGetErrorString(err) << '\n'; \
+        exit(1); \
+    }    \
+} \
+
+constexpr int BM = 64;
+constexpr int BN = 64;
+constexpr int BK = 8;
+
+constexpr int WM = 32;
+constexpr int WN = 32;
+
+constexpr int TM = 8;
+constexpr int TN = 4;
+
+constexpr int NUM_WARPS_M = BM / WM;
+constexpr int NUM_WARPS_N = BN / WN;
+constexpr int NUM_WARPS = NUM_WARPS_M * NUM_WARPS_N;
+constexpr int NUM_THREADS = NUM_WARPS * 32;
+
+static_assert(BM % WM == 0);
+static_assert(BN % WN == 0);
+static_assert(WM % TM == 0);
+static_assert(WN % TN == 0);
+static_assert((WM / TM) * (WN / TN) == 32);
+
+template <typename T> 
+__global__ void gemm_warptiling(int M, int N, int K, float alpha, const T *A, const T *B, float beta, T *C){
+    __shared__ T As[BM][BK];
+    __shared__ T Bs[BK][BN];
+
+    int tid = threadIdx.x;
+    int warpId = tid / 32;
+    int laneId = tid % 32;
+
+    int warpRow = warpId / NUM_WARPS_N;
+    int warpCol = warpId % NUM_WARPS_N;
+
+    constexpr int THREAD_TILES_N = WN / TN;
+    int laneRow = laneId / THREAD_TILES_N;
+    int laneCol = laneId % THREAD_TILES_N;
+
+    int threadRowBase = warpRow * WM + laneRow * TM;
+    int threadColBase = warpCol * WN + laneCol * TN;
+
+    T accum[TM][TN] = {T(0)};
+
+    for (int bk = 0; bk < K; bk += BK) {
+        for (int idx = tid; idx < BM * BK; idx += NUM_THREADS) {
+            int localRow = idx / BK;
+            int localK = idx % BK;
+
+            int globalRow = blockIdx.y * BM + localRow;
+            int globalK = bk + localK;
+
+            As[localRow][localK] = (globalRow < M && globalK < K) ? A[globalRow * K + globalK] : T(0);
+        }
+
+        for (int idx = tid; idx < BK * BN; idx += NUM_THREADS) {
+            int localK = idx / BN;
+            int localCol = idx % BN;
+
+            int globalK = bk + localK;
+            int globalCol = blockIdx.x * BN + localCol;
+
+            Bs[localK][localCol] = (globalK < K && globalCol < N) ? B[globalK * N + globalCol] : T(0);
+        }
+
+        __syncthreads();
+
+        #pragma unroll
+        for (int localK = 0; localK < BK; localK ++) {
+            T A_reg[TM];
+            T B_reg[TN];
+
+            #pragma unroll
+            for (int i = 0; i < TM; i ++) {
+                A_reg[i] = As[threadRowBase + i][localK];
+            }
+
+            #pragma unroll
+            for (int j = 0; j < TN; j ++) {
+                B_reg[j] = Bs[localK][threadColBase + j];
+            }
+
+            #pragma unroll
+            for (int i = 0; i < TM; i ++) {
+                #pragma unroll
+                for (int j = 0; j < TN; j ++) {
+                    accum[i][j] += A_reg[i] * B_reg[j];
+                }
+            }
+        }
+
+        __syncthreads();
+    }
+
+    #pragma unroll
+    for (int i = 0; i < TM; i ++) {
+        #pragma unroll
+        for (int j = 0; j < TN; j ++) {
+            int row = blockIdx.y * BM + threadRowBase + i;
+            int col = blockIdx.x * BN + threadColBase + j;
+
+            if (row < M && col < N) {
+                int index = row * N + col;
+
+                C[index] = static_cast<T>(
+                    alpha * accum[i][j] + beta * C[index]
+                );
+            }
+        }
+    }
+}
+
+
+int main () {
+    const int N = 1024;
+    const int M = 1024;
+    const int K = 512;
+    float alpha = 1.3f;
+    float beta = 2.1f;
+    std::vector<float> h_A_matrix(M*K);
+    std::vector<float> h_B_matrix(K*N);
+
+    std::vector<float> ref_C(M*N, 1.0f);
+    std::vector<float> ans_C(M*N, 1.0f);
+
+    for (size_t i = 0; i < M; i ++) {
+        for (size_t j = 0; j < K; j ++) {
+            h_A_matrix[i * K + j] = static_cast<float>(i % 97) - static_cast<float>(j);
+        }
+    }
+
+    for (size_t i = 0; i < K; i ++) {
+        for (size_t j = 0; j < N; j ++) {
+            h_B_matrix[i * N + j] = static_cast<float>(i % 53) - static_cast<float>(j);
+        }
+    }
+
+    for (size_t i = 0; i < M; i ++) {
+        for (size_t j = 0; j < N; j ++){
+            float sum = 0.0f;
+            for (size_t k = 0; k < K; k++)
+            {
+                sum += h_A_matrix[i*K+k] * h_B_matrix[k*N+j];
+            }
+            ref_C[i*N+j] = alpha * sum + beta * ref_C[i*N+j];
+        }
+    }
+
+    float *d_A_matrix = nullptr;
+    float *d_B_matrix = nullptr;
+    float *d_C = nullptr;
+    CUDA_CHECK(cudaMalloc(&d_A_matrix, static_cast<size_t>(M * K * sizeof(float))));
+    CUDA_CHECK(cudaMalloc(&d_B_matrix, static_cast<size_t>(K * N * sizeof(float))));
+    CUDA_CHECK(cudaMalloc(&d_C, static_cast<size_t>(M * N * sizeof(float))));
+
+    CUDA_CHECK(cudaMemcpy(d_A_matrix, h_A_matrix.data(), static_cast<size_t>(M * K * sizeof(float)), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_B_matrix, h_B_matrix.data(), static_cast<size_t>(K * N * sizeof(float)), cudaMemcpyHostToDevice));
+    CUDA_CHECK(cudaMemcpy(d_C, ans_C.data(), static_cast<size_t>(M * N * sizeof(float)), cudaMemcpyHostToDevice));
+
+    dim3 block(NUM_THREADS);
+    unsigned grid_size_x = (N + BN - 1) / BN;
+    unsigned grid_size_y = (M + BM - 1) / BM;
+    dim3 grid(grid_size_x, grid_size_y);
+
+    gemm_warptiling<float><<<grid, block>>> (M, N, K, alpha, d_A_matrix, d_B_matrix, beta, d_C);
+    CUDA_CHECK(cudaGetLastError());
+    CUDA_CHECK(cudaDeviceSynchronize());
+
+    CUDA_CHECK(cudaMemcpy(ans_C.data(), d_C, M * N * sizeof(float), cudaMemcpyDeviceToHost));
+
+    for (size_t i = 0; i < M; i ++) {
+        for (size_t j = 0; j < N; j ++) {
+            if (fabs(ref_C[i * N + j] - ans_C[i * N + j]) > 1e-3f * std::max(1.0f, fabs(ref_C[i * N + j]))) {
+                std::cerr << "wrong" ;
+                exit(1);
+            }
+        }
+    }
+
+    CUDA_CHECK(cudaFree(d_A_matrix));
+    CUDA_CHECK(cudaFree(d_B_matrix));
+    CUDA_CHECK(cudaFree(d_C));
+
+    std::cout << "passed!\n\n";
+
+    return 0;
+}
+```
+
+这里我先将block设为一维（方便逐步理解）
+```txt 
+int tid = threadIdx.x;      // 0..127
+int warpId = tid / 32;      // 0..3
+int laneId = tid % 32;      // 0..31
+```
+block tile中有2*2个warp tile， N方向的warp数量为2，映射公式：
+```c++ 
+int warpRow = warpId / WARPS_N;
+int warpCol = warpId % WARPS_N;
+```
+该warp在block tile中负责的起点：
+```c++ 
+int warpRowBase = warpRow * WM;
+int warpColBase = warpCol * WN;
+```
+一个warp tile中： 
+```txt 
+M 方向有 WM/TM = 4 个 thread tile
+N 方向有 WN/TN = 8 个 thread tile
+```
+因此把32个lane看成4*8，我们定义：
+```c++ 
+constexpr int THREAD_TILES_N = WN / TN;  // 8
+
+int laneRow = laneId / THREAD_TILES_N;   // 0..3
+int laneCol = laneId % THREAD_TILES_N;   // 0..7
+```
+
+![](https://amentirazblogpic.oss-cn-hangzhou.aliyuncs.com/img/20261018164546264.png)
+大概看图理解会更简单一点。
+
+这一节的GEMM先告一段落，我也有点做力竭了。
+
+下一节去从系统上对它进行优化
